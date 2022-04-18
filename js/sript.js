@@ -235,25 +235,302 @@
 
 
 
-//перешал сам 2й раз, добавил поведение при вводе пустой строки вместо пароля
+//перерешал сам 2й раз, добавил поведение при вводе пустой строки вместо пароля
 
-let login = prompt('who are you?', ['Admin']);
+// let login = prompt('who are you?', ['Admin']);
 
-if (login === 'Admin') {
+// if (login === 'Admin') {
 
-    let password = prompt('Password?',''); 
+//     let password = prompt('Password?',''); 
 
-        if (password === '1111') {
-        alert('Hello');
-    } else if (password == null) {
-        alert('Cancel');
-    } else if (password == '') {
-        alert('Incorrect pasword');
-    } else {
-        alert('Incorrect pasword');
-    }
-} else if (login == null || login == '') {
-    alert('Cancel');
-} else {
-    alert('I dont know who are you');
-}
+//         if (password === '1111') {
+//         alert('Hello');
+//     } else if (password == null) {
+//         alert('Cancel');
+//     } else if (password == '') {
+//         alert('Incorrect pasword');
+//     } else {
+//         alert('Incorrect pasword');
+//     }
+// } else if (login == null || login == '') {
+//     alert('Cancel');
+// } else {
+//     alert('I dont know who are you');
+// }
+
+//                lesson 22  Циклы While
+
+// let num = 50;
+
+// пока условие выполняется будем делать какието действия, в данном случае прибавлять 1 до получения 55
+// while (num <= 55) {
+//     console.log(num);
+//     num++;
+// }
+
+
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num < 55);
+
+
+// let i = 1 задаём переменную, i < 8 условие при котором цикл престанет работать, i++ шаг цикла
+
+// for (let i = 1; i < 8; i++) {
+//     console.log(num);
+//     num++;
+// }  тут мы сразу показываем переменную num (это будет первый цикл) а потом делаем 
+//еще 6 циклов сложения ++ тк ориентируемся на переменную 'i'
+
+// заканчивает досрочно
+// for (let i=1; i < 10; i++) {
+//     if (i === 6) {
+//         break;
+//     }
+//     console.log(i);
+// }
+
+//пропускает не нужный шаг но не прерывает цикл
+// for (let i=1; i < 10; i++) {
+//     if (i === 6) {
+//         continue;
+//     }
+//     console.log(i);
+// }
+
+
+//                    lesson 22
+
+
+
+
+//--------------------------
+
+
+
+
+//                    lesson 23
+
+
+// for (let i = 0; i < 3; i++) {
+//     console.log(i);
+//     for (let j = 0; j < 3; j++) {
+//         console.log(j);
+//     }
+// }
+//answer
+// 0--первый цикл i
+// 0 -первый цикл j
+// 1--2 цикл j
+// 2--3 цикл j
+// 1-- 2й цикл i
+// 0 первый цикл j второго цикла i
+// 1
+// 2
+// 2 --3 цикл i
+// 0 второй цикл j третьего цикла i
+// 1
+// 2
+
+
+// let result = '';
+// const lengt = 7;
+
+// for (let i = 1; i < lengt; i++) {
+
+//     for (let j = 0; j < i; j++) {
+//         result = "*";
+//         }
+
+//     result += '\n'; // += добавлям каждый раз кусочек строки , '\n' это перенос на новую строку
+// }
+// console.log(result);
+
+
+
+
+// задача 1
+// let number = 5;
+
+// while (number <=10 ) {
+//     console.log(number);
+//     number++;
+// }
+
+//задача 2
+// for (let i = 20; i >= 10; i--) {
+//     if (i === 13) {
+//         break;
+//     }
+//     console.log(i);
+// }
+
+
+// //задача 3 (вывод четных)
+// for (let i = 2; i <= 10; i++) {
+//     if (i % 2 == 1) {// если в скобках поставить 0 вместо 1, то будут нечетные
+//          continue;
+//      } else {
+//         console.log(i);
+//      } 
+// }
+
+//задача 4 
+
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+    
+
+
+// let i = 2;
+
+// while (i <= 16) {   //проверяем проходит ли 2 в условие
+//     if (i % 2 === 0) { //если остаток от деления 0 то, false
+//         i++; 
+//         continue; //пропускаем и переходим  на следующую итерацию ( 402: i++;)
+//         } else {
+//          console.log(i); // в консоль не выводим ничего т.к 2 делиться без остатка
+//     }
+//     i++; //прибовляем к let i = 2 единицу, получаем 3 и начинаем цикл сначала с ТРОЙКОЙ
+// }
+
+//задача 5
+// заполнить массив цифрами от 5 до 10 включительно
+// function fifthTask() {
+
+
+//     const arrayOfNumbers = [];
+
+//     for (let i = 5; i < 11; i++) {
+//         arrayOfNumbers[i - 5] = i;
+//     }
+    
+
+//     console.log(arrayOfNumbers);
+//     return arrayOfNumbers;
+// }
+
+    // const arr = [3, 5, 8, 16, 20, 23, 50];
+    // const result = [];
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     result[i] = arr[i];
+    // }
+
+    // console.log(result);
+    // return result;
+
+
+    
+
+//----
+
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+// for  (let i = 0; i < data.length; i++) {
+//     if (typeof(data[i]) === 'number') {
+//         data[i] = data[i] * 2;
+//     } else if (typeof(data[i]) === 'string') {
+//         data[i] = data[i] + " - done";
+//     }
+// }
+// console.log(data);
+// return data;
+
+
+///разворачивает массив наоборт
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// const result = [];
+
+// for (let i = 1; i <= data.length; i++) {
+//     result[i - 1] = data[data.length - i]
+// }
+
+// console.log(result);
+// return result;
+
+
+// const lines = 5;
+// let result = '';
+
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//         result += " ";
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+
+// console.log(result);
+
+
+/* Задание на урок:
+
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+// const numberOfFilms = prompt('Сколько фильмов вы посмотрели?','');
+// console.log(numberOfFilms);
+
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// };
+
+// for (let i = 0; i < 2; i++) {
+// 	const a = prompt('Last film?',''),
+// 	      b = prompt('Rating?','');
+
+    // if (a != null && b!= null && a != '' && b!= '' && a.length < 50) {
+    //     personalMovieDB.movies[a] = b;
+    //     console.log('done');
+    // } else {
+    //     console.log('error');
+    //     i--;
+    // } 
+
+//     if (a == null && b == null && a == '' && b == '' && a.length > 50) {   ///variant 2
+//         personalMovieDB.movies[a] = b;
+//         console.log('Error121');
+        
+//     } else {
+//         console.log('1Done');
+        
+//     } 
+
+// }
+
+// if (personalMovieDB.count < 10) {
+//     console.log('too little');
+// }   else if (personalMovieDB.count >= 10 || personalMovieDB.count <=30) {
+//     console.log('You are classical viewer');
+// }   else if (personalMovieDB.count > 30) {
+//     console.log('You are classical CINEPHILE');
+// }   else {
+//     console.log('ERROR');
+// }
+
+
+// console.log(numberOfFilms);
