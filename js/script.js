@@ -534,3 +534,70 @@
 
 
 // console.log(numberOfFilms);
+
+
+
+//   let value = prompt('Какое "официальное" название JavaScript?', '')
+//   if (value == 'ECMAScript') {
+//       alert('Yes!')
+//   } else {
+//       alert('no!')
+//   }
+// let value = prompt('Введите число', 0);
+
+// if (value > 0) {
+//   alert( 1 );
+// } else if (value < 0) {
+//   alert( -1 );
+// } else if (value == null || value == '') {
+//     alert( 'error' );
+// } else {
+//   alert( 0 );
+// }
+// let a = 0;
+// let b = 3;
+// let result = (a + b < 4) ? 'Мало' : 'Много'; 
+
+// alert(result);
+
+
+// let message;
+
+// if (login == 'Сотрудник') {
+//   message = 'Привет';
+// } else if (login == 'Директор') {
+//   message = 'Здравствуйте';
+// } else if (login == '') {
+//   message = 'Нет логина';
+// } else {
+//   message = '';
+// }
+// let login = prompt('ty kto');
+// let message = (login == 'Сотрудник') ? 'Привет' :
+//         (login == 'Директор') ? 'Здравствуйте' :
+//         (login == '') ? 'Нет логина':
+//         '';
+
+//         alert(message);
+
+
+
+// function sayHello(name) {
+//     return `Привет ${name}!`;
+//    }
+//    alert((name))
+
+ 
+
+//    function sayHello(name) {
+//     return `Привет, ${name}!`;
+// }
+
+// sayHello('Alex');
+// alert(`Привет, ${name}!`);
+//    function sum(a, b) {
+//     return a + b;
+//   }
+  
+//   let result = sum(1, 2);
+//   alert( result ); // 3

@@ -37,40 +37,64 @@
 
 // console.log(personalMovieDB);
 
-let num = 20;
-function showFirstMessage(text) {
-	console.log(text);
+// let num = 20;
+// function showFirstMessage(text) {
+// 	console.log(text);
 	
-	console.log(num);
+// 	console.log(num);
+// }
+// showFirstMessage("hello");
+// console.log(num);
+
+
+// function calc(a, b) {
+// 	return (a + b);
+// }
+// console.log(calc(4, 5));
+// console.log(calc(3, 4));
+// console.log(calc(6, 7));
+
+
+// function ret() {
+// 	let num = 50;
+// 	//
+
+// 	return num;
+// }
+
+// const anotherNum = ret();
+// console.log (anotherNum);
+
+
+// const logger = function() {
+// 	console.log('Hello');
+// };
+
+// logger();
+
+
+
+
+
+
+// const usdCurr = 25;
+// const eurCurr = 32;
+// const discount = 0.9;
+
+// function convert(amount, curr) {
+// 	return curr * amount;
+// }
+
+// function promotion(result) {
+// 	console.log(result * discount);
+// }
+// promotion(convert(400, usdCurr));
+
+
+
+
+function sayHello(name) {
+    return `Привет, ${name}!`;
 }
-showFirstMessage("hello");
-console.log(num);
 
-
-function calc(a, b) {
-	return (a + b);
-}
-console.log(calc(4, 5));
-console.log(calc(3, 4));
-console.log(calc(6, 7));
-
-
-function ret() {
-	let num = 50;
-	//
-
-	return num;
-}
-
-const anotherNum = ret();
-console.log (anotherNum);
-
-
-const logger = function() {
-	console.log('Hello');
-};
-
-logger();
-
-
-
+sayHello('Alex');
