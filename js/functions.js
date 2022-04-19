@@ -93,8 +93,8 @@
 
 
 
-function sayHello(name) {
-    return `Привет, ${name}!`;
-}
+// function sayHello(name) {
+//     return `Привет, ${name}!`;
+// }
 
-sayHello('Alex');
+// sayHello();
