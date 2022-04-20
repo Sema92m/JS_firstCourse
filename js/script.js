@@ -592,12 +592,126 @@
 //    function sayHello(name) {
 //     return `Привет, ${name}!`;
 // }
+// sayHello('Semi');
 
-// sayHello('Alex');
-// alert(`Привет, ${name}!`);
-//    function sum(a, b) {
-//     return a + b;
-//   }
-  
-//   let result = sum(1, 2);
-//   alert( result ); // 3
+// function createMassage(text, name) {
+//     return `${text}, ${name}!`;
+// }
+
+// function showMassage(message) {
+//     console.log(message);
+// }d
+
+// function initMessage(text, name) {
+//     showMassage(createMassage(text, name));
+// }
+
+// initMessage('Den', 'Fer');
+
+
+
+// function createMassage(text, name) {
+//     return `${text}, ${name}!`;
+// }
+
+// function showMassege(massage) {
+//     console.log(massage);
+// }
+// function initMassage(text, name) {
+//     showMassege(createMassage(text, name));
+// }
+
+// initMassage('Dew', 'Asa');
+// function getName(name) {
+//     return `Hello, ${name}`;
+
+// }
+// console.log(getName('Ewa'));
+    
+
+
+// function createMassage1(text, name) {
+//     return `${text}, ${name}!`;
+// }
+
+// function showMassege1(massege1) {
+//     console.log(massege1);
+// }
+
+// function initMassage1(text, name) {
+//     showMassege1(createMassage1(text, name));
+// }
+
+// initMassage1('Hello', 'Men');
+// let num = 1;
+// while (num <= 5) {
+//     console.log(num);
+//     num++;
+// }
+
+// for (let num = 1; num <= 5; num++) {
+//     console.log(num);
+// }
+
+
+// for (let num = 20; num >= 10; num--) {
+//     if (num == 12) break;
+//     console.log(num);
+// }
+
+
+// for (let num = 2; num <= 10; num++) {
+//     console.log(num);
+// }
+
+// let num = 2;
+// while (num <= 10) {
+//     console.log(num);
+//     num++;
+// }
+
+
+
+// function sayHello(name) {
+    
+//     return 'Hello,' `${name}`;
+
+// }
+// sayHello('Ass');
+
+
+// function sayHello(name) {
+//     return `Привет, ${name}!`;
+// }
+// console.log(sayHello('A'));
+
+
+// function returnNeighboringNumbers(num) {
+//     return [num -1, num, num +1];
+// }
+
+// console.log(returnNeighboringNumbers(5));
+
+// function getMathResult(num, times) {
+//     if (typeof(times) !== 'number' || times <= 0) {
+//         return num;
+//     }
+
+//     let str = '';
+
+//     for (let i = 1; i <= times; i++) {
+//         if (i === times) {
+//             str += `${num * i}`;
+//             // Тут без черточек в конце
+//         } else {
+//             str += `${num *  }---`;
+//             // Это тоже самое, что и
+//             // str = str + num * i + "---"
+//         }
+//     }
+
+//     return str;
+// }
+
+
+// console.log(getMathResult(5,4));
