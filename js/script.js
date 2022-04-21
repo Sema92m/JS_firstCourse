@@ -738,3 +738,75 @@
 // const test = "12.2px";
 // console.log(parseInt(test));//переводит число в дургую систему  измерения(из строки в число)
 // console.log(parseFloat(test));//возращает в десятичном варианте, возващает с точкой
+
+
+// Volume of cube V = s**3 -- объём куба;
+
+// s - сторона;
+
+// Surface area of cube  A = 6 * s**2;
+
+
+// не получилось
+// let number = 3;
+// function calcCubeVolume() {
+//     return number ** 3;
+// }
+// console.log(parseInt(calcCubeVolume()));
+
+
+// function calcCubeArea() {
+//     return 6 * number ** 2;
+// }
+// console.log(parseInt(calcCubeArea()));
+
+
+
+// function showVolumeAndArea() {
+//     if (calcCubeArea() <= 0 || calcCubeVolume() <= 0) {
+//         console.log ('Error');
+//     }
+//     console.log((calcCubeArea()), calcCubeVolume());
+// }
+
+
+
+
+// function calculateVolumeAndArea(length) {
+//     if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+//         return 'Error';
+//     }
+
+//     let volume = 0;
+//         area = 0;
+        
+//     volume = length ** 3;
+//     area = (length ** 2) * 6;
+//     return `Volume of cube: ${volume}, areaa of cub: ${area}`;
+// }
+// calculateVolumeAndArea(5);
+// console.log(calculateVolumeAndArea(15));
+
+
+
+
+
+
+
+// function getCoupeNumber(seatNumber) {
+//     if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+//         return 'Error';
+//     }
+
+//     if (seatNumber === 0 || seatNumber > 36) {
+//         return 'incorrect number';
+//     }
+
+//     for (let i = 4; i <= 36 ; i= i + 4) {
+//         if (seatNumber <= i) {
+//             return Math.ceil(i / 4);
+//         }
+//     }
+
+// }
+// console.log(getCoupeNumber(25));
