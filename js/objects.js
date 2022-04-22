@@ -391,10 +391,12 @@ let userInfo = {
 		street: "Freedom",
 	},
 	//showInfo: function () {
-	//	console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+	//	console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес:
+	 г.${userInfo.address.city}, ул.${userInfo.address.street}`);
 	//}
 	showInfo() {
-		console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+		console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес:
+		 г.${userInfo.address.city}, ул.${userInfo.address.street}`);
 	}
 }
 userInfo.showInfo();
@@ -411,7 +413,8 @@ let userInfo = {
 		street: "Freedom",
 	},
 	showInfo() {
-		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес:
+		 г.${userInfo.address.city}, ул.${userInfo.address.street}`);
 		console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
 	}
 }
@@ -434,7 +437,8 @@ let userInfo = {
 
 		// У стрелочной функции нет своего "this" используются
 		// значение из внешнего метода userInfo.showInfo()
-		let show = () => console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+		let show = () => console.log(`${this.name}, ${this.age} лет. Адрес:
+		 г.${this.address.city}, ул.${this.address.street}`);
 		show();
 	}
 }
@@ -452,7 +456,8 @@ let userInfo = {
 	},
 	showInfo() {
 		console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
-		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес:
+		 г.${userInfo.address.city}, ул.${userInfo.address.street}`);
 	}
 }
 userInfo.showInfo();
@@ -548,7 +553,7 @@ let userInfo = {
 	}
 }
 let user = userInfo;
-userInfo = null;
+userInfo = null; 
 user.showInfo();
 
 // Задача №5 (что будет в консоли?)
@@ -579,7 +584,7 @@ const userInfo = {
 	age: 30,
 	"likes js": true
 }
-console.log(userInfo."likes js");
+console.log(userInfo["likes js"]);
 */
 // Задача №8
 /*
@@ -589,3 +594,18 @@ console.log(userInfo."likes js");
 4.Измените значение свойства name на Лена.
 5.Удалите свойство name из объекта.
 */
+
+
+// let userInfo = {
+// 	name: 'Ewa',
+// 	age: 30,
+// }
+
+// console.log(userInfo);
+
+// userInfo.name = 'Aga';
+
+// console.log(userInfo);
+// delete userInfo.name;
+
+// console.log(userInfo);

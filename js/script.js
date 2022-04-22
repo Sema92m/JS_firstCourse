@@ -789,10 +789,6 @@
 
 
 
-
-
-
-
 // function getCoupeNumber(seatNumber) {
 //     if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
 //         return 'Error';
@@ -810,3 +806,122 @@
 
 // }
 // console.log(getCoupeNumber(25));
+
+
+//coding exercise nr 8
+// function getTimeFromMinutes(numberMin) {
+//     if (typeof(numberMin) !== 'number' || numberMin < 0 || !Number.isInteger(numberMin)) {
+//         return 'Error';
+//     }
+//     let minute = 0;
+//         hour = 0;
+
+//         minute = numberMin % 60;
+//         hour = (numberMin - (numberMin % 60)) / 60;
+    
+//     //окончания слова ЧАС
+//     if (hour === 1) {
+//         return `Это ${hour} час и ${minute} минут`;
+//     }
+//     if (hour !== 1 && hour <= 4) {
+//         return `Это ${hour} часа и ${minute} минут`;
+//     }
+//     if (hour >= 5) {
+//         return `Это ${hour} часов и ${minute} минут`;
+//     }
+// }
+// console.log(getTimeFromMinutes(189));
+
+
+
+
+//решение от Ивана
+// function getTimeFromMinutes(minutesTotal) {
+//     if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+//         return "Ошибка, проверьте данные";
+//     }
+
+//     const hours = Math.floor(minutesTotal / 60);
+//     const minutes = minutesTotal % 60;
+
+//     let hoursStr = '';
+
+//     switch (hours) {
+//         case 0: 
+//             hoursStr = 'часов';
+//             break;
+//         case 1:
+//             hoursStr = 'час';
+//             break;
+//         case 2:
+//         case 3:
+//         case 4:
+//             hoursStr = 'часа';
+//             break;
+//         default:
+//             hoursStr = 'часов';
+//     }
+
+//     return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+// }
+
+// console.log(Math.max(9, 3, ''));
+
+
+// function findMaxNumber(a, b, c, d) {
+    
+//     if (typeof(a) !== 'number' ||
+//         typeof(b) !== 'number' || 
+//         typeof(c) !== 'number' || 
+//         typeof(d) !== 'number') {
+//         return 'Error';
+//     } else {
+//         return Math.max(a, b, c, d);
+//     } 
+// }
+
+// console.log(findMaxNumber(1, 77, -4, 8));
+
+//пишем в фукцию номер, выводит число фибоначчи по этим номером в последовательности
+function fib(n) {
+    let a = 1;
+    let b = 1;
+        
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+console.log(fib(10));
+//Цикл начинается с i=3, потому что первое и второе значения последовательности заданы a=1, b=1.
+
+
+function fib(num) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result;
+}
+
+console.log(fib(10));
