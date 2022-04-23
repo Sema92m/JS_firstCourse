@@ -12,7 +12,7 @@
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
-'use strict';
+"use strict";
 
 //ДОМАШКА
 /*
@@ -73,11 +73,11 @@ showMessage();
 // 	 showMessage = function() {
 // 		console.log('Сообщение');
 // 	};
-     
+
 // }
 // showMessage();
 
- // Error (showMessage is not defined)
+// Error (showMessage is not defined)
 //========================================================================================================================================================
 //========================================================================================================================================================
 //Объявление функции (Function Declaration)
@@ -113,7 +113,6 @@ calcSum - посчитать сумму
 // 	console.log('Сообщение');
 // }
 // showMessege();
-
 
 /*
 Функция должна делать только то,
@@ -263,8 +262,6 @@ function calcSumm(numOne = 1, numTwo = 2) {
 
 calcSumm(5, 5);
 */
-
-
 
 //------
 /*
@@ -567,8 +564,6 @@ initMessage('Привет', 'Фрилансер');
 //========================================================================================================================================================
 //========================================================================================================================================================
 
-
-
 // const numberOfFilms = prompt('Сколько фильмов вы посмотрели?','');
 // console.log(numberOfFilms);
 
@@ -592,12 +587,11 @@ initMessage('Привет', 'Фрилансер');
 // let num = 20;
 // function showFirstMessage(text) {
 // 	console.log(text);
-	
+
 // 	console.log(num);
 // }
 // showFirstMessage("hello");
 // console.log(num);
-
 
 // function calc(a, b) {
 // 	return (a + b);
@@ -605,7 +599,6 @@ initMessage('Привет', 'Фрилансер');
 // console.log(calc(4, 5));
 // console.log(calc(3, 4));
 // console.log(calc(6, 7));
-
 
 // function ret() {
 // 	let num = 50;
@@ -617,17 +610,11 @@ initMessage('Привет', 'Фрилансер');
 // const anotherNum = ret();
 // console.log (anotherNum);
 
-
 // const logger = function() {
 // 	console.log('Hello');
 // };
 
 // logger();
-
-
-
-
-
 
 // const usdCurr = 25;
 // const eurCurr = 32;
@@ -641,8 +628,6 @@ initMessage('Привет', 'Фрилансер');
 // 	console.log(result * discount);
 // }
 // promotion(convert(400, usdCurr));
-
-
 
 // let name1 = '1';
 // function sayHello(name) {
@@ -667,6 +652,5 @@ initMessage('Привет', 'Фрилансер');
 // function less() {
 //      console.log('меньше чем 3');
 // }
-
 
 // calcSum(1, 1, more, less);

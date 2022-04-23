@@ -1,5 +1,5 @@
-'use strict';
-            //intro
+"use strict";
+//intro
 // alert('Hello');
 // const result = confirm("Are you here?");
 // console.log(result);
@@ -14,14 +14,10 @@
 // console.log(++incr);
 // console.log(decr--);
 // console.log(5%2);
-            //intro
+//intro
 //--------------------------------------------------
 
-
-
-
-
-             // //lesson1
+// //lesson1
 // const numberOfFilms = prompt('Сколько фильмов вы посмотрели?','');
 // console.log(numberOfFilms);
 
@@ -42,14 +38,11 @@
 // personalMovieDB.movies[c] = d;
 
 // console.log(personalMovieDB);
-               // //lesson1
-
+// //lesson1
 
 //---------------------------------------
 
-
-
-              //lesson2 (nr20)
+//lesson2 (nr20)
 // if (1) {
 // 	console.log('ok');
 // } else {
@@ -69,7 +62,6 @@
 // const num = 50;
 // (num === 50) ? console.log('Ok') : console.log('Error');
 
-
 // const num = 111;
 // switch (num) {
 // 	case 49:
@@ -83,20 +75,14 @@
 // 		break;
 // 	default:
 // 		console.log('not today');
-		
+
 // }
 
-
-
-              //lesson 2 (nr 20)
-
-
-
+//lesson 2 (nr 20)
 
 //---------------------------------------
 
-
-              //lesson 21 
+//lesson 21
 
 // const hamburger = 3;
 // const fries = 3;
@@ -109,29 +95,24 @@
 // 	console.log('Nok');
 // }
 
-
 // console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
 
-//т.к нету колы то левая часть *или* будет false.  В правой части fries === 3 и 
+//т.к нету колы то левая часть *или* будет false.  В правой части fries === 3 и
 // это true и nuggets(должно быть 1 или больше) 2шт,
 // поэтому nuggets тоже true).
-// Оператор && вернет первое ложное значение но если его нету то значение ПОСЛЕДНЕГО АРГУМЕНТА!. 
+// Оператор && вернет первое ложное значение но если его нету то значение ПОСЛЕДНЕГО АРГУМЕНТА!.
 // оператор || сравнивает false c ДВУМЯ nuggest и вернёт правду. Ответ: 2
 
+//lesson 21
 
-           //lesson 21 
+//---------------------------------------
 
-
-		   //---------------------------------------
-
-
-              //lesson 22 
+//lesson 22
 //    let hamburger;
 //    const fries = NaN;
 //    const cola = 0;
 //    const nuggets = 2;
-	
-	
+
 //    if (hamburger || cola || fries === 3 || nuggets) {
 // 	  console.log('Done!');
 //    } else {
@@ -142,17 +123,14 @@
 // const fries = NaN;
 // const cola = 1;
 // const nuggets = 2;
- 
+
 // if (hamburger && cola || fries === 3 && nuggets) {
 //    console.log('Done!');
 // } else {
 // 	console.log('Nok');
 // }
 
-
-					//lesson 22 
-
-
+//lesson 22
 
 //---------------------------------------
 
@@ -166,8 +144,6 @@
 // } else {
 //     console.log('Error');
 // }
-
-
 
 // Напишите условие if для проверки, что значение переменной age НЕ находится в диапазоне 14 и 90 включительно.
 
@@ -189,14 +165,9 @@
 //     console.log('В диапазоне 14-90');
 // }
 
-
 // if (-1 || 0) alert( 'first' );   //-1 это true, alert will work
 // if (-1 && 0) alert( 'second' );  //0=false, won't work
 // if (null || -1 && 1) alert( 'third' );//null|| -1   ->  -1=true , alert will work
-
-
-
-
 
 // Проверка логина
 // важность: 3
@@ -212,10 +183,9 @@
 // При отмене – «Отменено».
 // Блок-схема:
 
-
 // let login = prompt('who are you?', ['Admin']);
 
-// if (login === 'Admin') { 
+// if (login === 'Admin') {
 
 //     let pass = prompt('Password','');
 
@@ -233,15 +203,13 @@
 //     alert('I dont know who you are');
 // }
 
-
-
 //перерешал сам 2й раз, добавил поведение при вводе пустой строки вместо пароля
 
 // let login = prompt('who are you?', ['Admin']);
 
 // if (login === 'Admin') {
 
-//     let password = prompt('Password?',''); 
+//     let password = prompt('Password?','');
 
 //         if (password === '1111') {
 //         alert('Hello');
@@ -268,21 +236,18 @@
 //     num++;
 // }
 
-
-
 // do {
 //     console.log(num);
 //     num++;
 // }
 // while (num < 55);
 
-
 // let i = 1 задаём переменную, i < 8 условие при котором цикл престанет работать, i++ шаг цикла
 
 // for (let i = 1; i < 8; i++) {
 //     console.log(num);
 //     num++;
-// }  тут мы сразу показываем переменную num (это будет первый цикл) а потом делаем 
+// }  тут мы сразу показываем переменную num (это будет первый цикл) а потом делаем
 //еще 6 циклов сложения ++ тк ориентируемся на переменную 'i'
 
 // заканчивает досрочно
@@ -301,19 +266,11 @@
 //     console.log(i);
 // }
 
-
 //                    lesson 22
-
-
-
 
 //--------------------------
 
-
-
-
 //                    lesson 23
-
 
 // for (let i = 0; i < 3; i++) {
 //     console.log(i);
@@ -335,7 +292,6 @@
 // 1
 // 2
 
-
 // let result = '';
 // const lengt = 7;
 
@@ -348,9 +304,6 @@
 //     result += '\n'; // += добавлям каждый раз кусочек строки , '\n' это перенос на новую строку
 // }
 // console.log(result);
-
-
-
 
 // задача 1
 // let number = 5;
@@ -368,17 +321,16 @@
 //     console.log(i);
 // }
 
-
 // //задача 3 (вывод четных)
 // for (let i = 2; i <= 10; i++) {
 //     if (i % 2 == 1) {// если в скобках поставить 0 вместо 1, то будут нечетные
 //          continue;
 //      } else {
 //         console.log(i);
-//      } 
+//      }
 // }
 
-//задача 4 
+//задача 4
 
 // for (let i = 2; i <= 16; i++) {
 //     if (i % 2 === 0) {
@@ -387,14 +339,12 @@
 //         console.log(i);
 //     }
 // }
-    
-
 
 // let i = 2;
 
 // while (i <= 16) {   //проверяем проходит ли 2 в условие
 //     if (i % 2 === 0) { //если остаток от деления 0 то, false
-//         i++; 
+//         i++;
 //         continue; //пропускаем и переходим  на следующую итерацию ( 402: i++;)
 //         } else {
 //          console.log(i); // в консоль не выводим ничего т.к 2 делиться без остатка
@@ -406,30 +356,25 @@
 // заполнить массив цифрами от 5 до 10 включительно
 // function fifthTask() {
 
-
 //     const arrayOfNumbers = [];
 
 //     for (let i = 5; i < 11; i++) {
 //         arrayOfNumbers[i - 5] = i;
 //     }
-    
 
 //     console.log(arrayOfNumbers);
 //     return arrayOfNumbers;
 // }
 
-    // const arr = [3, 5, 8, 16, 20, 23, 50];
-    // const result = [];
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// const result = [];
 
-    // for (let i = 0; i < arr.length; i++) {
-    //     result[i] = arr[i];
-    // }
+// for (let i = 0; i < arr.length; i++) {
+//     result[i] = arr[i];
+// }
 
-    // console.log(result);
-    // return result;
-
-
-    
+// console.log(result);
+// return result;
 
 //----
 
@@ -445,7 +390,6 @@
 // console.log(data);
 // return data;
 
-
 ///разворачивает массив наоборт
 // const data = [5, 10, 'Shopping', 20, 'Homework'];
 // const result = [];
@@ -456,7 +400,6 @@
 
 // console.log(result);
 // return result;
-
 
 // const lines = 5;
 // let result = '';
@@ -472,7 +415,6 @@
 // }
 
 // console.log(result);
-
 
 /* Задание на урок:
 
@@ -503,22 +445,22 @@
 // 	const a = prompt('Last film?',''),
 // 	      b = prompt('Rating?','');
 
-    // if (a != null && b!= null && a != '' && b!= '' && a.length < 50) {
-    //     personalMovieDB.movies[a] = b;
-    //     console.log('done');
-    // } else {
-    //     console.log('error');
-    //     i--;
-    // } 
+// if (a != null && b!= null && a != '' && b!= '' && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log('done');
+// } else {
+//     console.log('error');
+//     i--;
+// }
 
 //     if (a == null && b == null && a == '' && b == '' && a.length > 50) {   ///variant 2
 //         personalMovieDB.movies[a] = b;
 //         console.log('Error121');
-        
+
 //     } else {
 //         console.log('1Done');
-        
-//     } 
+
+//     }
 
 // }
 
@@ -532,10 +474,7 @@
 //     console.log('ERROR');
 // }
 
-
 // console.log(numberOfFilms);
-
-
 
 //   let value = prompt('Какое "официальное" название JavaScript?', '')
 //   if (value == 'ECMAScript') {
@@ -556,10 +495,9 @@
 // }
 // let a = 0;
 // let b = 3;
-// let result = (a + b < 4) ? 'Мало' : 'Много'; 
+// let result = (a + b < 4) ? 'Мало' : 'Много';
 
 // alert(result);
-
 
 // let message;
 
@@ -580,14 +518,10 @@
 
 //         alert(message);
 
-
-
 // function sayHello(name) {
 //     return `Привет ${name}!`;
 //    }
 //    alert((name))
-
- 
 
 //    function sayHello(name) {
 //     return `Привет, ${name}!`;
@@ -608,8 +542,6 @@
 
 // initMessage('Den', 'Fer');
 
-
-
 // function createMassage(text, name) {
 //     return `${text}, ${name}!`;
 // }
@@ -627,8 +559,6 @@
 
 // }
 // console.log(getName('Ewa'));
-    
-
 
 // function createMassage1(text, name) {
 //     return `${text}, ${name}!`;
@@ -653,12 +583,10 @@
 //     console.log(num);
 // }
 
-
 // for (let num = 20; num >= 10; num--) {
 //     if (num == 12) break;
 //     console.log(num);
 // }
-
 
 // for (let num = 2; num <= 10; num++) {
 //     console.log(num);
@@ -670,21 +598,17 @@
 //     num++;
 // }
 
-
-
 // function sayHello(name) {
-    
+
 //     return 'Hello,' `${name}`;
 
 // }
 // sayHello('Ass');
 
-
 // function sayHello(name) {
 //     return `Привет, ${name}!`;
 // }
 // console.log(sayHello('A'));
-
 
 // function returnNeighboringNumbers(num) {
 //     return [num -1, num, num +1];
@@ -711,12 +635,9 @@
 //     }
 
 //     return str;
-// } 
-
+// }
 
 // console.log(getMathResult(5,4));
-
-
 
 // const str = "teSt";
 // console.log(str.toUpperCase());
@@ -726,7 +647,6 @@
 // const fruit = "Some fruit";
 // console.log(fruit.indexOf('fruit'));
 
-
 // const logg = "Hello world";
 // // console.log(logg.slice(6, 11));
 // // console.log(logg.substring(6, 11));
@@ -734,18 +654,15 @@
 // const num = 12.2;
 // console.log(Math.round(num));
 
-
 // const test = "12.2px";
 // console.log(parseInt(test));//переводит число в дургую систему  измерения(из строки в число)
 // console.log(parseFloat(test));//возращает в десятичном варианте, возващает с точкой
-
 
 // Volume of cube V = s**3 -- объём куба;
 
 // s - сторона;
 
 // Surface area of cube  A = 6 * s**2;
-
 
 // не получилось
 // let number = 3;
@@ -754,13 +671,10 @@
 // }
 // console.log(parseInt(calcCubeVolume()));
 
-
 // function calcCubeArea() {
 //     return 6 * number ** 2;
 // }
 // console.log(parseInt(calcCubeArea()));
-
-
 
 // function showVolumeAndArea() {
 //     if (calcCubeArea() <= 0 || calcCubeVolume() <= 0) {
@@ -769,9 +683,6 @@
 //     console.log((calcCubeArea()), calcCubeVolume());
 // }
 
-
-
-
 // function calculateVolumeAndArea(length) {
 //     if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
 //         return 'Error';
@@ -779,15 +690,13 @@
 
 //     let volume = 0;
 //         area = 0;
-        
+
 //     volume = length ** 3;
 //     area = (length ** 2) * 6;
 //     return `Volume of cube: ${volume}, areaa of cub: ${area}`;
 // }
 // calculateVolumeAndArea(5);
 // console.log(calculateVolumeAndArea(15));
-
-
 
 // function getCoupeNumber(seatNumber) {
 //     if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
@@ -807,7 +716,6 @@
 // }
 // console.log(getCoupeNumber(25));
 
-
 //coding exercise nr 8
 // function getTimeFromMinutes(numberMin) {
 //     if (typeof(numberMin) !== 'number' || numberMin < 0 || !Number.isInteger(numberMin)) {
@@ -818,7 +726,7 @@
 
 //         minute = numberMin % 60;
 //         hour = (numberMin - (numberMin % 60)) / 60;
-    
+
 //     //окончания слова ЧАС
 //     if (hour === 1) {
 //         return `Это ${hour} час и ${minute} минут`;
@@ -832,9 +740,6 @@
 // }
 // console.log(getTimeFromMinutes(189));
 
-
-
-
 //решение от Ивана
 // function getTimeFromMinutes(minutesTotal) {
 //     if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
@@ -847,7 +752,7 @@
 //     let hoursStr = '';
 
 //     switch (hours) {
-//         case 0: 
+//         case 0:
 //             hoursStr = 'часов';
 //             break;
 //         case 1:
@@ -867,17 +772,16 @@
 
 // console.log(Math.max(9, 3, ''));
 
-
 // function findMaxNumber(a, b, c, d) {
-    
+
 //     if (typeof(a) !== 'number' ||
-//         typeof(b) !== 'number' || 
-//         typeof(c) !== 'number' || 
+//         typeof(b) !== 'number' ||
+//         typeof(c) !== 'number' ||
 //         typeof(d) !== 'number') {
 //         return 'Error';
 //     } else {
 //         return Math.max(a, b, c, d);
-//     } 
+//     }
 // }
 
 // console.log(findMaxNumber(1, 77, -4, 8));
@@ -886,7 +790,7 @@
 function fib(n) {
     let a = 1;
     let b = 1;
-        
+
     for (let i = 3; i <= n; i++) {
         let c = a + b;
         a = b;
@@ -898,13 +802,12 @@ function fib(n) {
 console.log(fib(10));
 //Цикл начинается с i=3, потому что первое и второе значения последовательности заданы a=1, b=1.
 
-
 function fib(num) {
-    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+    if (typeof num !== "number" || num <= 0 || !Number.isInteger(num)) {
         return "";
     }
 
-    let result = '';
+    let result = "";
     let first = 0;
     let second = 1;
 

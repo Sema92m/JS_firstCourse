@@ -325,8 +325,8 @@ if ("name" in userInfo) {
 
 //В большинстве случаев сработает сравнение с undefined.
 //либо опциональная цепочка ?.
-//Но есть особый случай, когда свойство существует, 
-//но содержит значение undefined. 
+//Но есть особый случай, когда свойство существует,
+//но содержит значение undefined.
 //В этом случае необходимо использовать "in".
 
 /*
@@ -414,7 +414,7 @@ let userInfo = {
 	},
 	showInfo() {
 		//console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес:
-		 г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+		г.${userInfo.address.city}, ул.${userInfo.address.street}`);
 		console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
 	}
 }
@@ -595,7 +595,6 @@ console.log(userInfo["likes js"]);
 5.Удалите свойство name из объекта.
 */
 
-
 // let userInfo = {
 // 	name: 'Ewa',
 // 	age: 30,
@@ -609,3 +608,39 @@ console.log(userInfo["likes js"]);
 // delete userInfo.name;
 
 // console.log(userInfo);
+
+//lesson 32
+
+const options = {
+    name: "Ewa",
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: "black",
+        bg: "red",
+    },
+    makeTest: function () {
+        console.log("test");
+    },
+};
+options.makeTest();
+
+const { border, bg } = options.colors; //деструктуризация
+console.log(border);
+
+console.log(Object.keys(options).length);
+// console.log(options["colors"]["bg"]);
+
+let counter = 0;
+for (let key in options) {
+    if (typeof options[key] === "object") {
+        for (let i in options[key]) {
+            console.log(`${i} propety have the  ${options[key][i]} value`);
+            counter++;
+        }
+    } else {
+        console.log(`${key} propety have the  ${options[key]} value`);
+        counter++;
+    }
+}
+console.log(counter);

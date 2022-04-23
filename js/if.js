@@ -119,4 +119,3 @@ console.log(message);
 let message = 5 > 10 ? "Привет, Вася!" : "Привет, Оля!";
 console.log(message);
 */
-
