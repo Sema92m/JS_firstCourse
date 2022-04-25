@@ -787,44 +787,217 @@
 // console.log(findMaxNumber(1, 77, -4, 8));
 
 //пишем в фукцию номер, выводит число фибоначчи по этим номером в последовательности
-function fib(n) {
-    let a = 1;
-    let b = 1;
+// function fib(n) {
+//     let a = 1;
+//     let b = 1;
 
-    for (let i = 3; i <= n; i++) {
-        let c = a + b;
-        a = b;
-        b = c;
-    }
-    return b;
-}
+//     for (let i = 3; i <= n; i++) {
+//         let c = a + b;
+//         a = b;
+//         b = c;
+//     }
+//     return b;
+// }
 
-console.log(fib(10));
+// console.log(fib(10));
 //Цикл начинается с i=3, потому что первое и второе значения последовательности заданы a=1, b=1.
 
-function fib(num) {
-    if (typeof num !== "number" || num <= 0 || !Number.isInteger(num)) {
-        return "";
+// function fib(num) {
+//     if (typeof num !== "number" || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+
+//     let result = "";
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++) {
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//             // Без пробела в конце
+//         } else {
+//             result += `${first} `;
+//         }
+
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+
+//     return result;
+// }
+
+// console.log(fib(10));
+
+
+// function copy(mainObj) {
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4,
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+// newNumbers.c.x = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+
+
+// const add = {
+//     d: 17,
+//     e: 20,
+// };
+// const clone = Object.assign({}, add);
+// clone.d = 20;
+// console.log(add);
+// console.log(clone);
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+
+// newArray[1] = 'asasad';
+// console.log(newArray);
+// console.log(oldArray);
+
+
+// const video = ['youtube', 'vimeo', 'rutube'];
+//       blogs = ['wordpress', 'livejournal', 'blogger'];
+//       interest = [...video, ...blogs, 'vk', 'facebook'];
+
+// console.log(interest);
+
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const num2 = [2, 5, 7];
+// log(...num2);
+
+
+
+// const array = ["a", "b"];
+// const arrTwo = [...array];
+// console.log(arrTwo);
+
+
+// const q = {
+//     one: 1,
+//     two: 2,
+// };
+
+
+
+
+// const newObj = {...q};
+// console.log(newObj);
+
+
+
+
+
+
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%',
+//         },
+//         exp: '1 month',
+//     }
+// }
+// const showAgeAndLangs = {...personalPlanPeter};
+// console.log(personalPlanPeter.showAgeAndLangs);
+// /////second
+// function showProgrammingLangs(plan) {
+//     const new1PersonalPlanPeter = {...personalPlanPeter};
+//     console.log(`Язык JS изучен на ${new1PersonalPlanPeter.skills.programmingLangs.js}\n Язык PHP изучен на ${new1PersonalPlanPeter.skills.programmingLangs.php}`);
+// }
+// showProgrammingLangs();
+
+////first
+// function showExperience() {
+//     const newPersonalPlanPeter = {...personalPlanPeter};
+//     console.log(newPersonalPlanPeter.skills.exp);
+// };
+
+// showExperience();
+// return `Язык JS изучен на ${newPersonalPlanPeter.skills.programmingLangs.js}\n Язык PHP изучен на ${newPersonalPlanPeter.skills.programmingLangs.php}`;
+
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const {age} = plan;
+        const {languages} = plan.skills;
+        let str = `Мне ${age} и я владею языками: `;
+
+        languages.forEach(function(lang) {
+            str += `${lang.toUpperCase()} `;
+        });
+
+        return str;
     }
+};
 
-    let result = "";
-    let first = 0;
-    let second = 1;
 
-    for (let i = 0; i < num; i++) {
-        if (i + 1 === num) {
-            result += `${first}`;
-            // Без пробела в конце
-        } else {
-            result += `${first} `;
-        }
 
-        let third = first + second;
-        first = second;
-        second = third;
-    }
 
-    return result;
+
+
+
+function showExperience(plan) {
+    const {exp} = plan.skills;
+    return exp;
+    
 }
 
-console.log(fib(10));
+showExperience(personalPlanPeter);
+
+
+
+function showProgrammingLangs(plan) {
+    let str = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+
+    return str;
+}
+
+showProgrammingLangs(personalPlanPeter);
