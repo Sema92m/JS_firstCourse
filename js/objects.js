@@ -611,20 +611,8 @@ console.log(userInfo["likes js"]);
 
 //lesson 32
 
-const options = {
-    name: "Ewa",
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: "black",
-        bg: "red",
-    },
-    makeTest: function () {
-        console.log("test");
-    },
-};
-options.makeTest();
-
+ 
+console.log(Object.keys(options.colors).length);
 const { border, bg } = options.colors; //деструктуризация
 console.log(border);
 
@@ -644,3 +632,40 @@ for (let key in options) {
     }
 }
 console.log(counter);
+
+
+
+
+
+
+
+
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const {age} = plan;
+        const {languages} = plan.skills;
+        let str = `Мне ${age} и я владею языками: `;
+
+        languages.forEach(function(lang) {
+            str += `${lang.toUpperCase()} `;
+        });
+
+        return str;
+		
+    }
+};
+
+
+console.log(personalPlanPeter.plan());
