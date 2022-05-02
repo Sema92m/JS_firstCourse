@@ -654,3 +654,28 @@ initMessage('Привет', 'Фрилансер');
 // }
 
 // calcSum(1, 1, more, less);
+
+function f1(x, y) {
+    x + y;
+    return x + y;
+}
+
+console.log(11 + 3 + 5 + f1(4, 5));
+console.log(f1(6, 7) + f1(4, 5));
+
+function randInt(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+}
+console.log(randInt(1, 500));
+
+document.querySelector('.h1').textContent = f1(300, 400);
+document.querySelector('.h1').style.background = 'rgb(25, 156, 201)';
+
+
+
+document.querySelector(".h1").style.background =`rgb(${randInt(0, 255)}, ${randInt(0, 255)}, ${randInt(0, 255)})`;
+
+ console.log(100 * f1(3, 4));
+
+ confirm(4);

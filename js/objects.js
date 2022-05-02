@@ -612,28 +612,26 @@ console.log(userInfo["likes js"]);
 //lesson 32
 
  
-console.log(Object.keys(options.colors).length);
-const { border, bg } = options.colors; //деструктуризация
-console.log(border);
+// console.log(Object.keys(options.colors).length);
+// const { border, bg } = options.colors; //деструктуризация
+// console.log(border);
 
-console.log(Object.keys(options).length);
-// console.log(options["colors"]["bg"]);
+// console.log(Object.keys(options).length);
+// // console.log(options["colors"]["bg"]);
 
-let counter = 0;
-for (let key in options) {
-    if (typeof options[key] === "object") {
-        for (let i in options[key]) {
-            console.log(`${i} propety have the  ${options[key][i]} value`);
-            counter++;
-        }
-    } else {
-        console.log(`${key} propety have the  ${options[key]} value`);
-        counter++;
-    }
-}
-console.log(counter);
-
-
+// let counter = 0;
+// for (let key in options) {
+//     if (typeof options[key] === "object") {
+//         for (let i in options[key]) {
+//             console.log(`${i} propety have the  ${options[key][i]} value`);
+//             counter++;
+//         }
+//     } else {
+//         console.log(`${key} propety have the  ${options[key]} value`);
+//         counter++;
+//     }
+// }
+// console.log(counter);
 
 
 
@@ -642,30 +640,32 @@ console.log(counter);
 
 
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function(plan) {
-        const {age} = plan;
-        const {languages} = plan.skills;
-        let str = `Мне ${age} и я владею языками: `;
 
-        languages.forEach(function(lang) {
-            str += `${lang.toUpperCase()} `;
-        });
 
-        return str;
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function(plan) {
+//         const {age} = plan;
+//         const {languages} = plan.skills;
+//         let str = `Мне ${age} и я владею языками: `;
+
+//         languages.forEach(function(lang) {
+//             str += `${lang.toUpperCase()} `;
+//         });
+
+//         return str;
 		
-    }
-};
+//     }
+// };
 
 
-console.log(personalPlanPeter.plan());
+// console.log(personalPlanPeter.plan());
