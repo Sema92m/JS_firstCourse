@@ -605,7 +605,7 @@ console.log(userInfo["likes js"]);
 // userInfo.name = 'Aga';
 
 // console.log(userInfo);
-// delete userInfo.name;
+// delete userInfo.name; 
 
 // console.log(userInfo);
 
