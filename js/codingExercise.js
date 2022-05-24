@@ -193,3 +193,39 @@ console.log(isBudgetEnough(shoppingMallData));
 // console.log(transferWaitors(restorantData));
 // console.log(restorantData.waitors);
 // coding exercise 15
+
+
+// const name1 = ["Jacob", "Alex"];
+
+// function likes() {
+//     for (let names2 of name1.values()) {
+//         console.log(names2);
+//       }
+//     // console.log(Object.map([key, value]));
+// }
+// likes(name1);
+
+
+const names = ['Max', 'John', 'Mark'];
+
+function likes(names) {
+    if (names.length == 0) {
+      return 'no one likes this';
+  }
+  if (names.length == 1) {
+      return names.toString() + `${" likes this"}`;
+  }
+ if (names.length == 2) {
+      return names[0].toString() + `${" and "}` + names[1].toString() + `${" like this"}`;
+  }
+ if (names.length == 3) {
+      return names[0].toString() + `${", "}` + names[1].toString() + `${" and "}` + names[2].toString() + `${" like this"}`;
+  }
+  if (names.length >= 4) {
+      return names[0].toString() + `${", "}` + names[1].toString() + `${" and 2 others like this"}`;
+  }
+  if (names.length < 4) {
+      return names.toString();
+  }
+}
+likes(names);
