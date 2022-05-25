@@ -101,3 +101,23 @@
 //   }
 
 // task 3 done
+
+
+
+
+
+// task 4
+
+// let arr = [1, 3, 4, 1, 1, 3, 4, 5];
+// let count = [];
+// function findOdd(A) {
+// for (let elem of arr) {
+//     if (count[elem] === undefined) {
+//     count[elem] = 1;
+//     } else {
+//     count[elem]++;
+//     }
+// }
+// }
+// console.log(findOdd(arr)); // выведет {1: 3, 3: 2, 4: 2, 5: 1}
+

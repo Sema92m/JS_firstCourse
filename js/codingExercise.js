@@ -90,8 +90,7 @@ const personalMovieDB = {
 //coding exercise 13
 
 const shoppingMallData = {
-    shops: [
-        {
+    shops: [{
             width: 10,
             length: 5
         },
@@ -115,18 +114,18 @@ const shoppingMallData = {
 
 
 function isBudgetEnough(data) {
-	let square = 0;
-	let volume = 0;
-	data.shops.forEach(shop => {
-		square += shop.width * shop.length;
-	});
-	volume = data.height * square;
+    let square = 0;
+    let volume = 0;
+    data.shops.forEach(shop => {
+        square += shop.width * shop.length;
+    });
+    volume = data.height * square;
 
-	if (data.budget - (volume * data.moneyPer1m3) >= 0) {
-		return 'Бюджета достаточно';
-	} else {
-		return 'Бюджета недостаточно';
-	}
+    if (data.budget - (volume * data.moneyPer1m3) >= 0) {
+        return 'Бюджета достаточно';
+    } else {
+        return 'Бюджета недостаточно';
+    }
 }
 
 isBudgetEnough(shoppingMallData);
@@ -206,26 +205,47 @@ console.log(isBudgetEnough(shoppingMallData));
 // likes(name1);
 
 
-const names = ['Max', 'John', 'Mark'];
+// const names = ['Max', 'John', 'Mark'];
 
-function likes(names) {
-    if (names.length == 0) {
-      return 'no one likes this';
-  }
-  if (names.length == 1) {
-      return names.toString() + `${" likes this"}`;
-  }
- if (names.length == 2) {
-      return names[0].toString() + `${" and "}` + names[1].toString() + `${" like this"}`;
-  }
- if (names.length == 3) {
-      return names[0].toString() + `${", "}` + names[1].toString() + `${" and "}` + names[2].toString() + `${" like this"}`;
-  }
-  if (names.length >= 4) {
-      return names[0].toString() + `${", "}` + names[1].toString() + `${" and 2 others like this"}`;
-  }
-  if (names.length < 4) {
-      return names.toString();
-  }
-}
-likes(names);
+// function likes(names) {
+//     if (names.length == 0) {
+//       return 'no one likes this';
+//   }
+//   if (names.length == 1) {
+//       return names.toString() + `${" likes this"}`;
+//   }
+//  if (names.length == 2) {
+//       return names[0].toString() + `${" and "}` + names[1].toString() + `${" like this"}`;
+//   }
+//  if (names.length == 3) {
+//       return names[0].toString() + `${", "}` + names[1].toString() + `${" and "}` + names[2].toString() + `${" like this"}`;
+//   }
+//   if (names.length >= 4) {
+//       return names[0].toString() + `${", "}` + names[1].toString() + `${" and 2 others like this"}`;
+//   }
+//   if (names.length < 4) {
+//       return names.toString();
+//   }
+// }
+// likes(names);
+
+
+
+
+//coding exercise 16
+
+// function factorial(a) {
+//     if (a === 1) {
+//         return a;
+//     }
+//     if (a <= 0) {
+//         return 1;
+//     }
+//     if (a % 1 !== 0 && !isNaN(a)) {
+//         return 'Error';
+//     } else {
+//         return a * factorial(a - 1);
+//     }
+// }
+
+// console.log(factorial(7));
