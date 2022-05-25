@@ -290,3 +290,42 @@ console.log('Учим JS');
 // console.log(restorantData.waitors);
 
 
+// const fruits = ["Apple", "Banana", "Orange"];
+// for (a1 of fruits) {
+//   console.log(a1);
+// }
+
+// let arr = [1, 2, 3]; // массив — пример итерируемого объекта
+
+// for (let value of arr) {
+//   alert(value); // 1, затем 2, затем 3
+// }
+
+// let i = 0;
+// while
+//  (i < 10) {
+//   console.log(i);
+//   i++;
+// }
+
+
+// let i = 0;
+// while (i < 10) {
+//   console.log(i);
+  
+// i = i + 2;
+// }
+
+
+// let HitsStorage = 0;
+
+// HitsStorage = function () {
+//         var possibleValues = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//         var result = '';
+//         for (var i = 0; i < 10; i += 1) {
+//             result += possibleValues.charAt(Math.floor(Math.random() * possibleValues.length));
+//         }
+//         return result;
+//     };
+    
+//     console.log(HitsStorage());

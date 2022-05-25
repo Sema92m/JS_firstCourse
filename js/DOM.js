@@ -87,17 +87,4 @@ div.insertAdjacentHTML('afterend','<h2>Hello</h2>');
 
 
 
-// let HitsStorage = 0;
-
-// HitsStorage = function () {
-//         var keyLength = 10;
-//         var possibleValues = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//         var result = '';
-//         for (var i = 0; i < keyLength; i += 1) {
-//             result += possibleValues.charAt(Math.floor(Math.random() * possibleValues.length));
-//         }
-//         return result;
-//     };
-    
-//     console.log(HitsStorage());
 

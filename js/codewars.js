@@ -121,3 +121,12 @@
 // }
 // console.log(findOdd(arr)); // выведет {1: 3, 3: 2, 4: 2, 5: 1}
 
+
+//task
+
+const arr = [1,-4,7,12];
+function positiveSum(arr) {
+  
+}
+
+console.log();
