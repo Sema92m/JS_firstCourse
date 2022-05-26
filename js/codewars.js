@@ -124,9 +124,270 @@
 
 //task
 
-const arr = [1,-4,7,12];
-function positiveSum(arr) {
-  
-}
+// let num = 5;
+// function makeNegative(num) {
+// 	if (num === 0) {
+// 		return 0;
+// 	} if (num > 0) {
+// 		return -num;
+// 	}
+// }
+// console.log(makeNegative(num));
 
-console.log();
+// best solutions
+// function makeNegative(num) {
+// 	return -Math.abs(num);
+//   }
+
+//   function makeNegative(num) {
+// 	return num < 0 ? num : -num;
+//   }
+//task
+
+
+//task Even or Odd
+
+// let num = 4;
+// function even_or_odd(number) {
+//   if (number % 2 == 0) {
+// 	  return "Even";
+//   } else {
+// 	return "Odd";
+//   }
+
+// }
+// console.log(even_or_odd(num));
+
+// best solutions
+// function even_or_odd(number) {
+// 	return number % 2 ? "Odd" : "Even";
+//   }
+
+//   function even_or_odd(number) {
+// 	return number % 2 === 0 ? 'Even' : 'Odd';
+//  }
+
+
+//task Opposite number
+// let num = -4;
+// function opposite(number) {
+// 	if (number > 0) {
+// 		return -Math.abs(number);
+// 	} if (number < 0) {
+// 		return Math.abs(number);
+// 	} else {
+//     return 0;
+//   }
+// }
+//   console.log(opposite(num));
+
+// best solutions
+//   function opposite(number) {
+// 	return(-number);
+//   }
+
+//   const opposite = number => -number;
+
+// function opposite(number) {
+//     return number * (-1);
+// 
+
+
+
+//task Reversed String
+// let str = 'hello hello hello';
+// function solution(str) {
+//   return str.split('').reverse().join('');
+// }
+// console.log(solution(str));
+
+// best solutions
+//   const solution = str => str.split('').reverse().join('');
+//   const solution = s => [...s].reverse().join('')
+
+
+
+//task Remove First and Last Character
+// let str = 'hello';
+
+// function removeChar(str){
+// 	return str.slice(1, -1);
+//    };
+//    console.log(removeChar(str));
+
+// best solutions
+//  const removeChar = str => str.slice(1,-1);
+
+//  function removeChar(str){
+// 	return str.substring(1, str.length-1);
+//    };
+
+
+//task Convert boolean values to strings 'Yes' or 'No'.
+// function boolToWord(bool){
+// 	if (bool === true) {
+// 		return 'Yes';
+// 	} if (bool == false) {
+// 		return 'No';
+// 	}
+//   }
+
+// best solutions
+//    function boolToWord( bool ){
+// 	return bool ? 'Yes':'No';
+//   }
+
+
+//   function boolToWord( bool ){
+// 	if (bool) {
+// 	  return 'Yes';
+// 	} else {
+// 	  return 'No';
+// 	}
+//   }
+
+
+
+//task Convert a Number to a String!
+// function numberToString(num) {
+// 	return String(num);
+//   }
+// function numberToString(num) {
+// 	return num.toString();
+//   }
+//   function numberToString(num) {
+// 	return ''+num;
+//   }
+
+//task Grasshopper - Summation
+
+// let num = 4;
+// var summation = function (num) {
+// 	let sum = 0;
+// 	for (let i = 0; i <= num; i++) {
+// 		sum += i;
+// 	}
+// 	return sum;
+//   };
+//   console.log(summation(num));
+// best solutions
+//    const summation = n => n * (n + 1) / 2;
+
+//    function summation(num) {
+// 	return num * (num + 1) / 2
+//   }
+
+//task Remove String Spaces
+
+// let str = '        8 j 8   mBliB8g  imjB8B8  jl  B';
+// function noSpace(x){
+// 	// return x.replace(/\s+/g, '');
+// 	return x.split(' ').join('');
+// }
+// console.log(noSpace(str));
+
+// best solutions
+// function noSpace(x){
+// 	return x.replace(/\s/g, '');
+//   }
+
+//   const noSpace = x => x.replace(/ /g, "");
+
+
+//Find the smallest integer in the array
+// let arr = [34, -345, -1, 100];
+
+// 	function findSmallestInt(args) {
+// 	return Math.min(...args);
+// 	}
+//   console.log(findSmallestInt(arr));
+
+///теория 
+//let numbers = [2, 3, 15];
+// Оператор ... в вызове передаст массив как список аргументов
+// Этот вызов аналогичен Math.max(2, 3, 15)
+// let max = Math.max(...numbers);
+
+// class SmallestIntegerFinder {
+// 	findSmallestInt(args) {
+// 	  return Math.min.apply(null, args);
+// 	}
+//   }
+
+
+
+//Square(n) Sum
+
+// let nums = [0, 3, 4, 5];
+// function squareSum (numbers) {
+//   return numbers.reduce((sum, current) => sum  + current * current, 0);
+// }
+
+// console.log(squareSum(nums));
+
+
+
+// function squareSum(numbers){
+// 	return numbers.reduce(function(sum, n){
+// 	  return (n*n) + sum;
+// 	}, 0);
+//   }
+
+
+//Counting sheep...
+
+var array1 = [true,  true,  true,  false,
+	true,  true,  true,  true ,
+	true,  false, true,  false,
+	true,  false, false, true ,
+	true,  true,  true,  true ,
+	false, false, true,  true ];
+
+function countSheeps(arrayOfSheep) {
+	
+	return arrayOfSheep.filter(item => item === true).length;
+
+  }
+
+console.log(countSheeps(array1));
+
+
+
+
+//Is n divisible by x and y?
+
+// function isDivisible(n, x, y) {
+// 	if (n % x == 0 && n % y == 0) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+// console.log(isDivisible(12,3,4));
+
+// function isDivisible(n, x, y) {
+// 	return n % x === 0 && n % y === 0
+//   }
+// function isDivisible(n, x, y) {
+// return (n % x === 0 && n % y === 0) ? true : false;
+// }
+
+
+//Century From Year
+
+// function century(year) {
+// 	if (year % 100 == 0) {
+// 		return year / 100 ;
+// 	}
+// 	if (year % 100 >= 1) {
+// 		return Math.floor(year / 100 + 1);
+// 	}
+// }
+// console.log(century(1900));
+
+
+// const century = year => Math.ceil(year/100);
+
+// function century(year) {
+// 	return Math.ceil(year/100); //using ceiling method to round up to nearest century (100)
+//   }
