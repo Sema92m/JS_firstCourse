@@ -336,20 +336,20 @@
 
 //Counting sheep...
 
-var array1 = [true,  true,  true,  false,
-	true,  true,  true,  true ,
-	true,  false, true,  false,
-	true,  false, false, true ,
-	true,  true,  true,  true ,
-	false, false, true,  true ];
+// var array1 = [true,  true,  true,  false,
+// 	true,  true,  true,  true ,
+// 	true,  false, true,  false,
+// 	true,  false, false, true ,
+// 	true,  true,  true,  true ,
+// 	false, false, true,  true ];
 
-function countSheeps(arrayOfSheep) {
+// function countSheeps(arrayOfSheep) {
 	
-	return arrayOfSheep.filter(item => item === true).length;
+// 	return arrayOfSheep.filter(item => item === true).length;
 
-  }
+//   }
 
-console.log(countSheeps(array1));
+// console.log(countSheeps(array1));
 
 
 
@@ -390,4 +390,124 @@ console.log(countSheeps(array1));
 
 // function century(year) {
 // 	return Math.ceil(year/100); //using ceiling method to round up to nearest century (100)
+//   }
+
+
+
+//Sum of positive
+
+// var arr = [3,-2,5,6];
+// function positiveSum1(array) {
+// 	let result = array.reduce(function(sum, elem) {
+// 		if (elem >= 0) {
+// 			return sum + elem;
+// 		} else {
+// 			return sum;
+// 		}
+// 	}, 0);
+// 	return result;
+// }
+// console.log(positiveSum1(arr));
+
+// function positiveSum(arr) {
+// 	var total = 0;    
+// 	for (i = 0; i < arr.length; i++) {    // setup loop to go through array of given length
+// 	  if (arr[i] > 0) {                   // if arr[i] is greater than zero
+// 		total += arr[i];                  // add arr[i] to total
+// 	  }
+// 	}
+// 	return total;                         // return total
+//   }
+
+
+//   function positiveSum(arr) {
+// 	return arr.reduce((a,b) => a + (b > 0 ? b : 0),0);
+//  }
+
+//String repeat
+
+// function repeatStr (n, str) {
+// 	return str.repeat(n);
+//   }
+
+//   console.log(repeatStr(3, '*'));
+
+
+//   repeatStr = (n, s) => s.repeat(n);
+
+
+//Keep Hydrated!
+
+// let a = 12.3;
+// function litres(time) {
+// 	let result = Math.floor(time * 0.5); 
+// 	return result;
+//   }
+
+//   console.log(litres(a));
+
+
+//   function litres(time) {
+// 	return Math.floor(time * 0.5);
+//   }
+
+
+//Basic Mathematical Operations
+
+// function basicOp(operation, value1, value2) {
+// 	let result = value1 + operation + value2;
+//   return eval(result);
+// }
+
+// console.log(basicOp('/',2,3));
+
+// function basicOp(o, a, b) {
+// 	return eval(a+o+b);
+//   }
+
+
+//Abbreviate a Two Word Name
+
+// let names = 'sam harris';
+// function abbrevName(name){
+// 	// return name.match(/[A-Z]/g).join('.');
+// 	// return name[0] + `${'.'}`;
+	
+// 	// return name[0].toUpperCase() + `${'.'}` + name[name.indexOf(' ') + 1].toUpperCase();
+//       return (name[0][0] + `${'.'}` + name[1][0]).toUpperCase();
+// }
+
+// console.log(abbrevName(names));
+
+
+
+// function abbrevName(name){
+
+// 	var nameArray = name.split(" ");
+// 	return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+//   }
+
+// function abbrevName(name){
+
+//     return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+
+// }
+
+//Convert number to reversed array of digits
+
+// let num = 348597;
+// function digitize(n) {
+
+// 	return n.toString().split('').reverse().map(string => +string);
+// 	// return n.toString().split('');
+//   }
+//   console.log(digitize(num));
+
+
+//   function digitize(n) {
+// 	return String(n).split('').map(Number).reverse();
+//   }
+
+//   function digitize(n){
+// 	return (n + '').split('').map(Number).reverse();
 //   }
