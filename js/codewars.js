@@ -344,7 +344,7 @@
 // 	false, false, true,  true ];
 
 // function countSheeps(arrayOfSheep) {
-	
+
 // 	return arrayOfSheep.filter(item => item === true).length;
 
 //   }
@@ -472,7 +472,7 @@
 // function abbrevName(name){
 // 	// return name.match(/[A-Z]/g).join('.');
 // 	// return name[0] + `${'.'}`;
-	
+
 // 	// return name[0].toUpperCase() + `${'.'}` + name[name.indexOf(' ') + 1].toUpperCase();
 //       return (name[0][0] + `${'.'}` + name[1][0]).toUpperCase();
 // }
@@ -510,4 +510,280 @@
 
 //   function digitize(n){
 // 	return (n + '').split('').map(Number).reverse();
+//   }
+
+//A Needle in the Haystack
+
+// let arr = ['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'];
+
+// function findNeedle(haystack) {
+//  let needleIndex =  haystack.indexOf('needle', 0);
+//  return `found the needle at position ` + needleIndex;
+// }
+
+// console.log(findNeedle(arr));
+
+
+// function findNeedle(haystack) {
+// 	return "found the needle at position " + haystack.indexOf("needle");
+//   }
+//   const findNeedle = haystack => `found the needle at position ${haystack.indexOf('needle')}`;
+
+
+//Convert a String to a Number!
+// let num = '1520';
+// const stringToNumber = function(str){
+// 	return +str;
+//   }
+
+//   console.log(stringToNumber(num));
+
+//   return parseInt(str);
+//   return Number(str)
+
+//Beginner - Lost Without a Map
+// let arr = [1, 2, 3];
+// function maps(x) {
+// 	return x.map(a => a * 2);
+// 	}
+
+// 	console.log(maps(arr));
+
+// 	maps = x => x.map(e => e * 2);
+// 	const maps = arr => arr.map( x => x * 2 )
+
+
+//Returning Strings
+// let names = 'Semi';
+// function greet(name){
+// 	return `Hello, ${name} how are you doing today?`;
+//   }
+
+//   console.log(greet(names));
+
+
+//Beginner Series #2 Clock
+
+// function past(h, m, s){
+// 	return  (s * 1 + m * 60 + h * 3600) * 1000;
+//   }
+
+//   console.log(past(1,1,1));
+
+//   const past = (h,m,s) => 1000 * (3600 * h + 60 * m + s);
+
+
+
+//Count of positives / sum of negatives
+
+// let arr = null;
+
+// function countPositivesSumNegatives(input) {
+// 	if (input === null || input.length === 0) {
+// 		return [];
+// 	} else {
+// 	let positiveArr = input.filter(function(number) {
+// 		return number > 0;
+// 	});
+// 	let SumOfNegative = input => input.reduce((a, c) => a += c < 0 ? c : 0, 0);
+
+// 	return [positiveArr.length, SumOfNegative(input)];
+// 	}
+// }
+// console.log(countPositivesSumNegatives(arr));
+
+
+// function countPositivesSumNegatives(input) {
+//     return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
+// }
+
+//You only need one - Beginner
+// let arr = [101, 45, 75, 105, 99, 107];
+// function check(a, x) {
+// 	return a.includes(x);
+// }
+
+//   console.log(check(arr, 45));
+
+//   const check = (a,x) => a.includes(x);
+
+// Invert values
+
+// let arr = [101, -45, 75, 105, 99, 107];
+// function invert(array) {
+// 	let invert = array.map(function(item) {
+// 		return -item;
+// 	});
+// 	return invert;
+//  }
+//  console.log(invert(arr));
+
+//  function invert(array) {
+// 	return array.map( x => x === 0 ? x : -x);
+//  }
+//  const invert = array => array.map(num => -num);
+
+
+//Array plus array
+// let arr1 = [101, -45, 75, 105, 99, 107];
+// let arr2 = [1, 2, 3];
+
+// function arrayPlusArray(arr1, arr2) {
+
+// 	return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
+
+//   }
+// console.log(arrayPlusArray(arr1, arr2));
+
+// function arrayPlusArray(arr1, arr2) {
+// 	let arr = [...arr1, ...arr2];
+// 	return arr.reduce((a, b) => a + b);
+//   }
+
+//Beginner - Reduce but Grow
+// let arr = [1, 2, 3];
+// function grow(x){
+// 	return arr.reduce((a,b) => a * b);
+// }
+// console.log(grow(arr));
+
+//DNA to RNA Conversion
+// let a = 'TTT';
+// function DNAtoRNA(dna) {
+// 	return dna.replace(/T/g, 'U');
+//   }
+//   console.log(DNAtoRNA(a));
+
+
+
+
+//Simple multiplication
+// let num = 2;
+// function simpleMultiplication(number) {
+//     let result = number % 2 == 0 ? number * 8 : number * 9;
+// 	return result;
+// }
+
+// console.log(simpleMultiplication(num));
+
+// function simpleMultiplication(n) {
+//     return n * (n % 2 ? 9 : 8);
+// }
+// function simpleMultiplication(n){
+// 	return n % 2 == 0 ? n * 8 : n * 9
+//   }
+
+
+
+// 7 kyu
+// Vowel Count
+
+// let str = "should return 5 for 'abracadabra'";
+// function getCount(str) {
+// 	let A = [...str].filter(letter => letter === 'a').length;
+// 	let E = [...str].filter(letter => letter === 'e').length;
+// 	let I = [...str].filter(letter => letter === 'i').length;
+// 	let O = [...str].filter(letter => letter === 'o').length;
+// 	let U = [...str].filter(letter => letter === 'u').length;
+
+// 	return A + E + I + O + U;
+//   }
+
+//   console.log(getCount(str));
+
+
+//   function getCount(str) {
+// 	return (str.match(/[aeiou]/ig)||[]).length;
+//   }
+
+
+
+// 7 kyu
+// Square Every Digit
+// function squareDigits1(num){
+// 	let a = [...'' + num].map(Number).map(num => num * num).join('');
+
+// 	return +a;
+//   }
+//   console.log(squareDigits1(9119));
+
+
+//   function squareDigits(num){
+// 	return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+
+//   }
+
+
+// 7 kyu
+// Disemvowel Trolls
+// let str = "This website is for losers LOL!";
+// function disemvowel(str) {
+// 	return str.replace(/[aioue]/gi,'');
+
+//   }
+//   console.log(disemvowel(str));
+
+
+
+// 7 kyu
+// Highest and Lowest
+// let num = "-1 2 3 4 5";
+// function highAndLow(numbers){
+// 	let newArr = numbers.split(' ');	
+// 	 return `${Math.max(...newArr)} ${Math.min(...newArr)}`;
+// 	 }
+// console.log(highAndLow(num));
+
+
+
+//List Filtering
+// let arr = [1,2,'a','b'];
+// let a = 5;
+// function filterList(arr) {
+// 	return arr.filter(item => typeof item === 'number');
+// 	}
+//   console.log(typeof a);
+
+//   function filter_list(l) {
+// 	return l.filter(Number.isInteger);
+//   }
+
+
+
+
+//Isograms
+// let str = 'moOse';
+// function isIsogram(str) {
+// 	let strToLowerCase = str.toLowerCase();
+// 	let strToArr = Array.from(strToLowerCase).sort();
+// 	let result = [];
+	
+// 	for (let a of strToArr) {
+// 		if (!result.includes(a)) {
+// 			result.push(a);
+// 		}
+// 	}
+// 	if (result.length == strToArr.length) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+	
+// }
+// console.log(isIsogram(str));
+
+
+//найти одинаковые симваолы или буквы в строке
+//если есть совпадения то false!
+// function isIsogram (str) {
+// 	return !str || (str.length === new Set(str.toLowerCase()).size);
+//   }
+// function isIsogram(str){
+// 	return !str.match(/([a-z]).*\1/i);
+//   }
+// function isIsogram(str){
+// 	return new Set(str.toUpperCase()).size == str.length;
+//   }
+//   function isIsogram(str){ 
+// 	return !/(\w).*\1/i.test(str);
 //   }
