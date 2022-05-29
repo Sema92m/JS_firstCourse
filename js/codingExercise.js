@@ -249,3 +249,5 @@ console.log(isBudgetEnough(shoppingMallData));
 // }
 
 // console.log(factorial(7));
+
+

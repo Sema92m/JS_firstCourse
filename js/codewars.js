@@ -787,3 +787,61 @@
 //   function isIsogram(str){ 
 // 	return !/(\w).*\1/i.test(str);
 //   }
+
+
+
+// let str1 = "the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dogthe quick brown fox jumps over the lazy dog";
+// function isPangram(str) {
+// return (str.match(/([a-z])(?!.*\1)/ig) || []).length === 26;
+// }
+// console.log(isPangram(str1));
+
+
+//7 kyu Descending 
+
+// let num = 1021;
+// function descendingOrder(n){
+// 	let a = String(n).split('').sort().reverse().join('');
+// 	return Number(a);
+//   }
+
+//   console.log(descendingOrder(num));
+
+
+
+// 7 kyu
+// Exes and Ohs
+
+// let str = "xoOxx";
+// function XO(str) {
+// 	let a = str.toLowerCase().split('');
+// 	// let c = 
+// 	let x = a.filter(i => i ==='x').length;
+// 	let o = a.filter(i => i ==='o').length;
+// 	if (x == o) {
+// 		return true;
+// 	} else { 
+// 		return false; 
+// 	}
+// }
+// console.log(XO(str));
+
+// function XO(str) {
+// 	let x = str.match(/x/gi);
+// 	let o = str.match(/o/gi);
+// 	console.log(x);
+// 	return (x && x.length) === (o && o.length);
+//   }
+//   console.log(XO(str));
+
+
+// 7 kyu
+// Jaden Casing Strings
+
+let str = "How can mirrors be real if our eyes aren't real";
+String.prototype.toJadenCase = function () {
+let a = str.split(' ');
+// let b = a.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
+return console.log(a);
+  };
+str.toJadenCase();
