@@ -21,7 +21,7 @@
 // 	if (names.length == 3) {
 // 		return (
 // 			names[0].toString() +
-// 			`${", "}` +	
+// 			`${", "}` +
 // 			names[1].toString() +
 // 			`${" and "}` +
 // 			names[2].toString() +
@@ -51,10 +51,7 @@
 // }
 //
 
-
-
 // end of task 2
-
 
 //task 3
 
@@ -72,9 +69,8 @@
 // 	}	else {
 // 		return console.log(false);
 // 	}
-// };	
+// };
 // isSquare(-1);
-
 
 //второе решениеб чуть короче
 // var isSquare = function(n){
@@ -86,7 +82,6 @@
 // 	}
 //   }
 // isSquare(5);
-
 
 //best Practices
 //1
@@ -102,10 +97,6 @@
 
 // task 3 done
 
-
-
-
-
 // task 4
 
 // let arr = [1, 3, 4, 1, 1, 3, 4, 5];
@@ -120,7 +111,6 @@
 // }
 // }
 // console.log(findOdd(arr)); // выведет {1: 3, 3: 2, 4: 2, 5: 1}
-
 
 //task
 
@@ -144,7 +134,6 @@
 //   }
 //task
 
-
 //task Even or Odd
 
 // let num = 4;
@@ -166,7 +155,6 @@
 //   function even_or_odd(number) {
 // 	return number % 2 === 0 ? 'Even' : 'Odd';
 //  }
-
 
 //task Opposite number
 // let num = -4;
@@ -190,9 +178,7 @@
 
 // function opposite(number) {
 //     return number * (-1);
-// 
-
-
+//
 
 //task Reversed String
 // let str = 'hello hello hello';
@@ -204,8 +190,6 @@
 // best solutions
 //   const solution = str => str.split('').reverse().join('');
 //   const solution = s => [...s].reverse().join('')
-
-
 
 //task Remove First and Last Character
 // let str = 'hello';
@@ -222,7 +206,6 @@
 // 	return str.substring(1, str.length-1);
 //    };
 
-
 //task Convert boolean values to strings 'Yes' or 'No'.
 // function boolToWord(bool){
 // 	if (bool === true) {
@@ -237,7 +220,6 @@
 // 	return bool ? 'Yes':'No';
 //   }
 
-
 //   function boolToWord( bool ){
 // 	if (bool) {
 // 	  return 'Yes';
@@ -245,8 +227,6 @@
 // 	  return 'No';
 // 	}
 //   }
-
-
 
 //task Convert a Number to a String!
 // function numberToString(num) {
@@ -293,7 +273,6 @@
 
 //   const noSpace = x => x.replace(/ /g, "");
 
-
 //Find the smallest integer in the array
 // let arr = [34, -345, -1, 100];
 
@@ -302,7 +281,7 @@
 // 	}
 //   console.log(findSmallestInt(arr));
 
-///теория 
+///теория
 //let numbers = [2, 3, 15];
 // Оператор ... в вызове передаст массив как список аргументов
 // Этот вызов аналогичен Math.max(2, 3, 15)
@@ -314,8 +293,6 @@
 // 	}
 //   }
 
-
-
 //Square(n) Sum
 
 // let nums = [0, 3, 4, 5];
@@ -325,14 +302,11 @@
 
 // console.log(squareSum(nums));
 
-
-
 // function squareSum(numbers){
 // 	return numbers.reduce(function(sum, n){
 // 	  return (n*n) + sum;
 // 	}, 0);
 //   }
-
 
 //Counting sheep...
 
@@ -350,9 +324,6 @@
 //   }
 
 // console.log(countSheeps(array1));
-
-
-
 
 //Is n divisible by x and y?
 
@@ -372,7 +343,6 @@
 // return (n % x === 0 && n % y === 0) ? true : false;
 // }
 
-
 //Century From Year
 
 // function century(year) {
@@ -385,14 +355,11 @@
 // }
 // console.log(century(1900));
 
-
 // const century = year => Math.ceil(year/100);
 
 // function century(year) {
 // 	return Math.ceil(year/100); //using ceiling method to round up to nearest century (100)
 //   }
-
-
 
 //Sum of positive
 
@@ -410,7 +377,7 @@
 // console.log(positiveSum1(arr));
 
 // function positiveSum(arr) {
-// 	var total = 0;    
+// 	var total = 0;
 // 	for (i = 0; i < arr.length; i++) {    // setup loop to go through array of given length
 // 	  if (arr[i] > 0) {                   // if arr[i] is greater than zero
 // 		total += arr[i];                  // add arr[i] to total
@@ -418,7 +385,6 @@
 // 	}
 // 	return total;                         // return total
 //   }
-
 
 //   function positiveSum(arr) {
 // 	return arr.reduce((a,b) => a + (b > 0 ? b : 0),0);
@@ -432,25 +398,21 @@
 
 //   console.log(repeatStr(3, '*'));
 
-
 //   repeatStr = (n, s) => s.repeat(n);
-
 
 //Keep Hydrated!
 
 // let a = 12.3;
 // function litres(time) {
-// 	let result = Math.floor(time * 0.5); 
+// 	let result = Math.floor(time * 0.5);
 // 	return result;
 //   }
 
 //   console.log(litres(a));
 
-
 //   function litres(time) {
 // 	return Math.floor(time * 0.5);
 //   }
-
 
 //Basic Mathematical Operations
 
@@ -465,7 +427,6 @@
 // 	return eval(a+o+b);
 //   }
 
-
 //Abbreviate a Two Word Name
 
 // let names = 'sam harris';
@@ -478,8 +439,6 @@
 // }
 
 // console.log(abbrevName(names));
-
-
 
 // function abbrevName(name){
 
@@ -503,7 +462,6 @@
 //   }
 //   console.log(digitize(num));
 
-
 //   function digitize(n) {
 // 	return String(n).split('').map(Number).reverse();
 //   }
@@ -523,12 +481,10 @@
 
 // console.log(findNeedle(arr));
 
-
 // function findNeedle(haystack) {
 // 	return "found the needle at position " + haystack.indexOf("needle");
 //   }
 //   const findNeedle = haystack => `found the needle at position ${haystack.indexOf('needle')}`;
-
 
 //Convert a String to a Number!
 // let num = '1520';
@@ -552,7 +508,6 @@
 // 	maps = x => x.map(e => e * 2);
 // 	const maps = arr => arr.map( x => x * 2 )
 
-
 //Returning Strings
 // let names = 'Semi';
 // function greet(name){
@@ -560,7 +515,6 @@
 //   }
 
 //   console.log(greet(names));
-
 
 //Beginner Series #2 Clock
 
@@ -571,8 +525,6 @@
 //   console.log(past(1,1,1));
 
 //   const past = (h,m,s) => 1000 * (3600 * h + 60 * m + s);
-
-
 
 //Count of positives / sum of negatives
 
@@ -591,7 +543,6 @@
 // 	}
 // }
 // console.log(countPositivesSumNegatives(arr));
-
 
 // function countPositivesSumNegatives(input) {
 //     return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
@@ -623,7 +574,6 @@
 //  }
 //  const invert = array => array.map(num => -num);
 
-
 //Array plus array
 // let arr1 = [101, -45, 75, 105, 99, 107];
 // let arr2 = [1, 2, 3];
@@ -654,9 +604,6 @@
 //   }
 //   console.log(DNAtoRNA(a));
 
-
-
-
 //Simple multiplication
 // let num = 2;
 // function simpleMultiplication(number) {
@@ -672,8 +619,6 @@
 // function simpleMultiplication(n){
 // 	return n % 2 == 0 ? n * 8 : n * 9
 //   }
-
-
 
 // 7 kyu
 // Vowel Count
@@ -691,12 +636,9 @@
 
 //   console.log(getCount(str));
 
-
 //   function getCount(str) {
 // 	return (str.match(/[aeiou]/ig)||[]).length;
 //   }
-
-
 
 // 7 kyu
 // Square Every Digit
@@ -707,12 +649,10 @@
 //   }
 //   console.log(squareDigits1(9119));
 
-
 //   function squareDigits(num){
 // 	return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
 
 //   }
-
 
 // 7 kyu
 // Disemvowel Trolls
@@ -723,18 +663,14 @@
 //   }
 //   console.log(disemvowel(str));
 
-
-
 // 7 kyu
 // Highest and Lowest
 // let num = "-1 2 3 4 5";
 // function highAndLow(numbers){
-// 	let newArr = numbers.split(' ');	
+// 	let newArr = numbers.split(' ');
 // 	 return `${Math.max(...newArr)} ${Math.min(...newArr)}`;
 // 	 }
 // console.log(highAndLow(num));
-
-
 
 //List Filtering
 // let arr = [1,2,'a','b'];
@@ -748,16 +684,13 @@
 // 	return l.filter(Number.isInteger);
 //   }
 
-
-
-
 //Isograms
 // let str = 'moOse';
 // function isIsogram(str) {
 // 	let strToLowerCase = str.toLowerCase();
 // 	let strToArr = Array.from(strToLowerCase).sort();
 // 	let result = [];
-	
+
 // 	for (let a of strToArr) {
 // 		if (!result.includes(a)) {
 // 			result.push(a);
@@ -768,10 +701,9 @@
 // 	} else {
 // 		return false;
 // 	}
-	
+
 // }
 // console.log(isIsogram(str));
-
 
 //найти одинаковые симваолы или буквы в строке
 //если есть совпадения то false!
@@ -784,11 +716,9 @@
 // function isIsogram(str){
 // 	return new Set(str.toUpperCase()).size == str.length;
 //   }
-//   function isIsogram(str){ 
+//   function isIsogram(str){
 // 	return !/(\w).*\1/i.test(str);
 //   }
-
-
 
 // let str1 = "the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dogthe quick brown fox jumps over the lazy dog";
 // function isPangram(str) {
@@ -796,8 +726,7 @@
 // }
 // console.log(isPangram(str1));
 
-
-//7 kyu Descending 
+//7 kyu Descending
 
 // let num = 1021;
 // function descendingOrder(n){
@@ -807,21 +736,19 @@
 
 //   console.log(descendingOrder(num));
 
-
-
 // 7 kyu
 // Exes and Ohs
 
 // let str = "xoOxx";
 // function XO(str) {
 // 	let a = str.toLowerCase().split('');
-// 	// let c = 
+// 	// let c =
 // 	let x = a.filter(i => i ==='x').length;
 // 	let o = a.filter(i => i ==='o').length;
 // 	if (x == o) {
 // 		return true;
-// 	} else { 
-// 		return false; 
+// 	} else {
+// 		return false;
 // 	}
 // }
 // console.log(XO(str));
@@ -834,14 +761,164 @@
 //   }
 //   console.log(XO(str));
 
-
 // 7 kyu
 // Jaden Casing Strings
 
-let str = "How can mirrors be real if our eyes aren't real";
-String.prototype.toJadenCase = function () {
-let a = str.split(' ');
-// let b = a.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
-return console.log(a);
-  };
-str.toJadenCase();
+// let str = "How can mirrors be real if our eyes aren't real";
+// // String.prototype.toJadenCase = function () {
+// // let a = str.split(' ');
+// // let b = a.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
+// // return console.log(b);
+// //   };
+// // str.toJadenCase();
+
+// String.prototype.toJadenCase = function () {
+
+//   let b = str.split(' ').map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
+//   return console.log(b);
+//     };
+//   str.toJadenCase();
+
+//Set method
+// // const arr = ['Alex', 'Ivan', 'Ann', 'Alex'];
+// const set = new Set(arr);
+// set.add('Oleg');
+// console.log(set);
+// set.delete(value);
+// set.has(value);//проверка наличия значения
+// set.clear();//очистить
+// set.size;//получить кол элтов
+// for (let value of set) console.log(value);
+// set.forEach((value, valueAgaing, set) => {
+//   console.log(value, valueAgaing);
+// });
+// console.log(set.values());
+// set.keys();//коючей у сета как бы нетубвернёт values
+// set.entries();
+// const arr = ['Alex', 'Ivan', 'Ann', 'Alex'];
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+// console.log(unique(arr));
+
+//Big int Bigint
+// const bigint = 9111111111113333333333333333334444444444455777n;
+// const sameBigint = BigInt(9111111111113333333333333333334444444444455777) ;
+
+//Map
+
+// const obj = { a: '1',
+//               b: '2',
+//               c: '3'};
+
+//     const objMap = new Map(Object.entries(obj));
+//     // console.log(objMap);
+
+//     const objMapFromObj = Object.fromEntries(objMap);
+//     console.log(objMapFromObj);
+
+// 7 kyu
+// Shortest Word
+// let str = "MadeSafeCoin Mine Classic BTC Lisk MadeSafeCoin Mine Mine Lisk";
+// function findShort(str) {
+//     let c = str
+//         .split(" ")
+//         .map((i) => i.length)
+//         .sort((a, b) => {
+//             if (a > b) return 1;
+//             {
+//             }
+//             if (a == b) return 0;
+//             {
+//             }
+//             if (a < b) return -1;
+//         });
+//     return c[0];
+// }
+// console.log(findShort(str));
+
+// function findShort(s) {
+//     return Math.min.apply(
+//         null,
+//         s.split(" ").map((w) => w.length)
+//     );
+// }
+// function findShort(s) {
+//     return Math.min(...s.split(" ").map((s) => s.length));
+
+
+
+
+
+// 7 kyu
+// Sum of two lowest positive integers
+// let arr = [5, 8, 12, 19, 22];
+// function sumTwoSmallestNumbers(arr) {  
+//     let c = arr.sort((a, b) => {
+//             if (a > b) return 1;
+//             {
+//             }
+//             if (a == b) return 0;
+//             {
+//             }
+//             if (a < b) return -1;
+//         });
+//         return c[0] + c[1];
+//   }
+// console.log(sumTwoSmallestNumbers(arr));
+
+
+// function sumTwoSmallestNumbers(numbers){  
+//     numbers = numbers.sort(function(a, b){return a - b; });
+//     return numbers[0] + numbers[1];
+//   };
+
+// 7 kyu
+// Beginner Series #3 Sum of Numbers
+
+    // let a = 0;
+    // let b = 3;
+// function getSum(a, b) { 
+   
+//     for (let i = a; i <= b; a++) {
+//            console.log(a);
+//       }
+//       return a;
+// }
+// console.log(getSum(a, b));
+
+
+// let a = 10;
+// let b = 13;
+// function getSum(a, b) { 
+//     var sum = 0;
+
+// for (let i = a; i <= b; i++) {
+//     console.log(sum);
+// }
+
+// }
+// // console.log(getSum(a, b));
+// getSum(a, b);
+
+// 7 kyu
+// Odd or Even?
+let arr =[];
+function oddOrEven(array) {
+    if (array.length == 0) {
+        return 'even'; 
+    }
+    let a = array.reduce((a, b) => a + b );
+    if ( a.length === 0  ) {
+        return 'even';
+    }
+    if (a % 2 === 0 || a == [] || a === 0){
+        return 'even';
+    } else {
+        return 'odd';
+    }
+ }
+ console.log(oddOrEven(arr));
+ function oddOrEven(arr) {
+    return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
+  }
