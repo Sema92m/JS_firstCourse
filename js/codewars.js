@@ -903,22 +903,89 @@
 
 // 7 kyu
 // Odd or Even?
-let arr =[];
-function oddOrEven(array) {
-    if (array.length == 0) {
-        return 'even'; 
-    }
-    let a = array.reduce((a, b) => a + b );
-    if ( a.length === 0  ) {
-        return 'even';
-    }
-    if (a % 2 === 0 || a == [] || a === 0){
-        return 'even';
-    } else {
-        return 'odd';
-    }
- }
- console.log(oddOrEven(arr));
- function oddOrEven(arr) {
-    return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
-  }
+// let arr =[];
+// function oddOrEven(array) {
+//     if (array.length == 0) {
+//         return 'even'; 
+//     }
+//     let a = array.reduce((a, b) => a + b );
+//     if ( a.length === 0  ) {
+//         return 'even';
+//     }
+//     if (a % 2 === 0 || a == [] || a === 0){
+//         return 'even';
+//     } else {
+//         return 'odd';
+//     }
+//  }
+//  console.log(oddOrEven(arr));
+//  function oddOrEven(arr) {
+//     return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
+//   }
+
+
+// 7 kyu
+// Simple Fun #176: Reverse Letter
+
+// let str = "mr,n=ckvuh3!x q zm|ox_rni(u!su}jmed";
+// function reverseLetter(str) {
+// 	return str.split('').reverse().join('').replace(/[\W\d\_]/gi,'');
+//   }
+//   console.log(reverseLetter(str));
+
+//   reverseLetter=(s)=>s.replace(/[^a-z]/gi,'').split('').reverse().join('');
+//   const reverseLetter = str => str.match(/[a-z]/g).reverse().join('');
+
+
+// 7 kyu
+// Small enough? - Beginner
+
+// let arr = [9,0,0,9,0,9];
+// let num = 8;
+
+// function smallEnough(arr, num){
+// let c =  arr.sort((a, b) => {return a - b});
+// return  c[c.length - 1] > num ? false : true;
+// }
+// console.log(smallEnough(arr, num));
+
+
+// function smallEnough(a, limit){
+//     return Math.max(...a) <= limit;
+//   }
+
+
+// 7 kyu
+// Reverse words
+//перевернуть каждое слово строки отдельно
+// let str = "double  spaces" ;
+// function reverseWords(str) {
+    
+//     return str.split(' ').map(s => s.split('').reverse().join('')).join(' ');
+// }
+
+//   console.log(reverseWords(str));
+
+// 6 kyu
+// Multiples of 3 or 5
+
+// let num = 10;
+// function solution(number){
+// //   if (number < 0) {
+// //       return 0;
+// //   }
+//   for (let i = 0; i <= number; i++) {
+//     console.log(i);
+    
+//   }
+
+// }
+
+// // console.log(solution(num));
+// solution(num);
+
+// for (let i = 0; i <= 5; i++) {
+//     console.log(i);
+// }
+
+
