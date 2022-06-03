@@ -846,14 +846,10 @@
 // function findShort(s) {
 //     return Math.min(...s.split(" ").map((s) => s.length));
 
-
-
-
-
 // 7 kyu
 // Sum of two lowest positive integers
 // let arr = [5, 8, 12, 19, 22];
-// function sumTwoSmallestNumbers(arr) {  
+// function sumTwoSmallestNumbers(arr) {
 //     let c = arr.sort((a, b) => {
 //             if (a > b) return 1;
 //             {
@@ -867,8 +863,7 @@
 //   }
 // console.log(sumTwoSmallestNumbers(arr));
 
-
-// function sumTwoSmallestNumbers(numbers){  
+// function sumTwoSmallestNumbers(numbers){
 //     numbers = numbers.sort(function(a, b){return a - b; });
 //     return numbers[0] + numbers[1];
 //   };
@@ -876,10 +871,10 @@
 // 7 kyu
 // Beginner Series #3 Sum of Numbers
 
-    // let a = 0;
-    // let b = 3;
-// function getSum(a, b) { 
-   
+// let a = 0;
+// let b = 3;
+// function getSum(a, b) {
+
 //     for (let i = a; i <= b; a++) {
 //            console.log(a);
 //       }
@@ -887,10 +882,9 @@
 // }
 // console.log(getSum(a, b));
 
-
 // let a = 10;
 // let b = 13;
-// function getSum(a, b) { 
+// function getSum(a, b) {
 //     var sum = 0;
 
 // for (let i = a; i <= b; i++) {
@@ -906,7 +900,7 @@
 // let arr =[];
 // function oddOrEven(array) {
 //     if (array.length == 0) {
-//         return 'even'; 
+//         return 'even';
 //     }
 //     let a = array.reduce((a, b) => a + b );
 //     if ( a.length === 0  ) {
@@ -923,7 +917,6 @@
 //     return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
 //   }
 
-
 // 7 kyu
 // Simple Fun #176: Reverse Letter
 
@@ -935,7 +928,6 @@
 
 //   reverseLetter=(s)=>s.replace(/[^a-z]/gi,'').split('').reverse().join('');
 //   const reverseLetter = str => str.match(/[a-z]/g).reverse().join('');
-
 
 // 7 kyu
 // Small enough? - Beginner
@@ -949,18 +941,16 @@
 // }
 // console.log(smallEnough(arr, num));
 
-
 // function smallEnough(a, limit){
 //     return Math.max(...a) <= limit;
 //   }
-
 
 // 7 kyu
 // Reverse words
 //перевернуть каждое слово строки отдельно
 // let str = "double  spaces" ;
 // function reverseWords(str) {
-    
+
 //     return str.split(' ').map(s => s.split('').reverse().join('')).join(' ');
 // }
 
@@ -976,7 +966,7 @@
 // //   }
 //   for (let i = 0; i <= number; i++) {
 //     console.log(i);
-    
+
 //   }
 
 // }
@@ -988,4 +978,95 @@
 //     console.log(i);
 // }
 
+// function setOptions(height, width, ...additional) {
+//     console.log(height, width, ...additional)
+// }
+// setOptions(400, 500, 'red', 'top');
 
+// 7 kyu
+// Sort array by string length
+
+// let arr = [ 'Of', 'A', 'Food', 'Dog' ];
+// function sortByLength (array) {
+//     return  array.sort((a, b) => a.length - b.length);
+
+//   }
+
+//   console.log(sortByLength(arr));
+
+//   7 kyu
+// Regex validate PIN code
+
+// let pin = "1.234";
+
+// function validatePIN(pin) {
+//     let t = pin.replace(/[\D\s.,_%]/g, '');
+//     let a = +pin;
+
+//     if ((pin.length == t.length)  && (t.length === 4 || t.length === 6) && (a >= 0)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(validatePIN(pin));
+
+
+// function validatePIN(pin) {
+//     return /^(\d{4}|\d{6})$/.test(pin);
+//   }
+
+
+//   7 kyu
+// Binary Addition
+// let a = 1;
+// let b = 1;
+// function addBinary(a,b) {
+//     return (a + b).toString(2);
+// }
+// console.log(addBinary(a, b));
+
+
+// Is this a triangle?
+// let a = 2;
+// let b = 2;
+// let c = -2;
+
+// function isTriangle(a,b,c) {
+//     let arr = [a,b,c];
+//     let sortArr = arr.sort( (a, b) => b - a );
+
+// if (a <= 0 || b <= 0 || c <= 0) {
+//     return false;
+// }  if (((a > 0 && a !== 0) && (b > 0 && b !== 0) && (c > 0 && c !== 0)) && (sortArr[0] < sortArr[1] + sortArr[2]) || (sortArr[0] == sortArr[1])) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(isTriangle(a ,b ,c));
+
+// function isTriangle(a,b,c)
+// {
+//    return a + b > c && a + c > b && c + b > a;
+// }
+
+// 7 kyu
+// Ones and Zeros
+
+// let arr = [0, 0, 1, 0];
+
+// function binaryArrayToNumber(arr) {
+//     let a = arr.join('');
+//     return parseInt(a, 2);
+// };
+
+// console.log(binaryArrayToNumber(arr));
+
+
+// const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
+// const binaryArrayToNumber = arr => {
+//     return parseInt(arr.join(""), 2)
+//   };
