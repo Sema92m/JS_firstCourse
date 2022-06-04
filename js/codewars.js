@@ -1012,11 +1012,9 @@
 
 // console.log(validatePIN(pin));
 
-
 // function validatePIN(pin) {
 //     return /^(\d{4}|\d{6})$/.test(pin);
 //   }
-
 
 //   7 kyu
 // Binary Addition
@@ -1026,7 +1024,6 @@
 //     return (a + b).toString(2);
 // }
 // console.log(addBinary(a, b));
-
 
 // Is this a triangle?
 // let a = 2;
@@ -1065,8 +1062,121 @@
 
 // console.log(binaryArrayToNumber(arr));
 
-
 // const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
 // const binaryArrayToNumber = arr => {
 //     return parseInt(arr.join(""), 2)
 //   };
+
+// 6 kyu
+// Create Phone Number
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// function createPhoneNumber(numbers){
+
+// console.log(createPhoneNumber(numbers));
+
+// function createPhoneNumber(numbers){
+//     var format = "(xxx) xxx-xxxx";
+
+//     for(var i = 0; i < numbers.length; i++)
+//     {
+//       format = format.replace('x', numbers[i]);
+//     }
+
+//     return format;
+//   }
+
+//   function createPhoneNumber(numbers){
+//   return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+// }
+
+
+// 6 kyu
+// Find The Parity Outlier
+
+// let arr = [12749518,-165438383,-30101495];
+// function findOutlier(integers) {
+// 	let a = integers.map((i => ((i % 2)+1)-1));
+// 	let indexOfOne = a.lastIndexOf(1);
+// 	let lastIndexOfOne = a.indexOf(1);
+// 	let indexOfMinusOne = a.lastIndexOf(-1);
+// 	let lastIndexOfMinusOne = a.indexOf(-1);
+// 	let indexOfZero = a.lastIndexOf(0);
+// 	let lastIndexOfZero = a.indexOf(0);
+
+// 	console.log(a);
+// 	console.log(lastIndexOfMinusOne);
+// 	console.log(indexOfMinusOne);
+
+	
+// 	if ((indexOfMinusOne == lastIndexOfMinusOne) && (indexOfMinusOne >= 0)) {
+// 		return integers[indexOfMinusOne];
+// 	}
+// 	if ((indexOfOne == lastIndexOfOne)) {
+// 		return integers[indexOfOne];
+// 	}
+// 	if (indexOfZero == lastIndexOfZero) {
+// 		return integers[indexOfZero];
+// 	}
+// 	if (indexOfOne >= 0 && indexOfMinusOne >= 0) {
+// 		return integers[indexOfZero];
+// 	}
+// }
+// console.log(findOutlier(arr));
+
+
+// function findOutlier(int){
+// 	var even = int.filter(a=>a%2==0);
+// 	var odd = int.filter(a=>a%2!==0);
+// 	return even.length==1? even[0] : odd[0];
+//   }
+
+//   function findOutlier(integers){
+// 	return integers.slice(0,3).filter(even).length >=2 ? integers.find(odd) : integers.find(even);
+//   }
+//   function even(num){
+// 	return (num % 2 == 0);
+//   }
+//   function odd(num){
+// 	return !even(num)
+//   }
+
+
+
+// var string = "The quick brown fox jumps over the lazy dog.";
+
+// function isPangram(string){
+// 	return (string.match(/([a-z])(?!.*\1)/ig) || []).length === 26;
+//   }
+
+//   console.log(isPangram(string));
+
+
+
+//   6 kyu
+// Does my number look big in this?
+
+
+// let value = 371;
+
+// function narcissistic(value) {
+// 	let arr = String(value).split('');
+	
+// 	let result = arr.map(i => i ** arr.length).reduce((a, b) => a + b);
+// 	if( result == value) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// } 
+
+//   console.log(narcissistic(value));
+
+
+//   function narcissistic(value) {
+// 	return value.toString()
+// 				.split('')
+// 				.map( (x,i,arr) => x ** arr.length)
+// 				.reduce( (a,b)=> +a + +b) 
+// 				 === value
+//   }
