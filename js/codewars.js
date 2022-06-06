@@ -1156,7 +1156,6 @@
 //   6 kyu
 // Does my number look big in this?
 
-
 // let value = 371;
 
 // function narcissistic(value) {
@@ -1180,3 +1179,65 @@
 // 				.reduce( (a,b)=> +a + +b) 
 // 				 === value
 //   }
+
+// // 7 kyu
+// // Remove the minimum
+// let numbers = [1,2,3,4,5];
+// function removeSmallest(numbers) {
+// 	numbers.sort(fn)
+//   }
+
+
+// function arithmetic(a, b, operator) {
+// 	if (operator == 'add') {
+// 		return a + b;
+// 	}
+// 	if (operator == 'subtract') {
+// 		return a - b;
+// 	}
+// 	if (operator == 'multiply') {
+// 		return a * b;
+// 	}
+// 	if (operator == 'divide') {
+// 		return a / b;
+// 	}
+//   }
+
+//   console.log(arithmetic(5,2,'add'));
+//   console.log(arithmetic(5,2,'subtract'));
+//   console.log(arithmetic(5,2,'multiply'));
+//   console.log(arithmetic(5,2,'divide'));
+
+
+//   switch(operator) {
+//     case 'add':
+//       return a + b;
+//     case 'subtract':
+//       return a - b;
+//     case 'multiply':
+//       return a * b;
+//     case 'divide':
+//       return a / b;
+//   }
+
+// 7 kyu
+// Sum of a sequence
+
+// const sequenceSum = (begin, end, step) => {
+// 	for (let i = begin; i < end; step) {
+// 		return i;
+// 	}
+	
+//   };
+
+//   console.log(sequenceSum(2,6,2));
+//   console.log(sequenceSum(1,5,3));
+
+// let ages = [1, 5, 87, 45, 8, 8];
+
+// function twoOldestAges(ages) {
+// 	return ages.sort( (a, b) => a - b ).slice(-2);
+	
+	
+// }
+// console.log(twoOldestAges(ages));
