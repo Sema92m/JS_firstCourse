@@ -1241,3 +1241,117 @@
 	
 // }
 // console.log(twoOldestAges(ages));
+
+
+// 7 kyu
+// Remove the minimum
+// let numbers = [5, 3, 2, 1, 4];
+// function removeSmallest(numbers) {
+// 	let smallestNumberKEY = 0;
+// 	for (let i = 0; i <= numbers.length; i++) {
+// 	  if (numbers[i + 1] < numbers[i]) {
+// 		smallestNumberKEY = i + 1;
+// 	  }
+// 	}
+// 	numbers.splice(smallestNumberKEY, 1);
+// 	return numbers;
+//   }
+
+//   console.log(removeSmallest(numbers));
+
+
+//   7 kyu
+// Summing a number's digits
+
+// let number = -32;
+// function sumDigits(number) {
+// return number.toString().replace(/[\D]/g, '').split('').reduce(function(a,b){ return +a+ +b; });
+
+// }
+// console.log(sumDigits(number));
+// function sumDigits(number) {
+// 	return Math.abs(number).toString().split('').reduce(function(a,b){return +a + +b}, 0);
+//   }
+
+
+// 7 kyu
+// Sum of all the multiples of 3 or 5
+
+// let n = 10;
+// function findSum(n) {
+// 	let a5 = Math.floor(n / 5 );
+// 	let b3 = Math.floor(n / 3 );
+	
+// 	for (let i = a5; i >= n; a5 + a5) {
+// 		return a5;
+// 	}
+// 	return ((a5 * 5) + (b3 * 3));
+//   }
+//   console.log(findSum(n));
+
+
+
+//   7 kyu
+// Form The Minimum
+
+// let values = [4, 7, 5, 7];
+// function minValue(values) {
+// 	let a = Array.from(new Set (values));
+// 	let b = a.sort( (a, b) => a - b ).join('');
+	
+// 	return +b;
+//   }
+
+//   console.log(minValue(values));
+
+
+
+//   7 kyu
+// Coding Meetup #1 - Higher-Order Functions Series - 
+// Count the number of JavaScript developers coming from Europe
+// var list = [
+// 	{ firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+// 	{ firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+// 	{ firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+// 	{ firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+//   ];
+// function countDevelopers(list) {
+
+//   }
+//   console.log(countDevelopers(list));
+
+// 7 kyu
+// Count the divisors of a number
+
+// let n = 10;
+// function getDivisorsCnt(n){
+//     for (let i = 0; i >= n; i++) {
+// 		return 
+// 	}
+// }
+
+// console.log(getDivisorsCnt(n));
+
+// 7 kyu
+// Narcissistic Numbers
+// let n = 153;
+// function isNarcissistic(n) {
+//  let b = n.toString().split('');
+//  let d = Array.from((b), x => x ** b.length).reduce((sum, current) => sum + current, 0);
+
+//   if ( d === n) {
+//   return true; 
+// } else {
+// 	return false;
+// }
+
+// }
+
+// console.log(isNarcissistic(n));
+
+
+// function isNarcissistic(n) {
+// 	return n === n.toString().split('').reduce((res, num, index, arr) => res += Math.pow(num, arr.length), 0)
+//   }
+
+//   const isNarcissistic = (n, $ = n.toString()) => [...$].reduce((a, b)=> a + b**$.length, 0) === n
