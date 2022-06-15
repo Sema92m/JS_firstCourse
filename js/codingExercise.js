@@ -86,52 +86,49 @@ const personalMovieDB = {
     },
 };
 
-
 //coding exercise 13
 
 const shoppingMallData = {
-    shops: [{
+    shops: [
+        {
             width: 10,
-            length: 5
+            length: 5,
         },
         {
             width: 15,
-            length: 7
+            length: 7,
         },
         {
             width: 20,
-            length: 5
+            length: 5,
         },
         {
             width: 8,
-            length: 10
-        }
+            length: 10,
+        },
     ],
     height: 5,
     moneyPer1m3: 30,
-    budget: 50000
+    budget: 50000,
 };
-
 
 function isBudgetEnough(data) {
     let square = 0;
     let volume = 0;
-    data.shops.forEach(shop => {
+    data.shops.forEach((shop) => {
         square += shop.width * shop.length;
     });
     volume = data.height * square;
 
-    if (data.budget - (volume * data.moneyPer1m3) >= 0) {
-        return 'Бюджета достаточно';
+    if (data.budget - volume * data.moneyPer1m3 >= 0) {
+        return "Бюджета достаточно";
     } else {
-        return 'Бюджета недостаточно';
+        return "Бюджета недостаточно";
     }
 }
 
 isBudgetEnough(shoppingMallData);
 console.log(isBudgetEnough(shoppingMallData));
-
-
 
 // coding exercise 15
 
@@ -188,11 +185,9 @@ console.log(isBudgetEnough(shoppingMallData));
 
 // transferWaitors(restorantData);
 
-
 // console.log(transferWaitors(restorantData));
 // console.log(restorantData.waitors);
 // coding exercise 15
-
 
 // const name1 = ["Jacob", "Alex"];
 
@@ -203,7 +198,6 @@ console.log(isBudgetEnough(shoppingMallData));
 //     // console.log(Object.map([key, value]));
 // }
 // likes(name1);
-
 
 // const names = ['Max', 'John', 'Mark'];
 
@@ -229,9 +223,6 @@ console.log(isBudgetEnough(shoppingMallData));
 // }
 // likes(names);
 
-
-
-
 //coding exercise 16
 
 // function factorial(a) {
@@ -250,4 +241,74 @@ console.log(isBudgetEnough(shoppingMallData));
 
 // console.log(factorial(7));
 
+//code ex 20
 
+// const films = [
+//     {
+//         name: 'Titanic',
+//         rating: 9
+//     },
+//     {
+//         name: 'Die hard 5',
+//         rating: 5
+//     },
+//     {
+//         name: 'Matrix',
+//         rating: 8
+//     },
+//     {
+//         name: 'Some bad film',
+//         rating: 4
+//     }
+// ];
+// // const a = films.filter(item => item.rating >= 8);
+// // console.log(a);
+
+// function showListOfFilms(arr) {
+//     return arr.reduce((acc, curr) =>`${typeof(acc) === 'object' ? acc.name : acc}, ${curr.name}`);
+// }
+
+// console.log(showListOfFilms(films));
+
+// showListOfFilms(films);
+
+// function setFilmsIds(arr) {
+//     return arr.map((film, i) => {
+//         film.id = i;
+//         return film;
+//     });
+// }
+// console.log(setFilmsIds(films));
+
+// function checkFilms(arr) {
+//     return arr.every(film => film.id || film.id === 0 ? true : false);
+// }
+
+//code ex 21
+
+const funds = [
+    { amount: -1400 },
+    { amount: 2400 },
+    { amount: -1000 },
+    { amount: 500 },
+    { amount: 10400 },
+    { amount: -11400 },
+];
+const getPositiveIncomeAmount = (data) => {
+    // if (data.amount > 0) {
+    //     return data.reduce((sum, curr) => sum + curr);
+    // } else {
+    //     return 0;
+    // }
+    let a = data.filter((item) => item.amount > 0);
+    return a.reduce((sum, curr) => sum + curr.amount, 0);
+};
+
+console.log(getPositiveIncomeAmount(funds));
+
+const getTotalIncomeAmount = (data) => {
+    return data.some((i) => i.amount < 0)
+        ? data.reduce((sum, curr) => sum + curr.amount, 0)
+        : getPositiveIncomeAmount(data);
+};
+console.log(getTotalIncomeAmount(funds));

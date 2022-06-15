@@ -1090,7 +1090,6 @@
 //   return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
 // }
 
-
 // 6 kyu
 // Find The Parity Outlier
 
@@ -1108,7 +1107,6 @@
 // 	console.log(lastIndexOfMinusOne);
 // 	console.log(indexOfMinusOne);
 
-	
 // 	if ((indexOfMinusOne == lastIndexOfMinusOne) && (indexOfMinusOne >= 0)) {
 // 		return integers[indexOfMinusOne];
 // 	}
@@ -1123,7 +1121,6 @@
 // 	}
 // }
 // console.log(findOutlier(arr));
-
 
 // function findOutlier(int){
 // 	var even = int.filter(a=>a%2==0);
@@ -1141,8 +1138,6 @@
 // 	return !even(num)
 //   }
 
-
-
 // var string = "The quick brown fox jumps over the lazy dog.";
 
 // function isPangram(string){
@@ -1151,8 +1146,6 @@
 
 //   console.log(isPangram(string));
 
-
-
 //   6 kyu
 // Does my number look big in this?
 
@@ -1160,23 +1153,22 @@
 
 // function narcissistic(value) {
 // 	let arr = String(value).split('');
-	
+
 // 	let result = arr.map(i => i ** arr.length).reduce((a, b) => a + b);
 // 	if( result == value) {
 // 		return true;
 // 	} else {
 // 		return false;
 // 	}
-// } 
+// }
 
 //   console.log(narcissistic(value));
-
 
 //   function narcissistic(value) {
 // 	return value.toString()
 // 				.split('')
 // 				.map( (x,i,arr) => x ** arr.length)
-// 				.reduce( (a,b)=> +a + +b) 
+// 				.reduce( (a,b)=> +a + +b)
 // 				 === value
 //   }
 
@@ -1186,7 +1178,6 @@
 // function removeSmallest(numbers) {
 // 	numbers.sort(fn)
 //   }
-
 
 // function arithmetic(a, b, operator) {
 // 	if (operator == 'add') {
@@ -1208,7 +1199,6 @@
 //   console.log(arithmetic(5,2,'multiply'));
 //   console.log(arithmetic(5,2,'divide'));
 
-
 //   switch(operator) {
 //     case 'add':
 //       return a + b;
@@ -1227,7 +1217,7 @@
 // 	for (let i = begin; i < end; step) {
 // 		return i;
 // 	}
-	
+
 //   };
 
 //   console.log(sequenceSum(2,6,2));
@@ -1237,11 +1227,9 @@
 
 // function twoOldestAges(ages) {
 // 	return ages.sort( (a, b) => a - b ).slice(-2);
-	
-	
+
 // }
 // console.log(twoOldestAges(ages));
-
 
 // 7 kyu
 // Remove the minimum
@@ -1259,7 +1247,6 @@
 
 //   console.log(removeSmallest(numbers));
 
-
 //   7 kyu
 // Summing a number's digits
 
@@ -1273,7 +1260,6 @@
 // 	return Math.abs(number).toString().split('').reduce(function(a,b){return +a + +b}, 0);
 //   }
 
-
 // 7 kyu
 // Sum of all the multiples of 3 or 5
 
@@ -1281,15 +1267,13 @@
 // function findSum(n) {
 // 	let a5 = Math.floor(n / 5 );
 // 	let b3 = Math.floor(n / 3 );
-	
+
 // 	for (let i = a5; i >= n; a5 + a5) {
 // 		return a5;
 // 	}
 // 	return ((a5 * 5) + (b3 * 3));
 //   }
 //   console.log(findSum(n));
-
-
 
 //   7 kyu
 // Form The Minimum
@@ -1298,16 +1282,14 @@
 // function minValue(values) {
 // 	let a = Array.from(new Set (values));
 // 	let b = a.sort( (a, b) => a - b ).join('');
-	
+
 // 	return +b;
 //   }
 
 //   console.log(minValue(values));
 
-
-
 //   7 kyu
-// Coding Meetup #1 - Higher-Order Functions Series - 
+// Coding Meetup #1 - Higher-Order Functions Series -
 // Count the number of JavaScript developers coming from Europe
 // var list = [
 // 	{ firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
@@ -1326,7 +1308,7 @@
 // let n = 10;
 // function getDivisorsCnt(n){
 //     for (let i = 0; i >= n; i++) {
-// 		return 
+// 		return
 // 	}
 // }
 
@@ -1340,7 +1322,7 @@
 //  let d = Array.from((b), x => x ** b.length).reduce((sum, current) => sum + current, 0);
 
 //   if ( d === n) {
-//   return true; 
+//   return true;
 // } else {
 // 	return false;
 // }
@@ -1349,9 +1331,71 @@
 
 // console.log(isNarcissistic(n));
 
-
 // function isNarcissistic(n) {
 // 	return n === n.toString().split('').reduce((res, num, index, arr) => res += Math.pow(num, arr.length), 0)
 //   }
 
 //   const isNarcissistic = (n, $ = n.toString()) => [...$].reduce((a, b)=> a + b**$.length, 0) === n
+
+// 7 kyu
+// Find the Missing Number
+
+// let a = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91, 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64, 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52, 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12, 83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33, 38, 8, 15, 62, 35, 61, 99, 16]; // 26
+
+// function missingNo(nums) {
+// return  5050 - (nums.reduce(function(a,b) {return a+ b}));
+
+// }
+// console.log(missingNo(a));
+
+// function missingNo(nums) {
+// 	return 5050 - nums.reduce((a, b) => a + b, 0)
+//   }
+
+//   missingNo =(n)=> {
+//     for(i=0;i<=100;i++){
+//         if(!n.includes(i)){
+//             return i
+//         }}}
+
+// 7 kyu
+// Return the Missing Element
+// let ar = [0,5,1,3,2,9,7,6,4];
+// function getMissingElement(superImportantArray){
+// 	return 55 - superImportantArray.reduce(function(a,b) {return a+b});
+// 	}
+
+// 	console.log(getMissingElement(ar));
+
+// 7 kyu
+// Even numbers in an array
+// let array = [-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26];
+// let number = 3;
+
+// function evenNumbers(array, number) {
+//     let a = array.filter(function (item) {
+//         if (item % 2 === 0 || item % 2 === -0) {
+//             return item;
+//         }
+//     });
+    
+//     return a.slice(-number);
+// }
+// console.log(evenNumbers(array, number));
+
+// const evenNumbers = (array, number) => array
+// .filter(item => item % 2 === 0).slice(-number);
+
+// 7 kyu
+// Find the vowels
+let word = "apPle";
+function vowelIndices(word){
+	let a = word.split('');
+	
+	let b = word.match((/[aeiouy]/gi));
+	return b;
+  }
+  console.log(vowelIndices(word));
+
+
+
