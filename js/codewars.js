@@ -1340,7 +1340,12 @@
 // 7 kyu
 // Find the Missing Number
 
-// let a = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91, 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64, 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52, 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12, 83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33, 38, 8, 15, 62, 35, 61, 99, 16]; // 26
+// let a = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91,
+// 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64,
+// 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52,
+// 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12,
+//  83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33,
+//   38, 8, 15, 62, 35, 61, 99, 16]; // 26
 
 // function missingNo(nums) {
 // return  5050 - (nums.reduce(function(a,b) {return a+ b}));
@@ -1378,7 +1383,7 @@
 //             return item;
 //         }
 //     });
-    
+
 //     return a.slice(-number);
 // }
 // console.log(evenNumbers(array, number));
@@ -1388,14 +1393,258 @@
 
 // 7 kyu
 // Find the vowels
-let word = "apPle";
-function vowelIndices(word){
-	let a = word.split('');
+// let word = "apPle";
+// function vowelIndices(word){
+// 	let a = word.split('');
+
+// 	let b = word.match((/[aeiouy]/gi));
+// 	return b;
+//   }
+//   console.log(vowelIndices(word));
+
+// 8 kyu
+// Find Nearest square number
+// let c = 26;
+// function nearestSq(n){
+// 	let b = Math.round(Math.sqrt(n));
+// 	return b * b;
+// }
+
+// console.log(nearestSq(c));
+
+// function nearestSq(n){
+//     return Math.round(n**0.5)**2
+// }
+
+// 8 kyu
+// Beginner Series #4 Cockroach
+// let speed = 1.08;
+// function cockroachSpeed(s) {
+// 	return Math.floor((s * 100000) / 3600);
+// }
+
+// console.log(cockroachSpeed(speed));
+// const cockroachSpeed = s => Math.floor(s / 0.036);
+
+// 8 kyu
+// Do I get a bonus?
+// let salary = 1000;
+// let bonus = true;
+// function bonusTime(salary, bonus) {
+// 	if (bonus === true) {
+// 		return `${"£"}` + salary * 10;
+// 	} if (bonus === false) {
+// 		return `${"£"}` + salary;
+// 	}
+
+// 	}
+// console.log(bonusTime(salary, bonus));
+// return bonus ? `£${10 * salary}` : `£${salary}`;
+
+// 8 kyu
+// Sum Mixed Array
+// let arr = [9, 3, '7', '3'];
+// function sumMix(x){
+// 	 return (x.map(item => item * 1)).reduce((sum, cur) => sum + cur, 0);
+// }
+// console.log(sumMix(arr));
+// return x.map(a => +a).reduce((a, b) => a + b);
+
+// 8 kyu
+// Jenny's secret message
+// function greet(name){
+// 	if(name === "Johnny")
+// 	  return "Hello, my love!";
+// 	return "Hello, " + name + "!";
+
+//   }
+
+//   8 kyu
+// Quarter of the year
+// let month = 9;
+// const quarterOf = (month) => {
+// if (month >= 1 && month <= 3) {
+// 	return 1;
+// } if (month >= 4 && month <= 6) {
+// 	return 2;
+// } if (month >= 7 && month <= 9) {
+// 	return 3;
+// } if (month >= 10 && month <= 12) {
+// 	return 4;
+// } else {
+// 	return "Error";
+// }
+// 	if (month % 3 == 0) {
+// 		return month / 3;
+// 	} else {
+// 		return Math.floor((month / 3) + 1);
+// 	}
+// };
+// console.log(quarterOf(month));
+// const quarterOf = m => Math.ceil(m/3);
+
+// 8 kyu
+// How good are you really?
+// let classPoints = [100, 40, 34, 57, 29, 72, 57, 88];
+// let yourPoints = 75;
+// function betterThanAverage(classPoints, yourPoints) {
+// 	let result = (yourPoints > (classPoints.reduce((a,b) => a + b) + yourPoints) / (classPoints.length + 1)) ? true : false;
+// 	return result;
+//   }
+// console.log(betterThanAverage(classPoints, yourPoints));
+
+
+// 8 kyu
+// Beginner Series #1 School Paperwork
+// function paperwork(n, m) {
+//  return (n >= 0 && m >= 0) ? n * m : 0;
+// }
+// console.log(paperwork(n,m));
+
+// 8 kyu
+// N-th Power
+
+// let arr = [1, 2, 3, 4];
+// let num = 5;
+// function index(array, n){
+// 	// let a = array.indexOf(n + 1);
+// 	// let b = arr[num];
+// 	return (arr[num] >= 0) ? arr[num] ** num : -1;
+
+//   }
+//   console.log(index(arr, num));
+//   return array[n] ** n || -1;
+
+//   8 kyu
+// Convert a Boolean to a String
+// let b = true;
+// function booleanToString(b){
+// 	return b + '';
+//   }
+//   console.log(booleanToString(b));
+//   return `${b}`
+
+// 8 kyu
+// Sum without highest and lowest number
+
+// let arr = [];
+// function sumArray(array) {
+// 	if (array == null ||array.length <= 2) {
+// 		return 0;
+// 	} else {
+// 	let a = array.sort((a,b) => {
+// 		return a - b;
+// 	});
+// 	let b = a.slice(1, -1).reduce((a, b) => a + b);
+// 	return b;
+//    }
+// }
+// console.log(sumArray(arr));
+
+// 8 kyu
+// Is he gonna survive?
+// let bullets = 10;
+// let dragons = 5;
+// function hero(bullets, dragons) {
+// 	return ((bullets >= dragons * 2)) ? true : false;
 	
-	let b = word.match((/[aeiouy]/gi));
-	return b;
-  }
-  console.log(vowelIndices(word));
+// }
+// 	console.log(hero(bullets, dragons));
+// 	return bullets >= dragons * 2
+
+
+// 8 kyu
+// Capitalization and Mutability
+// let w = 'world';
+// function capitalizeWord(word) {
+// 	return word[0].toUpperCase() + word.substring(1);
+	 
+//   }
+
+//   console.log(capitalizeWord(w));
+//   return word[0].toUpperCase() + word.slice(1);
+
+
+// 8 kyu
+// Sum Arrays
+// function sum (numbers) {
+//     return numbers.reduce((a,b) => a + b);
+  
+// };
+// return numbers.reduce((a, b) => a + b, 0);
+
+
+// 8 kyu
+// Will there be enough space?
+
+
+// function enough(cap, on, wait) {
+// return ((on + wait) < cap) ? 0 : (on + wait - cap);
+// }
+
+// console.log(10,5,5);
+// return Math.max(wait + on - cap, 0);
+
+// 8 kyu
+// Rock Paper Scissors!
+
+// const rps = (p1, p2) => {
+// 	if( p1 == p2) {
+// 		return 'Draw';
+// 	} if (p1 == 'rock' && p2 == 'scissors') {
+// 		return "Player 1 won!";
+// 	}
+// 	if (p1 == 'rock' && p2 == 'paper') {
+// 		return "Player 2 won!";
+// 	}
+// 	if (p1 == 'scissors' && p2 == 'paper') {
+// 		return "Player 1 won!";
+// 	}
+// 	if (p1 == 'scissors' && p2 == 'rock') {
+// 		return "Player 2 won!";
+// 	}
+// 	if (p1 == 'paper' && p2 == 'rock') {
+// 		return "Player 1 won!";
+// 	}
+// 	if (p1 == 'paper' && p2 == 'scissors') {
+// 		return "Player 2 won!";
+// 	}
+// };
 
 
 
+// 8 kyu
+// Is the string uppercase?
+
+// String.prototype.isUpperCase = function() {
+//  }
+
+//    return String(this) === this.toUpperCase();
+
+
+// 8 kyu
+// Expressions Matter
+
+
+// function expressionMatter(a, b, c) {
+// 	let a1 = a + b + c;
+// 	let a2 = a + b * c;
+// 	let a3 = a * b + c;
+// 	let a4 = (a + b) * c;
+// 	let a5 = a * (b + c);
+// 	let a6 = a * b * c;
+// 	let arr = [a1,a2,a3,a4,a5,a6].sort((a,b) => {return a - b;});
+// 	console.log(arr);
+	
+// 	return arr[arr.length - 1];
+
+// }
+// console.log(expressionMatter(6,9,10));
+// return Math.max(
+//     a + b + c,
+//     a * b * c,
+//     a * (b + c),
+//     (a + b) * c,
+//     a + b * c,
+//     a * b + c,
+//   );
