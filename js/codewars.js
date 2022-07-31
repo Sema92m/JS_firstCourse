@@ -1493,7 +1493,6 @@
 //   }
 // console.log(betterThanAverage(classPoints, yourPoints));
 
-
 // 8 kyu
 // Beginner Series #1 School Paperwork
 // function paperwork(n, m) {
@@ -1547,36 +1546,32 @@
 // let dragons = 5;
 // function hero(bullets, dragons) {
 // 	return ((bullets >= dragons * 2)) ? true : false;
-	
+
 // }
 // 	console.log(hero(bullets, dragons));
 // 	return bullets >= dragons * 2
-
 
 // 8 kyu
 // Capitalization and Mutability
 // let w = 'world';
 // function capitalizeWord(word) {
 // 	return word[0].toUpperCase() + word.substring(1);
-	 
+
 //   }
 
 //   console.log(capitalizeWord(w));
 //   return word[0].toUpperCase() + word.slice(1);
 
-
 // 8 kyu
 // Sum Arrays
 // function sum (numbers) {
 //     return numbers.reduce((a,b) => a + b);
-  
+
 // };
 // return numbers.reduce((a, b) => a + b, 0);
 
-
 // 8 kyu
 // Will there be enough space?
-
 
 // function enough(cap, on, wait) {
 // return ((on + wait) < cap) ? 0 : (on + wait - cap);
@@ -1611,8 +1606,6 @@
 // 	}
 // };
 
-
-
 // 8 kyu
 // Is the string uppercase?
 
@@ -1621,10 +1614,8 @@
 
 //    return String(this) === this.toUpperCase();
 
-
 // 8 kyu
 // Expressions Matter
-
 
 // function expressionMatter(a, b, c) {
 // 	let a1 = a + b + c;
@@ -1635,7 +1626,7 @@
 // 	let a6 = a * b * c;
 // 	let arr = [a1,a2,a3,a4,a5,a6].sort((a,b) => {return a - b;});
 // 	console.log(arr);
-	
+
 // 	return arr[arr.length - 1];
 
 // }
@@ -1648,3 +1639,121 @@
 //     a + b * c,
 //     a * b + c,
 //   );
+
+// 8 kyu
+// Fake Binary
+// let str = '45385593107843568';
+// function fakeBin(x){
+//   	return str.replace(/[1234]/gi,'0').replace(/[56789]/gi,'1');
+//   }
+// console.log(fakeBin(str));
+// return x.split('').map(n => n < 5 ? 0 : 1).join('');
+// return x.replace(/\d/g, d => d < 5 ? 0 : 1);
+
+// 8 kyu
+// Calculate average
+// let arr =[1,2,3];
+// function findAverage(array) {
+// 		return array.reduce(((a,b) => a + b)) / array.length;
+// 	  }
+//   console.log(findAverage(arr));
+//   return array.length === 0 ? 0 : array.reduce((acc, ind)=> acc + ind, 0)/array.length;
+
+//   8 kyu
+// Opposites Attract
+
+// function lovefunc(flower1, flower2){
+// 	return ((flower1 + flower2) % 2 ) === 0 ? false : true;
+//   }
+//   console.log(lovefunc(2,3));
+//   return flower1 % 2 !== flower2 % 2;
+//   return (flower1 + flower2) % 2 === 1
+
+//   7 kyu
+// Mumbling
+// let s = "ZpglnRxqenU";
+// function accum(s) {
+// 	return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+// }
+// console.log(accum(s));
+
+// 7 kyu
+// Get the Middle Character
+// let a = 'middle';
+// function getMiddle(s){
+// if (a.length == 1) {
+// 	return a;
+// 	} if (a.length % 2 == 0) {
+// 		let b = (a.length / 2);
+// 		return a[b-1] + a[b];
+// 	} if (a.length % 2 == 1) {
+// 		let b = (a.length / 2);
+// 		return a[b-0.5];
+// 	}
+// }
+// console.log(getMiddle(a));
+// return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+
+// 7 kyu
+// Credit Card Mask
+// let cc = '1A34D6789';
+// function maskify(cc) {
+// 	if (cc.length <= 3) {
+// 		return cc;
+// 	} if (cc.length > 3) {
+// 		let a = cc.split('').splice(-4).join('');
+// 		let b = cc.slice(0, -4).replace(/[0-9,a-z]/gi, '#').concat(a);
+// 		return b;
+// 	}
+// }
+// console.log(maskify(cc));
+
+// return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+// return cc.replace(/.(?=....)/g, '#');
+// return cc.replace(/.(?=.{4})/g, "#");
+
+// 7 kyu
+// Two to One
+// let s1 = "loopingisfunbutdangerous";
+// let s2 = "lessdangerousthancoding";
+
+// function longest(s1, s2) {
+//     let s3 = s1.split("");
+//     let s4 = s2.split("");
+//     let s12 = Array.from(new Set(s3));
+//     let s13 = Array.from(new Set(s4));
+//     let s11 = s12 + s13;
+//     let s14 = Array.from(new Set(s11));
+//     let s20 = s14.sort().join("").replace(/[\,]/gi, "");
+//     return s20;
+// }
+
+// let s1 = "loopingisfunbutdangerous";
+// let s2 = "lessdangerousthancoding";
+// function longest(s1, s2) {
+//     return (Array.from(new Set((s1 + s2).split("")))).sort().join("").replace(/[\,]/gi, "");
+// }
+
+// console.log(longest(s1, s2));
+// const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+
+
+// 7 kyu
+// Friend or Foe?
+// let arr = ["Rysn", "Jimmy", "123", "4", "Cool Man", "Rysn"];
+// function friend(friends){
+// 	return friends.filter(el => typeof el === 'string' && el.length === 4);
+// }
+// console.log(friend(arr));
+// return friends.filter(n => n.length === 4)
+
+
+// 7 kyu
+// Growth of a Population
+
+// function nbYear(p0, percent, aug, p) {
+//     let year=0;
+//    while (p0<p){year++; p0=p0+(p0*(percent/100)) + aug;}
+//    return Math.floor(year);
+// }
+// console.log(nbYear(1500, 5, 100, 5000));
