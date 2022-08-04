@@ -765,12 +765,12 @@
 // Jaden Casing Strings
 
 // let str = "How can mirrors be real if our eyes aren't real";
-// // String.prototype.toJadenCase = function () {
-// // let a = str.split(' ');
-// // let b = a.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
-// // return console.log(b);
-// //   };
-// // str.toJadenCase();
+// String.prototype.toJadenCase = function () {
+// let a = str.split(' ');
+// let b = a.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(' ');
+// return console.log(b);
+//   };
+// str.toJadenCase();
 
 // String.prototype.toJadenCase = function () {
 
@@ -871,16 +871,14 @@
 // 7 kyu
 // Beginner Series #3 Sum of Numbers
 
-// let a = 0;
-// let b = 3;
 // function getSum(a, b) {
 
-//     for (let i = a; i <= b; a++) {
-//            console.log(a);
-//       }
-//       return a;
+//  if( a <= b) {
+// 	return (a+b)*(b-a+1)/2;
+// } else {return (b+a)*(a-b+1)/2;}
+
 // }
-// console.log(getSum(a, b));
+// console.log(getSum(519, -370));
 
 // let a = 10;
 // let b = 13;
@@ -1737,7 +1735,6 @@
 // console.log(longest(s1, s2));
 // const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
 
-
 // 7 kyu
 // Friend or Foe?
 // let arr = ["Rysn", "Jimmy", "123", "4", "Cool Man", "Rysn"];
@@ -1747,13 +1744,178 @@
 // console.log(friend(arr));
 // return friends.filter(n => n.length === 4)
 
-
 // 7 kyu
 // Growth of a Population
 
 // function nbYear(p0, percent, aug, p) {
-//     let year=0;
-//    while (p0<p){year++; p0=p0+(p0*(percent/100)) + aug;}
-//    return Math.floor(year);
+//     let year = 0;
+//     while (p0 < p) {
+//         year++;
+//         p0 = Math.floor(p0 + p0 * (percent / 100) + aug);
+//     }
+//     return year;
 // }
 // console.log(nbYear(1500, 5, 100, 5000));
+
+// 7 kyu
+// Find the next perfect square!
+
+// function findNextSquare(sq) {
+// 	// if ((Math.sqrt(sq) % 2 == 0) || (Math.sqrt(sq) % 2 == 0.5 || (Math.sqrt(sq) % 2 == 1))) {
+// 	// 	return ((Math.sqrt(sq)) + 1) ** 2;
+// 	// } else { return -1;
+// 	// }
+// 	if (Math.sqrt(sq) == Math.floor(Math.sqrt(sq))) {
+// 		return ((Math.sqrt(sq)) + 1) ** 2;
+// 	} else { return -1;
+// 	}
+//   }
+//   console.log(findNextSquare(121));
+
+//   7 kyu
+// Printer Errors,
+
+// function printerError(s) {
+
+// 	let b = s.length - (s.replace(/[n-z]/gi, '').length);
+//  return `${b}` + `${'/'}` + `${s.length}`;
+// }
+// console.log(printerError("aaabbbbhaijjjmx"));
+// const printerError = s => `${s.replace(/[a-m]/gi, "").length}/${s.length}`;
+
+// 7 kyu
+// Sum of odd numbers
+
+// function rowSumOddNumbers(n) {
+// 	return Math.pow(n, 3);
+// }
+// return n**3
+// return n*n*n
+
+// 7 kyu
+// Find the stray number
+// function stray(numbers) {
+// 	let a = numbers.sort((a,b) => a - b);
+// 	return a[0] == a[1] ? a[a.length -1] : a[0];
+
+//   }
+//   console.log(stray([1, 1,1, 2]));
+//   const stray = nums => nums.reduce((a, b) => a ^ b);
+
+// 6 kyu
+// Message Validator
+
+// function isAValidMessage(message){
+//   function numFromStr(str){
+//даёт цифры из строки в виде массива
+//     let num = [...str]
+//     .map(i => {if(isFinite(i) == true || i == "."){return i;}else{return " ";}})
+//     .join("")
+//     .split(" ")
+//     .filter(i => i != "")
+//     .map(i => Number(i));
+//     return num;
+//   }
+//   console.log(numFromStr("3hey5hello2hi"));
+//   let b = message.replace(/[0-9]/gi, ' ');
+//   console.log(b);
+
+//   return b;
+// }
+// console.log(isAValidMessage("3hey5hello2hi"));
+
+// 7 kyu
+// Multiple remainder of the division
+
+// function isMultiple(a, b, n) {
+//   let fractPart = ((a / b) - parseInt(a / b)).toFixed(1);
+
+//    if ((fractPart === 1 && fractPart % n !== 0) || (fractPart < 1 && ((fractPart * 10) % n)  == 0 && fractPart > 0)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(isMultiple(3691401, 1892272, 5));
+
+// var r=Math.round(a*10/b)%10|0;
+// return r>0&&r%n===0;
+
+// 7 kyu
+// String ends with?
+
+// function solution(str, ending){
+//   if (str.split('').splice(-(ending.length)).join('') === ending.split('').join('') || ending === '') {
+//     return true;
+//   } else {
+//     return false;
+//   }
+
+// }
+// console.log(solution('abc', ''));
+// return str.endsWith(ending);
+
+// 7 kyu
+// Is It Negative Zero (-0)?.
+
+// function isNegativeZero(n) {
+//   if (n === -0) {
+//     return true;
+//   } if (n === 0 || n > 0 || n < 0){
+//     false;a
+//   }else {
+//      return false;
+//   }
+//   }
+//   console.log(isNegativeZero(-5));
+
+// 7 kyu
+// Area of an arrow
+
+// function arrowArea(a,b) {
+//   return (a * 0.5 * b) / 2;
+// }
+// console.log(arrowArea(7,6));
+// a*b/4;
+
+// 7 kyu
+// Divide and Conquer
+// function divCon(x) {
+//     let a = x.filter((item) => typeof item === "number");
+//     let b = x.filter((item) => typeof item === "string");
+//     if (a.length > 0 && b.length > 0) {
+//         return a.reduce((a, b) => a + b) - b.reduce((a, b) => +a + +b);
+//     } if (a.length < 0 && b.length < 0) {
+//         return 0;
+//     }
+//     if (a.length > 0) {
+//         return a.reduce((a, b) => a + b) ;
+//     }
+//     if (b.length > 0) {
+//         return -b.reduce((a, b) => +a + +b);
+//     }
+// }
+// console.log(divCon([2,5,3]));
+// return x.reduce((acc, cur) => typeof cur === 'number'? acc + cur : acc - Number(cur),0)
+
+
+// 7 kyu
+// Number of People in the Bus
+
+// var number = function(busStops){
+// 	return 
+//   }
+
+//   number([[10,0],[3,5],[5,8]]);
+
+
+// 7 kyu
+// Find the divisors!
+
+function divisors(integer) {
+  for (let i = 1; i < integer; i++) {
+	if (integer / i == -1) continue;
+	console.log(i);
+  }
+}
+divisors(12);
