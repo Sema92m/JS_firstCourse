@@ -1912,10 +1912,71 @@
 // 7 kyu
 // Find the divisors!
 
-function divisors(integer) {
-  for (let i = 1; i < integer; i++) {
-	if (integer / i == -1) continue;
-	console.log(i);
-  }
-}
-divisors(12);
+// function divisors(integer) {
+//   for (let i = 1; i < integer; i++) {
+// 	if (integer / i == -1) continue;
+// 	console.log(i);
+//   }
+// }
+// divisors(12);
+
+// 7 kyu
+// The highest profit wins!
+
+// function minMax(arr){
+// 	if (arr.length >= 2) {
+// 		return [Math.min.apply(null, arr),Math.max.apply(null, arr)];
+// 	} if (arr.length == 1) {
+// 		return [...arr,...arr];
+// 	}
+// 	  }
+//   console.log(minMax([1, 2, 3, 4, 5]));
+//   return [Math.min(...arr), Math.max(...arr)];
+
+
+// 7 kyu
+// Sum of the first nth term of Series
+
+// function SeriesSum(n)
+// {
+//   return n.toFixed(2);
+// }
+// console.log(SeriesSum(1));
+
+
+// 7 kyu
+// Remove the minimum
+
+// function removeSmallest(numbers) {
+// // let a = Math.min(...numbers);
+// return numbers.filter(e => e != Math.min(...numbers));
+
+// }
+// console.log(removeSmallest([1,2,3,4,1,5]));
+
+
+// 7 kyu
+// Money, Money, Money
+
+
+// function nbYear(principal, interest, tax, desired) {
+//     let year = 0;
+//     while (principal < desired) {
+//         year++;
+//         principal = principal + (principal * interest) - (principal * interest * tax);
+//     }
+//     return year;
+// }
+// console.log(nbYear(1000, 0.05, 0.18, 1100));
+
+// 7 kyu
+// Sort Numbers
+
+// function solution(nums){
+
+// return (nums !== null && nums.length > 0) ? nums.sort((a,b) => a - b) : [];
+// }
+// console.log(solution(null));
+// return (nums || []).sort(function(a, b){
+//     return a - b
+//   });
