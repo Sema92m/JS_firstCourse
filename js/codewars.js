@@ -1898,16 +1898,14 @@
 // console.log(divCon([2,5,3]));
 // return x.reduce((acc, cur) => typeof cur === 'number'? acc + cur : acc - Number(cur),0)
 
-
 // 7 kyu
 // Number of People in the Bus
 
 // var number = function(busStops){
-// 	return 
+// 	return
 //   }
 
 //   number([[10,0],[3,5],[5,8]]);
-
 
 // 7 kyu
 // Find the divisors!
@@ -1933,7 +1931,6 @@
 //   console.log(minMax([1, 2, 3, 4, 5]));
 //   return [Math.min(...arr), Math.max(...arr)];
 
-
 // 7 kyu
 // Sum of the first nth term of Series
 
@@ -1942,7 +1939,6 @@
 //   return n.toFixed(2);
 // }
 // console.log(SeriesSum(1));
-
 
 // 7 kyu
 // Remove the minimum
@@ -1954,10 +1950,8 @@
 // }
 // console.log(removeSmallest([1,2,3,4,1,5]));
 
-
 // 7 kyu
 // Money, Money, Money
-
 
 // function nbYear(principal, interest, tax, desired) {
 //     let year = 0;
@@ -1980,3 +1974,242 @@
 // return (nums || []).sort(function(a, b){
 //     return a - b
 //   });
+
+// 7 kyu
+// Find the capitals
+
+// var capitals = function (word) {
+// 	let a = word.split('');
+// 	let b = word.toLowerCase().split('');
+
+// };
+// console.log(capitals('CodEWaRs'));
+
+// 7 kyu
+// Remove duplicate words
+// let s =  'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta';
+// console.log((Array.from(new Set(s.split(' ')))).join(' ') );
+
+// 7 kyu
+// Coding Meetup #1 - Higher-Order Functions Series
+// - Count the number of JavaScript developers coming from Europe
+// var list1 = [
+// 	{ firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+// 	{ firstName: 'Maia', lastName: 'S.', country: 'Europe', continent: 'Oceania', age: 28, language: 'JavaScript' },
+// 	{ firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Europe', age: 35, language: 'HTML' },
+// 	{ firstName: 'Sumayah', lastName: 'M.', country: 'Europe', continent: 'Asia', age: 30, language: 'CSS' }
+//   ];
+
+// function countDevelopers(list) {
+// 	return list.filter(item => item.language == 'JavaScript').filter(item => item.continent == 'Europe').length;
+//   }
+//   console.log(countDevelopers(list1));
+//   return list.filter(x=>x.continent=='Europe'&&x.language=='JavaScript').length
+
+//   7 kyu
+// Thinkful - String Drills: Repeater
+
+// function repeater(string, n){
+//   return  string.repeat(n);
+// }
+// console.log(repeater('a', 5));
+
+// 7 kyu
+// Love vs friendship
+
+// function wordsToMarks(string){
+
+// 	// if( "a" == 1, "b" == 2, "c" == 3, 'd' = 4, 'e' == 5,
+// 	// 'f' == 6, 'g' == 7, 'h' == 8, 'i' == 9, 'j' == 10 , 'k' == 11,
+// 	// 'l' == 12, 'm' == 13, 'n' == 14, 'o' == 15, 'p' == 16, 'q' == 17, 'r' == 18, 's' == 19,
+// 	// 't' == 20, 'u' == 21, 'v' == 22, 'w' == 23, 'x' == 24, 'y' == 25, 'z' == 26);
+// 	return string.split('');
+//   }
+//   console.log(wordsToMarks("attitude"));
+
+// 7 kyu
+// Find the middle element
+
+// function gimme (triplet) {
+// return triplet.indexOf([...triplet].sort((a,b) => a - b)[1]);
+// }
+// console.log(gimme([1, 3, 2]));
+// return a.indexOf(a.concat().sort(function(a, b) { return a - b })[1])
+
+// 7 kyu
+// Round up to the next multiple of 5
+
+// function roundToNext5(n) {
+//     let a = Math.abs(n % 5);
+//     console.log(a);
+//     if ((n == 0)) {
+//         return 0;
+//     } if (n % 5 == 0) {
+// 		return n;
+// 	}
+//     if (n > 0) {
+//         return n + (5 - a);
+//     } if (n < 0) {
+// 		return n + a;
+// 	}
+// }
+// console.log(roundToNext5(-6));
+// return Math.ceil(n/5)*5;
+
+// while(n % 5 !== 0) n++;
+// return n;
+
+// const promisify = (item, delay) =>
+//     new Promise(resolve => setTimeout(() => resolve(item), delay));
+ 
+// const a = () => promisify('a', 100);
+// const b = () => promisify('b', 5000);
+// const c = () => promisify('c', 3000);
+ 
+// async function one() {
+//     const promises = [a(), b(), c()];
+//     const [outpu1, outpu2, outpu3] = await Promise.all(promises);
+//     return `one is done: ${outpu1} ${outpu2} ${outpu3}`;
+// }
+ 
+// async function two() {
+//     const promises = [a(), b(), c()];
+//     const outpu1 = await Promise.race(promises);
+//     return `two is done: ${outpu1}`;
+// }
+ 
+// async function three() {
+//     const outpu1 = await a();
+//     const outpu2 = await b();
+//     const outpu3 = await c();
+//     return `three is done: ${outpu1} ${outpu2} ${outpu3}`
+// }
+ 
+// one().then(console.log);
+// two().then(console.log);
+// three().then(console.log);
+
+
+ 
+// function getSum(a, b) {
+//     function sum() {
+//         console.log(this);
+//         return a + b;
+//     }
+ 
+//     console.log(sum());
+// }
+ 
+// getSum(4, 5);
+
+// function foo(a,b) {
+//     const [first, second] = a;
+//     const {eng, ru} = b;
+ 
+//     return `${second}, ${ru}`;
+// }
+ 
+// const result = foo(['Hello', 'Привет'], {ru: 'Мир', eng: 'World'})
+// console.log(result)
+
+
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('foo');
+//     }, 1000);
+//     setTimeout(() => {
+//         reject('bar');
+//     }, 900);
+// });
+  
+// promise.then((value) => {
+//     console.log(value);
+// }).catch((e) => console.log(e))
+
+
+// function setOptions(height, width, ...additional) {
+//     console.log(height, width, ...additional);
+// }
+// setOptions(400, 500, 'red', 'top');
+
+
+// async function makeRequest() {
+//     return await fetch('https://jsonplaceholder.typicode.com/todos/1')
+//         .then(json => console.log(json))
+// }
+ 
+// makeRequest()
+
+
+// const arr = [
+//     {
+//         name: 'Alex',
+//         salary: 500
+//     },
+//     {
+//         name: 'Ann',
+//         salary: 1500
+//     },
+//     {
+//         name: 'John',
+//         salary: 2500
+//     },
+// ];
+ 
+// const result = arr.map(item => Object.entries(item)[1][1]).reduce((sum, curr) => sum + curr)
+// console.log(result)
+
+
+// let y = 1; 
+// let x = y = 2; 
+// console.log(x);
+
+
+
+// const msg = 'My number +12345678, name: Oleg';
+ 
+// function transformMsg(str) {
+//  let a = str.replace(/\+\d{8}/, '*****');
+//  let b = a.replace(/\w{4}:\s\w{1,}/, 'hidden');
+ 
+ 
+//     return b;
+// }
+ 
+// console.log(transformMsg(msg));
+
+// combineUrls('https', 'mysite.com');
+ 
+// const combineUrls = (protocol, domain) => {
+//     return `${protocol}://${domain}`;
+// }
+
+
+// let c = 4;
+// function addX(x) {
+//   return function(n) {
+//      return n + x;
+//   }
+// }
+// console.log(addX(c));
+// const addThree = addX(3);
+ 
+// let d = addThree(c);
+// let res = addThree(c);
+ 
+// console.log(res)
+
+
+
+ 
+// function getSum(a, b) {
+//     function sum() {
+//         console.log(this.a);
+//         return a + b;
+//     }
+ 
+//     console.log(sum());
+// }
+ 
+// getSum(4, 5);
