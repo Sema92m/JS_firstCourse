@@ -2239,3 +2239,31 @@
 //     let arr = [age1, age2, age3, age4, age5, age6, age7, age8]
 //     return Math.floor(Math.sqrt(arr.map(a => a * a).reduce((b,c) => b + c)) / 2)
 //   }
+
+// 7 kyu
+// Alternate capitalization
+
+
+// function capitalize(s){
+// 	return [s.split('').map((v,i)=>i%2==0?v.toUpperCase():v.toLowerCase()).join(''),
+// 	s.split('').map((v,i)=>i%2!==0?v.toUpperCase():v.toLowerCase()).join('')]
+	
+//   };
+
+//   console.log(capitalize("abcdef"))
+
+// 7 kyu
+// No oddities here
+
+// function noOdds( values ){
+// 	return values.filter(a => a%2 == 0)
+//   }
+//   console.log(noOdds([0,1,2,3]))
+
+//   7 kyu
+// Sum of angles
+
+// function angle(n) {
+// 	return 180*(n-2)
+//   }
+// console.log(angle(61))
