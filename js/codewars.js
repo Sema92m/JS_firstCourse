@@ -2267,3 +2267,79 @@
 // 	return 180*(n-2)
 //   }
 // console.log(angle(61))
+
+
+// 7 kyu
+// Flatten and sort an array
+
+// "use strict";
+
+// function flattenAndSort(array) {
+// 	return array.flat().sort((a,b) => a - b);
+   
+// }
+
+// console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
+
+// 7 kyu
+// Number of Decimal Digits
+
+
+// function digits(n) {
+// 	return String(n).length
+//   }
+
+//   console.log(digits(12345))
+
+//   function digits(n) {
+// 	return n.toString().length;
+//   }
+
+
+// 7 kyu
+// Sort the Gift Code
+
+// function sortGiftCode(code){
+// 	return [...code].sort().join('')
+//   }
+
+
+//   console.log(sortGiftCode('pqksuvy'))
+
+
+// 7 kyu
+// Sort arrays - 1
+// let names = ['one', 'two', 'three' ];
+// sortme = function( names ){
+// 	return names.sort()
+// }
+// console.log(sortme(names))
+
+// 7 kyu
+// Most digits
+
+// function findLongest(array){
+
+// 	return array.sort((a, b)=> b-a)[0]
+//   }
+//   console.log(findLongest([8, 900, 500]))
+
+// 7 kyu
+// Sum of Cubes
+
+// function sumCubes(n){
+	
+// 	for (i=1; n)
+//   }
+//   console.log(sumCubes(3))
+
+// 7 kyu
+// Reverse a Number
+// function reverseNumber(n) {
+// 	return String(n).split('').reverse().join('')
+//   }
+//   console.log(reverseNumber(123))
+
+
+
+  console.log()
