@@ -2341,5 +2341,79 @@
 //   console.log(reverseNumber(123))
 
 
+// 8 kyu
+// Reversed Words
 
-  console.log()
+// function reverseWords(str){
+//   return str.split(' ').reverse().join(" ")
+// }
+//   console.log(reverseWords("hello world!"))
+
+
+
+  // 8 kyu
+  // Are You Playing Banjo?
+
+  // function areYouPlayingBanjo(name) {
+  //  if (name[0] == 'R' || name[0] == 'r') {
+  //   return `${name} plays banjo` 
+  //  } else {
+  //   return `${name} does not play banjo` 
+  //  }
+  // }
+  // console.log(areYouPlayingBanjo("Adam"))
+
+  // function areYouPlayingBanjo(name) {
+  //   return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
+  // }
+
+
+//   8 kyu
+// Calculate BMI
+
+
+// function bmi(weight, height) {
+//   let a = weight / (height**2);
+//   if (a<=18.5) {
+    
+//       return "Underweight";
+//   }
+//   if (a<=25) {
+    
+//       return "Normal";
+//   }
+//   if (a<=30) {
+    
+//       return "Overweight";
+//   }
+//   if (a>30) {
+    
+//       return "Obese";
+//   }
+   
+// }
+
+//   console.log(bmi(80, 1.8))
+
+
+// 8 kyu
+// Get the mean of an array
+
+// function getAverage(marks){
+  
+//  let b =   marks.reduce((sum,cur) => {
+//   return (sum + cur);
+//  })
+// return Math.floor(b / marks.length)
+// }
+
+//   console.log(getAverage([1,2,3,4,5,]))
+
+//   function getAverage(marks){
+//     return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
+//   }
+
+const reverseSeq = (n) =>
+  Array(n)
+    .fill()
+    .map((x, i) => n - i);
