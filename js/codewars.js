@@ -2413,7 +2413,113 @@
 //     return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
 //   }
 
-const reverseSeq = (n) =>
-  Array(n)
-    .fill()
-    .map((x, i) => n - i);
+// 8 kyu
+// Count by X
+// function countBy(x, n) {
+//   let result = [];
+//   for (let i = 1; i <= n; i++) {
+//     result.push(x * i);
+//   }
+//   return result;
+// }
+
+// console.log(countBy(1,10))
+
+// function countBy2(x, n) {
+//   var arr = [];
+// 	for (var i = x; i <= x * n; i += x) {
+// 		arr.push(i);
+// 	}
+//   return arr;
+// }
+
+// function abc(a,b) {
+//   let res = [];
+//   for (i=1; i<=b; i++){
+//      res.push(a*i)
+//   }
+//   return res;
+// }
+
+// console.log(abc(1,10))
+
+// 8 kyu
+// Sentence Smash
+
+// function smash (words) {
+//   return words.join(' ')
+// };
+
+// console.log(smash(['hello', 'world', 'this', 'is', 'great']));
+
+
+// 8 kyu
+// Count the Monkeys!
+
+// function monkeyCount(n) {
+//  let a = [];
+//   for(i=1; i<=n; i++){
+//     a.push(i)
+//   }
+//   return a
+//   }
+
+//   console.log(monkeyCount(20));
+
+
+// 8 kyu
+// Convert a string to an array
+
+// function stringToArray(string){
+
+// 	return string.split(' ')
+
+// }
+
+
+// console.log(stringToArray("Robin Singh"));
+
+
+// 7 kyu
+// Sum of numbers from 0 to N
+
+
+// var SequenceSum = (function() {
+//   function SequenceSum() {}
+
+//   SequenceSum.showSequence = function(count) {
+//     let arr=[];
+//     for(let i=0;i<=count;i++) {arr.push(i)};
+//     let b=arr.reduce((total,next)=>total+next,0)
+//     let a=arr.join('+');
+//     if(count<0) return `${count}<0`;
+//     if(count==0) return `${count}=0`;
+//     return `${a} = ${b}`
+//   };
+
+//   return SequenceSum;
+
+// })();
+
+// function countA(n) {
+//   let res = [];
+//   for (i=1; i<=n; i++) {
+//     res.push(i)
+//   }
+//   return res.reduce((a,b) => a +b)
+// }
+// console.log(countA(6));
+
+
+// 7 kyu
+// Minimize Sum Of Array (Array Series #1)
+
+
+// function minSum(arr) {
+  
+//   let a = arr.sort((a,b) => a -b);
+//   return a[0]
+// }
+
+
+// console.log(minSum([5,4,2,3]));
