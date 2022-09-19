@@ -2205,7 +2205,6 @@
 // }
 // console.log(typeof +a(str));
 
-
 // 7 kyu
 // Largest pair sum in array
 // let arr = [10, 14, 2, 23, 19];
@@ -2215,8 +2214,6 @@
 //   }
 
 //   console.log(largestPairSum(arr))
-
-
 
 // 7 kyu
 // JavaScript Array Filter
@@ -2243,11 +2240,10 @@
 // 7 kyu
 // Alternate capitalization
 
-
 // function capitalize(s){
 // 	return [s.split('').map((v,i)=>i%2==0?v.toUpperCase():v.toLowerCase()).join(''),
 // 	s.split('').map((v,i)=>i%2!==0?v.toUpperCase():v.toLowerCase()).join('')]
-	
+
 //   };
 
 //   console.log(capitalize("abcdef"))
@@ -2268,7 +2264,6 @@
 //   }
 // console.log(angle(61))
 
-
 // 7 kyu
 // Flatten and sort an array
 
@@ -2276,14 +2271,13 @@
 
 // function flattenAndSort(array) {
 // 	return array.flat().sort((a,b) => a - b);
-   
+
 // }
 
 // console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
 
 // 7 kyu
 // Number of Decimal Digits
-
 
 // function digits(n) {
 // 	return String(n).length
@@ -2295,7 +2289,6 @@
 // 	return n.toString().length;
 //   }
 
-
 // 7 kyu
 // Sort the Gift Code
 
@@ -2303,9 +2296,7 @@
 // 	return [...code].sort().join('')
 //   }
 
-
 //   console.log(sortGiftCode('pqksuvy'))
-
 
 // 7 kyu
 // Sort arrays - 1
@@ -2328,7 +2319,7 @@
 // Sum of Cubes
 
 // function sumCubes(n){
-	
+
 // 	for (i=1; n)
 //   }
 //   console.log(sumCubes(3))
@@ -2340,7 +2331,6 @@
 //   }
 //   console.log(reverseNumber(123))
 
-
 // 8 kyu
 // Reversed Words
 
@@ -2349,58 +2339,53 @@
 // }
 //   console.log(reverseWords("hello world!"))
 
+// 8 kyu
+// Are You Playing Banjo?
 
+// function areYouPlayingBanjo(name) {
+//  if (name[0] == 'R' || name[0] == 'r') {
+//   return `${name} plays banjo`
+//  } else {
+//   return `${name} does not play banjo`
+//  }
+// }
+// console.log(areYouPlayingBanjo("Adam"))
 
-  // 8 kyu
-  // Are You Playing Banjo?
-
-  // function areYouPlayingBanjo(name) {
-  //  if (name[0] == 'R' || name[0] == 'r') {
-  //   return `${name} plays banjo` 
-  //  } else {
-  //   return `${name} does not play banjo` 
-  //  }
-  // }
-  // console.log(areYouPlayingBanjo("Adam"))
-
-  // function areYouPlayingBanjo(name) {
-  //   return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
-  // }
-
+// function areYouPlayingBanjo(name) {
+//   return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
+// }
 
 //   8 kyu
 // Calculate BMI
 
-
 // function bmi(weight, height) {
 //   let a = weight / (height**2);
 //   if (a<=18.5) {
-    
+
 //       return "Underweight";
 //   }
 //   if (a<=25) {
-    
+
 //       return "Normal";
 //   }
 //   if (a<=30) {
-    
+
 //       return "Overweight";
 //   }
 //   if (a>30) {
-    
+
 //       return "Obese";
 //   }
-   
+
 // }
 
 //   console.log(bmi(80, 1.8))
-
 
 // 8 kyu
 // Get the mean of an array
 
 // function getAverage(marks){
-  
+
 //  let b =   marks.reduce((sum,cur) => {
 //   return (sum + cur);
 //  })
@@ -2452,7 +2437,6 @@
 
 // console.log(smash(['hello', 'world', 'this', 'is', 'great']));
 
-
 // 8 kyu
 // Count the Monkeys!
 
@@ -2466,7 +2450,6 @@
 
 //   console.log(monkeyCount(20));
 
-
 // 8 kyu
 // Convert a string to an array
 
@@ -2476,13 +2459,10 @@
 
 // }
 
-
 // console.log(stringToArray("Robin Singh"));
-
 
 // 7 kyu
 // Sum of numbers from 0 to N
-
 
 // var SequenceSum = (function() {
 //   function SequenceSum() {}
@@ -2510,16 +2490,13 @@
 // }
 // console.log(countA(6));
 
-
 // 7 kyu
 // Minimize Sum Of Array (Array Series #1)
 
-
 // function minSum(arr) {
-  
+
 //   let a = arr.sort((a,b) => a -b);
 //   return a[0]
 // }
-
 
 // console.log(minSum([5,4,2,3]));
