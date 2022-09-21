@@ -2500,3 +2500,81 @@
 // }
 
 // console.log(minSum([5,4,2,3]));
+
+
+
+// Sum of all arguments
+// function sum(a,b) {
+// 	return a + b
+//   }
+
+//   console.log(sum(12, 1, 1, 1, 1, 1, 1));
+
+// 7 kyu
+// Build a square
+
+// function generateShape(integer){
+	
+// 	console.log('*' + integer.repeat(integer));
+// }
+// console.log(generateShape(5));
+
+// 7 kyu
+// Simple beads count
+
+// function countRedBeads(n) {
+// 	if (n < 2) {
+// 		return 0
+// 	} if (n > 2 ) {
+// 		return  (n-1) * 2
+// 	}
+//   }
+
+//   console.log(countRedBeads(3));
+
+// function countRedBeads(n) {
+// 	return n < 2 ? 0 : (n-1)*2
+//   }
+
+//   console.log(countRedBeads(3));
+
+// 7 kyu
+// Sum of Odd Cubed Numbers
+
+// function cubeOdd(arr) {
+// 	if ()
+// let a = arr.filter((i)=> {
+ 
+// 	return i % 2 >0
+// });
+// let b = a.map((item) => {
+// 	return 	item **3;
+// })
+// return b.reduce((a,b)=> {
+// 	return a+b
+// });
+// 	}
+
+
+// console.log(cubeOdd([1, 2, 3, 4]));
+
+function cubeOdd(arr) {
+	
+let a = arr.filter((i)=> {
+	return i % 2 !== 0
+}).map((item) => {
+	return 	item **3;
+}).reduce((a,b)=> {
+	return a+b
+});
+
+if ( typeof(a) == 'number') {
+		return a;
+	} else {
+		return undefined;
+	}
+
+}
+console.log(cubeOdd(["a",12,9,"z",42]));
+
+
