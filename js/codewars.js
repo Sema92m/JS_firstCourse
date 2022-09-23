@@ -2558,23 +2558,121 @@
 
 // console.log(cubeOdd([1, 2, 3, 4]));
 
-function cubeOdd(arr) {
+// function cubeOdd(arr) {
 	
-let a = arr.filter((i)=> {
-	return i % 2 !== 0
-}).map((item) => {
-	return 	item **3;
-}).reduce((a,b)=> {
-	return a+b
-});
+// let a = arr.filter((i)=> {
+// 	return i % 2 !== 0
+// }).map((item) => {
+// 	return 	item **3;
+// }).reduce((a,b)=> {
+// 	return a+b
+// });
 
-if ( typeof(a) == 'number') {
-		return a;
-	} else {
-		return undefined;
-	}
+// if ( typeof(a) == 'number') {
+// 		return a;
+// 	} else {
+// 		return undefined;
+// 	}
 
-}
-console.log(cubeOdd(["a",12,9,"z",42]));
+// }
+// console.log(cubeOdd(["a",12,9,"z",42]));
+
+//best Practices
+//1
+// function isSquare(n) {
+// 	return Math.sqrt(n) % 1 === 0;
+//   }
+//2
+//const isSquare = n => Number.isInteger(Math.sqrt(n));
+//3
+// var isSquare = function(n){
+// 	return Number.isInteger(Math.sqrt(n));
+//   }
+
+// task 3 done
+
+// task 4
+
+// let arr = [1, 3, 4, 1, 1, 3, 4, 5];
+// let count = [];
+// function findOdd(A) {
+// for (let elem of arr) {
+//     if (count[elem] === undefined) {
+//     count[elem] = 1;
+//     } else {
+//     count[elem]++;
+//     }
+// }
+// }
+// console.log(findOdd(arr)); // выведет {1: 3, 3: 2, 4: 2, 5: 1}
+
+//task
+
+// let num = 5;
+// function makeNegative(num) {
+// 	if (num === 0) {
+// 		return 0;
+// 	} if (num > 0) {
+// 		return -num;
+// 	}
+// }
+// console.log(makeNegative(num));
+
+// best solutions
+// function makeNegative(num) {
+// 	return -Math.abs(num);
+//   }
+
+//   function makeNegative(num) {
+// 	return num < 0 ? num : -num;
+//   }
+//task
+
+//task Even or Odd
+
+// let num = 4;
+// function even_or_odd(number) {
+//   if (number % 2 == 0) {
+// 	  return "Even";
+//   } else {
+// 	return "Odd";
+//   }
+
+// }
+// console.log(even_or_odd(num));
+
+// best solutions
+// function even_or_odd(number) {
+// 	return number % 2 ? "Odd" : "Even";
+//   }
+
+//   function even_or_odd(number) {
+// 	return number % 2 === 0 ? 'Even' : 'Odd';
+//  }
+
+//task Opposite number
+// let num = -4;
+// function opposite(number) {
+// 	if (number > 0) {
+// 		return -Math.abs(number);
+// 	} if (number < 0) {
+// 		return Math.abs(number);
+// 	} else {
+//     return 0;
+//   }
+// }
+//   console.log(opposite(num));
+
+// best solutions
+//   function opposite(number) {
+// 	return(-number);
+//   }
+
+//   const opposite = number => -number;
+
+// function opposite(number) {
+//     return number * (-1);
+//
+
 
 
