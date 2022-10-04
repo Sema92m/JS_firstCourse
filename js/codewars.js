@@ -2674,5 +2674,73 @@
 //     return number * (-1);
 //
 
+//task
+
+// let num = 5;
+// function makeNegative(num) {
+// 	if (num === 0) {
+// 		return 0;
+// 	} if (num > 0) {
+// 		return -num;
+// 	}
+// }
+// console.log(makeNegative(num));
+
+// best solutions
+// function makeNegative(num) {
+// 	return -Math.abs(num);
+//   }
+
+//   function makeNegative(num) {
+// 	return num < 0 ? num : -num;
+//   }
+//task
+
+//task Even or Odd
+
+// let num = 4;
+// function even_or_odd(number) {
+//   if (number % 2 == 0) {
+// 	  return "Even";
+//   } else {
+// 	return "Odd";
+//   }
+
+// }
+// console.log(even_or_odd(num));
+
+// best solutions
+// function even_or_odd(number) {
+// 	return number % 2 ? "Odd" : "Even";
+//   }
+
+//   function even_or_odd(number) {
+// 	return number % 2 === 0 ? 'Even' : 'Odd';
+//  }
+
+//task Opposite number
+// let num = -4;
+// function opposite(number) {
+// 	if (number > 0) {
+// 		return -Math.abs(number);
+// 	} if (number < 0) {
+// 		return Math.abs(number);
+// 	} else {
+//     return 0;
+//   }
+// }
+//   console.log(opposite(num));
+
+// best solutions
+//   function opposite(number) {
+// 	return(-number);
+//   }
+
+//   const opposite = number => -number;
+
+// function opposite(number) {
+//     return number * (-1);
+//
+
 
 
