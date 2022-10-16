@@ -2742,5 +2742,500 @@
 //     return number * (-1);
 //
 
+// function smallEnough(a, limit){
+//     return Math.max(...a) <= limit;
+//   }
+
+// 7 kyu
+// Reverse words
+//перевернуть каждое слово строки отдельно
+// let str = "double  spaces" ;
+// function reverseWords(str) {
+
+//     return str.split(' ').map(s => s.split('').reverse().join('')).join(' ');
+// }
+
+//   console.log(reverseWords(str));
+
+// 6 kyu
+// Multiples of 3 or 5
+
+// let num = 10;
+// function solution(number){
+// //   if (number < 0) {
+// //       return 0;
+// //   }
+//   for (let i = 0; i <= number; i++) {
+//     console.log(i);
+
+//   }
+
+// }
+
+// // console.log(solution(num));
+// solution(num);
+
+// for (let i = 0; i <= 5; i++) {
+//     console.log(i);
+// }
+
+// function setOptions(height, width, ...additional) {
+//     console.log(height, width, ...additional)
+// }
+// setOptions(400, 500, 'red', 'top');
+
+// 7 kyu
+// Sort array by string length
+
+// let arr = [ 'Of', 'A', 'Food', 'Dog' ];
+// function sortByLength (array) {
+//     return  array.sort((a, b) => a.length - b.length);
+
+//   }
+
+//   console.log(sortByLength(arr));
+
+//   7 kyu
+// Regex validate PIN code
+
+// let pin = "1.234";
+
+// function validatePIN(pin) {
+//     let t = pin.replace(/[\D\s.,_%]/g, '');
+//     let a = +pin;
+
+//     if ((pin.length == t.length)  && (t.length === 4 || t.length === 6) && (a >= 0)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(validatePIN(pin));
+
+// function validatePIN(pin) {
+//     return /^(\d{4}|\d{6})$/.test(pin);
+//   }
+
+//   7 kyu
+// Binary Addition
+// let a = 1;
+// let b = 1;
+// function addBinary(a,b) {
+//     return (a + b).toString(2);
+// }
+// console.log(addBinary(a, b));
+
+// Is this a triangle?
+// let a = 2;
+// let b = 2;
+// let c = -2;
+
+// function isTriangle(a,b,c) {
+//     let arr = [a,b,c];
+//     let sortArr = arr.sort( (a, b) => b - a );
+
+// if (a <= 0 || b <= 0 || c <= 0) {
+//     return false;
+// }  if (((a > 0 && a !== 0) && (b > 0 && b !== 0) && (c > 0 && c !== 0)) && (sortArr[0] < sortArr[1] + sortArr[2]) || (sortArr[0] == sortArr[1])) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(isTriangle(a ,b ,c));
+
+// function isTriangle(a,b,c)
+// {
+//    return a + b > c && a + c > b && c + b > a;
+// }
+
+// 7 kyu
+// Ones and Zeros
+
+// let arr = [0, 0, 1, 0];
+
+// function binaryArrayToNumber(arr) {
+//     let a = arr.join('');
+//     return parseInt(a, 2);
+// };
+
+// console.log(binaryArrayToNumber(arr));
+
+// const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
+// const binaryArrayToNumber = arr => {
+//     return parseInt(arr.join(""), 2)
+//   };
+
+// 6 kyu
+// Create Phone Number
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// function createPhoneNumber(numbers){
+
+// console.log(createPhoneNumber(numbers));
+
+// function createPhoneNumber(numbers){
+//     var format = "(xxx) xxx-xxxx";
+
+//     for(var i = 0; i < numbers.length; i++)
+//     {
+//       format = format.replace('x', numbers[i]);
+//     }
+
+//     return format;
+//   }
+
+//   function createPhoneNumber(numbers){
+//   return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+// }
+
+// 6 kyu
+// Find The Parity Outlier
+
+// let arr = [12749518,-165438383,-30101495];
+// function findOutlier(integers) {
+// 	let a = integers.map((i => ((i % 2)+1)-1));
+// 	let indexOfOne = a.lastIndexOf(1);
+// 	let lastIndexOfOne = a.indexOf(1);
+// 	let indexOfMinusOne = a.lastIndexOf(-1);
+// 	let lastIndexOfMinusOne = a.indexOf(-1);
+// 	let indexOfZero = a.lastIndexOf(0);
+// 	let lastIndexOfZero = a.indexOf(0);
+
+// 	console.log(a);
+// 	console.log(lastIndexOfMinusOne);
+// 	console.log(indexOfMinusOne);
+
+// 	if ((indexOfMinusOne == lastIndexOfMinusOne) && (indexOfMinusOne >= 0)) {
+// 		return integers[indexOfMinusOne];
+// 	}
+// 	if ((indexOfOne == lastIndexOfOne)) {
+// 		return integers[indexOfOne];
+// 	}
+// 	if (indexOfZero == lastIndexOfZero) {
+// 		return integers[indexOfZero];
+// 	}
+// 	if (indexOfOne >= 0 && indexOfMinusOne >= 0) {
+// 		return integers[indexOfZero];
+// 	}
+// }
+// console.log(findOutlier(arr));
+
+// function findOutlier(int){
+// 	var even = int.filter(a=>a%2==0);
+// 	var odd = int.filter(a=>a%2!==0);
+// 	return even.length==1? even[0] : odd[0];
+//   }
+
+//   function findOutlier(integers){
+// 	return integers.slice(0,3).filter(even).length >=2 ? integers.find(odd) : integers.find(even);
+//   }
+//   function even(num){
+// 	return (num % 2 == 0);
+//   }
+//   function odd(num){
+// 	return !even(num)
+//   }
+
+// var string = "The quick brown fox jumps over the lazy dog.";
+
+// function isPangram(string){
+// 	return (string.match(/([a-z])(?!.*\1)/ig) || []).length === 26;
+//   }
+
+//   console.log(isPangram(string));
+
+//   6 kyu
+// Does my number look big in this?
+
+// let value = 371;
+
+// function narcissistic(value) {
+// 	let arr = String(value).split('');
+
+// 	let result = arr.map(i => i ** arr.length).reduce((a, b) => a + b);
+// 	if( result == value) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+
+//   console.log(narcissistic(value));
+
+//   function narcissistic(value) {
+// 	return value.toString()
+// 				.split('')
+// 				.map( (x,i,arr) => x ** arr.length)
+// 				.reduce( (a,b)=> +a + +b)
+// 				 === value
+//   }
+
+// // 7 kyu
+// // Remove the minimum
+// let numbers = [1,2,3,4,5];
+// function removeSmallest(numbers) {
+// 	numbers.sort(fn)
+//   }
+
+// function arithmetic(a, b, operator) {
+// 	if (operator == 'add') {
+// 		return a + b;
+// 	}
+// 	if (operator == 'subtract') {
+// 		return a - b;
+// 	}
+// 	if (operator == 'multiply') {
+// 		return a * b;
+// 	}
+// 	if (operator == 'divide') {
+// 		return a / b;
+// 	}
+//   }
+
+//   console.log(arithmetic(5,2,'add'));
+//   console.log(arithmetic(5,2,'subtract'));
+//   console.log(arithmetic(5,2,'multiply'));
+//   console.log(arithmetic(5,2,'divide'));
+
+//   switch(operator) {
+//     case 'add':
+//       return a + b;
+//     case 'subtract':
+//       return a - b;
+//     case 'multiply':
+//       return a * b;
+//     case 'divide':
+//       return a / b;
+//   }
+
+// 7 kyu
+// Sum of a sequence
+
+// const sequenceSum = (begin, end, step) => {
+// 	for (let i = begin; i < end; step) {
+// 		return i;
+// 	}
+
+//   };
+
+//   console.log(sequenceSum(2,6,2));
+//   console.log(sequenceSum(1,5,3));
+
+// let ages = [1, 5, 87, 45, 8, 8];
+
+// function twoOldestAges(ages) {
+// 	return ages.sort( (a, b) => a - b ).slice(-2);
+
+// }
+// console.log(twoOldestAges(ages));
+
+// 7 kyu
+// Remove the minimum
+// let numbers = [5, 3, 2, 1, 4];
+// function removeSmallest(numbers) {
+// 	let smallestNumberKEY = 0;
+// 	for (let i = 0; i <= numbers.length; i++) {
+// 	  if (numbers[i + 1] < numbers[i]) {
+// 		smallestNumberKEY = i + 1;
+// 	  }
+// 	}
+// 	numbers.splice(smallestNumberKEY, 1);
+// 	return numbers;
+//   }
+
+//   console.log(removeSmallest(numbers));
+
+//   7 kyu
+// Summing a number's digits
+
+// let number = -32;
+// function sumDigits(number) {
+// return number.toString().replace(/[\D]/g, '').split('').reduce(function(a,b){ return +a+ +b; });
+
+// }
+// console.log(sumDigits(number));
+// function sumDigits(number) {
+// 	return Math.abs(number).toString().split('').reduce(function(a,b){return +a + +b}, 0);
+//   }
+
+// 7 kyu
+// Sum of all the multiples of 3 or 5
+
+// let n = 10;
+// function findSum(n) {
+// 	let a5 = Math.floor(n / 5 );
+// 	let b3 = Math.floor(n / 3 );
+
+// 	for (let i = a5; i >= n; a5 + a5) {
+// 		return a5;
+// 	}
+// 	return ((a5 * 5) + (b3 * 3));
+//   }
+//   console.log(findSum(n));
+
+//   7 kyu
+// Form The Minimum
+
+// let values = [4, 7, 5, 7];
+// function minValue(values) {
+// 	let a = Array.from(new Set (values));
+// 	let b = a.sort( (a, b) => a - b ).join('');
+
+// 	return +b;
+//   }
+
+//   console.log(minValue(values));
+
+//   7 kyu
+// Coding Meetup #1 - Higher-Order Functions Series -
+// Count the number of JavaScript developers coming from Europe
+// var list = [
+// 	{ firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+// 	{ firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+// 	{ firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+// 	{ firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+//   ];
+// function countDevelopers(list) {
+
+//   }
+//   console.log(countDevelopers(list));
+
+// 7 kyu
+// Count the divisors of a number
+
+// let n = 10;
+// function getDivisorsCnt(n){
+//     for (let i = 0; i >= n; i++) {
+// 		return
+// 	}
+// }
+
+// console.log(getDivisorsCnt(n));
+
+// 7 kyu
+// Narcissistic Numbers
+// let n = 153;
+// function isNarcissistic(n) {
+//  let b = n.toString().split('');
+//  let d = Array.from((b), x => x ** b.length).reduce((sum, current) => sum + current, 0);
+
+//   if ( d === n) {
+//   return true;
+// } else {
+// 	return false;
+// }
+
+// }
+
+// console.log(isNarcissistic(n));
+
+// function isNarcissistic(n) {
+// 	return n === n.toString().split('').reduce((res, num, index, arr) => res += Math.pow(num, arr.length), 0)
+//   }
+
+//   const isNarcissistic = (n, $ = n.toString()) => [...$].reduce((a, b)=> a + b**$.length, 0) === n
+
+// 7 kyu
+// Find the Missing Number
+
+// let a = [9, 45, 53, 10, 100, 30, 85, 72, 69, 93, 98, 27, 73, 82, 91,
+// 60, 5, 79, 88, 18, 71, 36, 44, 22, 89, 40, 59, 80, 81, 67, 25, 54, 13, 64,
+// 56, 39, 48, 92, 84, 94, 87, 90, 77, 63, 32, 68, 37, 96, 23, 0, 95, 1, 52,
+// 78, 6, 57, 50, 2, 46, 19, 76, 47, 14, 4, 3, 29, 17, 11, 21, 24, 74, 65, 12,
+//  83, 28, 41, 66, 7, 58, 55, 51, 43, 97, 42, 86, 49, 31, 20, 75, 70, 34, 33,
+//   38, 8, 15, 62, 35, 61, 99, 16]; // 26
+
+// function missingNo(nums) {
+// return  5050 - (nums.reduce(function(a,b) {return a+ b}));
+
+// }
+// console.log(missingNo(a));
+
+// function missingNo(nums) {
+// 	return 5050 - nums.reduce((a, b) => a + b, 0)
+//   }
+
+//   missingNo =(n)=> {
+//     for(i=0;i<=100;i++){
+//         if(!n.includes(i)){
+//             return i
+//         }}}
+
+// 7 kyu
+// Return the Missing Element
+// let ar = [0,5,1,3,2,9,7,6,4];
+// function getMissingElement(superImportantArray){
+// 	return 55 - superImportantArray.reduce(function(a,b) {return a+b});
+// 	}
+
+// 	console.log(getMissingElement(ar));
+
+// 7 kyu
+// Even numbers in an array
+// let array = [-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26];
+// let number = 3;
+
+// function evenNumbers(array, number) {
+//     let a = array.filter(function (item) {
+//         if (item % 2 === 0 || item % 2 === -0) {
+//             return item;
+//         }
+//     });
+
+//     return a.slice(-number);
+// }
+// console.log(evenNumbers(array, number));
+
+// const evenNumbers = (array, number) => array
+// .filter(item => item % 2 === 0).slice(-number);
+
+// 7 kyu
+// Find the vowels
+// let word = "apPle";
+// function vowelIndices(word){
+// 	let a = word.split('');
+
+// 	let b = word.match((/[aeiouy]/gi));
+// 	return b;
+//   }
+//   console.log(vowelIndices(word));
+
+// 8 kyu
+// Find Nearest square number
+// let c = 26;
+// function nearestSq(n){
+// 	let b = Math.round(Math.sqrt(n));
+// 	return b * b;
+// }
+
+// console.log(nearestSq(c));
+
+// function nearestSq(n){
+//     return Math.round(n**0.5)**2
+// }
+
+// 8 kyu
+// Beginner Series #4 Cockroach
+// let speed = 1.08;
+// function cockroachSpeed(s) {
+// 	return Math.floor((s * 100000) / 3600);
+// }
+
+// console.log(cockroachSpeed(speed));
+// const cockroachSpeed = s => Math.floor(s / 0.036);
+
+// 8 kyu
+// Do I get a bonus?
+// let salary = 1000;
+// let bonus = true;
+// function bonusTime(salary, bonus) {
+// 	if (bonus === true) {
+// 		return `${"£"}` + salary * 10;
+// 	} if (bonus === false) {
+// 		return `${"£"}` + salary;
+// 	}
 
 
