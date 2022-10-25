@@ -3239,3 +3239,47 @@
 // 	}
 
 
+// 7 kyu
+// Fix My Phone Numbers!
+
+
+// function isItANum(str) {
+// 	let a = str.replace(/[\s\D]/gi,'');
+
+// 	if( a[0] == '0' && a.length == 11) {
+// 		return a
+// 	} else {
+// 		return "Not a phone number"
+// 	}
+// 	}
+
+// console.log(isItANum("S:)0207ER GQREG88349F82!efRF)"))
+
+// 7 kyu
+// esreveR
+
+// reverse = function(array) {
+// 	return array.reverse()
+//   }
+
+//   console.log(reverse([645, 801, 942, 886, 950, 103, 8, 32, 251]))
+
+// 7 kyu
+// Sum even numbers
+
+function sumEvenNumbers(input) {
+	let a = input.filter(function(number) {
+		return number % 2 == 0
+	})
+
+	if (input.length == 0 || a.length == 0) {
+		return 0
+	} else {
+			let b = a.reduce(function(sum, current) {
+				return sum + current
+			})
+			return b
+	}
+ }
+
+  console.log(sumEvenNumbers([1]))
