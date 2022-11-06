@@ -1,5 +1,3 @@
-"use strict";
-
 // task 2
 // const names = ["Max", "John", "Mark", "Max", "John", "Mark"];
 
@@ -2501,8 +2499,6 @@
 
 // console.log(minSum([5,4,2,3]));
 
-
-
 // Sum of all arguments
 // function sum(a,b) {
 // 	return a + b
@@ -2514,7 +2510,7 @@
 // Build a square
 
 // function generateShape(integer){
-	
+
 // 	console.log('*' + integer.repeat(integer));
 // }
 // console.log(generateShape(5));
@@ -2544,7 +2540,7 @@
 // function cubeOdd(arr) {
 // 	if ()
 // let a = arr.filter((i)=> {
- 
+
 // 	return i % 2 >0
 // });
 // let b = a.map((item) => {
@@ -2555,11 +2551,10 @@
 // });
 // 	}
 
-
 // console.log(cubeOdd([1, 2, 3, 4]));
 
 // function cubeOdd(arr) {
-	
+
 // let a = arr.filter((i)=> {
 // 	return i % 2 !== 0
 // }).map((item) => {
@@ -3238,10 +3233,8 @@
 // 		return `${"£"}` + salary;
 // 	}
 
-
 // 7 kyu
 // Fix My Phone Numbers!
-
 
 // function isItANum(str) {
 // 	let a = str.replace(/[\s\D]/gi,'');
@@ -3267,19 +3260,161 @@
 // 7 kyu
 // Sum even numbers
 
-function sumEvenNumbers(input) {
-	let a = input.filter(function(number) {
-		return number % 2 == 0
-	})
+// function sumEvenNumbers(input) {
+// 	let a = input.filter(function(number) {
+// 		return number % 2 == 0
+// 	})
 
-	if (input.length == 0 || a.length == 0) {
-		return 0
-	} else {
-			let b = a.reduce(function(sum, current) {
-				return sum + current
-			})
-			return b
-	}
- }
+// 	if (input.length == 0 || a.length == 0) {
+// 		return 0
+// 	} else {
+// 			let b = a.reduce(function(sum, current) {
+// 				return sum + current
+// 			})
+// 			return b
+// 	}
+//  }
 
-  console.log(sumEvenNumbers([1]))
+//   console.log(sumEvenNumbers([1]))
+
+// /* 15:36 26-10-2022 */
+// /*  */
+// document.querySelector("");
+// console.log("")
+
+// example sum(1)(2)(3)(5)
+// function sum(n){
+// 	console.log(n)
+// 	return function(a){
+// 		return sum(a + n)
+// 	}
+// }
+
+// sum(5)(1)(3)
+
+// function d(){
+// 	b = 5
+// 	for(let i = 1; i <= b; i++) {
+// 		console.log("*".repeat(i))
+// 	}
+// }
+// d()
+// console.log(typeof(null))
+
+// Дан массив объектов. Отсортировать товары:
+// 1) по количеству .
+// 2) по цене (если цены две, то брать newUan)
+
+const items = [
+    {
+        ratingRevievs: "264 wdwd",
+        price: {
+            oldUan: '4333',
+            newUan: '3799',
+        },
+        name: "Motorola MOTO G4(XT1622) Black",
+    },
+    {
+        ratingRevievs: "1355 wsdqwdwq",
+        price: '4999',
+        name: "Samsung Galaxy J7 J700H/DS Black + карта памяти 16 + чехол + защитное стекло!",
+    },
+    {
+        ratingRevievs: 426,
+        price: '5199',
+        name: "Samsung Galaxy J5 (2016) J510H/DS Black + защитное стекло + чехол!",
+    },
+    {
+        ratingRevievs: 403,
+        price: '4349',
+        name: "Xiaomi Redmi Note 4X 3/32GB Black",
+    },
+    {
+        ratingRevievs: 488,
+        price: '6199',
+        name: "Samsung GalaxyJ7 (2016) J710F/DS Gold + защитное стекло + чехол!",
+    },
+    {
+        ratingRevievs: 198,
+        price: {
+            oldUan: '3495',
+            newUan: '2995',
+        },
+        name: "Lenovo K5 (A6020a40) Silver",
+    },
+    {
+        ratingRevievs: 352,
+        price: { oldUan: '9799', newUan: '7999' },
+        name: "Apple iPhone 5s Space Gray",
+    },
+    {
+        ratingRevievs: 59,
+        price: '5999',
+        name: "Nokia 5 Dual Sim Tempered Blue",
+    },
+    {
+        ratingRevievs: 86,
+        price: {
+            oldUan: '24999',
+            newUan: '22999',
+        },
+        name: "Samsung Galaxy S8 64GB Midnight Black",
+    },
+];
+
+function sortByFeedbacks(arr) {
+    const temp = JSON.parse(JSON.stringify(arr));
+    temp.forEach((item) => {
+        item.ratingRevievs = +item.ratingRevievs.toString().replace(/\D/g, "");
+    });
+    temp.sort((a, b) => (a.ratingRevievs > b.ratingRevievs ? 1 : -1));
+
+    document.querySelector(".result").innerHTML = "";
+    temp.forEach((item) => {
+		if (typeof (item.price === "string")) {
+            item.price = +item.price.toString().replace(/\D/g, "");
+        } else {
+            item.price = item.price.newUan.toString().replace(/\D/g, "");
+        }
+        document.querySelector(".result").innerHTML += `
+		<h3>Название: ${item.name}</h3>
+		<div>Цена: ${item.price} dollars</div>
+		<div>Количество отзывов: ${item.ratingRevievs};</div>
+		`;
+    });
+}
+const buttonFeed = document.querySelector(".feed");
+const buttonPrice = document.querySelector(".price");
+
+buttonFeed.addEventListener("click", () => {
+    sortByFeedbacks(items);
+});
+
+
+
+function sortByPrice(arr) {
+    const temp = JSON.parse(JSON.stringify(arr));
+
+    temp.forEach((item) => {
+        if (typeof (item.price === "string")) {
+            item.price = +item.price.toString().replace(/\D/g, "");
+        } else {
+            item.price = item.price.newUan;
+        }
+    });
+    temp.sort((a, b) => (a.price > b.price ? 1 : -1));
+
+    document.querySelector(".result").innerHTML = "";
+
+    temp.forEach((item) => {
+        document.querySelector(".result").innerHTML += `
+			<h3>Название: ${item.name}</h3>
+			<div>Цена: ${item.price}!!!</div>
+			<div>Количество отзывов: ${item.ratingRevievs}</div>
+			`;
+    });
+}
+
+buttonPrice.addEventListener("click", () => {
+    sortByPrice(items);
+});
