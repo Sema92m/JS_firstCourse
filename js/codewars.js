@@ -3302,119 +3302,147 @@
 // console.log(typeof(null))
 
 // Дан массив объектов. Отсортировать товары:
-// 1) по количеству .
+// 1) по количеству отзывов.
 // 2) по цене (если цены две, то брать newUan)
+
+const result = document.querySelector(".result");
+const btnFeed = document.querySelector(".feed");
+const btnPrice = document.querySelector(".price");
+
+// btnFeed.addEventListener("click", () => {
+//     // sortByRevievs(items)
+// });
+// btnPrice.addEventListener("click", () => {
+//     // sortByPrice(items)
+// });
 
 const items = [
     {
-        ratingRevievs: "264 wdwd",
-        price: {
-            oldUan: '4333',
-            newUan: '3799',
-        },
-        name: "Motorola MOTO G4(XT1622) Black",
+        ratingRevievs: "264 отзыва",
+        price: { oldUan: "4 333 грн", newUan: "3 799 грн" },
+        name: "Motorola MOTO G4 (XT1622) Black",
     },
     {
-        ratingRevievs: "1355 wsdqwdwq",
-        price: '4999',
-        name: "Samsung Galaxy J7 J700H/DS Black + карта памяти 16 + чехол + защитное стекло!",
+        ratingRevievs: "1355 отзывов",
+        price: "4 999 грн",
+        name: "Samsung Galaxy J7 J700H/DS",
     },
     {
-        ratingRevievs: 426,
-        price: '5199',
-        name: "Samsung Galaxy J5 (2016) J510H/DS Black + защитное стекло + чехол!",
+        ratingRevievs: "426 отзывов",
+        price: "5 199 грн",
+        name: "Samsung Galaxy J5 (2016)",
     },
     {
-        ratingRevievs: 403,
-        price: '4349',
+        ratingRevievs: "403 отзыва",
+        price: "4 349 грн",
         name: "Xiaomi Redmi Note 4X 3/32GB Black",
     },
     {
-        ratingRevievs: 488,
-        price: '6199',
-        name: "Samsung GalaxyJ7 (2016) J710F/DS Gold + защитное стекло + чехол!",
+        ratingRevievs: "488 отзывов",
+        price: "6 199 грн",
+        name: "Samsung Galaxy J7 (2016) J710F/DS Gold ",
     },
     {
-        ratingRevievs: 198,
-        price: {
-            oldUan: '3495',
-            newUan: '2995',
-        },
+        ratingRevievs: "198 отзывов",
+        price: { oldUan: "3 495 грн", newUan: "2 995 грн" },
         name: "Lenovo K5 (A6020a40) Silver",
     },
     {
-        ratingRevievs: 352,
-        price: { oldUan: '9799', newUan: '7999' },
-        name: "Apple iPhone 5s Space Gray",
-    },
-    {
-        ratingRevievs: 59,
-        price: '5999',
-        name: "Nokia 5 Dual Sim Tempered Blue",
-    },
-    {
-        ratingRevievs: 86,
-        price: {
-            oldUan: '24999',
-            newUan: '22999',
-        },
-        name: "Samsung Galaxy S8 64GB Midnight Black",
+        ratingRevievs: "352 отзыва",
+        price: { oldUan: "9 799 грн", newUan: "7 999 грн" },
+        name: "Apple iPhone 5s 16GB Space Gray",
     },
 ];
 
-function sortByFeedbacks(arr) {
-    const temp = JSON.parse(JSON.stringify(arr));
-    temp.forEach((item) => {
-        item.ratingRevievs = +item.ratingRevievs.toString().replace(/\D/g, "");
+function sortRevievs(arr) {
+    const newArr = JSON.parse(JSON.stringify(arr));
+    newArr.forEach((item) => {
+        item.ratingRevievs = item.ratingRevievs.replace(/\D/g, "") * 1;
     });
-    temp.sort((a, b) => (a.ratingRevievs > b.ratingRevievs ? 1 : -1));
+    newArr.sort((a, b) => (a.ratingRevievs > b.ratingRevievs ? 1 : -1));
 
-    document.querySelector(".result").innerHTML = "";
-    temp.forEach((item) => {
-		if (typeof (item.price === "string")) {
-            item.price = +item.price.toString().replace(/\D/g, "");
+    result.innerHTML = "";
+
+    newArr.forEach((item) => {
+        if(typeof(item.price) === 'string') {
+            item.price = item.price.replace(/\D/g, "") * 1;
         } else {
-            item.price = item.price.newUan.toString().replace(/\D/g, "");
+            item.price = item.price.newUan.replace(/\D/g, "") * 1;
         }
-        document.querySelector(".result").innerHTML += `
-		<h3>Название: ${item.name}</h3>
-		<div>Цена: ${item.price} dollars</div>
-		<div>Количество отзывов: ${item.ratingRevievs};</div>
-		`;
-    });
-}
-const buttonFeed = document.querySelector(".feed");
-const buttonPrice = document.querySelector(".price");
-
-buttonFeed.addEventListener("click", () => {
-    sortByFeedbacks(items);
-});
-
-
-
-function sortByPrice(arr) {
-    const temp = JSON.parse(JSON.stringify(arr));
-
-    temp.forEach((item) => {
-        if (typeof (item.price === "string")) {
-            item.price = +item.price.toString().replace(/\D/g, "");
-        } else {
-            item.price = item.price.newUan;
-        }
-    });
-    temp.sort((a, b) => (a.price > b.price ? 1 : -1));
-
-    document.querySelector(".result").innerHTML = "";
-
-    temp.forEach((item) => {
-        document.querySelector(".result").innerHTML += `
-			<h3>Название: ${item.name}</h3>
-			<div>Цена: ${item.price}!!!</div>
-			<div>Количество отзывов: ${item.ratingRevievs}</div>
-			`;
+        result.innerHTML += `
+            <div>${item.name}</div>
+            <div style="background-color: lightgreen">${item.ratingRevievs} revievs</div>
+            <div>${item.price} usd.</div>
+            `;
     });
 }
 
-buttonPrice.addEventListener("click", () => {
-    sortByPrice(items);
+function sortPrice(arr) {
+    const newArr = JSON.parse(JSON.stringify(arr));
+    newArr.forEach((item) => {
+        if (typeof item.price === "string") {
+            item.price = item.price.replace(/\D/g, "") * 1;
+        } else {
+            item.price = item.price.newUan.replace(/\D/g, "") * 1;
+        }
+    });
+    newArr.sort((a, b) => (a.price > b.price ? 1 : -1));
+
+    result.innerHTML = "";
+    newArr.forEach((item) => {
+        result.innerHTML += `
+    <div>${item.name}</div>
+    <div style='background-color: orange'>${item.price} usd.</div>
+    <div>${item.ratingRevievs}</div>
+    `;
+    });
+    // console.log(newArr);
+}
+
+btnPrice.addEventListener("click", () => {
+    sortPrice(items);
 });
+btnFeed.addEventListener("click", () => {
+    sortRevievs(items);
+});
+
+// function sortByPrice(array) {
+//     const temp = JSON.parse(JSON.stringify(array));
+//     temp.forEach(item => {
+//         if (typeof(item.price) === 'string') {
+//             item.price = +item.price.replace(/\D/g,'')
+//         } else {
+//             item.price = item.price.newUan.replace(/\D/g,'')
+//         }
+//     });
+//     temp.sort((a,b) => a.price > b.price ? 1 : -1)
+//     result.innerHTML = '';
+//     temp.forEach(item => {
+//         result.innerHTML += `
+//         <div>${item.name}</div>
+//         <div>${item.ratingRevievs}</div>
+//         <div>${item.price}</div>
+//         `
+//     })
+// }
+
+// function sortByRevievs(array) {
+//     const temp = JSON.parse(JSON.stringify(array));
+//     temp.forEach(item => {
+//         item.ratingRevievs = +item.ratingRevievs.replace(/\D/g,'')
+//     })
+//     temp.sort((a,b) => a.ratingRevievs > b.ratingRevievs ? -1 : 1);
+//     result.innerHTML = '';
+//     temp.forEach(item => {
+//         if (typeof(item.price) === 'string') {
+//             item.price = +item.price.replace(/\D/g,'')
+//         } else {
+//             item.price = item.price.newUan.replace(/\D/g,'')
+//         }
+//         result.innerHTML += `
+//         <div>${item.name}</div>
+//         <div>${item.price}</div>
+//         <div>${item.ratingRevievs}</div>
+//         `
+//         })
+//     }
