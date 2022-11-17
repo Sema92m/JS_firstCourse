@@ -3316,95 +3316,95 @@ const btnPrice = document.querySelector(".price");
 //     // sortByPrice(items)
 // });
 
-const items = [
-    {
-        ratingRevievs: "264 отзыва",
-        price: { oldUan: "4 333 грн", newUan: "3 799 грн" },
-        name: "Motorola MOTO G4 (XT1622) Black",
-    },
-    {
-        ratingRevievs: "1355 отзывов",
-        price: "4 999 грн",
-        name: "Samsung Galaxy J7 J700H/DS",
-    },
-    {
-        ratingRevievs: "426 отзывов",
-        price: "5 199 грн",
-        name: "Samsung Galaxy J5 (2016)",
-    },
-    {
-        ratingRevievs: "403 отзыва",
-        price: "4 349 грн",
-        name: "Xiaomi Redmi Note 4X 3/32GB Black",
-    },
-    {
-        ratingRevievs: "488 отзывов",
-        price: "6 199 грн",
-        name: "Samsung Galaxy J7 (2016) J710F/DS Gold ",
-    },
-    {
-        ratingRevievs: "198 отзывов",
-        price: { oldUan: "3 495 грн", newUan: "2 995 грн" },
-        name: "Lenovo K5 (A6020a40) Silver",
-    },
-    {
-        ratingRevievs: "352 отзыва",
-        price: { oldUan: "9 799 грн", newUan: "7 999 грн" },
-        name: "Apple iPhone 5s 16GB Space Gray",
-    },
-];
+// const items = [
+//     {
+//         ratingRevievs: "264 отзыва",
+//         price: { oldUan: "4 333 грн", newUan: "3 799 грн" },
+//         name: "Motorola MOTO G4 (XT1622) Black",
+//     },
+//     {
+//         ratingRevievs: "1355 отзывов",
+//         price: "4 999 грн",
+//         name: "Samsung Galaxy J7 J700H/DS",
+//     },
+//     {
+//         ratingRevievs: "426 отзывов",
+//         price: "5 199 грн",
+//         name: "Samsung Galaxy J5 (2016)",
+//     },
+//     {
+//         ratingRevievs: "403 отзыва",
+//         price: "4 349 грн",
+//         name: "Xiaomi Redmi Note 4X 3/32GB Black",
+//     },
+//     {
+//         ratingRevievs: "488 отзывов",
+//         price: "6 199 грн",
+//         name: "Samsung Galaxy J7 (2016) J710F/DS Gold ",
+//     },
+//     {
+//         ratingRevievs: "198 отзывов",
+//         price: { oldUan: "3 495 грн", newUan: "2 995 грн" },
+//         name: "Lenovo K5 (A6020a40) Silver",
+//     },
+//     {
+//         ratingRevievs: "352 отзыва",
+//         price: { oldUan: "9 799 грн", newUan: "7 999 грн" },
+//         name: "Apple iPhone 5s 16GB Space Gray",
+//     },
+// ];
 
-function sortRevievs(arr) {
-    const newArr = JSON.parse(JSON.stringify(arr));
-    newArr.forEach((item) => {
-        item.ratingRevievs = item.ratingRevievs.replace(/\D/g, "") * 1;
-    });
-    newArr.sort((a, b) => (a.ratingRevievs > b.ratingRevievs ? 1 : -1));
+// function sortRevievs(arr) {
+//     const newArr = JSON.parse(JSON.stringify(arr));
+//     newArr.forEach((item) => {
+//         item.ratingRevievs = item.ratingRevievs.replace(/\D/g, "") * 1;
+//     });
+//     newArr.sort((a, b) => (a.ratingRevievs > b.ratingRevievs ? 1 : -1));
 
-    result.innerHTML = "";
+//     result.innerHTML = "";
 
-    newArr.forEach((item) => {
-        if(typeof(item.price) === 'string') {
-            item.price = item.price.replace(/\D/g, "") * 1;
-        } else {
-            item.price = item.price.newUan.replace(/\D/g, "") * 1;
-        }
-        result.innerHTML += `
-            <div>${item.name}</div>
-            <div style="background-color: lightgreen">${item.ratingRevievs} revievs</div>
-            <div>${item.price} usd.</div>
-            `;
-    });
-}
+//     newArr.forEach((item) => {
+//         if(typeof(item.price) === 'string') {
+//             item.price = item.price.replace(/\D/g, "") * 1;
+//         } else {
+//             item.price = item.price.newUan.replace(/\D/g, "") * 1;
+//         }
+//         result.innerHTML += `
+//             <div>${item.name}</div>
+//             <div style="background-color: lightgreen">${item.ratingRevievs} revievs</div>
+//             <div>${item.price} usd.</div>
+//             `;
+//     });
+// }
 
-function sortPrice(arr) {
-    const newArr = JSON.parse(JSON.stringify(arr));
-    newArr.forEach((item) => {
-        if (typeof item.price === "string") {
-            item.price = item.price.replace(/\D/g, "") * 1;
-        } else {
-            item.price = item.price.newUan.replace(/\D/g, "") * 1;
-        }
-    });
-    newArr.sort((a, b) => (a.price > b.price ? 1 : -1));
+// function sortPrice(arr) {
+//     const newArr = JSON.parse(JSON.stringify(arr));
+//     newArr.forEach((item) => {
+//         if (typeof item.price === "string") {
+//             item.price = item.price.replace(/\D/g, "") * 1;
+//         } else {
+//             item.price = item.price.newUan.replace(/\D/g, "") * 1;
+//         }
+//     });
+//     newArr.sort((a, b) => (a.price > b.price ? 1 : -1));
 
-    result.innerHTML = "";
-    newArr.forEach((item) => {
-        result.innerHTML += `
-    <div>${item.name}</div>
-    <div style='background-color: orange'>${item.price} usd.</div>
-    <div>${item.ratingRevievs}</div>
-    `;
-    });
-    // console.log(newArr);
-}
+//     result.innerHTML = "";
+//     newArr.forEach((item) => {
+//         result.innerHTML += `
+//     <div>${item.name}</div>
+//     <div style='background-color: orange'>${item.price} usd.</div>
+//     <div>${item.ratingRevievs}</div>
+//     `;
+//     });
+//     // console.log(newArr);
+// }
 
-btnPrice.addEventListener("click", () => {
-    sortPrice(items);
-});
-btnFeed.addEventListener("click", () => {
-    sortRevievs(items);
-});
+// btnPrice.addEventListener("click", () => {
+//     sortPrice(items);
+// });
+// btnFeed.addEventListener("click", () => {
+//     sortRevievs(items);
+// });
 
 // function sortByPrice(array) {
 //     const temp = JSON.parse(JSON.stringify(array));
@@ -3446,3 +3446,106 @@ btnFeed.addEventListener("click", () => {
 //         `
 //         })
 //     }
+
+
+
+// 7 kyu
+// Check the exam
+
+
+
+// function checkExam(array1, array2) {
+
+//    }
+
+//    console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+
+
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//    return mpg*fuelLeft >= distanceToPump; 
+//  };
+
+
+//  console.log(zeroFuel(50,25,2));
+
+// var countSheep = function (num){
+//    let result = '';
+//    for( let i = 1; i <= num; i++) {
+//       result += `${i} sheep...`;
+//    }
+//    return result;
+// };
+
+// console.log((countSheep(5)));
+
+
+// var min = function(list){
+
+// return Math.min(...list);
+// };
+
+// // var max = function(list){
+
+// //    return list[0];
+// // }
+// console.log(min([-52, 56, 30, 29, -54, 0, -110]));
+
+
+// function points(games) {
+//   let sum=0;
+//   for (let i=0; i<games.length; ++i)
+//   {
+
+//       if(games[i][0] > games[i][2]) {
+//          sum += 3;
+//       }  
+//       if(games[i][0] == games[i][2]) {
+//          sum += 1;
+//       } 
+      
+    
+//    }
+//    return sum;
+
+// }'
+// console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]));
+
+
+// function getGrade (s1, s2, s3) {
+//    let score =  (s1 + s2 + s3)/3;
+//    if (score < 60 ) {
+//       return 'F';
+//    } else if(score <70) {
+//       return 'D';
+   
+//    } else if(score <80) {
+//       return 'C';
+//    }
+//     else if(score <90) {
+//       return 'B';
+//    } else return 'A';
+   
+//  }
+//  console.log(getGrade(82,5,87));
+
+// function setAlarm(employed, vacation){
+//   return employed  &&  !vacation 
+// }
+// console.log(setAlarm(true, false));
+
+
+// function removeExclamationMarks(s) {
+//    return s.replace(/[!]/g,'')
+//  }
+
+//  console.log(removeExclamationMarks('ad!asd1!!'))
+
+
+//  function remove (string) {
+  
+//   let a =  string.replace(/[!]/g,'') + '!'
+//   return a 
+  
+
+//  }
+//  console.log(remove("!Hi!"))
