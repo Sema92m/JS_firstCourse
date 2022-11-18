@@ -3305,9 +3305,9 @@
 // 1) по количеству отзывов.
 // 2) по цене (если цены две, то брать newUan)
 
-const result = document.querySelector(".result");
-const btnFeed = document.querySelector(".feed");
-const btnPrice = document.querySelector(".price");
+// const result = document.querySelector(".result");
+// const btnFeed = document.querySelector(".feed");
+// const btnPrice = document.querySelector(".price");
 
 // btnFeed.addEventListener("click", () => {
 //     // sortByRevievs(items)
@@ -3447,12 +3447,8 @@ const btnPrice = document.querySelector(".price");
 //         })
 //     }
 
-
-
 // 7 kyu
 // Check the exam
-
-
 
 // function checkExam(array1, array2) {
 
@@ -3460,11 +3456,9 @@ const btnPrice = document.querySelector(".price");
 
 //    console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
 
-
 // const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-//    return mpg*fuelLeft >= distanceToPump; 
+//    return mpg*fuelLeft >= distanceToPump;
 //  };
-
 
 //  console.log(zeroFuel(50,25,2));
 
@@ -3478,7 +3472,6 @@ const btnPrice = document.querySelector(".price");
 
 // console.log((countSheep(5)));
 
-
 // var min = function(list){
 
 // return Math.min(...list);
@@ -3490,7 +3483,6 @@ const btnPrice = document.querySelector(".price");
 // // }
 // console.log(min([-52, 56, 30, 29, -54, 0, -110]));
 
-
 // function points(games) {
 //   let sum=0;
 //   for (let i=0; i<games.length; ++i)
@@ -3498,18 +3490,16 @@ const btnPrice = document.querySelector(".price");
 
 //       if(games[i][0] > games[i][2]) {
 //          sum += 3;
-//       }  
+//       }
 //       if(games[i][0] == games[i][2]) {
 //          sum += 1;
-//       } 
-      
-    
+//       }
+
 //    }
 //    return sum;
 
 // }'
 // console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]));
-
 
 // function getGrade (s1, s2, s3) {
 //    let score =  (s1 + s2 + s3)/3;
@@ -3517,22 +3507,21 @@ const btnPrice = document.querySelector(".price");
 //       return 'F';
 //    } else if(score <70) {
 //       return 'D';
-   
+
 //    } else if(score <80) {
 //       return 'C';
 //    }
 //     else if(score <90) {
 //       return 'B';
 //    } else return 'A';
-   
+
 //  }
 //  console.log(getGrade(82,5,87));
 
 // function setAlarm(employed, vacation){
-//   return employed  &&  !vacation 
+//   return employed  &&  !vacation
 // }
 // console.log(setAlarm(true, false));
-
 
 // function removeExclamationMarks(s) {
 //    return s.replace(/[!]/g,'')
@@ -3540,12 +3529,92 @@ const btnPrice = document.querySelector(".price");
 
 //  console.log(removeExclamationMarks('ad!asd1!!'))
 
-
 //  function remove (string) {
-  
-//   let a =  string.replace(/[!]/g,'') + '!'
-//   return a 
-  
+//   let a = string.split(' ');
+//   a.forEach(element => element.replace(/[!]/g,''))
+
+// //   let a =  string.replace(/[!]/g,'') + '!'
+//   return a
 
 //  }
-//  console.log(remove("!Hi!"))
+//  console.log(remove("Hi! Hi!"))
+
+//  function doubleChar(str) {
+// let a = '';
+// for(let i = 0; i < str.length; i++) {
+// 	 a += str[i] + str[i];
+// }
+// return a
+//   }
+//   console.log(doubleChar("String"));
+
+//  function doubleChar(str) {
+// 	return  a = str.split('').map(item =>item + item + item).join('');
+//    }
+//      console.log(doubleChar("String"));
+
+// function updateLight(current) {
+// 	if (current === 'green') {
+// 		return 'yellow';
+// 	}
+// 	if (current === 'yellow') {
+// 		return 'red';
+// 	}
+// 	if (current === 'red') {
+// 		return 'green';
+// 	}
+
+// }
+// console.log(updateLight("green"));
+
+// function getPlanetName(id) {
+//     var name;
+//     switch (id) {
+//         case 1:
+//             name = "Mercury";
+// 			break;
+//         case 2:
+//             name = "Venus";
+// 			break;
+//         case 3:
+//             name = "Earth";
+// 			break;
+//         case 4:
+//             name = "Mars";
+// 			break;
+//         case 5:
+//             name = "Jupiter";
+// 			break;
+//         case 6:
+//             name = "Saturn";
+// 			break;
+//         case 7:
+//             name = "Uranus";
+// 			break;
+//         case 8:
+//             name = "Neptune";
+// 			break;
+//     }
+
+//     return name;
+// }
+// console.log(getPlanetName(3))
+
+// function getPlanetName(id) {
+//     return {
+//         1: "Mercury",
+//         2: "Venus",
+//         3: "Earth",
+//         4: "Mars",
+//         5: "Jupiter",
+//         6: "Saturn",
+//         7: "Uranus",
+//         8: "Neptune",
+//     }[id];
+// }
+// console.log(getPlanetName(3))
+
+
+// function otherAngle(a, b) {
+// 	return Math.abs(a + b - 180) ;
+//   }
