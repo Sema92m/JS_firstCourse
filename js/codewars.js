@@ -3618,3 +3618,26 @@
 // function otherAngle(a, b) {
 // 	return Math.abs(a + b - 180) ;
 //   }
+
+// const areaOrPerimeter = function(l , w) {
+// 	if(l == w )
+//   {return l*w
+//   } if (l!==w) {
+// 	return (l+w)*2
+//   }
+//   };
+//   console.log(areaOrPerimeter(2,3))
+
+
+//   function firstNonConsecutive (arr) {
+// 	for(let i = 0; i < arr.length; i++) {
+// 		if(arr[i-1] + 1 !== arr[i]) return arr[i]
+// 	}
+// }
+// console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
+
+function oddCount(n){
+	return Math.floor(n / 2)
+		
+  }
+  console.log(oddCount(5))
