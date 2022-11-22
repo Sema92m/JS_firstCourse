@@ -3614,7 +3614,6 @@
 // }
 // console.log(getPlanetName(3))
 
-
 // function otherAngle(a, b) {
 // 	return Math.abs(a + b - 180) ;
 //   }
@@ -3628,7 +3627,6 @@
 //   };
 //   console.log(areaOrPerimeter(2,3))
 
-
 //   function firstNonConsecutive (arr) {
 // 	for(let i = 0; i < arr.length; i++) {
 // 		if(arr[i-1] + 1 !== arr[i]) return arr[i]
@@ -3636,8 +3634,145 @@
 // }
 // console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
 
-function oddCount(n){
-	return Math.floor(n / 2)
-		
-  }
-  console.log(oddCount(5))
+// function oddCount(n){
+// 	return Math.floor(n / 2)
+
+//   }
+//   console.log(oddCount(5))
+
+// function removeEveryOther(arr){
+// let res= [];
+// for(let i =0; i< arr.length; i +=2){
+//   res.push(arr[i])
+// }
+// return res
+// }
+
+// function removeEveryOther(arr){
+//   return arr.filter(function(elem, index) {
+//     return index % 2 === 0;
+//   });
+// }
+
+// function removeEveryOther(arr){
+//   //your code here
+//   for (var i = 1; i < arr.length;i++){
+//     console.log(i)
+//       arr.splice(i,2);
+//   }
+//   return arr;
+// }
+// console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+// Место для первой задачи
+
+// При помощи цикла выведите числа от 5 до 10 в консоль. 5 и 10 включительно. Цикл можно использовать любой
+// function firstTask() {
+//   for(let i = 5; i<11; i++) {
+//      console.log(i)
+//   }
+
+// }
+// firstTask()
+
+// При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
+
+// (function a(){
+//   for(let i = 20; i >=10; i--){
+//     if(i< 13) {
+//       break
+//     }
+//     console.log(i)
+//   }
+// })()
+
+// При помощи цикла for выведите чётные числа от 2 до 10 включительно
+
+// function a(){
+//   for(let i=2;i<=10; i+=2 ){
+//     console.log(i)
+//   }
+// }
+// a()
+
+// Место для четвертой задачи
+
+// Цикл, который нужно переписать:
+
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+// let num= 1;
+// while (num<=15){
+// num +=2
+// console.log(num)
+// }
+
+// Заполните массив цифрами от 5 до 10 включительно. Помните, что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
+
+// let arr = []
+// function a(){
+//   for(let i= 5; i<=10; i++) {
+//     arr.push(i)
+//   }
+//   console.log(arr)
+// }
+// a()
+
+// Заполните новый массив (result) числами из старого (arr). Количество элементов в массиве можно получить как arr.length, а к элементам обращаемся все так же: arr[0], arr[1] и тд.
+// Должен получиться точно такой же массив
+// Место для первой задачи
+
+// Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+
+// copy array dublicate clone копирование клонирование массива
+// const arr = [3, 5, 8, 16, 20, 23, 50];
+// let result = [];
+// result = [...arr];
+// result = arr.slice()
+// result = arr.concat(arr)
+// for(let i = 0; i < arr.length; i++){
+//   result[i] = arr[i]
+// }
+// numbers = [1, 2, 3];
+// numbersCopy = numbers.map((x) => x);
+// numbersCopy1 = numbers.slice();
+// console.log(result)
+
+// const arr = [3, 5, "Shopping", 16, "Homework "];
+const arr = [3, 5, 16,'a'];
+const result = [...arr];
+
+
+for (let i = 0; i < result.length; i++) {
+     
+    if(typeof(result[i]) === 'string') {
+        result[i] = `${result[i]} + done`
+    }
+    if(typeof(result[i]) === 'number') {
+        result[i] = result[i] * 2
+    }
+  
+}
+console.log(result);
+
+
+
+
+function thirdTask() {
+    const data = [5, 10, 'Shopping', 20, 'Homework'];
+    const result = [];
+    // result = data.reverse()
+   for (let i = 1; i <= data.length; i++) {
+        result[i - 1] = data[data.length - i]
+    }
+    console.log(result) ;
+    return result
+   
+}
+thirdTask()
