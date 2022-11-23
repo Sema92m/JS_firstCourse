@@ -5,8 +5,11 @@
 
 // const lineCount1 = 5;
 // for(let i=5;i <=lineCount1; i--){
+// 	if(i<1){
+//         break
+//     }
 //   console.log('*'.repeat(i));
-// }//обратная половина елки(от 5 к 1)
+}//обратная половина елки(от 5 к 1)
 
 // let lines = (line = 5),
 //     a = ".",

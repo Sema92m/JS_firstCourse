@@ -3745,34 +3745,75 @@
 // console.log(result)
 
 // const arr = [3, 5, "Shopping", 16, "Homework "];
-const arr = [3, 5, 16,'a'];
-const result = [...arr];
+// const arr = [3, 5, 16,'a'];
+// const result = [...arr];
 
 
-for (let i = 0; i < result.length; i++) {
+// for (let i = 0; i < result.length; i++) {
      
-    if(typeof(result[i]) === 'string') {
-        result[i] = `${result[i]} + done`
-    }
-    if(typeof(result[i]) === 'number') {
-        result[i] = result[i] * 2
-    }
+//     if(typeof(result[i]) === 'string') {
+//         result[i] = `${result[i]} + done`
+//     }
+//     if(typeof(result[i]) === 'number') {
+//         result[i] = result[i] * 2
+//     }
   
-}
-console.log(result);
+// }
+// console.log(result);
 
 
 
 
-function thirdTask() {
-    const data = [5, 10, 'Shopping', 20, 'Homework'];
-    const result = [];
-    // result = data.reverse()
-   for (let i = 1; i <= data.length; i++) {
-        result[i - 1] = data[data.length - i]
-    }
-    console.log(result) ;
-    return result
+// function thirdTask() {
+//     const data = [5, 10, 'Shopping', 20, 'Homework'];
+//     const result = [];
+//     // result = data.reverse()
+//    for(let i = 0; i<=data.length; i++) {
+//     result[i-1] = data[data.length - i]
+//    }
+//     console.log(result) ;
+//     return result
    
+// }
+// thirdTask()
+
+
+// const line = 5
+
+// for(let i = 1; i <= line; i++){
+   
+//      console.log('*'.repeat(i))
+
+// }
+
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+function showExperience(plan) {
+    const {exp} = plan.skills;
+    return exp;
 }
-thirdTask()
+showExperience(personalPlanPeter);
+
+
+
+function showProgrammingLangs(plan) {
+    let str = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+    }
+    return str;
+}
+showProgrammingLangs(personalPlanPeter);
