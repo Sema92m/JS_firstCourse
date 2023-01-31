@@ -3748,21 +3748,17 @@
 // const arr = [3, 5, 16,'a'];
 // const result = [...arr];
 
-
 // for (let i = 0; i < result.length; i++) {
-     
+
 //     if(typeof(result[i]) === 'string') {
 //         result[i] = `${result[i]} + done`
 //     }
 //     if(typeof(result[i]) === 'number') {
 //         result[i] = result[i] * 2
 //     }
-  
+
 // }
 // console.log(result);
-
-
-
 
 // function thirdTask() {
 //     const data = [5, 10, 'Shopping', 20, 'Homework'];
@@ -3773,47 +3769,119 @@
 //    }
 //     console.log(result) ;
 //     return result
-   
+
 // }
 // thirdTask()
-
 
 // const line = 5
 
 // for(let i = 1; i <= line; i++){
-   
+
 //      console.log('*'.repeat(i))
 
 // }
-
-
 
 const personalPlanPeter = {
     name: "Peter",
     age: "29",
     skills: {
-        languages: ['ru', 'eng'],
+        languages: ["ru", "eng"],
         programmingLangs: {
-            js: '20%',
-            php: '10%'
+            js: "20%",
+            php: "10%",
         },
-        exp: '1 month'
-    }
+        exp: "1 month",
+    },
 };
 function showExperience(plan) {
-    const {exp} = plan.skills;
+    const { exp } = plan.skills;
     return exp;
 }
 showExperience(personalPlanPeter);
 
-
-
 function showProgrammingLangs(plan) {
-    let str = '';
-    const {programmingLangs} = plan.skills;
+    let str = "";
+    const { programmingLangs } = plan.skills;
     for (let key in programmingLangs) {
-        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
     }
     return str;
 }
 showProgrammingLangs(personalPlanPeter);
+
+function dontGiveMeFive(start, end) {
+    let arr = [];
+    for (let i = start; i <= end; i++) {
+        i = String(i);
+        if (!i.includes("5")) {
+            arr.push(i);
+        }
+    }
+
+    return arr.length;
+}
+dontGiveMeFive(2, 6);
+
+function removeUrlAnchor(url) {
+    let index = url.indexOf("#");
+    if (index == -1) {
+        return url;
+    }
+    return url.slice(0, index);
+}
+
+removeUrlAnchor("www.codewars.com#");
+
+function factorial(n) {
+    if (n < 0 || n > 12) {
+        return "Should throw RangeError";
+    }
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push(i);
+    }
+    console.log(arr.reduce((a, b) => a * b));
+}
+factorial(13);
+
+function solve(s) {
+    let lowcase = s.replace(/[A-Z]/g, "").length;
+    let upercase = s.replace(/[a-z]/g, "").length;
+    if (lowcase >= upercase) {
+        return s.toLowerCase();
+    } else {
+        return s.toUpperCase();
+    }
+    console.log(lowcase, upercase);
+}
+
+solve("coDe");
+solve("cODe");
+solve("CODe");
+
+var number = function (array) {
+    let arr = [];
+    for (let i = 0; i < array.length; i++) {
+        arr.push(`${i+1}: ${array[i]}`);
+    }
+    return arr;
+};
+(number(["a", "b", "c"]));
+
+
+
+
+
+function sumOfMinimums(arr) {
+    let a = []
+    for(let i = 0; i < arr.length; i++){ 
+    a.push(arr[i].sort((a,b) => a-b)[0])
+    }
+    return a.reduce((a,b) => a+ b);
+
+    }
+    sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]])
