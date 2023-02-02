@@ -3866,22 +3866,62 @@ solve("CODe");
 var number = function (array) {
     let arr = [];
     for (let i = 0; i < array.length; i++) {
-        arr.push(`${i+1}: ${array[i]}`);
+        arr.push(`${i + 1}: ${array[i]}`);
     }
     return arr;
 };
-(number(["a", "b", "c"]));
-
-
-
-
+number(["a", "b", "c"]);
 
 function sumOfMinimums(arr) {
-    let a = []
-    for(let i = 0; i < arr.length; i++){ 
-    a.push(arr[i].sort((a,b) => a-b)[0])
+    let a = [];
+    for (let i = 0; i < arr.length; i++) {
+        a.push(arr[i].sort((a, b) => a - b)[0]);
     }
-    return a.reduce((a,b) => a+ b);
+    return a.reduce((a, b) => a + b);
+}
+sumOfMinimums([
+    [7, 9, 8, 6, 2],
+    [6, 3, 5, 4, 3],
+    [5, 8, 7, 4, 5],
+]);
 
+function inAscOrder(arr) {
+    if(arr.length ==0 || arr.length ==1) {
+        return true
     }
-    sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]])
+    let res = [];
+    let arr1 = JSON.parse(JSON.stringify(arr));
+    let a = arr1.sort((a, b) => a - b);
+    for (let i = 0; i < arr.length; i++) {
+        if (a[i] !== arr[i]) {
+            res.push(1);
+        }
+    }
+    if(res.length > 0) {
+        return false
+    } else {
+        return true
+    }
+
+    
+}
+inAscOrder([1, 2, 4, 7, 19]);
+
+
+
+function inAscOrder1(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > arr[i+1]) {
+            return false
+        }
+    }
+    return true
+    
+}
+inAscOrder1([1, 2, 4, 7, 19]);
+
+
+
+function mxdiflg(a1, a2) {
+    // your code
+}
