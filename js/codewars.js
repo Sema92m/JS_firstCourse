@@ -3886,8 +3886,8 @@ sumOfMinimums([
 ]);
 
 function inAscOrder(arr) {
-    if(arr.length ==0 || arr.length ==1) {
-        return true
+    if (arr.length == 0 || arr.length == 1) {
+        return true;
     }
     let res = [];
     let arr1 = JSON.parse(JSON.stringify(arr));
@@ -3897,31 +3897,42 @@ function inAscOrder(arr) {
             res.push(1);
         }
     }
-    if(res.length > 0) {
-        return false
+    if (res.length > 0) {
+        return false;
     } else {
-        return true
+        return true;
     }
-
-    
 }
 inAscOrder([1, 2, 4, 7, 19]);
 
-
-
 function inAscOrder1(arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > arr[i+1]) {
-            return false
+        if (arr[i] > arr[i + 1]) {
+            return false;
         }
     }
-    return true
-    
+    return true;
 }
 inAscOrder1([1, 2, 4, 7, 19]);
 
-
+function isSortedAndHow(arr) {}
+isSortedAndHow([3, 0, 1]);
 
 function mxdiflg(a1, a2) {
     // your code
 }
+
+
+
+
+function findLongest(array) {
+    const b = []
+    let a = array.map((elem)=> elem + '');
+    for(let i = 0; i< a.length; i++) {
+            b.push(a[i].length);
+        
+    }
+    console.log(b)
+}
+
+findLongest([9000, 8, 800]);
