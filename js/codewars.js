@@ -3936,3 +3936,57 @@ function findLongest(array) {
 }
 
 findLongest([9000, 8, 800]);
+
+
+
+
+function vowelIndices(word){
+    const newWord = word.toLowerCase();
+    let a = []
+    for(let i =0; i < newWord.length; i++) {
+        if (newWord[i] === 'a' || newWord[i] === 'e' || newWord[i] === 'i' || newWord[i] === 'o' ||  newWord[i] === 'u' || newWord[i] === 'y') {
+             a.push(i+1)
+        }
+    }
+    return a;
+  }
+
+ console.log( vowelIndices("super"))
+
+ function vowelIndices(word) {
+    var arr = [];
+    for(var i = 0; i < word.length; i++) {
+      if(/[aeioyu]/i.test(word[i])) {
+        arr.push(i+1);
+      }
+    }
+    return arr;
+  }
+
+  function testinput(re, str){
+    var midstring;
+    if (re.test(str)) {
+      midstring = ' содержит ';
+    } else {
+      midstring = ' не содержит ';
+    }
+    console.log(str + midstring + re.source);
+  }
+
+  testinput('s', "super")
+
+
+
+  function reverseNumber(n) {
+    if(String(n).replace(/0/g,'').length === 1) {
+        return String(n).replace(/0/g,'')*1
+    }
+    if(String(n)[0] == '-') {
+        return  -String(n).split('').slice(1).reverse().join('')*1
+    }
+    return +String(n).split('').reverse().join('')
+  }
+
+console.log(reverseNumber(-123))
+console.log(typeof(reverseNumber(123)))
+
