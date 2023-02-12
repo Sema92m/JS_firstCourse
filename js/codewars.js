@@ -3990,3 +3990,19 @@ function vowelIndices(word){
 console.log(reverseNumber(-123))
 console.log(typeof(reverseNumber(123)))
 
+
+
+function sumCubes(n){
+  if(n===1){
+    return 1
+  } else {
+  return n**3 + sumCubes(n - 1) }
+}
+console.log(sumCubes(3)); 
+
+
+
+
+function distanceBetweenPoints(a, b) {
+  return 0; // your code here
+}
