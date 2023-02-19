@@ -3922,87 +3922,124 @@ function mxdiflg(a1, a2) {
     // your code
 }
 
-
-
-
 function findLongest(array) {
-    const b = []
-    let a = array.map((elem)=> elem + '');
-    for(let i = 0; i< a.length; i++) {
-            b.push(a[i].length);
-        
+    const b = [];
+    let a = array.map((elem) => elem + "");
+    for (let i = 0; i < a.length; i++) {
+        b.push(a[i].length);
     }
-    console.log(b)
+    console.log(b);
 }
 
 findLongest([9000, 8, 800]);
 
-
-
-
-function vowelIndices(word){
+function vowelIndices(word) {
     const newWord = word.toLowerCase();
-    let a = []
-    for(let i =0; i < newWord.length; i++) {
-        if (newWord[i] === 'a' || newWord[i] === 'e' || newWord[i] === 'i' || newWord[i] === 'o' ||  newWord[i] === 'u' || newWord[i] === 'y') {
-             a.push(i+1)
+    let a = [];
+    for (let i = 0; i < newWord.length; i++) {
+        if (
+            newWord[i] === "a" ||
+            newWord[i] === "e" ||
+            newWord[i] === "i" ||
+            newWord[i] === "o" ||
+            newWord[i] === "u" ||
+            newWord[i] === "y"
+        ) {
+            a.push(i + 1);
         }
     }
     return a;
-  }
+}
 
- console.log( vowelIndices("super"))
+console.log(vowelIndices("super"));
 
- function vowelIndices(word) {
+function vowelIndices(word) {
     var arr = [];
-    for(var i = 0; i < word.length; i++) {
-      if(/[aeioyu]/i.test(word[i])) {
-        arr.push(i+1);
-      }
+    for (var i = 0; i < word.length; i++) {
+        if (/[aeioyu]/i.test(word[i])) {
+            arr.push(i + 1);
+        }
     }
     return arr;
-  }
+}
 
-  function testinput(re, str){
+function testinput(re, str) {
     var midstring;
     if (re.test(str)) {
-      midstring = ' содержит ';
+        midstring = " содержит ";
     } else {
-      midstring = ' не содержит ';
+        midstring = " не содержит ";
     }
     console.log(str + midstring + re.source);
-  }
-
-  testinput('s', "super")
-
-
-
-  function reverseNumber(n) {
-    if(String(n).replace(/0/g,'').length === 1) {
-        return String(n).replace(/0/g,'')*1
-    }
-    if(String(n)[0] == '-') {
-        return  -String(n).split('').slice(1).reverse().join('')*1
-    }
-    return +String(n).split('').reverse().join('')
-  }
-
-console.log(reverseNumber(-123))
-console.log(typeof(reverseNumber(123)))
-
-
-
-function sumCubes(n){
-  if(n===1){
-    return 1
-  } else {
-  return n**3 + sumCubes(n - 1) }
 }
-console.log(sumCubes(3)); 
 
+testinput("s", "super");
 
+function reverseNumber(n) {
+    if (String(n).replace(/0/g, "").length === 1) {
+        return String(n).replace(/0/g, "") * 1;
+    }
+    if (String(n)[0] == "-") {
+        return -String(n).split("").slice(1).reverse().join("") * 1;
+    }
+    return +String(n).split("").reverse().join("");
+}
 
+console.log(reverseNumber(-123));
+console.log(typeof reverseNumber(123));
+
+function sumCubes(n) {
+    if (n === 1) {
+        return 1;
+    } else {
+        return n ** 3 + sumCubes(n - 1);
+    }
+}
+console.log(sumCubes(3));
 
 function distanceBetweenPoints(a, b) {
-  return 0; // your code here
+    return 0; // your code here
 }
+
+function maxMultiple(divisor, bound) {
+    return bound - (bound % divisor);
+}
+console.log(maxMultiple(37, 200));
+
+function multiple(x) {
+    if (x % 3 === 0 && x % 5 === 0) {
+        return "BangBoom";
+    } else if (x % 3 === 0) {
+        return "Bang";
+    } else if (x % 5 === 0) {
+        return "Boom";
+    } else return "Miss";
+}
+console.log(multiple(31));
+
+function digitalRoot(n) {
+    return String(n).split("").length === 1
+        ? n
+        : digitalRoot(
+              String(n)
+                  .split("")
+                  .reduce((sum, cur) => +sum + +cur)
+          );
+}
+console.log(digitalRoot(456));
+
+
+
+
+function arrayDiff(a, b) {
+    for(let i = 0; i< a.length; i++) {
+      for(let j = 0; j < b.length; j++){
+        if(a[i] === b[j]) {
+          a.splice(i,1)
+        }
+      }
+    }
+    return a
+  }
+console.log(arrayDiff([-1,2,-9,4,-9,-11],[-1,2,-9,4]));
+
