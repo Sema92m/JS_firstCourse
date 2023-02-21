@@ -4028,18 +4028,76 @@ function digitalRoot(n) {
 }
 console.log(digitalRoot(456));
 
-
-
-
 function arrayDiff(a, b) {
-    for(let i = 0; i< a.length; i++) {
-      for(let j = 0; j < b.length; j++){
-        if(a[i] === b[j]) {
-          a.splice(i,1)
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            if (a[i] === b[j]) {
+                a.splice(i, 1);
+            }
         }
-      }
     }
-    return a
-  }
-console.log(arrayDiff([-1,2,-9,4,-9,-11],[-1,2,-9,4]));
+    return a;
+}
+console.log(arrayDiff([-1, 2, -9, 4, -9, -11], [-1, 2, -9, 4]));
 
+function difference(a, b) {
+    var result = [];
+    for (var i = 0; i < a.length; i++) {
+        if (b.indexOf(a[i]) === -1) {
+            result.push(a[i]);
+        }
+    }
+    return result;
+}
+console.log(difference([-1, 2, -9, 4, -9, -11], [-1, 2, -9, 4]));
+
+function array_diff(a, b) {
+    return a.filter((e) => !b.includes(e));
+}
+
+function switcheroo(x) {
+    return x.replace(/[b]/gi, "B").replace(/[a]/gi, "b").replace(/[B]/g, "a");
+}
+console.log(switcheroo("aaabcccbaaa"));
+
+const switcheroo = (x) => x.replace(/[ab]/g, (x) => (x == "a" ? "b" : "a"));
+
+function hasUniqueChars(str) {
+    return Array.from(new Set(str.split(""))).join("") === str ? true : false;
+}
+console.log(hasUniqueChars("abcdef"));
+let hasUniqueChars = (str) => new Set(str).size === str.length;
+
+function isPowerOfTwo(n) {
+    let a = Math.sqrt(n);
+    if (a == 2) {
+        return true;
+    }
+
+    if (a < 2) {
+        isPowerOfTwo(Math.sqrt(n));
+    }
+}
+console.log(isPowerOfTwo(1024));
+
+const orderedCount = function (text) {
+    let newArr = [];
+    let count = 0;
+    let set = new Set(text.split("").sort());
+    let arr = text.split("").sort();
+
+    for (let i = 0; i < set.length; i++) {
+      if(set[i] =)
+    }
+    return newArr
+};
+console.log(orderedCount("abracadabra"));
+
+
+
+var arr = ['a', 'b', 'c'];
+var eArr = arr.entries();
+
+console.log(eArr); // [0, 'a']
+console.log(eArr.next().value); // [1, 'b']
+console.log(eArr.next().value); // [2, 'c']
