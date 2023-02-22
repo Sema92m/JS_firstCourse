@@ -4069,35 +4069,40 @@ console.log(hasUniqueChars("abcdef"));
 let hasUniqueChars = (str) => new Set(str).size === str.length;
 
 function isPowerOfTwo(n) {
-    let a = Math.sqrt(n);
-    if (a == 2) {
-        return true;
-    }
-
-    if (a < 2) {
-        isPowerOfTwo(Math.sqrt(n));
-    }
+    return Math.log2(512);
 }
-console.log(isPowerOfTwo(1024));
+console.log(isPowerOfTwo(16));
+
+function isPowerOfTwo(n) {
+    if (n == 1) return true;
+    if (n < 1) return false;
+
+    return isPowerOfTwo(n / 2);
+}
 
 const orderedCount = function (text) {
     let newArr = [];
-    let count = 0;
-    let set = new Set(text.split("").sort());
-    let arr = text.split("").sort();
-
+    let set = Array.from(new Set(text.split("")));
     for (let i = 0; i < set.length; i++) {
-      if(set[i] =)
+        let l = text.split("").filter((el) => el === set[i]).length;
+        newArr.push([set[i], l]);
     }
-    return newArr
+    return newArr;
 };
-console.log(orderedCount("abracadabra"));
+console.log(orderedCount(""));
 
-
-
-var arr = ['a', 'b', 'c'];
-var eArr = arr.entries();
-
-console.log(eArr); // [0, 'a']
-console.log(eArr.next().value); // [1, 'b']
-console.log(eArr.next().value); // [2, 'c']
+function findDeletedNumber(arr, mixArr) {
+    let arr2 = mixArr.sort((a, b) => a - b);
+    if (arr2.length === arr.length) {
+        return 0;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr2[i]) {
+            return arr[i];
+        }
+    }
+}
+console.log(findDeletedNumber([1, 2, 3, 4, 5], [3, 4, 1, 5]));
+function findDeletedNumber(arr, mixArr) {
+  return arr.filter(v=>mixArr.indexOf(v)==-1)[0]||0
+}
