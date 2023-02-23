@@ -4106,3 +4106,180 @@ console.log(findDeletedNumber([1, 2, 3, 4, 5], [3, 4, 1, 5]));
 function findDeletedNumber(arr, mixArr) {
   return arr.filter(v=>mixArr.indexOf(v)==-1)[0]||0
 }
+
+
+ function doubleChar(str) {
+	return  a = str.split('').map(item =>item + item + item).join('');
+   }
+     console.log(doubleChar("String"));
+
+function updateLight(current) {
+	if (current === 'green') {
+		return 'yellow';
+	}
+	if (current === 'yellow') {
+		return 'red';
+	}
+	if (current === 'red') {
+		return 'green';
+	}
+
+}
+console.log(updateLight("green"));
+
+function getPlanetName(id) {
+    var name;
+    switch (id) {
+        case 1:
+            name = "Mercury";
+			break;
+        case 2:
+            name = "Venus";
+			break;
+        case 3:
+            name = "Earth";
+			break;
+        case 4:
+            name = "Mars";
+			break;
+        case 5:
+            name = "Jupiter";
+			break;
+        case 6:
+            name = "Saturn";
+			break;
+        case 7:
+            name = "Uranus";
+			break;
+        case 8:
+            name = "Neptune";
+			break;
+    }
+
+    return name;
+}
+console.log(getPlanetName(3))
+
+function getPlanetName(id) {
+    return {
+        1: "Mercury",
+        2: "Venus",
+        3: "Earth",
+        4: "Mars",
+        5: "Jupiter",
+        6: "Saturn",
+        7: "Uranus",
+        8: "Neptune",
+    }[id];
+}
+console.log(getPlanetName(3))
+
+function otherAngle(a, b) {
+	return Math.abs(a + b - 180) ;
+  }
+
+const areaOrPerimeter = function(l , w) {
+	if(l == w )
+  {return l*w
+  } if (l!==w) {
+	return (l+w)*2
+  }
+  };
+  console.log(areaOrPerimeter(2,3))
+
+  function firstNonConsecutive (arr) {
+	for(let i = 0; i < arr.length; i++) {
+		if(arr[i-1] + 1 !== arr[i]) return arr[i]
+	}
+}
+console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
+
+function oddCount(n){
+	return Math.floor(n / 2)
+
+  }
+  console.log(oddCount(5))
+
+function removeEveryOther(arr){
+let res= [];
+for(let i =0; i< arr.length; i +=2){
+  res.push(arr[i])
+}
+return res
+}
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+    return index % 2 === 0;
+  });
+}
+
+function removeEveryOther(arr){
+  //your code here
+  for (var i = 1; i < arr.length;i++){
+    console.log(i)
+      arr.splice(i,2);
+  }
+  return arr;
+}
+console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+Место для первой задачи
+
+При помощи цикла выведите числа от 5 до 10 в консоль. 5 и 10 включительно. Цикл можно использовать любой
+function firstTask() {
+  for(let i = 5; i<11; i++) {
+     console.log(i)
+  }
+
+}
+firstTask()
+
+При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
+
+(function a(){
+  for(let i = 20; i >=10; i--){
+    if(i< 13) {
+      break
+    }
+    console.log(i)
+  }
+})()
+
+При помощи цикла for выведите чётные числа от 2 до 10 включительно
+
+function a(){
+  for(let i=2;i<=10; i+=2 ){
+    console.log(i)
+  }
+}
+a()
+
+Место для четвертой задачи
+
+Цикл, который нужно переписать:
+
+for (let i = 2; i <= 16; i++) {
+    if (i % 2 === 0) {
+        continue;
+    } else {
+        console.log(i);
+    }
+}
+
+let num= 1;
+while (num<=15){
+num +=2
+console.log(num)
+}
+
+Заполните массив цифрами от 5 до 10 включительно. Помните, что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
+
+let arr = []
+function a(){
+  for(let i= 5; i<=10; i++) {
+    arr.push(i)
+  }
+  console.log(arr)
+}
+a()
