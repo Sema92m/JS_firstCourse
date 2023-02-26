@@ -4104,61 +4104,8 @@ function findDeletedNumber(arr, mixArr) {
 }
 console.log(findDeletedNumber([1, 2, 3, 4, 5], [3, 4, 1, 5]));
 function findDeletedNumber(arr, mixArr) {
-  return arr.filter(v=>mixArr.indexOf(v)==-1)[0]||0
+    return arr.filter((v) => mixArr.indexOf(v) == -1)[0] || 0;
 }
-
-
- function doubleChar(str) {
-	return  a = str.split('').map(item =>item + item + item).join('');
-   }
-     console.log(doubleChar("String"));
-
-function updateLight(current) {
-	if (current === 'green') {
-		return 'yellow';
-	}
-	if (current === 'yellow') {
-		return 'red';
-	}
-	if (current === 'red') {
-		return 'green';
-	}
-
-}
-console.log(updateLight("green"));
-
-function getPlanetName(id) {
-    var name;
-    switch (id) {
-        case 1:
-            name = "Mercury";
-			break;
-        case 2:
-            name = "Venus";
-			break;
-        case 3:
-            name = "Earth";
-			break;
-        case 4:
-            name = "Mars";
-			break;
-        case 5:
-            name = "Jupiter";
-			break;
-        case 6:
-            name = "Saturn";
-			break;
-        case 7:
-            name = "Uranus";
-			break;
-        case 8:
-            name = "Neptune";
-			break;
-    }
-
-    return name;
-}
-console.log(getPlanetName(3))
 
 function getPlanetName(id) {
     return {
@@ -4172,92 +4119,91 @@ function getPlanetName(id) {
         8: "Neptune",
     }[id];
 }
-console.log(getPlanetName(3))
+console.log(getPlanetName(3));
 
 function otherAngle(a, b) {
-	return Math.abs(a + b - 180) ;
-  }
-
-const areaOrPerimeter = function(l , w) {
-	if(l == w )
-  {return l*w
-  } if (l!==w) {
-	return (l+w)*2
-  }
-  };
-  console.log(areaOrPerimeter(2,3))
-
-  function firstNonConsecutive (arr) {
-	for(let i = 0; i < arr.length; i++) {
-		if(arr[i-1] + 1 !== arr[i]) return arr[i]
-	}
-}
-console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
-
-function oddCount(n){
-	return Math.floor(n / 2)
-
-  }
-  console.log(oddCount(5))
-
-function removeEveryOther(arr){
-let res= [];
-for(let i =0; i< arr.length; i +=2){
-  res.push(arr[i])
-}
-return res
+    return Math.abs(a + b - 180);
 }
 
-function removeEveryOther(arr){
-  return arr.filter(function(elem, index) {
-    return index % 2 === 0;
-  });
-}
-
-function removeEveryOther(arr){
-  //your code here
-  for (var i = 1; i < arr.length;i++){
-    console.log(i)
-      arr.splice(i,2);
-  }
-  return arr;
-}
-console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
-
-Место для первой задачи
-
-При помощи цикла выведите числа от 5 до 10 в консоль. 5 и 10 включительно. Цикл можно использовать любой
-function firstTask() {
-  for(let i = 5; i<11; i++) {
-     console.log(i)
-  }
-
-}
-firstTask()
-
-При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
-
-(function a(){
-  for(let i = 20; i >=10; i--){
-    if(i< 13) {
-      break
+const areaOrPerimeter = function (l, w) {
+    if (l == w) {
+        return l * w;
     }
-    console.log(i)
-  }
-})()
+    if (l !== w) {
+        return (l + w) * 2;
+    }
+};
+console.log(areaOrPerimeter(2, 3));
 
-При помощи цикла for выведите чётные числа от 2 до 10 включительно
-
-function a(){
-  for(let i=2;i<=10; i+=2 ){
-    console.log(i)
-  }
+function firstNonConsecutive(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i - 1] + 1 !== arr[i]) return arr[i];
+    }
 }
-a()
+console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]));
 
-Место для четвертой задачи
+function oddCount(n) {
+    return Math.floor(n / 2);
+}
+console.log(oddCount(5));
 
-Цикл, который нужно переписать:
+function removeEveryOther(arr) {
+    let res = [];
+    for (let i = 0; i < arr.length; i += 2) {
+        res.push(arr[i]);
+    }
+    return res;
+}
+
+function removeEveryOther(arr) {
+    return arr.filter(function (elem, index) {
+        return index % 2 === 0;
+    });
+}
+
+function removeEveryOther(arr) {
+    //your code here
+    for (var i = 1; i < arr.length; i++) {
+        console.log(i);
+        arr.splice(i, 2);
+    }
+    return arr;
+}
+console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+// Место для первой задачи
+
+// При помощи цикла выведите числа от 5 до 10 в консоль. 5 и 10 включительно. Цикл можно использовать любой
+function firstTask() {
+    for (let i = 5; i < 11; i++) {
+        console.log(i);
+    }
+}
+firstTask()(
+    // При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
+
+    function a() {
+        for (let i = 20; i >= 10; i--) {
+            if (i < 13) {
+                break;
+            }
+            console.log(i);
+        }
+    }
+)();
+
+// При помощи цикла for выведите чётные числа от 2 до 10 включительно
+
+function a() {
+    for (let i = 2; i <= 10; i += 2) {
+        console.log(i);
+    }
+}
+a();
+
+// Место для четвертой задачи
+
+// Цикл, который нужно переписать:
 
 for (let i = 2; i <= 16; i++) {
     if (i % 2 === 0) {
@@ -4267,19 +4213,165 @@ for (let i = 2; i <= 16; i++) {
     }
 }
 
-let num= 1;
-while (num<=15){
-num +=2
-console.log(num)
+let num = 1;
+while (num <= 15) {
+    num += 2;
+    console.log(num);
 }
 
-Заполните массив цифрами от 5 до 10 включительно. Помните, что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
+// Заполните массив цифрами от 5 до 10 включительно. Помните, что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
 
-let arr = []
-function a(){
-  for(let i= 5; i<=10; i++) {
-    arr.push(i)
-  }
-  console.log(arr)
+let arr = [];
+function a() {
+    for (let i = 5; i <= 10; i++) {
+        arr.push(i);
+    }
+    console.log(arr);
 }
-a()
+a();
+
+// 7 kyu
+// String ends with?
+
+function solution(str, ending) {
+    if (
+        str.split("").splice(-ending.length).join("") ===
+            ending.split("").join("") ||
+        ending === ""
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(solution("abc", ""));
+return str.endsWith(ending);
+
+// 7 kyu
+// Is It Negative Zero (-0)?.
+
+function isNegativeZero(n) {
+    if (n === -0) {
+        return true;
+    }
+    if (n === 0 || n > 0 || n < 0) {
+        false;
+        a;
+    } else {
+        return false;
+    }
+}
+console.log(isNegativeZero(-5));
+
+// 7 kyu
+// Area of an arrow
+
+function arrowArea(a, b) {
+    return (a * 0.5 * b) / 2;
+}
+console.log(arrowArea(7, 6));
+(a * b) / 4;
+
+// 7 kyu
+// Divide and Conquer
+function divCon(x) {
+    let a = x.filter((item) => typeof item === "number");
+    let b = x.filter((item) => typeof item === "string");
+    if (a.length > 0 && b.length > 0) {
+        return a.reduce((a, b) => a + b) - b.reduce((a, b) => +a + +b);
+    }
+    if (a.length < 0 && b.length < 0) {
+        return 0;
+    }
+    if (a.length > 0) {
+        return a.reduce((a, b) => a + b);
+    }
+    if (b.length > 0) {
+        return -b.reduce((a, b) => +a + +b);
+    }
+}
+console.log(divCon([2, 5, 3]));
+return x.reduce(
+    (acc, cur) => (typeof cur === "number" ? acc + cur : acc - Number(cur)),
+    0
+);
+
+// 7 kyu
+// Number of People in the Bus
+
+var number = function (busStops) {
+    return;
+};
+
+number([
+    [10, 0],
+    [3, 5],
+    [5, 8],
+]);
+
+// 7 kyu
+// Find the divisors!
+
+function divisors(integer) {
+    for (let i = 1; i < integer; i++) {
+        if (integer / i == -1) continue;
+        console.log(i);
+    }
+}
+divisors(12);
+
+// 7 kyu
+// The highest profit wins!
+
+function minMax(arr) {
+    if (arr.length >= 2) {
+        return [Math.min.apply(null, arr), Math.max.apply(null, arr)];
+    }
+    if (arr.length == 1) {
+        return [...arr, ...arr];
+    }
+}
+console.log(minMax([1, 2, 3, 4, 5]));
+return [Math.min(...arr), Math.max(...arr)];
+
+// 7 kyu
+// Sum of the first nth term of Series
+
+function SeriesSum(n) {
+    return n.toFixed(2);
+}
+console.log(SeriesSum(1));
+
+// 7 kyu
+// Remove the minimum
+
+function removeSmallest(numbers) {
+    // let a = Math.min(...numbers);
+    return numbers.filter((e) => e != Math.min(...numbers));
+}
+console.log(removeSmallest([1, 2, 3, 4, 1, 5]));
+
+// 7 kyu
+// Money, Money, Money
+
+function nbYear(principal, interest, tax, desired) {
+    let year = 0;
+    while (principal < desired) {
+        year++;
+        principal =
+            principal + principal * interest - principal * interest * tax;
+    }
+    return year;
+}
+console.log(nbYear(1000, 0.05, 0.18, 1100));
+
+// 7 kyu
+// Sort Numbers
+
+function solution(nums) {
+    return nums !== null && nums.length > 0 ? nums.sort((a, b) => a - b) : [];
+}
+console.log(solution(null));
+return (nums || []).sort(function (a, b) {
+    return a - b;
+});
