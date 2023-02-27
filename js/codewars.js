@@ -4375,3 +4375,37 @@ console.log(solution(null));
 return (nums || []).sort(function (a, b) {
     return a - b;
 });
+
+function head(arr) {
+    return arr.slice(0, 1).join("") * 1;
+}
+function tail(arr) {
+    return arr.slice(1);
+}
+
+function init(arr) {
+    return arr.slice(0, arr.length - 1);
+}
+
+function last(arr) {
+    return arr.slice(-1).join("") * 1;
+}
+console.log(head([1, 2, 3, 4, 5]));
+console.log(tail([1, 2, 3, 4, 5]));
+console.log(init([1, 2, 3, 4, 5]));
+console.log(last([1, 2, 3, 4, 5]));
+function head(a) {
+    return a[0];
+}
+
+function last(a) {
+    return a[a.length - 1];
+}
+
+function init(a) {
+    return a.slice(0, -1);
+}
+
+function tail(a) {
+    return a.slice(1);
+}
