@@ -4409,3 +4409,125 @@ function init(a) {
 function tail(a) {
     return a.slice(1);
 }
+
+function basicOp(operation, value1, value2) {
+    return value1 + "" + operation + (value2 + "");
+}
+
+console.log(basicOp("+", 4, 7));
+
+function printArray(array) {
+    let result = "";
+    for (let i = 0; i < array.length; i++) {
+        if (i === array.length - 1) {
+            result += array[i];
+            break;
+        }
+        result += array[i] + ",";
+    }
+    return result;
+}
+
+console.log(printArray(["h", "o", "l", "a"]));
+
+function rentalCarCost(d) {
+    let amount = d * 40;
+    if (d < 3) {
+        return amount;
+    } else if (d >= 3 && d < 7) {
+        return amount - 20;
+    } else if (d >= 7) {
+        return amount - 50;
+    }
+}
+
+console.log(rentalCarCost(d));
+
+function getMiddle(s) {
+    if (s.length === 0) {
+        return "";
+    }
+    if (s.length === 1) {
+        return s[0];
+    }
+    if (s.length % 2 === 0) {
+        return s[s.length / 2 - 1] + s[s.length / 2];
+    }
+    if (s.length % 2 === 1) {
+        return s[(s.length - 1) / 2];
+    }
+}
+console.log(getMiddle("testing"));
+return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+
+
+
+function array(arr) {
+    if (arr.length <= 2) {
+        return null;
+    }
+    return arr.split(",").slice(1, -1).join(" ") || null;
+}
+console.log(array(""));
+
+
+
+class Animal {
+  constructor(name, age, legs, species, status) {
+    this.name = name;
+    this.age = age;
+    this.legs = legs;
+    this.species = species;
+    this.status = status;
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  }
+}
+
+
+class Shark extends Animal {
+  constructor(/* Insert your parameters here */) {
+    super(/* Make a call to the parent class's constructor with the correct arguments */);
+  }
+}
+
+class Cat extends Animal {
+
+}
+
+class Dog extends Animal {
+}
+
+
+
+
+function prefill(n, v) {
+  let res = []
+  if(n===0 || n==='0') {
+    return [undefined]
+  }
+  if(typeof(n) !== 'number') {
+    return [v]
+  }
+ 
+  for(let i = 1; i <= n; i++){ 
+    res.push(v)
+  } 
+  return res
+}
+
+console.log(prefill('0','123'));
+
+
+
+
+
+
+
+function array(arr) {
+  return arr.split(",").slice(1, -1).join(" ").length < 1 ? null || arr.split(",").slice(1, -1).join(" ").length;
+}
+console.log(array(''));
+return arr.split(",").slice(1,-1).join(" ") || null;
+
