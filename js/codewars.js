@@ -4460,8 +4460,6 @@ function getMiddle(s) {
 console.log(getMiddle("testing"));
 return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
 
-
-
 function array(arr) {
     if (arr.length <= 2) {
         return null;
@@ -4470,64 +4468,201 @@ function array(arr) {
 }
 console.log(array(""));
 
-
+// function array(arr) {
+//   return arr.split(",").slice(1, -1).join(" ").length < 1 ? null || arr.split(",").slice(1, -1).join(" ").length
+// }
+// console.log(array(''));
+// return arr.split(",").slice(1,-1).join(" ") || null;
 
 class Animal {
-  constructor(name, age, legs, species, status) {
-    this.name = name;
-    this.age = age;
-    this.legs = legs;
-    this.species = species;
-    this.status = status;
-  }
-  introduce() {
-    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
-  }
+    constructor(name, age, legs, species, status) {
+        this.name = name;
+        this.age = age;
+        this.legs = legs;
+        this.species = species;
+        this.status = status;
+    }
+    introduce() {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
 }
-
 
 class Shark extends Animal {
-  constructor(/* Insert your parameters here */) {
-    super(/* Make a call to the parent class's constructor with the correct arguments */);
-  }
+    constructor(/* Insert your parameters here */) {
+        super(/* Make a call to the parent class's constructor with the correct arguments */);
+    }
 }
 
-class Cat extends Animal {
+class Cat extends Animal {}
 
-}
-
-class Dog extends Animal {
-}
-
-
-
+class Dog extends Animal {}
 
 function prefill(n, v) {
-  let res = []
-  if(n===0 || n==='0') {
-    return [undefined]
-  }
-  if(typeof(n) !== 'number') {
-    return [v]
-  }
- 
-  for(let i = 1; i <= n; i++){ 
-    res.push(v)
-  } 
-  return res
+    let res = [];
+    if (typeof n !== "number" || typeof n !== "string") {
+        return `${n} is invalid`;
+    }
+    if (n === 0 || n === "0") {
+        return [];
+    }
+    if (!v) {
+        return [undefined];
+    }
+    // if (parseFloat(n) !== +n || parseFloat(n) < 0) {
+    //     return `${n} is invalid`;
+    // }
+    for (let i = 1; i <= +n; i++) {
+        res.push(v);
+    }
+    return res;
+}
+console.log(prefill("3", 5));
+
+console.log(typeof 1);
+
+var maxRedigit = function (num) {
+    return num <= 99 || num > 999
+        ? null
+        : +String(num)
+              .split("")
+              .sort((a, b) => b - a)
+              .join("");
+};
+console.log(maxRedigit(1480));
+
+function maskify(c) {
+    const newStr = c.slice(0, -4).replace(/./g, "#") + c.slice(-4) || c;
+    return newStr;
+}
+console.log(maskify("4556364607935616"));
+
+function DNAStrand(dna) {
+    const result = [];
+    for (let i = 0; i < dna.length; i++) {
+        if (dna[i] === "A") {
+            result.push("T");
+        } else if (dna[i] === "T") {
+            result.push("A");
+        } else if (dna[i] === "C") {
+            result.push("G");
+        } else if (dna[i] === "G") {
+            result.push("C");
+        }
+    }
+    return result.join("");
 }
 
-console.log(prefill('0','123'));
+console.log(DNAStrand("ATTGC"));
 
-
-
-
-
-
-
-function array(arr) {
-  return arr.split(",").slice(1, -1).join(" ").length < 1 ? null || arr.split(",").slice(1, -1).join(" ").length;
+function arithmetic(a, b, operator) {
+    if (operator === "add") {
+        return a + b;
+    }
+    if (operator === "subtract") {
+        return a - b;
+    }
+    if (operator === "multiply") {
+        return a * b;
+    }
+    if (operator === "divide") {
+        return a / b;
+    }
 }
-console.log(array(''));
-return arr.split(",").slice(1,-1).join(" ") || null;
 
+console.log(arithmetic(a, b, operator));
+
+var Calculator = {
+    average: function () {
+        return [...arguments];
+    },
+};
+
+console.log(Calculator.average());
+
+function whoseBicycle(diary1, diary2, diary3) {
+    const ageTable = {
+        firstSonAge: 14,
+        secondSonAge: 9,
+        thirdSonAge: 8,
+    };
+
+    function averageMark(diary) {
+        return (
+            Object.values(diary).reduce((acc, num) => acc + num) /
+            Object.values(diary).length
+        );
+    }
+
+    const averageMark1 = averageMark(diary1);
+    const averageMark2 = averageMark(diary2);
+    const averageMark3 = averageMark(diary3);
+
+    if (averageMark3 >= averageMark2 && averageMark3 >= averageMark1) {
+        return "I need to buy a bicycle for my third son.";
+    } else if (averageMark2 >= averageMark3 && averageMark2 > averageMark1) {
+        return "I need to buy a bicycle for my second son.";
+    } else {
+        return "I need to buy a bicycle for my first son.";
+    }
+}
+
+console.log(
+    whoseBicycle(
+        {
+            algebra: 6,
+            history: 7,
+            physics: 8,
+            geography: 9,
+            chemistry: 10,
+        },
+        {
+            algebra: 8,
+            history: 7,
+            physics: 8,
+            geography: 9,
+            chemistry: 10,
+        },
+        {
+            algebra: 6,
+            history: 5,
+            physics: 5,
+            geography: 9,
+            chemistry: 10,
+        }
+    )
+);
+
+const array1 = [1, 2, 3, 4, 5, [6, 7, 8, [9, 10, 11, [12]]]];
+const result = [];
+
+const flatternArray = function (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number") {
+            flatternArray(arr[i]);
+        } else result.push(arr[i]);
+    }
+    return result;
+};
+console.log(flatternArray(array1));
+
+function sumTriangularNumbers(n) {
+    if (n <= 0) {
+        return 0;
+    }
+    let res = 0;
+    for (let i = 1; i < n + 1; i++) {
+        res += (i * (i + 1)) / 2;
+    }
+    return res;
+}
+
+console.log(sumTriangularNumbers(4));
+
+var myArray = [1, 2, 3];
+function factory(x) {
+    return function a(arr) {
+        return arr.map((el) => el * x);
+    };
+}
+var fives = factory(5);
+console.log(fives(myArray));
