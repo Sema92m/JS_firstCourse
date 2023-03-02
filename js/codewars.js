@@ -4666,3 +4666,113 @@ function factory(x) {
 }
 var fives = factory(5);
 console.log(fives(myArray));
+
+function absentVowel(x) {
+    if (!x.includes("a")) {
+        return 0;
+    } else if (!x.includes("e")) {
+        return 1;
+    } else if (!x.includes("i")) {
+        return 2;
+    } else if (!x.includes("o")) {
+        return 3;
+    } else if (!x.includes("u")) {
+        return 4;
+    }
+}
+
+console.log(absentVowel("John Doe hs seven red pples under his bsket"));
+
+// function absentVowel(x) {
+//   switch (true) {
+//     case !x.includes('a'):
+//       return 0;
+//     case !x.includes('e'):
+//       return 1;
+//     case !x.includes('i'):
+//       return 2;
+//     case !x.includes('o'):
+//       return 3;
+//     case !x.includes('u'):
+//       return 4;
+//       }
+// }
+
+function isIsogram(str) {
+    let a = str.toLowerCase().split("").sort();
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] == a[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isIsogram(""));
+
+function nicknameGenerator(name) {
+    if (name.length <= 3) {
+        return "Error: Name too short";
+    }
+    if (name.length === 4 && consonants.includes(name[2])) {
+        return name;
+    }
+    const consonants = "aeiuo";
+    if (consonants.includes(name[2])) {
+        return name.slice(0, 4);
+    } else {
+        return name.slice(0, 3);
+    }
+}
+console.log(nicknameGenerator("Kqqt"));
+
+function explode(s) {
+    let result = "";
+    // const arr = s.replace(/0/g,'')
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "0") {
+            s[i] = "";
+        }
+        result += s[i].repeat(+s[i]);
+    }
+    return result;
+}
+
+console.log(explode("31020"));
+
+function highAndLow(numbers) {
+    const str = numbers.split(" ").sort((a, b) => b - a);
+    return `${str[0]} ${str[str.length - 1]}`;
+}
+console.log(highAndLow("1 2 3 4 5"));
+
+
+
+
+
+
+
+function toJadenCase(str) {
+    let a = str.split(" ");
+    let s = ''
+    for(let i = 0; i < a.length; i++){ 
+      s += a[i][0].toUpperCase() + a[i].substr(1) + ' '
+    }
+    return s.trimEnd()
+}
+console.log(toJadenCase("how can mirrors be real if our eyes aren't real"));
+String.prototype.toJadenCase = function () {
+  let a = this.split(" ");
+  let s = '';
+  for (let i = 0; i < a.length; i++) { 
+    s += a[i][0].toUpperCase() + a[i].substr(1) + ' ';
+  }
+  return s.trim().trimEnd();
+};
+
+
+
+function disemvowel(str) {
+  const vowels = (/[aeuio]/gi);
+  return str.replace(vowels,'');
+}
+console.log(disemvowel("This website is for losers LOL!"));
