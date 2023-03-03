@@ -4745,34 +4745,100 @@ function highAndLow(numbers) {
 }
 console.log(highAndLow("1 2 3 4 5"));
 
-
-
-
-
-
-
 function toJadenCase(str) {
     let a = str.split(" ");
-    let s = ''
-    for(let i = 0; i < a.length; i++){ 
-      s += a[i][0].toUpperCase() + a[i].substr(1) + ' '
+    let s = "";
+    for (let i = 0; i < a.length; i++) {
+        s += a[i][0].toUpperCase() + a[i].substr(1) + " ";
     }
-    return s.trimEnd()
+    return s.trimEnd();
 }
 console.log(toJadenCase("how can mirrors be real if our eyes aren't real"));
 String.prototype.toJadenCase = function () {
-  let a = this.split(" ");
-  let s = '';
-  for (let i = 0; i < a.length; i++) { 
-    s += a[i][0].toUpperCase() + a[i].substr(1) + ' ';
-  }
-  return s.trim().trimEnd();
+    let a = this.split(" ");
+    let s = "";
+    for (let i = 0; i < a.length; i++) {
+        s += a[i][0].toUpperCase() + a[i].substr(1) + " ";
+    }
+    return s.trim().trimEnd();
 };
 
-
-
 function disemvowel(str) {
-  const vowels = (/[aeuio]/gi);
-  return str.replace(vowels,'');
+    const vowels = /[aeuio]/gi;
+    return str.replace(vowels, "");
 }
 console.log(disemvowel("This website is for losers LOL!"));
+
+function brightest(colors) {
+    let col = colors.forEach();
+}
+console.log(brightest(["#001000", "#000000"]));
+
+function convertHEXtoRGB(color) {
+    color = color.toUpperCase();
+    const R = color.slice(1, 3);
+    const G = color.slice(3, 5);
+    const B = color.slice(5, 7);
+
+    function rgb(color) {
+        for (let i = 1; i < color.length; i++) {
+            if (color[i] === "A") {
+                color[i] = 10;
+            } else if (color[i] === "B") {
+                color[i] = 11;
+            } else if (color[i] === "C") {
+                color[i] = 12;
+            } else if (color[i] === "D") {
+                color[i] = 13;
+            } else if (color[i] === "E") {
+                color[i] = 14;
+            } else if (color[i] === "F") {
+                color[i] = 15;
+            }
+            return +color[0] + +color[1];
+        }
+    }
+
+    return rgb(R);
+}
+
+console.log(convertHEXtoRGB("#ABCDEF"));
+
+function duplicateEncode(word) {
+    const newSTR = word.split("");
+    const setStr = Array.from(new Set(word.split("")));
+    console.log(setStr);
+}
+duplicateEncode("aba");
+
+
+
+
+
+function nthFibo(n) {
+    if (n === 1) {
+        return 0;
+    } else if (n === 2) {
+        return 1;
+    } else if (n === 3) {
+        return 1;
+    }
+
+}
+
+console.log(nthFibo(3));
+
+
+
+
+function myLanguages(results) {
+  let str = '';
+  return results.filter(score)
+}
+console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65}));
+
+
+
+
+
+let a = {"Java": 10, "Ruby": 80, "Python": 65}
