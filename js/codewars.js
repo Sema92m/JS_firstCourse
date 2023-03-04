@@ -4804,41 +4804,65 @@ function convertHEXtoRGB(color) {
 
 console.log(convertHEXtoRGB("#ABCDEF"));
 
-function duplicateEncode(word) {
-    const newSTR = word.split("");
-    const setStr = Array.from(new Set(word.split("")));
-    console.log(setStr);
+function myLanguages(results) {
+    const result = [];
+    const sortObj = Object.entries(results).sort((a, b) => b[1] - a[1]);
+    // [ [ 'Ruby', 80 ], [ 'Python', 65 ], [ 'Java', 10 ] ]
+    for (let i = 0; i < sortObj.length; i++) {
+        if (sortObj[i][1] >= 60) {
+            result.push(sortObj[i][0]);
+        }
+    }
+    return result;
 }
-duplicateEncode("aba");
+console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
 
+function duplicateEncode(word) {
+    const newArr = word.toLowerCase().split("");
+    const result = [];
 
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr.filter((el) => el === newArr[i]).length > 1) {
+            result.push(")");
+        } else {
+            result.push("(");
+        }
+    }
+    return result.join("");
+}
 
-
+console.log(duplicateEncode("OOOyO)kOPO"));
 
 function nthFibo(n) {
     if (n === 1) {
         return 0;
-    } else if (n === 2) {
+    } else if (n === 2 || n === 3) {
         return 1;
-    } else if (n === 3) {
-        return 1;
+    } else if (n === 4) {
+        return 2;
+    } else if (n > 4) {
+        return (n = nthFibo(n - 1) + nthFibo(n - 2));
     }
-
 }
-
-console.log(nthFibo(3));
-
+console.log(nthFibo(10));
 
 
 
-function myLanguages(results) {
-  let str = '';
-  return results.filter(score)
+
+
+function deepCount(a) {
+    let count = 0;
+    function flatternArray(a) {
+        for (let i = 0; i < a.length; i++) {
+            count++;
+            if (typeof a[i] !== "number" && typeof a[i] !== 'string') {
+              flatternArray(a[i]);
+            } 
+        }
+        return count;
+    }
+    return flatternArray(a);
 }
-console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65}));
+console.log(deepCount(["x", "y", ["z"]]));
 
 
-
-
-
-let a = {"Java": 10, "Ruby": 80, "Python": 65}
