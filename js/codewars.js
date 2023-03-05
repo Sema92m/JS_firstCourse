@@ -4846,18 +4846,14 @@ function nthFibo(n) {
 }
 console.log(nthFibo(10));
 
-
-
-
-
 function deepCount(a) {
     let count = 0;
     function flatternArray(a) {
         for (let i = 0; i < a.length; i++) {
             count++;
-            if (typeof a[i] !== "number" && typeof a[i] !== 'string') {
-              flatternArray(a[i]);
-            } 
+            if (typeof a[i] !== "number" && typeof a[i] !== "string") {
+                flatternArray(a[i]);
+            }
         }
         return count;
     }
@@ -4865,4 +4861,259 @@ function deepCount(a) {
 }
 console.log(deepCount(["x", "y", ["z"]]));
 
+// --------------------------
 
+function countYears(s) {
+    const years = s / 31536000;
+    if (years < 1) {
+        return "";
+    } else if (years >= 1 && years < 2) {
+        return "1 year";
+    } else if (years >= 2) {
+        return `${Math.floor(years)} years`;
+    }
+}
+console.log(countYears());
+
+function countDays(s) {
+    const years = s % 31536000;
+    const days = Math.floor(years / 86400);
+    if (days < 1) {
+        return "";
+    } else if (days >= 1 && days < 2) {
+        return "1 day";
+    } else if (days >= 2) {
+        return `${days} days`;
+    }
+}
+console.log(countDays(32536000));
+
+function countHours(s) {
+    const years = s % 31536000;
+    const days = years % 86400;
+    const hours = Math.floor(days / 3600);
+
+    if (hours < 1) {
+        return "";
+    } else if (hours >= 1 && hours < 2) {
+        return "1 hour";
+    } else if (hours >= 2) {
+        return `${hours} hours`;
+    }
+}
+console.log(countHours(35536000));
+
+function countMinutes(s) {
+    const years = s % 31536000;
+    const days = years % 86400;
+    const hours = days % 3600;
+    const minutes = Math.floor(hours / 60);
+    if (minutes < 1) {
+        return "";
+    } else if (minutes >= 1 && minutes < 2) {
+        return "1 minute";
+    } else if (minutes >= 2) {
+        return `${minutes} minutes`;
+    }
+}
+console.log(countMinutes(35539867));
+
+function countSeconds(s) {
+    const years = s % 31536000;
+    const days = years % 86400;
+    const hours = days % 3600;
+    const minutes = hours % 60;
+    const sec = minutes;
+    return [years, days, hours, minutes, sec];
+    if (sec < 1) {
+        return "";
+    } else if (sec >= 1 && sec < 2) {
+        return "1 second";
+    } else if (sec >= 2) {
+        return `${sec} seconds`;
+    }
+}
+console.log(countSeconds(71));
+
+function formatDuration(seconds) {
+    function countYears(seconds) {
+        const years = seconds / 31536000;
+        if (years < 1) {
+            return "";
+        } else if (years >= 1 && years < 2) {
+            return "1 year";
+        } else if (years >= 2) {
+            return `${Math.floor(years)} years`;
+        }
+    }
+    function countDays(seconds) {
+        const days = Math.floor((seconds % 31536000) / 86400);
+        if (days < 1) {
+            return "";
+        } else if (days >= 1 && days < 2) {
+            return "1 day";
+        } else if (days >= 2) {
+            return `${days} days`;
+        }
+    }
+    function countHours(seconds) {
+        const hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+        if (hours < 1) {
+            return "";
+        } else if (hours >= 1 && hours < 2) {
+            return "1 hour";
+        } else if (hours >= 2) {
+            return `${hours} hours`;
+        }
+    }
+    function countMinutes(seconds) {
+        const minutes = Math.floor(
+            (((seconds % 31536000) % 86400) % 3600) / 60
+        );
+        if (minutes < 1) {
+            return "";
+        } else if (minutes >= 1 && minutes < 2) {
+            return "1 minute";
+        } else if (minutes >= 2) {
+            return `${minutes} minutes`;
+        }
+    }
+
+    function countSeconds(seconds) {
+        const sec = (((seconds % 31536000) % 86400) % 3600) % 60;
+        if (sec < 1) {
+            return "";
+        } else if (sec >= 1 && sec < 2) {
+            return "1 second";
+        } else if (sec >= 2) {
+            return `${sec} seconds`;
+        }
+    }
+    const result = [
+        countYears(seconds),
+        countDays(seconds),
+        countHours(seconds),
+        countMinutes(seconds),
+        countSeconds(seconds),
+    ];
+    const filterArr = result.filter((el) => el !== "");
+    if (seconds === 0) {
+        return "now";
+    } else if (filterArr.length === 2) {
+        return `${filterArr[0]} and ${filterArr[1]}`;
+    } else if (filterArr.length === 3) {
+        return `${filterArr[0]}, ${filterArr[1]} and ${filterArr[2]}`;
+    } else if (filterArr.length === 4) {
+        return `${filterArr[0]}, ${filterArr[1]}, ${filterArr[2]} and ${filterArr[3]}`;
+    } else if (filterArr.length === 5) {
+        return `${filterArr[0]}, ${filterArr[1]}, ${filterArr[2]}, ${filterArr[3]} and ${filterArr[4]}`;
+    } else if (filterArr.length === 1) {
+        return `${filterArr[0]}`;
+    }
+}
+console.log(formatDuration(38557662));
+
+function numberOfPairs(gloves) {
+    const set = Array.from(new Set(gloves));
+    const countPairs = [];
+    for (let i = 0; i < set.length; i++) {
+        let a = gloves.filter((el) => el === set[i]);
+        if (a.length === 1) {
+            continue;
+        } else if (a.length > 1) {
+            countPairs.push(a.length);
+        }
+    }
+    const result = countPairs.map((el) => (el % 2 === 0 ? el : el - 1));
+    return result.length === 0
+        ? 0
+        : countPairs
+              .map((el) => (el % 2 === 0 ? el : el - 1))
+              .reduce((a, b) => a + b) / 2;
+}
+console.log(numberOfPairs(["red", "green", "blue"]));
+
+function getLengthOfMissingArray(arrayOfArrays) {
+    const arrOfLength = (arrayOfArrays || [])
+        .map((el) => (el ? el.length : 0))
+        .sort((a, b) => a - b);
+    if (arrOfLength.includes(0)) {
+        return 0;
+    }
+    for (let i = 0; i < arrOfLength.length - 1; i++) {
+        if (arrOfLength.includes(0) || arrOfLength.length === 0) {
+            return 0;
+        }
+        if (arrOfLength[i] + 1 !== arrOfLength[i + 1]) {
+            return arrOfLength[i] + 1;
+        }
+    }
+    return 0;
+}
+console.log(
+    getLengthOfMissingArray([[1], [2, 4], [5, 6, 7], null, [6, 7, 8, 9]])
+);
+
+function recycle(array) {
+    return;
+}
+
+console.log(
+    recycle([
+        { type: "rotten apples", material: "organic" },
+        {
+            type: "out of date yogurt",
+            material: "organic",
+            secondMaterial: "plastic",
+        },
+        { type: "wine bottle", material: "glass", secondMaterial: "paper" },
+        { type: "amazon box", material: "paper" },
+        { type: "beer bottle", material: "glass", secondMaterial: "paper" },
+    ])
+);
+
+
+
+
+function calculate(f) {
+    return function (a) {
+        return function (b) {
+            return f(a, b);
+        };
+    };
+}
+
+function sum(a, b) {
+    return [...arguments];
+}
+
+let curriedSum = calculate(sum);
+
+console.log(curriedSum(1,1)(1,-1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+function calculate() {
+    return function (a) {
+        return function (b) {
+            return f(a, b);
+        };
+    };
+}
+
+function sum1(a, b) {
+    return [...arguments];
+}
+
+let calcSum = calculate(sum1);
+console.log(calculate(1,1)(1,-1));
