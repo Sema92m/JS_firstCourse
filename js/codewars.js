@@ -5054,66 +5054,94 @@ console.log(
     getLengthOfMissingArray([[1], [2, 4], [5, 6, 7], null, [6, 7, 8, 9]])
 );
 
+
+
+const addCurry = (...args1) => {
+  return (...args2)=>{
+    const arr = [args1,args2];
+
+    const result = [];
+    const flatternArray = function (arr) {
+      for (let i = 0; i < arr.length; i++) {
+          if (typeof arr[i] !== "number") {
+              flatternArray(arr[i]);
+          } else result.push(arr[i]);
+      }
+      return result
+      };
+      flatternArray(arr)
+
+          return result.reduce((acc, num)=> acc+num)
+  }
+}
+
+console.log(addCurry(2, 5)(7, 2));
+
+
+
+
+
+
+
+
+
+
+
 function recycle(array) {
-    return;
+  const paperArr = [];  const glassArr = [];  const organicArr = [];  const plasticArr = [];  let result = [];
+  function materialLoop(array) {
+    for(let i = 0; i < array.length; i++){ 
+      if(array[i].material && !array[i].secondMaterial) {
+        if(array[i].material === "paper") {
+          paperArr.push(array[i].type) 
+        }else if(array[i].material === "glass") {
+          glassArr.push(array[i].type)
+        }else if(array[i].material === "organic") {
+          organicArr.push(array[i].type)
+        }else if(array[i].material === "plastic") {
+          plasticArr.push(array[i].type)
+        }
+      } 
+      if(array[i].material && array[i].secondMaterial) {
+        if(array[i].material === "paper") {
+          paperArr.push(array[i].type), secondMaterialLoop(array[i]) 
+        }else if(array[i].material === "glass") {
+          glassArr.push(array[i].type), secondMaterialLoop(array[i]) 
+        }else if(array[i].material === "organic") {
+          organicArr.push(array[i].type), secondMaterialLoop(array[i]) 
+        }else if(array[i].material === "plastic") {
+          plasticArr.push(array[i].type), secondMaterialLoop(array[i]) 
+        }
+      } 
+    }
+    return result
+  }
+function secondMaterialLoop(array) {
+        if (array.secondMaterial === "paper") {
+          paperArr.push(array.type)
+        } else if(array.secondMaterial === "glass") {
+          glassArr.push(array.type)
+        } else if(array.secondMaterial === "organic") {
+          organicArr.push(array.type)
+        } else if(array.secondMaterial === "plastic") {
+          plasticArr.push(array.type)
+      }
+  return result
+  }
+
+  materialLoop(array)
+  return console.log(result = [paperArr, glassArr,organicArr, plasticArr]);
 }
 
-console.log(
-    recycle([
-        { type: "rotten apples", material: "organic" },
-        {
-            type: "out of date yogurt",
-            material: "organic",
-            secondMaterial: "plastic",
-        },
-        { type: "wine bottle", material: "glass", secondMaterial: "paper" },
-        { type: "amazon box", material: "paper" },
-        { type: "beer bottle", material: "glass", secondMaterial: "paper" },
-    ])
-);
+  recycle([ { type: "rotten apples", material: "organic" },
+            { type: "out of date yogurt", material: "organic", secondMaterial: "plastic"},
+            { type: "wine bottle", material: "glass", secondMaterial: "paper" },
+            { type: "amazon box", material: "paper" },
+            { type: "beer bottle", material: "glass", secondMaterial: "paper" }]);
 
 
+//             const recyclerMaterials = ['paper', 'glass', 'organic', 'plastic'];
 
-
-function calculate(f) {
-    return function (a) {
-        return function (b) {
-            return f(a, b);
-        };
-    };
-}
-
-function sum(a, b) {
-    return [...arguments];
-}
-
-let curriedSum = calculate(sum);
-
-console.log(curriedSum(1,1)(1,-1));
-
-
-
-
-
-
-
-
-
-
-
-
-
-function calculate() {
-    return function (a) {
-        return function (b) {
-            return f(a, b);
-        };
-    };
-}
-
-function sum1(a, b) {
-    return [...arguments];
-}
-
-let calcSum = calculate(sum1);
-console.log(calculate(1,1)(1,-1));
+// function recycle(objects) {
+//   return recyclerMaterials.map(m => objects.filter(o => o.material == m || o.secondMaterial == m).map(o => o.type));
+// }
