@@ -5145,3 +5145,53 @@ function secondMaterialLoop(array) {
 // function recycle(objects) {
 //   return recyclerMaterials.map(m => objects.filter(o => o.material == m || o.secondMaterial == m).map(o => o.type));
 // }
+
+
+
+// function recycle(arr) {
+//   let paper = [], glass = [], organic = [], plastic = [];
+
+//   arr.forEach(obj => {  
+//     if(obj.material === 'paper' || obj.secondMaterial === 'paper' ) paper.push(obj.type)
+//     if(obj.material === 'glass' || obj.secondMaterial === 'glass') glass.push(obj.type)
+//     if(obj.material === 'organic' || obj.secondMaterial === 'organic') organic.push(obj.type)
+//     if(obj.material === 'plastic' || obj.secondMaterial === 'plastic') plastic.push(obj.type)
+//   });
+
+//   return [paper, glass, organic, plastic]
+// }
+
+
+
+var runLengthEncoding = function(str){
+  let result = []
+  let count = 1;
+  for(let i = 0; i < str.length; i++){ 
+    if(str[i] !== str[i+1]) {
+      result.push([count, str[i]])
+      count = 1
+    }else if(str[i] === str[i+1]) {
+      count++
+    }
+  }
+  return result
+}
+
+console.log(runLengthEncoding('abc'));
+
+
+
+
+
+
+
+
+function unluckyDays(year){
+  let countUnlDays = 0
+  for (i = 0; i < 12; i++) {
+    new Date(year,i,13).getDay() === 5 ? countUnlDays++ : 0
+    
+  }
+  return countUnlDays
+}
+console.log(unluckyDays(2065));
