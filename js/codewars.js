@@ -5195,3 +5195,29 @@ function unluckyDays(year){
   return countUnlDays
 }
 console.log(unluckyDays(2065));
+
+
+function getParticipants(handshakes){
+  return (handshakes*(handshakes-1))/2
+}
+console.log(getParticipants(4));
+
+
+
+
+
+
+
+function createFunctions(n) {
+  let callbacks = [];
+  
+  for (let i=1; i <= n; i++) {
+    function call(n) {
+      return n
+    }
+    callbacks.push(call());
+  }
+  return callbacks;
+}
+console.log(createFunctions(3));
+
