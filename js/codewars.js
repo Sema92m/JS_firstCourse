@@ -5198,7 +5198,7 @@ console.log(unluckyDays(2065));
 
 
 function getParticipants(handshakes){
-  return (handshakes*(handshakes-1))/2
+  return ( = handshakes*(handshakes-1))/2
 }
 console.log(getParticipants(4));
 
@@ -5221,3 +5221,31 @@ function createFunctions(n) {
 }
 console.log(createFunctions(3));
 
+
+
+
+
+
+function handAngle(date) {
+  const p = 3.141592653589793;
+
+	let hours =  date.getHours()
+  if(hours >= 12) {
+    hours = hours - 12
+  }
+  let min = date.getMinutes()
+
+
+  let minAng = min * 6
+  let hourAng1 = (hours * 30) + ((minAng * 15 )/180)
+  if(minAng > 180) {
+    minAng = 180 - (minAng - 180)
+  }
+  if(hourAng1 > 180) {
+    hourAng1 = 180 - (hourAng1 - 180)
+  }
+  let angel = Math.abs(minAng-hourAng1)
+    return [((angel*p)/180), angel,hourAng1,minAng]
+}
+let d = new Date(2023,4,10, 0, 45)
+console.log(handAngle(d));
