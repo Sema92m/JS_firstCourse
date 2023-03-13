@@ -2060,24 +2060,24 @@
 // const promisify = (item, delay) =>
 //     new Promise(resolve => setTimeout(() => resolve(item), delay));
 
-// const a = () => promisify('a', 100);
+// const a111 = () => promisify('a', 100);
 // const b = () => promisify('b', 5000);
 // const c = () => promisify('c', 3000);
 
 // async function one() {
-//     const promises = [a(), b(), c()];
+//     const promises = [a111(), b(), c()];
 //     const [outpu1, outpu2, outpu3] = await Promise.all(promises);
 //     return `one is done: ${outpu1} ${outpu2} ${outpu3}`;
 // }
 
 // async function two() {
-//     const promises = [a(), b(), c()];
+//     const promises = [a111(), b(), c()];
 //     const outpu1 = await Promise.race(promises);
 //     return `two is done: ${outpu1}`;
 // }
 
 // async function three() {
-//     const outpu1 = await a();
+//     const outpu1 = await a111();
 //     const outpu2 = await b();
 //     const outpu3 = await c();
 //     return `three is done: ${outpu1} ${outpu2} ${outpu3}`
@@ -4174,61 +4174,61 @@ console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // Место для первой задачи
 
 // При помощи цикла выведите числа от 5 до 10 в консоль. 5 и 10 включительно. Цикл можно использовать любой
-function firstTask() {
-    for (let i = 5; i < 11; i++) {
-        console.log(i);
-    }
-}
-firstTask()(
-    // При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
+// function firstTask() {
+//     for (let i = 5; i < 11; i++) {
+//         console.log(i);
+//     }
+// }
+// firstTask()(
+// При помощи цикла for вывести числа от 20 до 10 в консоль. В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
 
-    function a() {
-        for (let i = 20; i >= 10; i--) {
-            if (i < 13) {
-                break;
-            }
-            console.log(i);
-        }
-    }
-)();
+//     function a() {
+//         for (let i = 20; i >= 10; i--) {
+//             if (i < 13) {
+//                 break;
+//             }
+//             console.log(i);
+//         }
+//     }
+// )();
 
 // При помощи цикла for выведите чётные числа от 2 до 10 включительно
 
-function a() {
-    for (let i = 2; i <= 10; i += 2) {
-        console.log(i);
-    }
-}
-a();
+// function a111() {
+//     for (let i = 2; i <= 10; i += 2) {
+//         console.log(i);
+//     }
+// }
+// a111();
 
 // Место для четвертой задачи
 
 // Цикл, который нужно переписать:
 
-for (let i = 2; i <= 16; i++) {
-    if (i % 2 === 0) {
-        continue;
-    } else {
-        console.log(i);
-    }
-}
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
 
-let num = 1;
-while (num <= 15) {
-    num += 2;
-    console.log(num);
-}
+// let num = 1;
+// while (num <= 15) {
+//     num += 2;
+//     console.log(num);
+// }
 
 // Заполните массив цифрами от 5 до 10 включительно. Помните, что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
 
 let arr = [];
-function a() {
+function a111() {
     for (let i = 5; i <= 10; i++) {
         arr.push(i);
     }
     console.log(arr);
 }
-a();
+a111();
 
 // 7 kyu
 // String ends with?
@@ -5054,91 +5054,90 @@ console.log(
     getLengthOfMissingArray([[1], [2, 4], [5, 6, 7], null, [6, 7, 8, 9]])
 );
 
-
-
 const addCurry = (...args1) => {
-  return (...args2)=>{
-    const arr = [args1,args2];
+    return (...args2) => {
+        const arr = [args1, args2];
 
-    const result = [];
-    const flatternArray = function (arr) {
-      for (let i = 0; i < arr.length; i++) {
-          if (typeof arr[i] !== "number") {
-              flatternArray(arr[i]);
-          } else result.push(arr[i]);
-      }
-      return result
-      };
-      flatternArray(arr)
+        const result = [];
+        const flatternArray = function (arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof arr[i] !== "number") {
+                    flatternArray(arr[i]);
+                } else result.push(arr[i]);
+            }
+            return result;
+        };
+        flatternArray(arr);
 
-          return result.reduce((acc, num)=> acc+num)
-  }
-}
+        return result.reduce((acc, num) => acc + num);
+    };
+};
 
 console.log(addCurry(2, 5)(7, 2));
 
-
-
-
-
-
-
-
-
-
-
 function recycle(array) {
-  const paperArr = [];  const glassArr = [];  const organicArr = [];  const plasticArr = [];  let result = [];
-  function materialLoop(array) {
-    for(let i = 0; i < array.length; i++){ 
-      if(array[i].material && !array[i].secondMaterial) {
-        if(array[i].material === "paper") {
-          paperArr.push(array[i].type) 
-        }else if(array[i].material === "glass") {
-          glassArr.push(array[i].type)
-        }else if(array[i].material === "organic") {
-          organicArr.push(array[i].type)
-        }else if(array[i].material === "plastic") {
-          plasticArr.push(array[i].type)
+    const paperArr = [];
+    const glassArr = [];
+    const organicArr = [];
+    const plasticArr = [];
+    let result = [];
+    function materialLoop(array) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].material && !array[i].secondMaterial) {
+                if (array[i].material === "paper") {
+                    paperArr.push(array[i].type);
+                } else if (array[i].material === "glass") {
+                    glassArr.push(array[i].type);
+                } else if (array[i].material === "organic") {
+                    organicArr.push(array[i].type);
+                } else if (array[i].material === "plastic") {
+                    plasticArr.push(array[i].type);
+                }
+            }
+            if (array[i].material && array[i].secondMaterial) {
+                if (array[i].material === "paper") {
+                    paperArr.push(array[i].type), secondMaterialLoop(array[i]);
+                } else if (array[i].material === "glass") {
+                    glassArr.push(array[i].type), secondMaterialLoop(array[i]);
+                } else if (array[i].material === "organic") {
+                    organicArr.push(array[i].type),
+                        secondMaterialLoop(array[i]);
+                } else if (array[i].material === "plastic") {
+                    plasticArr.push(array[i].type),
+                        secondMaterialLoop(array[i]);
+                }
+            }
         }
-      } 
-      if(array[i].material && array[i].secondMaterial) {
-        if(array[i].material === "paper") {
-          paperArr.push(array[i].type), secondMaterialLoop(array[i]) 
-        }else if(array[i].material === "glass") {
-          glassArr.push(array[i].type), secondMaterialLoop(array[i]) 
-        }else if(array[i].material === "organic") {
-          organicArr.push(array[i].type), secondMaterialLoop(array[i]) 
-        }else if(array[i].material === "plastic") {
-          plasticArr.push(array[i].type), secondMaterialLoop(array[i]) 
-        }
-      } 
+        return result;
     }
-    return result
-  }
-function secondMaterialLoop(array) {
+    function secondMaterialLoop(array) {
         if (array.secondMaterial === "paper") {
-          paperArr.push(array.type)
-        } else if(array.secondMaterial === "glass") {
-          glassArr.push(array.type)
-        } else if(array.secondMaterial === "organic") {
-          organicArr.push(array.type)
-        } else if(array.secondMaterial === "plastic") {
-          plasticArr.push(array.type)
-      }
-  return result
-  }
+            paperArr.push(array.type);
+        } else if (array.secondMaterial === "glass") {
+            glassArr.push(array.type);
+        } else if (array.secondMaterial === "organic") {
+            organicArr.push(array.type);
+        } else if (array.secondMaterial === "plastic") {
+            plasticArr.push(array.type);
+        }
+        return result;
+    }
 
-  materialLoop(array)
-  return console.log(result = [paperArr, glassArr,organicArr, plasticArr]);
+    materialLoop(array);
+    return console.log((result = [paperArr, glassArr, organicArr, plasticArr]));
 }
 
-  recycle([ { type: "rotten apples", material: "organic" },
-            { type: "out of date yogurt", material: "organic", secondMaterial: "plastic"},
-            { type: "wine bottle", material: "glass", secondMaterial: "paper" },
-            { type: "amazon box", material: "paper" },
-            { type: "beer bottle", material: "glass", secondMaterial: "paper" }]);
-
+recycle([
+    { type: "rotten apples", material: "organic" },
+    {
+        type: "out of date yogurt",
+        material: "organic",
+        secondMaterial: "plastic",
+    },
+    { type: "wine bottle", material: "glass", secondMaterial: "paper" },
+    { type: "amazon box", material: "paper" },
+    { type: "beer bottle", material: "glass", secondMaterial: "paper" },
+]);
 
 //             const recyclerMaterials = ['paper', 'glass', 'organic', 'plastic'];
 
@@ -5146,12 +5145,10 @@ function secondMaterialLoop(array) {
 //   return recyclerMaterials.map(m => objects.filter(o => o.material == m || o.secondMaterial == m).map(o => o.type));
 // }
 
-
-
 // function recycle(arr) {
 //   let paper = [], glass = [], organic = [], plastic = [];
 
-//   arr.forEach(obj => {  
+//   arr.forEach(obj => {
 //     if(obj.material === 'paper' || obj.secondMaterial === 'paper' ) paper.push(obj.type)
 //     if(obj.material === 'glass' || obj.secondMaterial === 'glass') glass.push(obj.type)
 //     if(obj.material === 'organic' || obj.secondMaterial === 'organic') organic.push(obj.type)
@@ -5161,91 +5158,110 @@ function secondMaterialLoop(array) {
 //   return [paper, glass, organic, plastic]
 // }
 
-
-
-var runLengthEncoding = function(str){
-  let result = []
-  let count = 1;
-  for(let i = 0; i < str.length; i++){ 
-    if(str[i] !== str[i+1]) {
-      result.push([count, str[i]])
-      count = 1
-    }else if(str[i] === str[i+1]) {
-      count++
+var runLengthEncoding = function (str) {
+    let result = [];
+    let count = 1;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== str[i + 1]) {
+            result.push([count, str[i]]);
+            count = 1;
+        } else if (str[i] === str[i + 1]) {
+            count++;
+        }
     }
-  }
-  return result
-}
+    return result;
+};
 
-console.log(runLengthEncoding('abc'));
+console.log(runLengthEncoding("abc"));
 
-
-
-
-
-
-
-
-function unluckyDays(year){
-  let countUnlDays = 0
-  for (i = 0; i < 12; i++) {
-    new Date(year,i,13).getDay() === 5 ? countUnlDays++ : 0
-    
-  }
-  return countUnlDays
+function unluckyDays(year) {
+    let countUnlDays = 0;
+    for (i = 0; i < 12; i++) {
+        new Date(year, i, 13).getDay() === 5 ? countUnlDays++ : 0;
+    }
+    return countUnlDays;
 }
 console.log(unluckyDays(2065));
 
-
-function getParticipants(handshakes){
-  return ( = handshakes*(handshakes-1))/2
+function getParticipants(handshakes) {
+    return (handshakes * (handshakes - 1)) / 2;
 }
 console.log(getParticipants(4));
 
-
-
-
-
-
-
 function createFunctions(n) {
-  let callbacks = [];
-  
-  for (let i=1; i <= n; i++) {
-    function call(n) {
-      return n
+    let callbacks = [];
+
+    for (let i = 1; i <= n; i++) {
+        function call(n) {
+            return n;
+        }
+        callbacks.push(call());
     }
-    callbacks.push(call());
-  }
-  return callbacks;
+    return callbacks;
 }
 console.log(createFunctions(3));
 
-
-
-
-
-
 function handAngle(date) {
-  const p = 3.141592653589793;
+    const p = 3.141592653589793;
 
-	let hours =  date.getHours()
-  if(hours >= 12) {
-    hours = hours - 12
-  }
-  let min = date.getMinutes()
+    let hours = date.getHours();
+    if (hours >= 12) {
+        hours = hours - 12;
+    }
+    let min = date.getMinutes();
 
-
-  let minAng = min * 6
-  let hourAng1 = (hours * 30) + ((minAng * 15 )/180)
-  if(minAng > 180) {
-    minAng = 180 - (minAng - 180)
-  }
-  if(hourAng1 > 180) {
-    hourAng1 = 180 - (hourAng1 - 180)
-  }
-  let angel = Math.abs(minAng-hourAng1)
-    return [((angel*p)/180), angel,hourAng1,minAng]
+    let minAng = min * 6;
+    let hourAng1 = hours * 30 + (minAng * 15) / 180;
+    if (minAng > 180) {
+        minAng = 180 - (minAng - 180);
+    }
+    if (hourAng1 > 180) {
+        hourAng1 = 180 - (hourAng1 - 180);
+    }
+    let angel = Math.abs(minAng - hourAng1);
+    return [(angel * p) / 180, angel, hourAng1, minAng];
 }
-let d = new Date(2023,4,10, 0, 45)
+let d = new Date(2023, 4, 10, 0, 45);
 console.log(handAngle(d));
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+    if (enteredCode !== correctCode) {
+        return false;
+    }
+    const dateArr = [];
+    function getDateArr(strDate) {
+        const date = new Date(strDate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        dateArr.push(year, month, day);
+        return dateArr;
+    }
+    getDateArr(currentDate);
+    getDateArr(expirationDate);
+
+    if (
+        dateArr[0] > dateArr[3] ||
+        (dateArr[0] === dateArr[3] && dateArr[1] > dateArr[4]) ||
+        (dateArr[0] >= dateArr[3] &&
+            dateArr[1] === dateArr[4] &&
+            dateArr[2] > dateArr[5])
+    ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+console.log(checkCoupon("123", "123", "November 8, 2013", "November 5, 2014"));
+// [ 2013, 11, 8, 2014, 11, 5 ]
+
+
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+    if (enteredCode !== correctCode) {
+        return false;
+    }
+
+    return Date.parse(currentDate) <= Date.parse(expirationDate) ? true : false;
+}
+console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015"));
