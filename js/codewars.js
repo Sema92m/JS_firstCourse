@@ -5201,29 +5201,6 @@ function createFunctions(n) {
 }
 console.log(createFunctions(3));
 
-function handAngle(date) {
-    const p = 3.141592653589793;
-
-    let hours = date.getHours();
-    if (hours >= 12) {
-        hours = hours - 12;
-    }
-    let min = date.getMinutes();
-
-    let minAng = min * 6;
-    let hourAng1 = hours * 30 + (minAng * 15) / 180;
-    if (minAng > 180) {
-        minAng = 180 - (minAng - 180);
-    }
-    if (hourAng1 > 180) {
-        hourAng1 = 180 - (hourAng1 - 180);
-    }
-    let angel = Math.abs(minAng - hourAng1);
-    return [(angel * p) / 180, angel, hourAng1, minAng];
-}
-let d = new Date(2023, 4, 10, 0, 45);
-console.log(handAngle(d));
-
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     if (enteredCode !== correctCode) {
         return false;
@@ -5255,8 +5232,6 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
 console.log(checkCoupon("123", "123", "November 8, 2013", "November 5, 2014"));
 // [ 2013, 11, 8, 2014, 11, 5 ]
 
-
-
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     if (enteredCode !== correctCode) {
         return false;
@@ -5265,3 +5240,50 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     return Date.parse(currentDate) <= Date.parse(expirationDate) ? true : false;
 }
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015"));
+
+function handAngle(date) {
+    const p = 3.141592653589793;
+
+    let hours = date.getHours();
+    if (hours >= 12) {
+        hours = hours - 12;
+    }
+    let min = date.getMinutes();
+
+    let minAng = min * 6;
+    let hourAng1 = hours * 30 + (minAng * 15) / 180;
+    if (minAng > 180) {
+        minAng = 180 - (minAng - 180);
+    }
+    if (hourAng1 > 180) {
+        hourAng1 = 180 - (hourAng1 - 180);
+    }
+    let angel = Math.abs(minAng - hourAng1);
+    return [(angel * p) / 180, angel, hourAng1, minAng];
+}
+let d = new Date(2023, 4, 10, 0, 45);
+console.log(handAngle(d));
+
+
+
+
+
+
+function brightest(colors) {
+    let ind = 0;
+    let maxVal = 0;
+    for (let i = 0; i < colors.length; i++) {
+        let color = colors[i];
+        let r = parseInt(color.slice(1, 3), 16);
+        let g = parseInt(color.slice(3, 5), 16);
+        let b = parseInt(color.slice(5), 16);
+        let val = [r, g, b].sort((a, b) => b - a)[0];
+        if(val > maxVal) {
+          maxVal = val;
+          ind = i
+        }
+    }
+    return colors[ind]
+}
+
+console.log(brightest(["#00FF00", "#FFFF00"]));
