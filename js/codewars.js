@@ -5241,34 +5241,6 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
 }
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015"));
 
-function handAngle(date) {
-    const p = 3.141592653589793;
-
-    let hours = date.getHours();
-    if (hours >= 12) {
-        hours = hours - 12;
-    }
-    let min = date.getMinutes();
-
-    let minAng = min * 6;
-    let hourAng1 = hours * 30 + (minAng * 15) / 180;
-    if (minAng > 180) {
-        minAng = 180 - (minAng - 180);
-    }
-    if (hourAng1 > 180) {
-        hourAng1 = 180 - (hourAng1 - 180);
-    }
-    let angel = Math.abs(minAng - hourAng1);
-    return [(angel * p) / 180, angel, hourAng1, minAng];
-}
-let d = new Date(2023, 4, 10, 0, 45);
-console.log(handAngle(d));
-
-
-
-
-
-
 function brightest(colors) {
     let ind = 0;
     let maxVal = 0;
@@ -5278,12 +5250,55 @@ function brightest(colors) {
         let g = parseInt(color.slice(3, 5), 16);
         let b = parseInt(color.slice(5), 16);
         let val = [r, g, b].sort((a, b) => b - a)[0];
-        if(val > maxVal) {
-          maxVal = val;
-          ind = i
+        if (val > maxVal) {
+            maxVal = val;
+            ind = i;
         }
     }
-    return colors[ind]
+    return colors[ind];
 }
 
 console.log(brightest(["#00FF00", "#FFFF00"]));
+
+function handAngle(date) {
+    let hours = date.getHours();
+    let min = date.getMinutes();
+    let minAng = min * 6;
+    let hourAng1 = hours * 30;
+    if (minAng >= 180) {
+        hourAng1 = Math.abs(hours * 30 - (minAng * 15) / 180);
+    }
+    if (minAng < 180) {
+        hourAng1 = hours * 30 + (minAng * 15) / 180;
+    }
+
+    let angel = Math.abs(minAng - hourAng1);
+    let res = Math.PI - Math.abs(Math.PI - (angel * Math.PI) / 180);
+
+    return res;
+    // return [res, [angel, "Hours " + hourAng1, 'Minutes ' + minAng]];
+}
+let d = new Date("Tue Mar 14 2023 12:30");
+console.log(handAngle(d));
+
+
+
+
+
+function sortByBit(arr) {
+  function bitLength(num){
+    return  num.toString(2).replace(/0/g, "").length
+  }
+    return arr.sort((a, b) => {
+      if (bitLength(a) > bitLength(b)) {
+          return 1;
+      } else if (bitLength(a) < bitLength(b)) {
+          return -1;
+      } else if (bitLength(a) === bitLength(b) && a < b) {
+          return -1;
+      }
+  });
+}
+console.log(sortByBit([3, 8, 3, 6, 5, 7, 9, 1]));
+
+const sortByBit = arr => arr.sort((a, b) => a.toString(2).replace(/0/g, '') - b.toString(2).replace(/0/g, '') || a - b)
