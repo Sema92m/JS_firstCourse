@@ -1,5 +1,3 @@
-// task 2
-// const names = ["Max", "John", "Mark", "Max", "John", "Mark"];
 
 // function likes(names) {
 // 	if (names.length == 0) {
@@ -5281,24 +5279,43 @@ function handAngle(date) {
 let d = new Date("Tue Mar 14 2023 12:30");
 console.log(handAngle(d));
 
-
-
-
-
 function sortByBit(arr) {
-  function bitLength(num){
-    return  num.toString(2).replace(/0/g, "").length
-  }
+    function bitLength(num) {
+        return num.toString(2).replace(/0/g, "").length;
+    }
     return arr.sort((a, b) => {
-      if (bitLength(a) > bitLength(b)) {
-          return 1;
-      } else if (bitLength(a) < bitLength(b)) {
-          return -1;
-      } else if (bitLength(a) === bitLength(b) && a < b) {
-          return -1;
-      }
-  });
+        if (bitLength(a) > bitLength(b)) {
+            return 1;
+        } else if (bitLength(a) < bitLength(b)) {
+            return -1;
+        } else if (bitLength(a) === bitLength(b) && a < b) {
+            return -1;
+        }
+    });
 }
 console.log(sortByBit([3, 8, 3, 6, 5, 7, 9, 1]));
 
-const sortByBit = arr => arr.sort((a, b) => a.toString(2).replace(/0/g, '') - b.toString(2).replace(/0/g, '') || a - b)
+const sortByBit = (arr) =>
+    arr.sort(
+        (a, b) =>
+            a.toString(2).replace(/0/g, "") - b.toString(2).replace(/0/g, "") ||
+            a - b
+    );
+
+console.log(new Array(2));
+
+var runLengthEncoding = function (str) {
+    let result = [];
+    let count = 1;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== str[i + 1]) {
+            result.push([count, str[i]]);
+            count = 1;
+        } else if (str[i] === str[i + 1]) {
+            count++;
+        }
+    }
+    return result;
+};
+
+
