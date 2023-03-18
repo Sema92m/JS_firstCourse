@@ -1,4 +1,3 @@
-
 // function likes(names) {
 // 	if (names.length == 0) {
 // 		return "no one likes this";
@@ -5318,4 +5317,23 @@ var runLengthEncoding = function (str) {
     return result;
 };
 
+function accum(s) {
+    return s
+        .toLowerCase()
+        .split("")
+        .map(
+            (symbol, index) => `${symbol.toUpperCase()}${symbol.repeat(index)}`
+        )
+        .join("-");
+}
 
+function filterHomogenous(arrays) {
+  // Alea iacta est, code legionary!
+  return arrays.filter((arr)=> arr.length && arr.every((item) => typeof item === typeof arr[0]))
+}
+console.log(filterHomogenous([[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]));
+
+
+function inter(s1, s2){
+  return new Set([...s1].filter((item)=> s2.has(item)))
+ }
