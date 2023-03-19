@@ -5328,12 +5328,88 @@ function accum(s) {
 }
 
 function filterHomogenous(arrays) {
-  // Alea iacta est, code legionary!
-  return arrays.filter((arr)=> arr.length && arr.every((item) => typeof item === typeof arr[0]))
+    // Alea iacta est, code legionary!
+    return arrays.filter(
+        (arr) =>
+            arr.length && arr.every((item) => typeof item === typeof arr[0])
+    );
 }
-console.log(filterHomogenous([[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]));
+console.log(filterHomogenous([[1, 5, 4], ["a", 3, 5], ["b"], [], ["1", 2, 3]]));
 
+function inter(s1, s2) {
+    return new Set([...s1].filter((item) => s2.has(item)));
+}
 
-function inter(s1, s2){
-  return new Set([...s1].filter((item)=> s2.has(item)))
- }
+let ar1r = ["Rysn", "Jimmy", "123", "4", "Cool Man", "Rysn"];
+function friend(friends) {
+    return friends.filter((el) => typeof el === "string" && el.length === 4);
+}
+console.log(friend(arr));
+return friends.filter((n) => n.length === 4);
+
+function nbYear(p0, percent, aug, p) {
+    let year = 0;
+    while (p0 < p) {
+        year++;
+        p0 = Math.floor(p0 + p0 * (percent / 100) + aug);
+    }
+    return year;
+}
+console.log(nbYear(1500, 5, 100, 5000));
+
+function findNextSquare(sq) {
+    // if ((Math.sqrt(sq) % 2 == 0) || (Math.sqrt(sq) % 2 == 0.5 || (Math.sqrt(sq) % 2 == 1))) {
+    // 	return ((Math.sqrt(sq)) + 1) ** 2;
+    // } else { return -1;
+    // }
+    if (Math.sqrt(sq) == Math.floor(Math.sqrt(sq))) {
+        return (Math.sqrt(sq) + 1) ** 2;
+    } else {
+        return -1;
+    }
+}
+console.log(findNextSquare(121));
+
+function printerError(s) {
+    let b = s.length - s.replace(/[n-z]/gi, "").length;
+    return `${b}` + `${"/"}` + `${s.length}`;
+}
+console.log(printerError("aaabbbbhaijjjmx"));
+const printerError = (s) => `${s.replace(/[a-m]/gi, "").length}/${s.length}`;
+
+function rowSumOddNumbers(n) {
+    return Math.pow(n, 3);
+}
+return n ** 3;
+return n * n * n;
+
+function stray(numbers) {
+    let a = numbers.sort((a, b) => a - b);
+    return a[0] == a[1] ? a[a.length - 1] : a[0];
+}
+console.log(stray([1, 1, 1, 2]));
+const stray = (nums) => nums.reduce((a, b) => a ^ b);
+
+function isAValidMessage(message) {
+    function numFromStr(str) {
+        let num = [...str]
+            .map((i) => {
+                if (isFinite(i) == true || i == ".") {
+                    return i;
+                } else {
+                    return " ";
+                }
+            })
+            .join("")
+            .split(" ")
+            .filter((i) => i != "")
+            .map((i) => Number(i));
+        return num;
+    }
+    console.log(numFromStr("3hey5hello2hi"));
+    let b = message.replace(/[0-9]/gi, " ");
+    console.log(b);
+
+    return b;
+}
+console.log(isAValidMessage("3hey5hello2hi"));
