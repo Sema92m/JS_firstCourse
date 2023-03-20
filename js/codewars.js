@@ -5413,3 +5413,41 @@ function isAValidMessage(message) {
     return b;
 }
 console.log(isAValidMessage("3hey5hello2hi"));
+
+function noOdds(values) {
+    return values.filter((a) => a % 2 == 0);
+}
+console.log(noOdds([0, 1, 2, 3]));
+
+function angle(n) {
+    return 180 * (n - 2);
+}
+console.log(angle(61));
+
+function flattenAndSort(array) {
+    return array.flat().sort((a, b) => a - b);
+}
+
+console.log(
+    flattenAndSort([
+        [3, 2, 1],
+        [7, 9, 8],
+        [6, 4, 5],
+    ])
+);
+
+function digits(n) {
+    return String(n).length;
+}
+
+console.log(digits(12345));
+
+function digits(n) {
+    return n.toString().length;
+}
+
+function sortGiftCode(code) {
+    return [...code].sort().join("");
+}
+
+console.log(sortGiftCode("pqksuvy"));
