@@ -5478,3 +5478,31 @@ function countA(n) {
     return res.reduce((a, b) => a + b);
 }
 console.log(countA(6));
+
+
+
+
+
+
+function generateShape(integer){
+
+	console.log('*' + integer.repeat(integer));
+}
+console.log(generateShape(5));
+
+
+function countRedBeads(n) {
+	if (n < 2) {
+		return 0
+	} if (n > 2 ) {
+		return  (n-1) * 2
+	}
+  }
+
+  console.log(countRedBeads(3));
+
+function countRedBeads(n) {
+	return n < 2 ? 0 : (n-1)*2
+  }
+
+  console.log(countRedBeads(3));
