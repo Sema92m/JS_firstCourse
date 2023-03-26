@@ -5506,3 +5506,23 @@ function countRedBeads(n) {
   }
 
   console.log(countRedBeads(3));
+
+
+
+  
+
+  function getParticipants(handshakes){
+    if(handshakes === 0) return 0;
+    if(handshakes === 1) return 2;
+  
+    let answer = 0;
+    let sum = 0
+  
+    while(handshakes > sum) {
+      sum = answer * (answer + 1) / 2;
+  
+      answer++;
+    }
+  
+    return answer;
+  }
