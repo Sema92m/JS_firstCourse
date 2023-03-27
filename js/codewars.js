@@ -5479,50 +5479,69 @@ function countA(n) {
 }
 console.log(countA(6));
 
-
-
-
-
-
-function generateShape(integer){
-
-	console.log('*' + integer.repeat(integer));
+function generateShape(integer) {
+    console.log("*" + integer.repeat(integer));
 }
 console.log(generateShape(5));
 
-
 function countRedBeads(n) {
-	if (n < 2) {
-		return 0
-	} if (n > 2 ) {
-		return  (n-1) * 2
-	}
-  }
-
-  console.log(countRedBeads(3));
-
-function countRedBeads(n) {
-	return n < 2 ? 0 : (n-1)*2
-  }
-
-  console.log(countRedBeads(3));
-
-
-
-  
-
-  function getParticipants(handshakes){
-    if(handshakes === 0) return 0;
-    if(handshakes === 1) return 2;
-  
-    let answer = 0;
-    let sum = 0
-  
-    while(handshakes > sum) {
-      sum = answer * (answer + 1) / 2;
-  
-      answer++;
+    if (n < 2) {
+        return 0;
     }
-  
-    return answer;
-  }
+    if (n > 2) {
+        return (n - 1) * 2;
+    }
+}
+
+console.log(countRedBeads(3));
+
+function countRedBeads(n) {
+    return n < 2 ? 0 : (n - 1) * 2;
+}
+
+console.log(countRedBeads(3));
+
+function getParticipants(h) {
+    if (h === 0) return 0;
+    if (h === 1) return 2;
+    let res = 0;
+    let sum = 0;
+    while (h > sum) {
+        sum = (res * (res + 1)) / 2;
+        ++res;
+    }
+    return res;
+}
+
+console.log(getParticipants(7));
+// Задача является обратной задаче определения количества связей (H) 
+// между точками:
+// H = N * (N - 1) / 2,
+// где N - количество точек.
+// Результат представляет решение квадратного уравнения:
+// N * N - N - 2 * H = 0
+// Дискриминант D = 1 + 8 * H
+// По условиям задачи всегда H >= 0, тогда нужен только положительный 
+// корень уравнения:
+// H1 = (1 + sqrt(D))/ 2
+// Поскольку ответом должно быть целое число, то нужно вернуть значение 
+// H1, округленное вверх. Если H1 <= 1, то это противоречит условиям 
+// задачи (для совершения рукопожатия нужно минимум два человека), 
+// тогда ответ 0.
+// */
+
+
+
+function cubeOdd(arr) {
+	if ()
+let a = arr.filter((i)=> {
+
+	return i % 2 >0
+});
+let b = a.map((item) => {
+	return 	item **3;
+})
+return b.reduce((a,b)=> {
+	return a+b
+});
+	}
