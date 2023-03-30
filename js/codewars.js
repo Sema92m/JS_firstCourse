@@ -3990,3 +3990,15 @@ function vowelIndices(word){
 console.log(reverseNumber(-123))
 console.log(typeof(reverseNumber(123)))
 
+  function reverseNumber1(n) {
+    if(String(n).replace(/0/g,'').length === 1) {
+        return String(n).replace(/0/g,'')*1
+    }
+    if(String(n)[0] == '-') {
+        return  -String(n).split('').slice(1).reverse().join('')*1
+    }
+    return +String(n).split('').reverse().join('')
+  }
+
+
+
