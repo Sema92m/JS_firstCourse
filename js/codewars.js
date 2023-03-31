@@ -5559,4 +5559,17 @@ return b.reduce((a,b)=> {
 	return a+b
 });
 	}
->>>>>>> 59c4b4ac389c24cb066d6e48bf36c10922ca8b76
+function cubeOdd(arr) {
+	if ()
+let a = arr.filter((i)=> {
+
+	return i % 2 >0
+});
+let b = a.map((item) => {
+	return 	item **3;
+})
+return b.reduce((a,b)=> {
+	return a+b
+});
+	}
+
