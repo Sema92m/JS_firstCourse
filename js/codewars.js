@@ -5572,4 +5572,31 @@ return b.reduce((a,b)=> {
 	return a+b
 });
 	}
+  
+function cubeOdd1(arr) {
+	if ()
+let a = arr.filter((i)=> {
+
+	return i % 2 >0
+});
+let b = a.map((item) => {
+	return 	item **3;
+})
+return b.reduce((a,b)=> {
+	return a+b
+});
+	}
+function cubeOdd(arr) {
+	if ()
+let a = arr.filter((i)=> {
+
+	return i % 2 >0
+});
+let b = a.map((item) => {
+	return 	item **3;
+})
+return b.reduce((a,b)=> {
+	return a+b
+});
+	}
 
