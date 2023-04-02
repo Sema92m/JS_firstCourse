@@ -3985,20 +3985,11 @@ function reverseNumber(n) {
 console.log(reverseNumber(-123));
 console.log(typeof reverseNumber(123));
 
-<<<<<<< HEAD
-  function reverseNumber1(n) {
-    if(String(n).replace(/0/g,'').length === 1) {
-        return String(n).replace(/0/g,'')*1
-    }
-    if(String(n)[0] == '-') {
-        return  -String(n).split('').slice(1).reverse().join('')*1
-    }
-    return +String(n).split('').reverse().join('')
-  }
 
 
 
-=======
+
+
 function sumCubes(n) {
     if (n === 1) {
         return 1;
@@ -5542,61 +5533,15 @@ console.log(getParticipants(7));
 // H1, округленное вверх. Если H1 <= 1, то это противоречит условиям 
 // задачи (для совершения рукопожатия нужно минимум два человека), 
 // тогда ответ 0.
-// */
-
-
-
-function cubeOdd(arr) {
-	if ()
-let a = arr.filter((i)=> {
-
-	return i % 2 >0
-});
-let b = a.map((item) => {
-	return 	item **3;
-})
-return b.reduce((a,b)=> {
-	return a+b
-});
-	}
-function cubeOdd(arr) {
-	if ()
-let a = arr.filter((i)=> {
-
-	return i % 2 >0
-});
-let b = a.map((item) => {
-	return 	item **3;
-})
-return b.reduce((a,b)=> {
-	return a+b
-});
-	}
-  
-function cubeOdd1(arr) {
-	if ()
-let a = arr.filter((i)=> {
-
-	return i % 2 >0
-});
-let b = a.map((item) => {
-	return 	item **3;
-})
-return b.reduce((a,b)=> {
-	return a+b
-});
-	}
-function cubeOdd(arr) {
-	if ()
-let a = arr.filter((i)=> {
-
-	return i % 2 >0
-});
-let b = a.map((item) => {
-	return 	item **3;
-})
-return b.reduce((a,b)=> {
-	return a+b
-});
-	}
-
+// */1
+function getParticipants1(h) {
+  if (h === 0) return 0;
+  if (h === 1) return 2;
+  let res = 0;
+  let sum = 0;
+  while (h > sum) {
+      sum = (res * (res + 1)) / 2;
+      ++res;
+  }
+  return res;
+}
