@@ -5545,3 +5545,14 @@ function getParticipants1(h) {
   }
   return res;
 }
+function getParticipants2(h) {
+  if (h === 0) return 0;
+  if (h === 1) return 2;
+  let res = 0;
+  let sum = 0;
+  while (h > sum) {
+      sum = (res * (res + 1)) / 2;
+      ++res;
+  }
+  return res;
+}
