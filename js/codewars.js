@@ -5517,89 +5517,25 @@ function getParticipants(h) {
     }
     return res;
 }
-
-console.log(getParticipants(7));
-// Задача является обратной задаче определения количества связей (H) 
-// между точками:
-// H = N * (N - 1) / 2,
-// где N - количество точек.
-// Результат представляет решение квадратного уравнения:
-// N * N - N - 2 * H = 0
-// Дискриминант D = 1 + 8 * H
-// По условиям задачи всегда H >= 0, тогда нужен только положительный 
-// корень уравнения:
-// H1 = (1 + sqrt(D))/ 2
-// Поскольку ответом должно быть целое число, то нужно вернуть значение 
-// H1, округленное вверх. Если H1 <= 1, то это противоречит условиям 
-// задачи (для совершения рукопожатия нужно минимум два человека), 
-// тогда ответ 0.
-// */1
-function getParticipants1(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
+function getParticipant2s(h) {
+    if (h === 0) return 0;
+    if (h === 1) return 2;
+    let res = 0;
+    let sum = 0;
+    while (h > sum) {
+        sum = (res * (res + 1)) / 2;
+        ++res;
+    }
+    return res;
 }
-function getParticipants2(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
+function getParticipants3(h) {
+    if (h === 0) return 0;
+    if (h === 1) return 2;
+    let res = 0;
+    let sum = 0;
+    while (h > sum) {
+        sum = (res * (res + 1)) / 2;
+        ++res;
+    }
+    return res;
 }
-function getParticipants32(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
-}
-function getParticipants312(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
-}
-function getParticipants3212(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
-}
-function getParticipants32312(h) {
-  if (h === 0) return 0;
-  if (h === 1) return 2;
-  let res = 0;
-  let sum = 0;
-  while (h > sum) {
-      sum = (res * (res + 1)) / 2;
-      ++res;
-  }
-  return res;
-}
-
-//test
-//test1
