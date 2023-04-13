@@ -5551,3 +5551,6 @@ function getParticipants3(h) {
     }
     return res;
 }
+
+
+//add what-season algo task rs-school
