@@ -5554,3 +5554,4 @@ function getParticipants3(h) {
 
 
 //add what-season algo task rs-school
+//sun-digits algo task rs-school
