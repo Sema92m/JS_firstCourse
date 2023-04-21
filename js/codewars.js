@@ -5562,3 +5562,4 @@ function getParticipants3(h) {
 // algo task rs-school
 
 //clean code task start
+//clean code task continue
