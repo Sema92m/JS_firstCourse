@@ -3985,11 +3985,6 @@ function reverseNumber(n) {
 console.log(reverseNumber(-123));
 console.log(typeof reverseNumber(123));
 
-
-
-
-
-
 function sumCubes(n) {
     if (n === 1) {
         return 1;
@@ -5504,8 +5499,6 @@ function countRedBeads(n) {
     return n < 2 ? 0 : (n - 1) * 2;
 }
 
-console.log(countRedBeads(3));
-
 function getParticipants(h) {
     if (h === 0) return 0;
     if (h === 1) return 2;
@@ -5552,7 +5545,6 @@ function getParticipants3(h) {
     return res;
 }
 
-
 //add what-season algo task rs-school
 //sun-digits algo task rs-school
 // algo task rs-school
@@ -5566,6 +5558,10 @@ function getParticipants3(h) {
 //clean code task continue
 //clean code task continue
 //clean code task continue
-//virtual keyboard task
+//clean code task continue
+//clean code task continue
+//clean code task continue
 //virtual keyboard task
 //virtual keyboard task continue
+//virtual keyboard task
+//virtual keyboard task
