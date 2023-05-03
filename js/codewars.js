@@ -5544,27 +5544,27 @@ function getParticipants3(h) {
     }
     return res;
 }
+function getParticipants112(h) {
+    if (h === 0) return 0;
+    if (h === 1) return 2;
+    let res = 0;
+    let sum = 0;
+    while (h > sum) {
+        sum = (res * (res + 1)) / 2;
+        ++res;
+    }
+    return res;
+}
+function getParticipants1312(h) {
+    if (h === 0) return 0;
+    if (h === 1) return 2;
+    let res = 0;
+    let sum = 0;
+    while (h > sum) {
+        sum = (res * (res + 1)) / 2;
+        ++res;
+    }
+    return res;
+}
 
-//add what-season algo task rs-school
-//sun-digits algo task rs-school
-// algo task rs-school
-// algo task rs-school
-// algo task rs-school
-// algo task rs-school
-// algo task rs-school
-
-//clean code task start
-//clean code task continue
-//clean code task continue
-//clean code task continue
-//clean code task continue
-//clean code task continue
-//clean code task continue
-//clean code task continue
-//virtual keyboard task
-//virtual keyboard task continue
-//virtual keyboard task
-//virtual keyboard task
-//virtual keyboard task
-//virtual keyboard task
-//virtual keyboard task
+//virtual keyboard task done
