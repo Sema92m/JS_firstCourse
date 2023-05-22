@@ -1318,3 +1318,5 @@ function getParticipants1312(h) {
 //webpack test completed
 //Client - Server interaction test completed
 //Client - Server interaction test completed
+//Client - Server interaction test
+//najem okazjonalny
