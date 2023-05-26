@@ -1327,3 +1327,4 @@ function getParticipants1312(h) {
 //JavaScript Classes lection 1
 // OOP module
 >>>>>>> 3ba097ca2ca2714c6d6da41260225c0673a5eefb
+// OOP test passed
