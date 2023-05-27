@@ -1312,9 +1312,7 @@ function getParticipants1312(h) {
 //HTML Builder task continue
 //HTML Builder task continue
 //HTML Builder task continue
-<<<<<<< HEAD
 //HTML Builder task continue
-=======
 //HTML Builder task crosscheck
 //HTML Builder task crosscheck
 //HTML Builder task crosscheck
@@ -1325,6 +1323,5 @@ function getParticipants1312(h) {
 //Self-introduction
 //Self-introduction video make
 //JavaScript Classes lection 1
-// OOP module
->>>>>>> 3ba097ca2ca2714c6d6da41260225c0673a5eefb
-// OOP test passed
+// OOP module// OOP test passed
+//JavaScript Classes lection 2
