@@ -1325,3 +1325,16 @@ function getParticipants1312(h) {
 //JavaScript Classes lection 1
 // OOP module// OOP test passed
 //JavaScript Classes lection 2
+
+class Animal {
+    constructor(name, type) {
+        this.name = name;
+        this.type = type;
+    }
+    toString() {
+        console.log(`${this.name} is a ${this.type}`);
+    }
+}
+const dog = new Animal("Max", "dog");
+dog.toString();
+console.log(dog.type);
