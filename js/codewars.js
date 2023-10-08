@@ -1363,3 +1363,30 @@ Array.prototype.odd = function () {
 };
 
 console.log(numbers.square());
+
+function neutralise(s1, s2) {
+    let res = "";
+    for (let i = 0; i < s1.length; i++) {
+        res += s1[i] === s2[i] ? s1[i] : "0";
+    }
+    return res;
+}
+console.log(neutralise("-+-+-+", "-+-+-+"));
+
+function flickSwitch(arr) {
+    let result = [];
+    let switchValue = true;
+
+    for (let item of arr) {
+        if (item === "flick") {
+            result.push(!switchValue);
+            switchValue = !switchValue;
+        } else {
+            result.push(switchValue);
+        }
+    }
+
+    return result;
+}
+
+console.log(flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]));
