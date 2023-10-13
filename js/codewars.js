@@ -1390,3 +1390,132 @@ function flickSwitch(arr) {
 }
 
 console.log(flickSwitch(["bicycle", "jarmony", "flick", "sheep", "flick"]));
+
+const flip = (d, a) => {
+    return d === "R" ? a.sort((a, b) => a - b) : a.sort((a, b) => b - a);
+};
+console.log(flip("L", [3, 2, 1, 2]));
+
+function sameCase(a, b) {
+    const res = a + b;
+    if (res.replace(/[\W\d\_]/g, "") !== res) {
+        return -1;
+    } else if (res.toUpperCase() === res || res.toLowerCase() === res) {
+        return 1;
+    }
+
+    return 0;
+}
+
+console.log(sameCase("1 a", "B:"));
+
+function pillars(numPill, dist, width) {
+    return numPill === 1
+        ? 0
+        : (numPill - 1) * (dist * 100) + (numPill * width - 2 * width);
+}
+console.log(pillars(11, 15, 30));
+
+function sumOfDifferences(arr) {
+    if (arr.length <= 1) {
+        return 0;
+    }
+    const newArr = arr.sort((a, b) => b - a);
+    let res = [];
+    for (let i = 0; i < newArr.length - 1; i++) {
+        res.push(newArr[i] - newArr[i + 1]);
+    }
+
+    return res.reduce((cur, acc) => acc + cur);
+}
+console.log(sumOfDifferences([-1]));
+
+function multipleOfIndex(array) {
+    const res = [];
+    if (array[0] === 0) {
+        res.push(array[0]);
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % i === 0) {
+            res.push(array[i]);
+        }
+    }
+    return res;
+}
+console.log(multipleOfIndex([0, 2, 3, 6, 9]));
+
+function spinAround(turns) {
+    let res = 0;
+    for (let i = 0; i < turns.length; i++) {
+        turns[i] === "left" ? (res -= 0.25) : (res += 0.25);
+    }
+    return Math.floor(Math.abs(res));
+}
+console.log(spinAround(["right", "right", "right", "right", "left", "right"]));
+
+function closingInSum(n) {
+    let res = [];
+    const arr = String(n).split("");
+    if (arr.length === 1) {
+        return arr.map(Number)[0];
+    }
+    if (arr.length % 2 !== 0) {
+        res.push(arr[Math.floor(arr.length / 2)]);
+    }
+    for (let i = 0; i < arr.length; i++) {
+        res.push(arr[i] + arr[arr.length - 1 - i]);
+        if (i >= Math.floor(arr.length / 2 - 1)) {
+            break;
+        }
+    }
+    return res.map(Number).reduce((acc, curr) => acc + curr);
+}
+console.log(closingInSum(1));
+
+function madShout(sidewalk) {
+    const distanceYF = sidewalk.indexOf("F") - sidewalk.indexOf("Y");
+    if (distanceYF > 2) {
+        let arr = [];
+        for (let i = 0; i < distanceYF / 2; i++) {
+            arr.push("i");
+        }
+        return `O${arr.join("")} F!`;
+    }
+    return "Oi F!";
+}
+console.log(madShout("---------Y-----F------------"));
+
+function openOrSenior(data) {
+    let res = [];
+    for (let i = 0; i < data.length; i++) {
+        if (data[i][0] >= 55 && data[i][1] > 7) {
+            res.push("Senior");
+        } else {
+            res.push("Open");
+        }
+    }
+    return res;
+}
+
+console.log(
+    openOrSenior([
+        [45, 12],
+        [55, 21],
+        [19, -2],
+        [104, 20],
+    ])
+);
+
+function breakChocolate(n, m) {
+    if (n < 1 || m < 1) {
+        return 0;
+    }
+    let counter2 = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < m - 1; j++) {
+            counter2++;
+        }
+    }
+    return counter2 + n - 1;
+}
+console.log(breakChocolate(5, 5));
