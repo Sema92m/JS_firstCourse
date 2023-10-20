@@ -1519,3 +1519,37 @@ function breakChocolate(n, m) {
     return counter2 + n - 1;
 }
 console.log(breakChocolate(5, 5));
+
+function nbDig(n, d) {
+    let arrOfSqNums = [];
+    for (let i = 0; i <= n; i++) {
+        arrOfSqNums.push(i ** 2);
+    }
+    return arrOfSqNums
+        .join("")
+        .split("")
+        .filter((item) => +item === d).length;
+}
+console.log(nbDig(25, 1));
+
+function solution(digits) {
+    let str = digits + "";
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        arr.push(+str.slice(i, i + 5));
+    }
+    return Math.max(...arr);
+}
+console.log(solution(1234567890));
+
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push(i);
+    }
+    return arr.reduce((a, b) => a * b);
+}
+console.log(factorial(0));
