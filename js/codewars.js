@@ -1553,3 +1553,152 @@ function factorial(n) {
     return arr.reduce((a, b) => a * b);
 }
 console.log(factorial(0));
+
+function alphabetWar(fight) {
+    let res = [];
+    for (let i = 0; i < fight.length; i++) {
+        switch (fight[i]) {
+            case "w":
+                res.push(4);
+                break;
+            case "p":
+                res.push(3);
+                break;
+            case "b":
+                res.push(2);
+                break;
+            case "s":
+                res.push(1);
+                break;
+            case "m":
+                res.push(-4);
+                break;
+            case "q":
+                res.push(-3);
+                break;
+            case "d":
+                res.push(-2);
+                break;
+            case "z":
+                res.push(-1);
+                break;
+        }
+    }
+    const num = res.reduce((a, b) => a + b, 0);
+    if (num > 0) {
+        return "Left side wins!";
+    } else if (num < 0) {
+        return "Right side wins!";
+    }
+    return "Let's fight again!";
+}
+console.log(alphabetWar("zzzzs"));
+
+const greet = function (name) {
+    const firstLetter = name.slice(0, 1).toUpperCase();
+    const otherLetters = name.slice(1).toLowerCase();
+    return "Hello " + firstLetter + otherLetters + "!";
+};
+console.log(greet("rocky"));
+
+function spinWords(string) {
+    let res = [];
+    const arr1 = string.split(" ").map((item) => item.split(""));
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i].length > 4) {
+            res.push(arr1[i].reverse().join(""));
+        } else {
+            res.push(arr1[i].join(""));
+        }
+    }
+    return res.join(" ");
+}
+console.log(spinWords("Hey fellow warriors"));
+
+function duplicateCount(text) {
+    let res = Array.from(text.toLowerCase()).sort();
+    let arr = [];
+    for (let i = 0; i < res.length; i++) {
+        if (res[i] === res[i + 1]) {
+            arr.push(res[i]);
+        }
+    }
+    return Array.from(new Set(arr)).length;
+}
+console.log(duplicateCount("aabBcde"));
+
+const n = [1, 2, 3, 4, 5];
+function removeSmallest(numbers) {
+    if (numbers.length === 0) {
+        return [];
+    }
+    const minNum = Math.min(...numbers);
+    const minNumFLowerIndex = numbers.indexOf(minNum);
+    return numbers.filter((elem, index) => index !== minNumFLowerIndex);
+}
+console.log(removeSmallest(n));
+console.log(n);
+
+function findOdd(A) {
+    const res = [...new Set(A)]; //[ 1, 2, 3, 4 ]
+    const arr1 = res.map((num) => A.filter((item) => item === num));
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i].length % 2 > 0) {
+            return arr1[i][0];
+        }
+    }
+}
+console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+
+function solution(number) {
+    if (number < 0) {
+        return 0;
+    }
+    let arr = [];
+    for (let i = 1; i < number; i++) {
+        arr.push(i);
+    }
+    const arrFiveFilter = arr.filter((item) => item % 5 === 0);
+    const arrThreeFilter = arr.filter((item) => item % 3 === 0);
+    return [...new Set([arrFiveFilter, arrThreeFilter].flat())].reduce(
+        (acc, cur) => acc + cur,
+        0
+    );
+}
+console.log(solution(20));
+
+function getDivisorsCnt(n) {
+    let count = 0;
+    for (let i = n; i > 0; i--) {
+        if (n % i === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(getDivisorsCnt(12));
+
+// function getDivisorsCnt(n) {
+//     let count = 0;
+//     for (let i = 1; i <= Math.sqrt(n); i++) {
+//         if (n % i === 0) {
+//             // If i is a divisor, increment count by 2 (for both i and n/i)
+//             if (i * i === n) {
+//                 count++;
+//             } else {
+//                 count += 2;
+//             }
+//         }
+//     }
+//     return count;
+// }
+// console.log(getDivisorsCnt(12));
+
+var capitals = function (word) {
+    let res = [];
+    [...word.replace(/[a-z]/g, "0")].map((item, index) =>
+        item !== "0" ? res.push(index) : -1
+    );
+    return res;
+};
+console.log(capitals("CodEWaRs"));
