@@ -1702,3 +1702,192 @@ var capitals = function (word) {
     return res;
 };
 console.log(capitals("CodEWaRs"));
+
+var countBits = function (n) {
+    if (n === 0 || n === 1) {
+        return n;
+    }
+    return [...n.toString(2)].reduce((acc, cur) => +acc + +cur);
+};
+
+function findUniq(arr) {
+    const sortArr = arr.sort();
+    return sortArr.at(0) === sortArr.at(1) ? sortArr.at(-1) : sortArr.at(0);
+}
+console.log(findUniq([1, 1, 2, 1, 1]));
+
+function solution(str) {
+    let res = [];
+    for (let i = 0; i < str.length; i++) {
+        if (i === str.length - 1) {
+            res.push(str[i] + "_");
+            break;
+        }
+        res.push(str[i] + str[i + 1]);
+        i++;
+    }
+    return res;
+}
+console.log(solution(""));
+
+function sortArray(array) {
+    const filteredArr = array
+        .filter((item) => item % 2 !== 0)
+        .sort((a, b) => a - b);
+    let res = [];
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            res.push(filteredArr[count]);
+            count++;
+        } else {
+            res.push(array[i]);
+        }
+    }
+    return res;
+}
+console.log(sortArray([1, 11, 2, 8, 3, 4, 5]));
+
+function isValidWalk(walk) {
+    if (walk.length !== 10) {
+        return false;
+    }
+    let countNS = 0;
+    let countWE = 0;
+    for (let i = 0; i < walk.length; i++) {
+        switch (walk[i]) {
+            case "n":
+                countNS++;
+                break;
+            case "s":
+                countNS--;
+                break;
+            case "w":
+                countWE++;
+                break;
+            case "e":
+                countWE--;
+                break;
+        }
+    }
+    console.log([countNS, countWE]);
+    return countNS !== 0 || countWE !== 0 ? false : true;
+}
+console.log(isValidWalk(["s", "e", "s", "s", "w", "w", "n", "w", "n", "e"]));
+
+function alphabetPosition(text) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const formatedText = text.replace(/[\W\d\s\_]/gi, "");
+    console.log(formatedText);
+    if (formatedText.length < 1) {
+        return "";
+    }
+    let res = "";
+    for (let i = 0; i < formatedText.length; i++) {
+        res = res + (alphabet.indexOf(formatedText[i].toLowerCase()) + 1) + " ";
+    }
+    return res.trim();
+}
+console.log(alphabetPosition("i<cvmc_!"));
+
+function moveZeros(arr) {
+    let res = [];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 0) {
+            res.push(arr[i]);
+        } else {
+            count++;
+        }
+    }
+    for (let i = 0; i < count; i++) {
+        res.push(0);
+    }
+    return res;
+}
+console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+
+function pigIt(str) {
+    let arr = str.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].replace(/[^A-Za-z]/gi, "") !== arr[i]) {
+            arr[i] === arr[i];
+            break;
+        }
+        arr[i] = arr[i].slice(1) + arr[i][0] + "ay";
+    }
+    return arr.join(" ");
+}
+console.log(pigIt("Pig latin is cool !"));
+
+function humanReadable(seconds) {
+    let hour = Math.floor(seconds / 3600);
+    let min = Math.floor((seconds % 3600) / 60);
+    let sec = seconds - (3600 * hour + 60 * min);
+    sec < 10 ? (sec = "0" + sec) : sec;
+    min < 10 ? (min = "0" + min) : min;
+    hour < 10 ? (hour = "0" + hour) : hour;
+    return `${hour}:${min}:${sec}`;
+}
+console.log(humanReadable(15125));
+
+function dirReduc(arr) {
+    let newArr = [...arr];
+    let res = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] === "NORTH" && arr.slice(i).indexOf("SOUTH") > -1) {
+            newArr[i] = 0;
+            newArr[newArr.indexOf("SOUTH")] = 0;
+        }
+        if (arr[i] === "WEST" && arr.slice(i).indexOf("EAST") > -1) {
+            newArr[i] = 0;
+            newArr[newArr.indexOf("EAST")] = 0;
+        }
+        if (arr[i] === "SOUTH" && arr.slice(i).indexOf("NORTH") > -1) {
+            newArr[i] = 0;
+            newArr[newArr.indexOf("NORTH")] = 0;
+        }
+        if (arr[i] === "EAST" && arr.slice(i).indexOf("WEST") > -1) {
+            newArr[i] = 0;
+            newArr[newArr.indexOf("WEST")] = 0;
+        }
+    }
+    for (let i = 0; i < newArr.length; i++) {
+        if (
+            newArr[i] === "NORTH" ||
+            newArr[i] === "SOUTH" ||
+            newArr[i] === "EAST" ||
+            newArr[i] === "WEST"
+        ) {
+            res.push(newArr[i]);
+        }
+    }
+    return res;
+}
+
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+
+function rot13(message) {
+    const newMessage = [...message.toLowerCase()];
+    let res = [];
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    for (let i = 0; i < newMessage.length; i++) {
+        if (alphabet.includes(newMessage[i])) {
+            if (alphabet.indexOf(newMessage[i]) <= 12) {
+                res.push(alphabet[alphabet.indexOf(newMessage[i]) + 13]);
+            }
+            if (alphabet.indexOf(newMessage[i]) > 12) {
+                res.push(alphabet[alphabet.indexOf(newMessage[i]) - 13]);
+            }
+        } else {
+            res.push(newMessage[i]);
+        }
+    }
+    for (let i = 0; i < message.length; i++) {
+        if (message[i] === message[i].toUpperCase()) {
+            res[i] = res[i].toUpperCase();
+        }
+    }
+    return res.join("");
+}
+console.log(rot13("Te2st"));
