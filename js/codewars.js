@@ -1891,3 +1891,19 @@ function rot13(message) {
     return res.join("");
 }
 console.log(rot13("Te2st"));
+
+function firstNonRepeatingLetter(s) {
+    s = s.split("");
+    let res = "";
+    for (let i = 0; i < s.length; i++) {
+        if (
+            s.filter((elem) => elem.toLowerCase() === s[i].toLowerCase())
+                .length === 1
+        ) {
+            res = s[i];
+            break;
+        }
+    }
+    return res;
+}
+console.log(firstNonRepeatingLetter("stress"));
