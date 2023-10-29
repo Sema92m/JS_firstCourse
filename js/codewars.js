@@ -1907,3 +1907,138 @@ function firstNonRepeatingLetter(s) {
     return res;
 }
 console.log(firstNonRepeatingLetter("stress"));
+
+function incrementString(strng) {
+    let str = "";
+    if (strng === strng.replace(/[]\d/g, "")) {
+        str === strng.slice(0, -1) + (+strng.slice(-1) + 1);
+        return str;
+    }
+
+    let res = [];
+    let strngSplit = strng.split("");
+    for (let i = strngSplit.length - 1; i >= 0; i--) {
+        if (+strngSplit[i]) {
+            res.push(strngSplit[i]);
+        } else {
+            console.log("break");
+            break;
+        }
+    }
+    console.log(res);
+    if (res.length > 0) {
+        res = res.reverse().join("");
+        console.log(res);
+        str = strng.slice(0, strng.length - res.length);
+        console.log(str);
+        return str + (+res + 1);
+    }
+    return str;
+}
+console.log(incrementString("0123"));
+
+function generateHashtag(str) {
+    if (str.trim() === "") {
+        return false;
+    }
+    const capitalized = str
+        .trim()
+        .split(" ")
+        .map((el) => el.charAt(0).toUpperCase() + el.slice(1));
+    const res = "#" + capitalized.join("");
+    return res.length > 140 ? false : res;
+}
+console.log(generateHashtag(" Hello there thanks for trying my Kata"));
+
+function scramble(str1, str2) {
+    const count1 = {};
+    const count2 = {};
+    for (const char of str1) {
+        count1[char] = (count1[char] || 0) + 1;
+    }
+    for (const char of str2) {
+        count2[char] = (count2[char] || 0) + 1;
+    }
+    for (const char in count2) {
+        if (!count1[char] || count1[char] < count2[char]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(scramble("katas", "steak"));
+
+function alphanumeric(string) {
+    return string.replace(/[\W\_]/gi, "") === string && string !== ""
+        ? true
+        : false;
+}
+console.log(alphanumeric(""));
+
+function rot13(str) {
+    const alphabet =
+        "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const arr = str.split("");
+    const res = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     alphabet.indexOf(arr[i]) > -1
+    //         ? (arr[i] = alphabet[alphabet.indexOf(arr[i]) + 13])
+    //         : 0;
+    // }
+
+    arr.forEach((elem) =>
+        alphabet.indexOf(elem) > -1
+            ? res.push(alphabet[alphabet.indexOf(elem) + 13])
+            : res.push(elem)
+    );
+    return res.join("");
+}
+console.log(rot13("EBG13 rknzcyr."));
+
+function isSolved(board) {
+    let res = [];
+    for (let i = 0; i < board.length; i++) {
+        if (board[i].includes(0)) {
+            return -1;
+        }
+        if (
+            board[i].length ===
+            board[i].filter((el) => el === board[i][0]).length
+        ) {
+            return 1;
+        }
+        for (let j = 0; j < board[i].length; j++) {}
+    }
+}
+
+console.log(
+    isSolved([
+        [1, 1, 1],
+        [0, 1, 2],
+        [0, 0, 0],
+    ])
+);
+
+function persistence(num) {
+    let count = 0;
+    while (num >= 10) {
+        num = num
+            .toString()
+            .split("")
+            .reduce((acc, cur) => acc * +cur, 1);
+        count++;
+    }
+    return count;
+}
+console.log(persistence(39));
+
+var uniqueInOrder = function (iterable) {
+    const res = [];
+    for (let i = 0; i < iterable.length; i++) {
+        if (iterable[i] !== iterable[i + 1]) {
+            res.push(iterable[i]);
+        }
+    }
+    return res;
+};
+console.log(uniqueInOrder("AAAABBBCCDAABBB"));
