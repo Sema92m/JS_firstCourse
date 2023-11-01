@@ -2042,3 +2042,29 @@ var uniqueInOrder = function (iterable) {
     return res;
 };
 console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+
+var beeramid = function (bonus, price) {
+    let count = 0;
+    let beersCount = Math.floor(bonus / price);
+    for (let i = 1; i <= beersCount; i++) {
+        if (beersCount - i ** 2 >= 0) {
+            count++;
+            beersCount = beersCount - i ** 2;
+        } else {
+            break;
+        }
+    }
+    return count;
+};
+console.log(beeramid(454, 5));
+
+var solution = function (firstArray, secondArray) {
+    const arr = [];
+    for (let i = 0; i < firstArray.length; i++) {
+        arr.push(Math.abs(firstArray[i] - secondArray[i]) ** 2);
+    }
+
+    return arr.reduce((acc, cur) => acc + cur, 0) / arr.length;
+};
+
+console.log(solution([1, 2, 3], [4, 5, 6]));
