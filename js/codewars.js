@@ -2068,3 +2068,76 @@ var solution = function (firstArray, secondArray) {
 };
 
 console.log(solution([1, 2, 3], [4, 5, 6]));
+
+function rgb(r, g, b) {
+    const arr = [r, g, b];
+    let subArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 255) {
+            subArr.push("FF");
+            continue;
+        }
+        if (arr[i] <= 0) {
+            subArr.push("00");
+            continue;
+        }
+        subArr.push(parseInt(arr[i] / 16), arr[i] % 16);
+    }
+    for (let i = 0; i < subArr.length; i++) {
+        if (subArr[i] === 10) {
+            subArr[i] = "A";
+        } else if (subArr[i] === 11) {
+            subArr[i] = "B";
+        } else if (subArr[i] === 12) {
+            subArr[i] = "C";
+        } else if (subArr[i] === 13) {
+            subArr[i] = "D";
+        } else if (subArr[i] === 14) {
+            subArr[i] = "E";
+        } else if (subArr[i] === 15) {
+            subArr[i] = "F";
+        }
+    }
+    return subArr.join("");
+}
+console.log(rgb(0, 0, 0));
+2;
+const getNumbers = (numbers, target) => {
+    return [];
+};
+
+console.log(getNumbers([100, 25, 15, 7, 3], target));
+
+function lastSurvivor(letters, coords) {
+    let str = letters.slice(0);
+    for (let i = 0; i < coords.length; i++) {
+        str = str;
+    }
+    return str;
+}
+console.log(lastSurvivor("zbk", [0, 1]));
+
+function toCamelCase(str) {
+    const string = str.replace(/[_-]/gi, "-").split("-");
+    for (let i = 1; i < string.length; i++) {
+        string[i] = string[i][0].toUpperCase() + string[i].slice(1);
+    }
+    return string.join("");
+}
+console.log(toCamelCase("the_stealth_warrior"));
+
+function validISBN10(isbn) {
+    if (isbn.length !== 10 || isbn.slice(0, 9).includes("X")) {
+        return false;
+    }
+    const res = [];
+    for (let i = 0; i < isbn.length; i++) {
+        if (isbn[i] === "X") {
+            res.push((i + 1) * 10);
+            continue;
+        }
+        res.push((i + 1) * +isbn[i]);
+    }
+    return res.reduce((acc, cur) => acc + cur) % 11 === 0 ? true : false;
+}
+console.log(validISBN10("X123456789"));
