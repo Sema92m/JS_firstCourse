@@ -2141,3 +2141,30 @@ function validISBN10(isbn) {
     return res.reduce((acc, cur) => acc + cur) % 11 === 0 ? true : false;
 }
 console.log(validISBN10("X123456789"));
+
+function hexStringToRGB(hexString) {
+    return {
+        r: parseInt(hexString.slice(1, 3), 16),
+        g: parseInt(hexString.slice(3, 5), 16),
+        b: parseInt(hexString.slice(5, 7), 16),
+    };
+}
+console.log(hexStringToRGB("#1ABBCC"));
+
+function findMissingLetter(array) {
+    let counter = 1;
+    let res = "";
+    const arr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const index = arr.indexOf(array[0]);
+
+    for (let i = index; i < array.length + index; i++) {
+        if (arr[i + 1] !== array[counter]) {
+            res = arr[i + 1];
+            break;
+        }
+        counter++;
+    }
+
+    return res;
+}
+console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
