@@ -2168,3 +2168,16 @@ function findMissingLetter(array) {
     return res;
 }
 console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
+
+function isLeapYear(year) {
+    if (0 == year % 400) return true;
+    if (0 == year % 100) return false;
+    if (0 == year % 4) return true;
+    return false;
+}
+console.log(isLeapYear(2100));
+
+function bump(x) {
+    return x.replace(/[_]/g, "").length <= 15 ? "Woohoo!" : "Car Dead";
+}
+console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"));
