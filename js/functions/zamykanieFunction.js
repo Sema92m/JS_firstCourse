@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // let number = 5; debugger
 
@@ -11,24 +11,19 @@
 
 // logNumber();debugger
 
-
 function createCounter() {
-	let counter = 0;
+    let counter = 0;
 
-	const myFunction = function() {debugger
-		counter = counter + 1;debugger
-		return counter;debugger
-	};
-	return myFunction;
+    const myFunction = function () {
+        counter = counter + 1;
+        return counter;
+    };
+    return myFunction;
 }
-debugger
-const increment = createCounter();debugger
+const increment = createCounter();
 
-const c1 = increment();debugger
-const c2 = increment();debugger
-const c3 = increment();debugger
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
 
-
-console.log(c1, c2, c3); 
-
-
+console.log(c1, c2, c3);

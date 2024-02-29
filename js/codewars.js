@@ -2181,3 +2181,93 @@ function bump(x) {
     return x.replace(/[_]/g, "").length <= 15 ? "Woohoo!" : "Car Dead";
 }
 console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"));
+
+function fizzbuzz(n) {
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            arr.push("FizzBuzz");
+            continue;
+        }
+        if (i % 3 === 0) {
+            arr.push("Fizz");
+            continue;
+        }
+        if (i % 5 === 0) {
+            arr.push("Buzz");
+            continue;
+        } else {
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+console.log(fizzbuzz(15));
+
+function evaporator(content, evap_per_day, threshold) {
+    let content1 = content;
+    let threshold1 = content * threshold * 0.01;
+    let evap_per_day1 = content * evap_per_day * 0.01;
+    function a(content1) {
+        content2 = content1 - evap_per_day1;
+        return content2;
+    }
+    // for (let i = 0; i < 150; i++) {
+    //     content1 = content1 - evap_per_day1;
+    //     console.log(content1);
+    //     if (content1 <= threshold1) {
+    //         break;
+    //     }
+    // }
+    return content1;
+}
+console.log(evaporator(10, 10, 5));
+
+const solve = function (arr) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        let count2 = 0;
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j].toLowerCase() === alphabet[j]) {
+                count2++;
+            }
+        }
+        res.push(count2);
+    }
+    return res;
+};
+console.log(solve(["IAMDEFANDJKL", "thedefgh", "xyzDEFghijabc"]));
+
+function isRubyComing(list) {
+    return list.find((item) => item.language === "Ruby") ? true : false;
+}
+
+console.log(
+    isRubyComing([
+        {
+            firstName: "Sofia",
+            lastName: "I.",
+            country: "Argentina",
+            continent: "Americas",
+            age: 35,
+            language: "Java",
+        },
+        {
+            firstName: "Lukas",
+            lastName: "X.",
+            country: "Croatia",
+            continent: "Europe",
+            age: 35,
+            language: "Python",
+        },
+        {
+            firstName: "Madison",
+            lastName: "U.",
+            country: "United States",
+            continent: "Americas",
+            age: 32,
+            language: "Ruby",
+        },
+    ])
+);
