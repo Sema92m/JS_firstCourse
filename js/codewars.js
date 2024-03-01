@@ -2271,3 +2271,69 @@ console.log(
         },
     ])
 );
+
+function toNumberArray(stringarray) {
+    return stringarray.map((item) => +item);
+}
+console.log(toNumberArray(["1", "2", "3"]));
+
+var filterString = function (value) {
+    return typeof +value.replace(/\D/g, "");
+};
+console.log(filterString("12wd3"));
+
+function solution(roman) {
+    const symbols = ["I", "V", "X", "L", "C", "D", "M"];
+    const nums = [1, 5, 10, 50, 100, 500, 1000];
+    let res = [];
+    let num = 0;
+    for (let i = 0; i < roman.length; i++) {
+        let index = symbols.indexOf(roman[i]);
+        res.push(nums.at(index));
+    }
+
+    for (let i = 0; i < res.length; i++) {
+        res[i] >= res[i + 1] || i + 1 === res.length
+            ? (num = num + res[i])
+            : ((num = num + res[i + 1] - res[i]), i++);
+    }
+    return num;
+}
+console.log(solution("DXXXIX"));
+
+function solution(string) {
+    let res = [];
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === string[i].toUpperCase()) {
+            res.push(" " + string[i]);
+        } else {
+            res.push(string[i]);
+        }
+    }
+    return res.join("");
+}
+console.log(solution("camelCasingTest"));
+
+function generateShape(integer) {
+    let str = "";
+    for (let i = 0; i < integer; i++) {
+        if (i === 0) {
+            str = str + "+".repeat(integer);
+            continue;
+        }
+        str = str + "\n" + "+".repeat(integer);
+    }
+    return str;
+}
+console.log(generateShape(8));
+
+function towerBuilder(nFloors) {
+    let res = [];
+    for (let i = 0; i < nFloors; i++) {
+        res.push(" ".repeat(nFloors - i - 1)) +
+            "*".repeat(i * 2 + 1) +
+            " ".repeat(nFloors - i - 1);
+    }
+    return res;
+}
+console.log(towerBuilder(9));
