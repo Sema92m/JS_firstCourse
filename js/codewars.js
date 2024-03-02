@@ -2330,10 +2330,116 @@ console.log(generateShape(8));
 function towerBuilder(nFloors) {
     let res = [];
     for (let i = 0; i < nFloors; i++) {
-        res.push(" ".repeat(nFloors - i - 1)) +
-            "*".repeat(i * 2 + 1) +
-            " ".repeat(nFloors - i - 1);
+        res.push(
+            " ".repeat(nFloors - i - 1) +
+                "*".repeat(i * 2 + 1) +
+                " ".repeat(nFloors - i - 1)
+        );
     }
     return res;
 }
 console.log(towerBuilder(9));
+
+function countSmileys(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (
+            arr[i].length === 2 &&
+            (arr[i][0] === ":" || arr[i][0] === ";") &&
+            (arr[i].at(-1) === ")" || arr[i].at(-1) === "D")
+        ) {
+            count++;
+        } else if (
+            arr[i].length === 3 &&
+            (arr[i][0] === ":" || arr[i][0] === ";") &&
+            (arr[i][1] === "-" || arr[i][1] === "~") &&
+            (arr[i].at(-1) === ")" || arr[i].at(-1) === "D")
+        ) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countSmileys([":)", ":(", ":D", ":O", ":;"]));
+
+function expandedForm(num) {
+    let arr = String(num);
+    let res = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== "0") {
+            res = res + (arr[i] + "0".repeat(arr.length - i - 1)) + " + ";
+        } else if (arr[i] === "0") {
+            continue;
+        } else {
+            res = res + arr[i];
+        }
+    }
+    return res.slice(0, -3);
+}
+console.log(expandedForm(12345));
+
+function wave(str) {
+    let res = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === " ") {
+            continue;
+        }
+        str[i] = str[i].toUpperCase();
+        res.push(str.join(""));
+        str[i] = str[i].toLowerCase();
+    }
+    return res;
+}
+console.log(wave("two words"));
+
+// function solution(number) {
+//     const obj = {
+//         I: 1,
+//         II: 2,
+//         III: 3,
+//         IV: 4,
+//         V: 5,
+//         VI: 6,
+//         VII: 7,
+//         VIII: 8,
+//         X: 10,
+//         L: 50,
+//         C: 100,
+//         D: 500,
+//         M: 1000,
+//     };
+//     let arr = String(number).split("");
+//     let res = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== "0") {
+//             res.push(arr[i] + "0".repeat(arr.length - i - 1));
+//         } else if (arr[i] === "0") {
+//             continue;
+//         } else {
+//             res.push(arr[i]);
+//         }
+//     }
+//     res = res.map(Number);
+
+//     return res;
+// }
+// console.log(solution(3999));
+
+function inArray(array1, array2) {
+    const res = [];
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+            if (array2[j].includes(array1[i])) {
+                res.push(array1[i]);
+            }
+        }
+    }
+    return Array.from(new Set(res.sort()));
+}
+
+console.log(
+    inArray(
+        ["live", "strong", "arp"],
+        ["lively", "alive", "harp", "sharp", "armstrong"]
+    )
+);
