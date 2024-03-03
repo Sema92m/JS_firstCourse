@@ -2443,3 +2443,101 @@ console.log(
         ["lively", "alive", "harp", "sharp", "armstrong"]
     )
 );
+
+function count(string) {
+    let obj = {};
+    for (let i = 0; i < string.length; i++) {
+        // console.log(obj);
+        // console.log(obj.hasOwnProperty(`${string[i]}`));
+        if (obj.hasOwnProperty(`${string[i]}`) === true) {
+            obj[string[i]] += 1;
+            continue;
+        }
+        obj[`${string[i]}`] = 1;
+    }
+    return obj;
+}
+console.log(count("abaccab"));
+
+function toWeirdCase(string) {
+    let arr = string.split(" ");
+    let fin = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (j % 2 === 0) {
+                fin.push(arr[i][j].toUpperCase());
+            } else {
+                fin.push(arr[i][j].toLowerCase());
+            }
+        }
+        fin.push(" ");
+    }
+    return fin.join("").trim();
+}
+console.log(toWeirdCase("This is a test"));
+
+function isValidIP(str) {
+    const arr = str
+        .split(".")
+        .filter((item) => +item >= 0 && +item <= 255 && item === String(+item));
+    console.log(arr);
+    return arr.length !== 4 ? false : true;
+}
+console.log(isValidIP("1.2.3.4.5"));
+
+function titleCase(title, minorWords) {
+    if (title.trim().length === 0) {
+        return title;
+    }
+    const arrTitle = title
+        .split(" ")
+        .map((item) => item.toLowerCase())
+        .map((item) => item[0].toUpperCase() + item.slice(1));
+    const arrMinorWords = minorWords
+        .split(" ")
+        .map((item) => item.toLowerCase());
+    console.log([arrTitle, arrMinorWords]);
+    let res = [];
+    for (let i = 0; i < arrTitle.length; i++) {
+        if (i === 0) {
+            res.push(arrTitle[i]);
+            continue;
+        }
+        if (arrMinorWords.includes(arrTitle[i].toLowerCase())) {
+            res.push(arrTitle[i].toLowerCase());
+            continue;
+        }
+        res.push(arrTitle[i]);
+    }
+    return res.join(" ");
+}
+console.log(titleCase("THE WIND IN THE WILLOWS", "The In"));
+
+function validPhoneNumber(phoneNumber) {
+    return /^\(\d{3}\) \d{3}\-\d{4}$/.test(phoneNumber);
+}
+console.log(validPhoneNumber("(1111)555 2345"));
+// "(123) 456-7890"
+
+function isValidHKPhoneNumber(phoneNumber) {
+    let str = phoneNumber.replace(/\d{4} \d{4}/).trim();
+    console.log(str);
+    // return /^\d{4} \d{4}/.test(str);
+}
+console.log(
+    isValidHKPhoneNumber("I wonder if 2359 1478 is a valid phone number?")
+);
+// "(123) 456-7890"
+
+function cleanString(s) {
+    let res = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] !== "#") {
+            res.push(s[i]);
+        } else {
+            res.pop();
+        }
+    }
+    return res.join("");
+}
+console.log(cleanString("abc##d######"));
