@@ -2447,8 +2447,6 @@ console.log(
 function count(string) {
     let obj = {};
     for (let i = 0; i < string.length; i++) {
-        // console.log(obj);
-        // console.log(obj.hasOwnProperty(`${string[i]}`));
         if (obj.hasOwnProperty(`${string[i]}`) === true) {
             obj[string[i]] += 1;
             continue;
@@ -2541,3 +2539,197 @@ function cleanString(s) {
     return res.join("");
 }
 console.log(cleanString("abc##d######"));
+
+function toUnderscore(string) {
+    const res = [];
+    string = string.toString();
+    for (let i = 0; i < string.length; i++) {
+        if (i === 0 || Number(string[i])) {
+            res.push(string[i].toLowerCase());
+            continue;
+        }
+        if (string[i] === string[i].toUpperCase()) {
+            res.push("_");
+            res.push(string[i].toLowerCase());
+            continue;
+        }
+        res.push(string[i]);
+    }
+    return res.join("");
+}
+console.log(toUnderscore(123));
+
+// function findUniq(arr) {
+//     let res = [];
+//     let arr2 = [];
+//     let count = 0;
+//     let arr1 = arr.map((item) =>
+//         item.toLowerCase().split("").sort().join("").trim()
+//     );
+//     for (let i = 0; i < arr1.length; i++) {
+//         arr2.push(Array.from(new Set(arr1[i].split(""))));
+//     }
+//     for (let i = 0; i < arr2.length; i++) {
+//         for (let j = 0; j < arr2[i].length; j++) {
+//             res.push(arr2[i][j]);
+//         }
+//     }
+//     console.log(res);
+//     for (let i = 1; i < res.length; i++) {
+//         if (res[i - 1] !== res[i] && res[i + 1] && res[i - 1] !== res[i + 1]) {
+//             count = [i - 1];
+//             break;
+//         }
+//     }
+//     return arr[count];
+// }
+// console.log(findUniq(["Aa", "aaa", "aaaaa", "BbBb", "Aaaa", "AaAaAa", "a"]));
+
+function solve(s) {
+    const alphabet = "0abcdefghijklmnopqrstuvwxyz";
+    let res = [];
+    let str = s.replace(/[aeiou]/gi, " ").split(" ");
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "") {
+            continue;
+        }
+        if (str[i].length === 1) {
+            res.push(alphabet.indexOf(str[i]));
+            continue;
+        }
+        if (str[i].length > 1) {
+            let sumIndex = 0;
+            for (let j = 0; j < str[i].length; j++) {
+                sumIndex = sumIndex + alphabet.indexOf(str[i][j]);
+            }
+            res.push(sumIndex);
+        }
+    }
+    console.log(res);
+    return res.sort((a, b) => b - a)[0];
+}
+console.log(
+    solve(
+        "pufuujanuriameeuxuavexoxcioelujoaauyvmuezkepauoureeuanhiawciusktaliiuacoxejmhvqgemgteapjbroigcwihrsoexedaoaaiegoqquoehogiefiaqiatevrhjyiooiqeouocieuickqkehudniopuuluqopfsoeheaauoioiuuaueoiueioioou"
+    )
+);
+
+function tripledouble(num1, num2) {
+    let num1Str = String(num1);
+    let num13 = [];
+    let res = 0;
+    for (let i = 0; i < num1Str.length; i++) {
+        if (num1Str[i] === num1Str[i + 1] && num1Str[i] === num1Str[i + 2]) {
+            num13.push(num1Str[i].repeat(3));
+        }
+    }
+    for (let i = 0; i < num13.length; i++) {
+        if (num13[i].length === 3 && String(num2).includes(num13[i].slice(1))) {
+            res = 1;
+        }
+    }
+    return res;
+}
+console.log(tripledouble(71998487111888, 4352627488));
+
+function upArray(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 0 && arr[i] <= 9) {
+            continue;
+        }
+        return null;
+    }
+    let num = arr.map((item) => String(item)).join("");
+    console.log(num);
+    console.log(typeof num);
+    // let zeroCount = arr.length - String(num).length;
+
+    // console.log(zeroCount + ' zeroCount');
+    // let numStrArr = String(num).split("").reverse();
+    // for (let i = 0; i < zeroCount; i++) {
+    //     if (zeroCount === 0) {
+    //         break;
+    //     }
+    //     numStrArr.push("0");
+    // }
+    // return numStrArr.reverse().map((item) => Number(item));
+}
+
+function pyramid(n) {
+    let res = [];
+    for (let i = 0; i < n; i++) {
+        let arr = [];
+        for (let j = 0; j < i + 1; j++) {
+            arr.push(1);
+        }
+        res.push(arr);
+    }
+    return res;
+}
+console.log(pyramid(3));
+
+function dup(s) {
+    let res = [];
+    for (let i = 0; i < s.length; i++) {
+        let subres = [];
+        for (let j = 0; j < s[i].length; j++) {
+            if (s[i][j + 1] && s[i][j] === s[i][j + 1]) {
+                continue;
+            }
+            subres.push(s[i][j]);
+        }
+        res.push(subres.join(""));
+    }
+    return res;
+}
+console.log(dup(["kelless", "keenness"]));
+
+function findSenior(list) {
+    let res = [];
+    let maxAge = list.sort((a, b) => b.age - a.age)[0].age;
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].age === maxAge) {
+            res.push(list[i]);
+        }
+    }
+    return res;
+}
+console.log(
+    findSenior([
+        {
+            firstName: "Gabriel",
+            lastName: "X.",
+            country: "Monaco",
+            continent: "Europe",
+            age: 49,
+            language: "PHP",
+        },
+        {
+            firstName: "Odval",
+            lastName: "F.",
+            country: "Mongolia",
+            continent: "Asia",
+            age: 38,
+            language: "Python",
+        },
+        {
+            firstName: "Emilija",
+            lastName: "S.",
+            country: "Lithuania",
+            continent: "Europe",
+            age: 19,
+            language: "Python",
+        },
+        {
+            firstName: "Sou",
+            lastName: "B.",
+            country: "Japan",
+            continent: "Asia",
+            age: 49,
+            language: "PHP",
+        },
+    ])
+);
