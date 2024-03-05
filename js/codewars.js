@@ -2733,3 +2733,61 @@ console.log(
         },
     ])
 );
+
+function highestRank(arr) {
+    let obj = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (obj[arr[i]]) {
+            obj[arr[i]] += 1;
+        } else {
+            obj[arr[i]] = 1;
+        }
+    }
+    console.log(obj);
+    const max = Math.max(...Object.values(obj));
+    let sortedObj = Object.entries(obj)
+        .sort((a, b) => a[1] - b[1])
+        .filter(([key, value]) => value === max)
+        .flat(Infinity);
+    let res = [];
+    for (let i = 0; i < sortedObj.length; i++) {
+        if (typeof sortedObj[i] == "string") {
+            res.push(+sortedObj[i]);
+        }
+    }
+    return res.sort((a, b) => b - a)[0];
+}
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));
+
+function reverse(str) {
+    let arr = str.split(" ");
+    for (let i = 1; i < arr.length; i += 2) {
+        arr[i] = arr[i].split("").reverse().join("");
+    }
+    return arr.join(" ").trim();
+}
+console.log(reverse("   "));
+
+function dashatize(num) {
+    let res = [];
+    let arr = String(Math.abs(num)).split("");
+    for (let i = 0; i < arr.length; i++) {
+        if (+arr[i] % 2 !== 0) {
+            res.push(`-${arr[i]}-`);
+            continue;
+        } else {
+            res.push(arr[i]);
+            continue;
+        }
+    }
+    res = res.join("");
+    if (res[res.length - 1] === "-") {
+        res = res.slice(0, -1);
+    }
+    if (res[0] === "-") {
+        res = res.slice(1);
+    }
+
+    return res.replace(/--/g, "-");
+}
+console.log(dashatize(-9743021));
