@@ -2791,3 +2791,31 @@ function dashatize(num) {
     return res.replace(/--/g, "-");
 }
 console.log(dashatize(-9743021));
+
+function kebabize(str) {
+    return str
+        .replace(/([A-Z])/g, "-$1")
+        .replace(/^-|\d/g, "")
+        .toLowerCase();
+}
+console.log(kebabize("MyCamelHas3Hu3mps"));
+
+function grabscrab(anagram, dictionary) {
+    function splitSort(arr) {
+        return arr
+            .split("")
+            .sort((a, b) => a.localeCompare(b))
+            .join("");
+    }
+    let newAnagram = splitSort(anagram);
+    let newD = dictionary.map((item) => splitSort(item));
+    let res = [];
+    for (let i = 0; i < newD.length; i++) {
+        if (newD[i] === newAnagram) {
+            res.push(dictionary[i]);
+        }
+        continue;
+    }
+    return res;
+}
+console.log(grabscrab("ortsp", ["sport", "parrot", "ports", "matey"]));
