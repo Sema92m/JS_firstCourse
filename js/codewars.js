@@ -2819,3 +2819,61 @@ function grabscrab(anagram, dictionary) {
     return res;
 }
 console.log(grabscrab("ortsp", ["sport", "parrot", "ports", "matey"]));
+
+function sumConsecutives(s) {
+    let res = [];
+    let count = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === s[i + 1]) {
+            count += s[i];
+            continue;
+        }
+        if (s[i] !== s[i + 1] && count !== 0) {
+            res.push(count + s[i]);
+            count = 0;
+            continue;
+        }
+        res.push(s[i]);
+    }
+    return res;
+}
+console.log(sumConsecutives([1, 4, 4, 4, 0, 4, 3, 3, 1]));
+
+function stringTransformer(str) {
+    let subStr = "";
+    let res = [];
+    let s = str.split(" ").reverse();
+    for (let i = 0; i < s.length; i++) {
+        for (let j = 0; j < s[i].length; j++) {
+            if (s[i][j] === s[i][j].toUpperCase()) {
+                subStr += s[i][j].toLowerCase();
+            } else {
+                subStr += s[i][j].toUpperCase();
+            }
+        }
+        res.push(subStr);
+        subStr = "";
+    }
+    return res.join(" ");
+}
+console.log(stringTransformer("Example string"));
+
+function stringTransformer(str) {
+    return str
+        .split(" ")
+        .reverse()
+        .join(" ")
+        .split("")
+        .map((item) =>
+            item === item.toUpperCase()
+                ? item.toLowerCase()
+                : item.toUpperCase()
+        )
+        .join("");
+}
+console.log(stringTransformer("Example string"));
+
+function add(x, y) {
+    return 0; // Do your magic!
+}
+console.log(add(x, y));
