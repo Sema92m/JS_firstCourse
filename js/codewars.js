@@ -2873,7 +2873,69 @@ function stringTransformer(str) {
 }
 console.log(stringTransformer("Example string"));
 
-function add(x, y) {
-    return 0; // Do your magic!
+function encode(string) {
+    const arr = ["a", 1, "e", 2, "i", 3, "o", 4, "u", 5];
+    return string
+        .split("")
+        .map((item) =>
+            arr.indexOf(item) !== -1
+                ? (item = arr[arr.indexOf(item) + 1])
+                : item
+        )
+        .join("");
 }
-console.log(add(x, y));
+console.log(encode("hello"));
+
+function decode(string) {
+    let arr = ["a", "1", "e", "2", "i", "3", "o", "4", "u", "5"];
+    return string
+        .split("")
+        .map((item) =>
+            arr.indexOf(item) !== -1 && Number(+item)
+                ? (item = arr[arr.indexOf(item) - 1])
+                : item
+        )
+        .join("");
+}
+console.log(decode("xphlwsuddxemdogbg"));
+
+function matrixAddition(a, b) {
+    let res = [];
+    let subRes = [];
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++) {
+            subRes.push(a[i][j] + b[i][j]);
+        }
+        res.push(subRes);
+        subRes = [];
+    }
+    return res;
+}
+console.log(
+    matrixAddition(
+        [
+            [1, 2, 3],
+            [3, 2, 1],
+            [1, 1, 1],
+        ],
+        [
+            [2, 2, 1],
+            [3, 2, 3],
+            [1, 1, 3],
+        ]
+    )
+);
+
+function whatCentury(year) {
+    let str = String(Math.ceil(year / 100));
+    let centery = str.slice(0, 2);
+    if (+centery[1] === 0) {
+        return centery + "th";
+    } else if (+centery[1] === 1) {
+        return centery + "st";
+    } else if (+centery[1] === 3) {
+        return centery + "rd";
+    }
+    return centery;
+}
+console.log(whatCentury(2000));
