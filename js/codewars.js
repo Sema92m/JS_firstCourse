@@ -2939,3 +2939,332 @@ function whatCentury(year) {
     return centery;
 }
 console.log(whatCentury(2000));
+
+function findChildren(dancingBrigade) {
+    let str = dancingBrigade
+        .split("")
+        .sort((a, b) => a.localeCompare(b))
+        .join("")
+        .toLowerCase();
+    let res = [];
+    for (let i = 0; i < str.length; i++) {
+        if (i === 0) {
+            res.push(str[i].toUpperCase());
+            continue;
+        }
+        if (str[i] !== str[i - 1]) {
+            res.push(str[i].toUpperCase());
+            continue;
+        }
+        res.push(str[i]);
+    }
+    return res.join("");
+}
+console.log(findChildren("beeeEBb"));
+// BbbEeee
+
+function firstDup(s) {
+    let newSet = Array.from(new Set(s));
+    let obj = {};
+    for (let i = 0; i < newSet.length; i++) {
+        obj[newSet[i]] = 0;
+    }
+    let res = "";
+    for (let i = 0; i < s.length; i++) {
+        obj[s[i]] += 1;
+        // if (obj[s[i]] === 2) {
+        //     res = s[i];
+        //     con
+        // }
+    }
+    for (let key in obj) {
+        if (obj[key] > 1) {
+            res = key;
+            break;
+        }
+    }
+    return res;
+}
+console.log(firstDup("tweet"));
+
+function diamond(n) {
+    if (n % 2 === 0 || n <= 0) {
+        return null;
+    }
+    let res = "";
+    for (let i = 1; i <= n; i++) {
+        res = res + " ".repeat((n - i) / 2) + "*".repeat(i) + "\n";
+        if (i === n) {
+            for (let i = n - 2; i > 0; i--) {
+                res = res + " ".repeat((n - i) / 2) + "*".repeat(i) + "\n";
+                i--;
+            }
+        }
+        i++;
+    }
+    return res;
+}
+console.log(diamond(5));
+
+function allContinents(list) {
+    let res = [];
+    for (let i = 0; i < list.length; i++) {
+        if (!res.includes(list[i].continent)) {
+            res.push(list[i].continent);
+        }
+    }
+    return res.length > 4 ? true : false;
+}
+console.log(
+    allContinents([
+        {
+            firstName: "Fatima",
+            lastName: "A.",
+            country: "Algeria",
+            continent: "Africa",
+            age: 25,
+            language: "JavaScript",
+        },
+        {
+            firstName: "Agustín",
+            lastName: "M.",
+            country: "Chile",
+            continent: "Americas",
+            age: 37,
+            language: "C",
+        },
+        {
+            firstName: "Jing",
+            lastName: "X.",
+            country: "China",
+            continent: "Asia",
+            age: 39,
+            language: "Ruby",
+        },
+        {
+            firstName: "Laia",
+            lastName: "P.",
+            country: "Andorra",
+            continent: "Europe",
+            age: 55,
+            language: "Ruby",
+        },
+        {
+            firstName: "Oliver",
+            lastName: "Q.",
+            country: "Australia",
+            continent: "Oceania",
+            age: 65,
+            language: "PHP",
+        },
+    ])
+);
+
+function greetDevelopers(list) {
+    let res = [];
+    for (let i = 0; i < list.length; i++) {
+        list[
+            i
+        ].greeting = `Hi ${list[i].firstName}, what do you like the most about ${list[i].language}?`;
+    }
+    return list;
+}
+console.log(
+    greetDevelopers([
+        {
+            firstName: "Sofia",
+            lastName: "I.",
+            country: "Argentina",
+            continent: "Americas",
+            age: 35,
+            language: "Java",
+        },
+        {
+            firstName: "Lukas",
+            lastName: "X.",
+            country: "Croatia",
+            continent: "Europe",
+            age: 35,
+            language: "Python",
+        },
+        {
+            firstName: "Madison",
+            lastName: "U.",
+            country: "United States",
+            continent: "Americas",
+            age: 32,
+            language: "Ruby",
+        },
+    ])
+);
+
+function getFirstPython(list) {
+    let str = "There will be no Python developers";
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].language === "Python") {
+            str = `${list[i].firstName}, ${list[i].country}`;
+            break;
+        }
+    }
+    return str;
+}
+// let list1 = [
+//     {
+//         firstName: "Mark",
+//         lastName: "G.",
+//         country: "Scotland",
+//         continent: "Europe",
+//         age: 22,
+//         language: "JavaScript",
+//     },
+//     {
+//         firstName: "Victoria",
+//         lastName: "T.",
+//         country: "Puerto Rico",
+//         continent: "Americas",
+//         age: 30,
+//         language: "Python",
+//     },
+//     {
+//         firstName: "Emma",
+//         lastName: "B.",
+//         country: "Norway",
+//         continent: "Europe",
+//         age: 19,
+//         language: "Clojure",
+//     },
+// ];
+console.log(getFirstPython(list1));
+
+function countLanguages(list) {
+    let res = {};
+    for (let i = 0; i < list.length; i++) {
+        if (!res[list[i].language]) {
+            res[list[i].language] = 1;
+        } else {
+            res[list[i].language] += 1;
+        }
+    }
+    return res;
+}
+var list1 = [
+    {
+        firstName: "Noah",
+        lastName: "M.",
+        country: "Switzerland",
+        continent: "Europe",
+        age: 19,
+        language: "C",
+    },
+    {
+        firstName: "Anna",
+        lastName: "R.",
+        country: "Liechtenstein",
+        continent: "Europe",
+        age: 52,
+        language: "JavaScript",
+    },
+    {
+        firstName: "Ramon",
+        lastName: "R.",
+        country: "Paraguay",
+        continent: "Americas",
+        age: 29,
+        language: "Ruby",
+    },
+    {
+        firstName: "George",
+        lastName: "B.",
+        country: "England",
+        continent: "Europe",
+        age: 81,
+        language: "C",
+    },
+];
+console.log(countLanguages(list1));
+
+function isSameLanguage(list) {
+    let language = list[0].language;
+    return list.every((el) => el.language === language);
+}
+var list1 = [
+    {
+        firstName: "Daniel",
+        lastName: "J.",
+        country: "Aruba",
+        continent: "Americas",
+        age: 42,
+        language: "JavaScript",
+    },
+    {
+        firstName: "Kseniya",
+        lastName: "T.",
+        country: "Belarus",
+        continent: "Europe",
+        age: 22,
+        language: "JavaScript",
+    },
+    {
+        firstName: "Hanna",
+        lastName: "L.",
+        country: "Hungary",
+        continent: "Europe",
+        age: 65,
+        language: "JavaScript",
+    },
+];
+console.log(isSameLanguage(list1));
+
+function addUsername(list) {
+    return list.forEach(
+        (item) =>
+            (item.username = `${item.firstName.toLowerCase()}${item.lastName[0].toLowerCase()}${
+                2020 - item.age
+            }`)
+    );
+}
+
+function addUsername(list) {
+    for (let i = 0; i < list.length; i++) {
+        list[i].username = `${list[i].firstName.toLowerCase()}${list[
+            i
+        ].lastName[0].toLowerCase()}${2020 - list[i].age}`;
+    }
+    return list;
+}
+var list1 = [
+    {
+        firstName: "Harry",
+        lastName: "K.",
+        country: "Brazil",
+        continent: "Americas",
+        age: 19,
+        language: "Python",
+    },
+];
+console.log(addUsername(list1));
+
+function getAverageAge(list) {
+    return Math.round(
+        list.reduce((acc, cur) => acc + cur.age, 0) / list.length
+    );
+}
+var list1 = [
+    {
+        firstName: "Maria",
+        lastName: "Y.",
+        country: "Cyprus",
+        continent: "Europe",
+        age: 30,
+        language: "Java",
+    },
+    {
+        firstName: "Victoria",
+        lastName: "T.",
+        country: "Puerto Rico",
+        continent: "Americas",
+        age: 70,
+        language: "Python",
+    },
+];
+console.log(getAverageAge(list1));
