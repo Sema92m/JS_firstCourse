@@ -3268,3 +3268,55 @@ var list1 = [
     },
 ];
 console.log(getAverageAge(list1));
+
+function formatWords(words) {
+    if (!words) {
+        return "";
+    }
+    let newArr = words.filter((item) => item.trim() !== "");
+    if (newArr.length === 1) {
+        return newArr[0];
+    }
+
+    let res = "";
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i] === "") {
+            continue;
+        }
+        if (i + 1 === newArr.length) {
+            res = res + ` and ${newArr[i]}`;
+            continue;
+        }
+        if (i === newArr.length - 2) {
+            res = res + ` ${newArr[i]}`;
+            continue;
+        }
+        res = res + ` ${newArr[i]},`;
+    }
+    return res.trim();
+}
+console.log(formatWords(""));
+
+function sortTheInnerContent(words) {
+    let res = [];
+    let arr = words.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length < 4) {
+            res.push(arr[i]);
+            continue;
+        }
+        res.push(
+            arr[i][0] +
+                arr[i]
+                    .slice(1, -1)
+                    .split("")
+                    .sort((a, b) => a.localeCompare(b))
+                    .reverse()
+                    .join("") +
+                arr[i][arr[i].length - 1]
+        );
+    }
+    return res.join(" ");
+}
+
+console.log(sortTheInnerContent("sort the inner content in descending order"));
