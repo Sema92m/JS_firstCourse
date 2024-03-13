@@ -3320,3 +3320,33 @@ function sortTheInnerContent(words) {
 }
 
 console.log(sortTheInnerContent("sort the inner content in descending order"));
+
+function averageString(str) {
+    if (str.trim() === "") {
+        return "n/a";
+    }
+    const nums = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ];
+    let res = [];
+    let str1 = str.split(" ");
+    for (let i = 0; i < str1.length; i++) {
+        if (nums.includes(str1[i])) {
+            res.push(nums.indexOf(str1[i]));
+        } else {
+            return "n/a";
+        }
+    }
+    const averageNum = Math.floor(res.reduce((a, b) => a + b) / res.length);
+    return nums[averageNum];
+}
+console.log(averageString("four six two three"));
