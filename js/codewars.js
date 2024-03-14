@@ -3350,3 +3350,22 @@ function averageString(str) {
     return nums[averageNum];
 }
 console.log(averageString("four six two three"));
+
+function dataReverse(data) {
+    let res = [];
+    let subRes = [];
+    for (let i = 0; i < data.length; i++) {
+        subRes.push(data[i]);
+        if (subRes.length === 8) {
+            res.push(subRes);
+            subRes = [];
+        }
+    }
+    return res.reverse().flat(Infinity);
+}
+console.log(
+    dataReverse([
+        1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
+        1, 0, 1, 0, 1, 0, 1, 0,
+    ])
+);
