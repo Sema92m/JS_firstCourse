@@ -3369,3 +3369,13 @@ console.log(
         1, 0, 1, 0, 1, 0, 1, 0,
     ])
 );
+
+function partsSums(ls) {
+    let res = [];
+    for (let i = 0; i < ls.length; i++) {
+        // res.push(ls.slice(i).reduce((a, b) => a + b));
+    }
+    res.push(0);
+    return res;
+}
+console.log(partsSums([0, 1, 3, 6, 10]));
