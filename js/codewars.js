@@ -3372,10 +3372,29 @@ console.log(
 
 function partsSums(ls) {
     let res = [];
-    for (let i = 0; i < ls.length; i++) {
-        // res.push(ls.slice(i).reduce((a, b) => a + b));
+    let sum = 0;
+    for (let i = ls.length - 1; i >= 0; i--) {
+        sum += ls[i];
+        res.push(sum);
     }
-    res.push(0);
-    return res;
+    res.unshift(0);
+    return res.reverse();
 }
 console.log(partsSums([0, 1, 3, 6, 10]));
+
+const reverseSeq = (n) => {
+    let res = [];
+    for (let i = n; i > 0; i--) {
+        res.push(i);
+    }
+    return res;
+};
+console.log(reverseSeq(5));
+
+function greet(name, owner) {
+    return name === owner ? "Hello boss" : "Hello guest";
+}
+console.log(greet(("Daniel", "Daniel")));
+
+Test.assertEquals(greet("Daniel", "Daniel"), "Hello boss");
+Test.assertEquals(greet("Greg", "Daniel"), "Hello guest");
