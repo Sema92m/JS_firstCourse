@@ -3398,3 +3398,25 @@ console.log(greet(("Daniel", "Daniel")));
 
 Test.assertEquals(greet("Daniel", "Daniel"), "Hello boss");
 Test.assertEquals(greet("Greg", "Daniel"), "Hello guest");
+
+function order(words) {
+    return words
+        .split(" ")
+        .sort((a, b) => +a.replace(/\D/g, "") - +b.replace(/\D/g, ""))
+        .join(" ");
+}
+console.log(order("is2 Thi1s T4est 3a"));
+
+multiplicationTable = function (size) {
+    let res = [];
+    let arr = [];
+    for (let i = 1; i <= size; i++) {
+        for (let j = 1; j <= size; j++) {
+            arr.push(i * j);
+        }
+        res.push(arr);
+        arr = [];
+    }
+    return res;
+};
+console.log(multiplicationTable(4));
