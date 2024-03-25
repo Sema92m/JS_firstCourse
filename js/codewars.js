@@ -3521,6 +3521,7 @@ var list1 = [
     },
 ];
 function isAgeDiverse(list) {
+    let count = 0;
     if (list.length < 10) {
         return false;
     }
@@ -3528,7 +3529,70 @@ function isAgeDiverse(list) {
     for (let i = 0; i < list.length; i++) {
         ages.push(list[i].age);
     }
-
-    return ages;
+    let teens = 0,
+        twenties = 0,
+        thirties = 0,
+        forties = 0,
+        fifties = 0,
+        sixties = 0,
+        seventies = 0,
+        eighties = 0,
+        nineties = 0,
+        centenarian = 0;
+    let res = [
+        teens,
+        twenties,
+        thirties,
+        forties,
+        fifties,
+        sixties,
+        seventies,
+        eighties,
+        nineties,
+        centenarian,
+    ];
+    for (let age of ages) {
+        if (age >= 13 && age <= 19) {
+            teens++;
+        } else if (age >= 20 && age <= 29) {
+            twenties++;
+        } else if (age >= 30 && age <= 39) {
+            thirties++;
+        } else if (age >= 40 && age <= 49) {
+            forties++;
+        } else if (age >= 50 && age <= 59) {
+            fifties++;
+        } else if (age >= 60 && age <= 69) {
+            sixties++;
+        } else if (age >= 70 && age <= 79) {
+            seventies++;
+        } else if (age >= 80 && age <= 89) {
+            eighties++;
+        } else if (age >= 90 && age <= 99) {
+            nineties++;
+        } else if (age >= 100) {
+            centenarian++;
+        }
+    }
+    return res.includes(0) ? false : true;
 }
 console.log(isAgeDiverse(list1));
+
+sortme = function (names) {
+    return names.sort((a, b) => a.localeCompare(b));
+};
+console.log(sortme(["do", "He", "Case", "Use", "Way", "Their", "call", "way"]));
+
+function balance(left, right) {
+    let rightSide = right
+        .split("")
+        .reduce((a, b) => a + (b === "!" ? 2 : 3), 0);
+    let leftSide = left.split("").reduce((a, b) => a + (b === "!" ? 2 : 3), 0);
+
+    return rightSide === leftSide
+        ? "Balance"
+        : rightSide > leftSide
+        ? "Right"
+        : "Left";
+}
+console.log(balance("!?!!", "?!?"));
