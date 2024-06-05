@@ -3596,3 +3596,12 @@ function balance(left, right) {
         : "Left";
 }
 console.log(balance("!?!!", "?!?"));
+
+function digPow(n, p) {
+    let res = String(n)
+        .split("")
+        .map((val, index) => parseInt(val) ** (p + index))
+        .reduce((a, b) => a + b, 0);
+    return res % n === 0 ? res / n : -1;
+}
+console.log(digPow(695, 2));
