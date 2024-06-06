@@ -3605,3 +3605,46 @@ function digPow(n, p) {
     return res % n === 0 ? res / n : -1;
 }
 console.log(digPow(695, 2));
+
+snail = function (array) {
+    let res = [];
+    let startCol = 0;
+    let endCol = array.length - 1;
+    let startRow = 0;
+    let endRow = array.length - 1;
+    console.log(array[1][5]);
+
+    // while (startCol <= endCol && startRow <= endRow) {
+    for (let i = startCol; i < endCol; i++) {
+        //-->
+        res.push(array[startCol][i]);
+    }
+    startRow++;
+    for (let i = startRow; i <= endRow; i++) {
+        //down
+        res.push(array[i][endCol]);
+    }
+    console.log(res);
+    endCol--;
+    // for (let i = endCol; i > startCol; i--) {
+    //     // <--
+    //     res.push(array[endRow][i]);
+    // }
+    // endRow--;
+    // for (let i = endRow; i > startRow; i--) {
+    //     // ^
+    //     res.push(array[startCol][i]);
+    // }
+    // startCol++;
+    // }
+    return res;
+};
+const arr = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25],
+];
+console.log(snail(arr));
+// [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]
