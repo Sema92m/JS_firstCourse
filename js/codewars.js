@@ -3605,46 +3605,73 @@ function digPow(n, p) {
     return res % n === 0 ? res / n : -1;
 }
 console.log(digPow(695, 2));
-
 snail = function (array) {
+    if (array.flat().length === 0) {
+        return [];
+    }
     let res = [];
     let startCol = 0;
     let endCol = array.length - 1;
     let startRow = 0;
     let endRow = array.length - 1;
-    console.log(array[1][5]);
 
-    // while (startCol <= endCol && startRow <= endRow) {
-    for (let i = startCol; i < endCol; i++) {
-        //-->
-        res.push(array[startCol][i]);
+    while (startCol <= endCol && startRow <= endRow) {
+        for (let i = startCol; i <= endCol; i++) {
+            //-->
+            res.push(array[startCol][i]);
+        }
+        startRow++;
+        for (let i = startRow; i <= endRow; i++) {
+            //down
+            res.push(array[i][endCol]);
+        }
+        endCol--;
+        for (let i = endCol; i >= startCol; i--) {
+            // <--
+            res.push(array[endRow][i]);
+        }
+        endRow--;
+
+        for (let i = endRow; i >= startRow; i--) {
+            // ^
+            res.push(array[i][startCol]);
+        }
+        startCol++;
     }
-    startRow++;
-    for (let i = startRow; i <= endRow; i++) {
-        //down
-        res.push(array[i][endCol]);
-    }
-    console.log(res);
-    endCol--;
-    // for (let i = endCol; i > startCol; i--) {
-    //     // <--
-    //     res.push(array[endRow][i]);
-    // }
-    // endRow--;
-    // for (let i = endRow; i > startRow; i--) {
-    //     // ^
-    //     res.push(array[startCol][i]);
-    // }
-    // startCol++;
-    // }
     return res;
 };
-const arr = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15],
-    [16, 17, 18, 19, 20],
-    [21, 22, 23, 24, 25],
-];
+const arr = [[]];
 console.log(snail(arr));
-// [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]
+// [1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21,
+//  16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]
+
+function orderWeight(strng) {
+    let str = strng.replace(/\s+/g, " ").trim().split(" ");
+    if (str.join("") === "") {
+        return "";
+    }
+    const arr = str
+        .map((el) =>
+            el
+                .split("")
+                .map((el) => +el)
+                .reduce((a, b) => a + b)
+        )
+        .sort((a, b) => a - b);
+    const sortArr = str.sort();
+    // console.log(["sortArr", sortArr]);
+    // console.log(["arr", arr]);
+    //
+    for (let i = 0; i < sortArr.length; i++) {
+        let num = +[sortArr[i]].map((el) =>
+            el.split("").reduce((a, b) => +a + +b)
+        )[0];
+        // console.log(typeof num);
+        if (arr.includes(num)) {
+            arr[arr.indexOf(num)] = sortArr[i];
+        }
+    }
+    // console.log(sortArr);
+    return arr.join(" ");
+}
+console.log(orderWeight("112 32 6 33 42 7"));
