@@ -1,51 +1,40 @@
-Math.round = function (number) {
-    if (!String(number).split("").includes(".")) {
-        return number;
+function createSpiral(N) {
+    console.log(!Number.isInteger("N"));
+    if (!Number.isInteger(N) || N < 1 || typeof N !== "number") {
+        return [];
     }
-    const remainder = String(number).match(/\.(\d+)$/)[1];
-    const base = +String(number).match(/^(\d+)\./)[1];
-    if (remainder && +remainder[0] >= 5) {
-        return base + 1;
-    }
-    return base;
-};
+    let result = new Array(N).fill().map(() => new Array(N).fill(""));
+    let counter = 1;
+    let fc = 0;
+    let lc = N - 1;
+    let fr = 0;
+    let lr = N - 1;
 
-Math.ceil = function (number) {
-    if (number == 0) {
-        return 0;
+    while (fc <= lc && fr <= lr) {
+        for (let i = fc; i <= lc; i++) {
+            result[fr][i] = counter;
+            counter++;
+        }
+        fr++;
+        for (let i = fr; i <= lr; i++) {
+            result[i][lc] = counter;
+            counter++;
+        }
+        lc--;
+        for (let i = lc; i >= fc; i--) {
+            result[lr][i] = counter;
+            counter++;
+        }
+        lr--;
+        for (let i = lr; i >= fr; i--) {
+            result[i][fc] = counter;
+            counter++;
+        }
+        fc++;
     }
-    const num = String(number).split("").includes(".");
-    if (!num) {
-        return number;
-    } else {
-        return +String(number).match(/^(\d+)\./)[1] + 1;
-    }
-};
-
-Math.floor = function (number) {
-    const num = String(number).split("").includes(".");
-
-    if (!num && number !== 0) {
-        return number;
-    }
-    if (number == 0) {
-        return 0;
-    }
-    const base = +String(number).match(/^(\d+)\./)[1];
-    if (num) {
-        return base;
-    } else if (num) {
-        return 0;
-    }
-};
-const num = 5;
-console.log([
-    "round " + Math.round(num),
-    "ceil " + Math.ceil(num),
-    "floor " + Math.floor(num),
-]);
-console.log(parseInt(1.99));
-
-// Math.floor = number => parseInt(number)
-// Math.round = number => Math.floor(number + 0.5)
-// Math.ceil  = number => Number.isInteger(number) ? number : Math.floor( number + 1 )
+    return result;
+}
+// console.log(createSpiral(1));
+// console.log(createSpiral(3));
+// console.log(createSpiral(0));
+console.log(createSpiral(5.5));
