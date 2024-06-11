@@ -1,27 +1,39 @@
-function incrementString(strng) {
-    if (
-        strng.replace(/[\D]/gi, "") === strng &&
-        String(Number(strng)) === strng
-    ) {
-        return String(Number(strng) + 1);
-    }
-    let remNums = "";
-    let mainPart = "";
-    for (let i = strng.length - 1; i > 0; i--) {
-        if (Number(strng[i]) || strng[i] === "0") {
-            remNums = remNums + strng[i];
-        } else {
-            break;
+function isSolved(board) {
+    let res = 0;
+    let arr = [];
+    function run(array) {
+        if (array.every((el) => el === 1)) {
+            return (res = 1);
+        } else if (array.every((el) => el === 2)) {
+            return (res = 2);
         }
+        return 0;
     }
-    remNums = remNums.split("").reverse().join("");
-    mainPart = strng.slice(0, strng.length - remNums.length);
-
-    if (remNums[0] === "0") {
-        remNums = String(+("10" + remNums) + 1).slice(2);
-        return mainPart + remNums;
+    for (let i = 0; i < board.length; i++) {
+        run(arr);
+        for (let j = 0; j < board[i].length; j++) {
+            arr.push(board[j][i]);
+        }
+        run(arr);
+        arr = [];
+        for (let j = 0; j < board.length; j++) {
+            arr.push(board[j][i]);
+            i++;
+        }
+        run(arr);
+        arr = [];
+        for (let j = board.length - 1; j >= 0; j--) {
+            arr.push(board[j][i]);
+            i++;
+        }
+        run(arr);
     }
-    return mainPart + (Number(remNums) + 1);
+    return res;
 }
-
-console.log(incrementString("1"));
+console.log(
+    isSolved([
+        [2, 0, 2],
+        [2, 1, 1],
+        [1, 1, 2],
+    ])
+);
