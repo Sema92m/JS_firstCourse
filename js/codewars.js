@@ -3858,7 +3858,51 @@ function average(scores) {
     return Math.round(scores.reduce((a, b) => a + b) / scores.length);
 }
 console.log(average([49, 3, 5, 300, 7]));
-function average(scores) {
-    return Math.round(scores.reduce((a, b) => a + b) / scores.length);
+
+function initials(n) {
+    const arr = n.split(" ");
+    let res = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (i === arr.length - 1) {
+            res = res + arr[i][0].toUpperCase() + arr[i].slice(1);
+            break;
+        }
+        res = res + arr[i][0].toUpperCase() + ".";
+    }
+    return res;
 }
-console.log(average([49, 3, 5, 300, 7]));
+console.log(initials("code mpode wars"));
+
+function isInertial(arr) {
+    function isOdd(num) {
+        return num % 2 !== 0;
+    }
+    // a. It contains at least one odd value
+    function containOdd(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (isOdd(arr[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+    // b. The maximum value in the array is even
+    function maxIsEven(arr) {
+        const maxValue = Math.max(...arr);
+        return maxValue % 2 === 0;
+    }
+    // c. Every odd value is greater than every even value that is not the maximum value
+    function oddIsGreather(arr) {
+        const maxValue = Math.max(...arr);
+        const odd = arr.filter(isOdd);
+        const even = arr.filter((num) => num % 2 === 0 && num !== maxValue);
+        if (odd.length === 0 || even.length === 0) return true;
+        const minOdd = Math.min(...odd);
+        const maxNonMaxEven = Math.max(...even);
+        return minOdd > maxNonMaxEven;
+    }
+
+    return containOdd(arr) && maxIsEven(arr) && oddIsGreather(arr);
+}
+
+console.log(isInertial([11, 4, 20, 9, 2, 8])); // Output: true
