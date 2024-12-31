@@ -3853,3 +3853,8 @@ console.log(
         [1, 1, 2],
     ])
 );
+
+function average(scores) {
+    return Math.round(scores.reduce((a, b) => a + b) / scores.length);
+}
+console.log(average([49, 3, 5, 300, 7]));
