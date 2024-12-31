@@ -3858,3 +3858,7 @@ function average(scores) {
     return Math.round(scores.reduce((a, b) => a + b) / scores.length);
 }
 console.log(average([49, 3, 5, 300, 7]));
+function average(scores) {
+    return Math.round(scores.reduce((a, b) => a + b) / scores.length);
+}
+console.log(average([49, 3, 5, 300, 7]));
