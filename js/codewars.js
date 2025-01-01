@@ -3906,3 +3906,46 @@ function isInertial(arr) {
 }
 
 console.log(isInertial([11, 4, 20, 9, 2, 8])); // Output: true
+
+function partlist(arr) {
+    let res = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        let subres = "";
+        let a = subres + arr.slice(0, i + 1).join(" ");
+        let b = subres + arr.slice(i + 1, arr.length).join(" ");
+        res.push([a, b]);
+    }
+    return res;
+}
+console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
+
+function sortMyString(S) {
+    let res = "";
+    let odd = "";
+    let even = "";
+    for (let i = 0; i < S.length; i++) {
+        if (i % 2 !== 0) {
+            odd = odd + S[i];
+        } else {
+            even = even + S[i];
+        }
+    }
+    return (res = even + " " + odd);
+}
+console.log(sortMyString("CodeWars"));
+//("CodeWars"), "CdWr oeas")
+
+function repeats(arr) {
+    let res = 0;
+    arr = arr.sort((a, b) => a - b);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] === arr[i + 1] ? i++ : (res += arr[i]);
+    }
+    return res;
+}
+console.log(repeats([4, 5, 7, 5, 4, 8]));
+
+function solve(arr) {
+    return Array.from(new Set(arr));
+}
+console.log(solve([3, 4, 4, 3, 6, 3]));
