@@ -3949,3 +3949,57 @@ function solve(arr) {
     return Array.from(new Set(arr));
 }
 console.log(solve([3, 4, 4, 3, 6, 3]));
+
+function maxDiff(list) {
+    return list.length > 1 ? Math.max(...list) - Math.min(...list) : 0;
+}
+console.log(maxDiff([0, 1, 2, 3, 4, 5, 6]));
+
+var palindromeChainLength = function (n) {
+    let counter = 0;
+    function reverseNum(n) {
+        return +String(n).split("").reverse().join("");
+    }
+    while (true) {
+        const reversed = reverseNum(n);
+        if (n === reversed) {
+            break;
+        }
+        n += reversed;
+        counter++;
+    }
+    return counter;
+};
+console.log(palindromeChainLength(87));
+
+function automorphic(n) {
+    return +String(n ** 2).slice(-String(n).length) === n
+        ? "Automorphic"
+        : "Not!!";
+}
+console.log(automorphic(25));
+
+function findDigit(num, nth) {
+    if (nth <= 0) {
+        return -1;
+    } else if (String(Math.abs(num)).length < nth) {
+        return 0;
+    }
+    return +String(Math.abs(num))
+        .split("")
+        .reverse()
+        .join("")
+        .charAt(nth - 1);
+}
+console.log(findDigit(5673, 4));
+
+function halvingSum(n) {
+    let res = 0;
+    while (n > 0) {
+        res += n;
+        n = Math.floor(n / 2);
+    }
+    return res;
+}
+
+console.log(halvingSum(25));
