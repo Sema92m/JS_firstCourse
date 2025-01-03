@@ -4003,3 +4003,21 @@ function halvingSum(n) {
 }
 
 console.log(halvingSum(25));
+
+function min(arr, toReturn) {
+    return toReturn === "value"
+        ? Math.min(...arr)
+        : arr.indexOf(Math.min(...arr));
+}
+console.log(min([1, 2, 3, 4, 5], "vaue"));
+
+function tidyNumber(n) {
+    const digits = String(n).split("").map(Number);
+    for (let i = 0; i < digits.length; i++) {
+        if (digits[i] > digits[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(tidyNumber(186));
