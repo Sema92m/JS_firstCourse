@@ -4021,3 +4021,72 @@ function tidyNumber(n) {
     return true;
 }
 console.log(tidyNumber(186));
+
+function solve(s) {
+    let res = [];
+    const upperCaseLetters = s.replace(/[\W\d/_]/g, "").replace(/[a-z]/g, "");
+    const lowerCaseLetters = s.replace(/[\W\d/_]/g, "").replace(/[A-Z]/g, "");
+    const nums = s.replace(/[\D]/g, "");
+    const special =
+        s.length -
+        upperCaseLetters.length -
+        lowerCaseLetters.length -
+        nums.length;
+
+    console.log([upperCaseLetters, lowerCaseLetters, nums, special]);
+
+    return [
+        upperCaseLetters.length,
+        lowerCaseLetters.length,
+        nums.length,
+        special,
+    ];
+}
+s = "&RXO|F|KQ|0>U/{^FTC_49I#/{GI*^1L!?}_0ON7LZ";
+console.log(solve(s));
+
+function averages(numbers) {
+    if (numbers === null || numbers.length < 2) {
+        return [];
+    }
+    let res = [];
+    for (let i = 0; i < numbers.length - 1; i++) {
+        res.push((numbers[i] + numbers[i + 1]) / 2);
+    }
+    return res;
+}
+console.log(
+    averages([9, 18, -18, -10, -17, -17, 19, 19, 15, -20, 18, 0, 19, 14, 6, -7])
+);
+
+function stockList(books, categories) {
+    if (books.length < 1 || categories.length < 1) {
+        return "";
+    }
+    let res = "";
+    let arr = [];
+    const obj = {};
+    categories.forEach((letter) => {
+        obj[letter] = 0;
+    });
+
+    for (let i = 0; i < books.length; i++) {
+        if (Object.hasOwn(obj, books[i][0])) {
+            obj[books[i][0]] += +books[i].replace(/[\D]/gi, "");
+        }
+    }
+    for (let i = 0; i < categories.length; i++) {
+        if (Object.hasOwn(obj, categories[i])) {
+            arr.push([categories[i], obj[categories[i]]]);
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (i === arr.length - 1) {
+            res = res + `(${arr[i][0]} : ${arr[i][1]})`;
+            break;
+        }
+        res = res + `(${arr[i][0]} : ${arr[i][1]}) - `;
+    }
+    return res;
+}
+console.log(stockList([], ["B", "R", "D", "X"]));
