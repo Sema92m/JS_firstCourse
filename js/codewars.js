@@ -4090,3 +4090,44 @@ function stockList(books, categories) {
     return res;
 }
 console.log(stockList([], ["B", "R", "D", "X"]));
+
+function vaporcode(string) {
+    return string
+        .split("")
+        .map((letter) => (letter === " " ? "" : letter.toUpperCase() + "  "))
+        .join("")
+        .trim();
+}
+console.log(vaporcode("Lets go to the movies"));
+
+function menFromBoys(arr) {
+    arr = [...new Set(arr)].sort((a, b) => a - b);
+    let res = [];
+    let odd = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            res.push(arr[i]);
+        } else {
+            odd.push(arr[i]);
+        }
+    }
+    res.push(odd.reverse());
+    return res.flat();
+}
+console.log(menFromBoys([20, 50, 34, 46, 43, 33]));
+
+// [20,34,46,50,43,33]
+
+function removeRotten(bagOfFruits) {
+    console.log(bagOfFruits);
+    if (!bagOfFruits || bagOfFruits.length < 1) {
+        return [];
+    }
+
+    return bagOfFruits.map((fruit) =>
+        fruit.startsWith("rotten")
+            ? fruit.slice(6).toLowerCase()
+            : fruit.toLowerCase()
+    );
+}
+console.log(removeRotten(["Apple", "rottenBanana", "Apple"]));
