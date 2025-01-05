@@ -4131,3 +4131,49 @@ function removeRotten(bagOfFruits) {
     );
 }
 console.log(removeRotten(["Apple", "rottenBanana", "Apple"]));
+
+function getCard() {
+    function getRandomArbitrary(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    const bingo = ["B", "I", "N", "G", "O"];
+    const numbers = [
+        [1, 15],
+        [16, 30],
+        [31, 45],
+        [46, 60],
+        [61, 75],
+    ];
+    let res = [];
+    let counter = 0;
+    let finCounter = 0;
+    let num = 0;
+    let arrOfNums = [];
+    for (let i = 0; i < 25; i++) {
+        if (i > 0 && i % 5 === 0) {
+            counter++;
+        }
+
+        // console.log([numbers[counter][0], numbers[counter][1]]);
+        num = getRandomArbitrary(numbers[counter][0], numbers[counter][1]);
+        if (arrOfNums.includes(num)) {
+            i = --i;
+            continue;
+        } else {
+            arrOfNums.push(num);
+        }
+    }
+    for (let i = 0; i < arrOfNums.length; i++) {
+        if (i === 12) {
+            continue;
+        }
+        if (i > 0 && i % 5 === 0) {
+            finCounter++;
+        }
+
+        res.push(bingo[finCounter] + arrOfNums[i]);
+    }
+
+    return res;
+}
+console.log(getCard());
