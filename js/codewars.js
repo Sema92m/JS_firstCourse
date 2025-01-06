@@ -4177,3 +4177,33 @@ function getCard() {
     return res;
 }
 console.log(getCard());
+
+function isValidCoordinates(coordinates) {
+    const arr = coordinates.split(",");
+
+    if (arr.length !== 2) {
+        return false;
+    }
+    const regexp = /[A-Z]/gi;
+    if (
+        arr[0].match(regexp, "") !== null ||
+        arr[1].match(regexp, "") !== null
+    ) {
+        return false;
+    }
+    let mapingArr = arr.map((el) => Number(el));
+
+    if (
+        mapingArr.includes(NaN) ||
+        mapingArr[0] < -90 ||
+        mapingArr[0] > 90 ||
+        mapingArr[1] < -180 ||
+        mapingArr[1] > 180
+    ) {
+        return false;
+    }
+
+    return true;
+}
+
+console.log(isValidCoordinates("99.234, 12.324"));
