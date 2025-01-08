@@ -42,3 +42,45 @@ function maxProduct(numbers, size) {
         .reduce((a, b) => a * b);
 }
 console.log(maxProduct([10, 8, 7, 9], 3));
+
+function strong(n) {
+    const factorial = (num) => {
+        let res = 1;
+        while (num > 1) {
+            res *= num;
+            num--;
+        }
+        return res;
+    };
+    let subRes = 0;
+    const digits = String(n)
+        .split("")
+        .map((n) => Number(n));
+    for (let i = 0; i < digits.length; i++) {
+        subRes += factorial(digits[i]);
+    }
+    return subRes === n ? "STRONG!!!!" : "Not Strong !!";
+}
+console.log(strong(145));
+
+function maxTriSum(numbers) {
+    console.log(numbers);
+    return [...new Set(numbers)]
+        .sort((a, b) => b - a)
+        .slice(0, 3)
+        .reduce((a, b) => a + b, 0);
+}
+
+console.log(maxTriSum([3, 2, 6, 8, 2, 3]));
+
+function pairs(ar) {
+    let counter = 0;
+    for (let i = 0; i < ar.length; i++) {
+        if (Math.abs(ar[i] - ar[i + 1]) === 1) {
+            counter += 1;
+        }
+        ++i;
+    }
+    return counter;
+}
+console.log(pairs([1, 2, 5, 8, -4, -3, 7, 6, 5]));
