@@ -84,3 +84,30 @@ function pairs(ar) {
     return counter;
 }
 console.log(pairs([1, 2, 5, 8, -4, -3, 7, 6, 5]));
+
+function review(height, ornaments, tree) {
+    let str = "";
+    let counter = 1;
+    let maxWidth = height * 2 - 1;
+    for (let i = 0; i < height; i++) {
+        str +=
+            " ".repeat((maxWidth - counter) / 2) +
+            "*".repeat(counter) +
+            " ".repeat((maxWidth - counter) / 2) +
+            "\n";
+        counter = counter + 2;
+    }
+    str += " ".repeat(maxWidth / 2) + "|" + " ".repeat(maxWidth / 2);
+
+    return str;
+}
+console.log(review(5, "yes"));
+
+function evenOrOdd(n) {
+    if (typeof n !== "number") {
+        return n[0] % 2 !== 0 ? "Odd" : "Even";
+    }
+    return n % 2 !== 0 ? "Odd" : "Even";
+}
+
+console.log(typeof evenOrOdd[0]);
