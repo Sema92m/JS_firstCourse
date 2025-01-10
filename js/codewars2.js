@@ -111,3 +111,78 @@ function evenOrOdd(n) {
 }
 
 console.log(typeof evenOrOdd[0]);
+
+function encode(str, n) {
+    const letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ];
+    const res = [];
+    const numArr = String(n)
+        .split("")
+        .map((el) => Number(el));
+    let counter = 0;
+    for (let i = 0; i < str.length; i++) {
+        res.push(letters.indexOf(str[i]) + 1 + numArr[counter]);
+        counter++;
+        if (counter >= numArr.length) {
+            counter = 0;
+        }
+    }
+    return res;
+}
+console.log(encode("scout", 1939));
+
+function disariumNumber(n) {
+    const arr = String(n)
+        .split("")
+        .reduce((acc, digit, idx) => acc + Math.pow(Number(digit), idx + 1), 0);
+
+    return arr === n ? "Disarium !!" : "Not !!";
+}
+console.log(disariumNumber(89));
+
+function add(num1, num2) {
+    const arr1 = String(num1)
+        .split("")
+        .map((el) => Number(el));
+    const arr2 = String(num2)
+        .split("")
+        .map((el) => Number(el));
+    let str = [];
+    let res = [arr1, arr2].sort((a, b) => b.length - a.length);
+    console.log(res);
+    for (let i = 0; i < res[0].length; i++) {
+        if (res[1][i]) {
+            str.push(res[0][i] + res[1][i]);
+        } else {
+            str.push(res[0][i]);
+        }
+    }
+    return str.join("");
+}
+console.log(add(16, 1));
