@@ -166,6 +166,7 @@ function disariumNumber(n) {
 }
 console.log(disariumNumber(89));
 
+//7 kyu 16+18=214
 function add(num1, num2) {
     const arr1 = String(num1)
         .split("")
@@ -175,14 +176,81 @@ function add(num1, num2) {
         .map((el) => Number(el));
     let str = [];
     let res = [arr1, arr2].sort((a, b) => b.length - a.length);
-    console.log(res);
-    for (let i = 0; i < res[0].length; i++) {
-        if (res[1][i]) {
-            str.push(res[0][i] + res[1][i]);
-        } else {
-            str.push(res[0][i]);
+
+    for (let i = res[0].length; i >= 0; i--) {
+        if (res[1][i]) console.log(res[0][i]);
+    }
+    return str;
+}
+console.log(add(123, 12));
+
+function sumOfIntegersInString(s) {
+    return s
+        .replace(/[\D]/gi, ",")
+        .split(",")
+        .reduce((acc, el) => acc + Number(el), 0);
+}
+console.log(sumOfIntegersInString("12.4"));
+
+function pattern(n) {
+    var output = "";
+    for (let i = 1; i <= n; i++) {
+        output += String(i).repeat(i);
+        if (i !== n) {
+            output += "\n";
         }
     }
-    return str.join("");
+    return output;
 }
-console.log(add(16, 1));
+console.log(pattern(1));
+
+var splitInParts = function (s, partLength) {
+    return s.match(new RegExp(`.{1,${partLength}}`, "g")).join(" ");
+};
+
+console.log(splitInParts("supercalifragilisticexpialidocious", 3));
+
+/*  Explanation:
+Regex .{1,3}:
+
+. matches any character.
+{1,3} specifies that the match should be between 1 and 3 characters.
+match:
+
+Splits the string into an array of substrings, each up to 3 characters long.
+join(' '):
+
+Joins the array of substrings with a space (' ') to form the desired output.
+*/
+
+function myCrib(n) {
+    const roofHeight = n + 1;
+    let res = "";
+    for (let i = 0; i < roofHeight; i++) {
+        if (i === roofHeight - 1) {
+            res +=
+                ` `.repeat(roofHeight - i - 1) +
+                `/` +
+                `${"_".repeat(i * 2)}` +
+                `\\` +
+                "\n";
+            break;
+        }
+        res +=
+            ` `.repeat(roofHeight - i - 1) +
+            `/` +
+            `${" ".repeat(i * 2)}` +
+            `\\` +
+            ` `.repeat(roofHeight - i - 1) +
+            "\n";
+    }
+    for (let i = 0; i < n; i++) {
+        if (i === n - 1) {
+            res += `|` + `${"_".repeat(n * 2)}` + `|`;
+            break;
+        }
+        res += `|` + `${" ".repeat(n * 2)}` + `|` + "\n";
+    }
+    return res;
+}
+console.log(myCrib(3));
