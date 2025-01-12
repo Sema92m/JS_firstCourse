@@ -254,3 +254,70 @@ function myCrib(n) {
     return res;
 }
 console.log(myCrib(3));
+
+function yesNo(arr) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i + 1]) {
+            res.push(arr[i]);
+            i++;
+        }
+    }
+    for (let i = 1; i <= arr.length; i++) {
+        if (arr[i + 1]) {
+            res.push(arr[i]);
+            i++;
+        }
+    }
+    return res;
+}
+console.log(yesNo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+function censor(sentence) {
+    const strLower = sentence.toLowerCase().split(" ");
+    const str = sentence.split(" ");
+    const words1 = ["pancakes", "flapjacks", "slapjacks", "hotcakes"];
+    const words2 = ["waffles", "crepes", "blintzes"];
+    const words3 = [
+        "syrup",
+        "honey",
+        "jam",
+        "butter",
+        "chocolate",
+        "margarine",
+        "pancakes",
+        "flapjacks",
+        "slapjacks",
+        "hotcakes",
+    ];
+    if (!str.includes("waffles")) {
+        for (let i = 0; i < words3.length; i++) {
+            if (strLower.includes(words3[i])) {
+                str[strLower.indexOf(words3[i])] = "*".repeat(words3[i].length);
+            }
+        }
+    } else {
+        for (let i = 0; i < words3.length; i++) {
+            if (strLower.includes(words3[i])) {
+                str[strLower.indexOf(words3[i])] =
+                    "**" + str[strLower.indexOf(words3[i])] + "**";
+            }
+        }
+    }
+    for (let i = 0; i < words1.length; i++) {
+        if (strLower.includes(words1[i])) {
+            str[strLower.indexOf(words1[i])] = "*".repeat(words1[i].length);
+        }
+    }
+    for (let i = 0; i < words2.length; i++) {
+        if (strLower.includes(words2[i])) {
+            str[strLower.indexOf(words2[i])] =
+                "**" + str[str.indexOf(words2[i])] + "**";
+        }
+    }
+
+    return str.join(" ");
+}
+console.log(
+    censor("The debate between pancakes and waffles is as sweet as honey")
+);
