@@ -321,3 +321,19 @@ function censor(sentence) {
 console.log(
     censor("The debate between pancakes and waffles is as sweet as honey")
 );
+
+function vowel2index(str) {
+    const letters = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    return str
+        .split("")
+        .map((curr, index) =>
+            letters.includes(curr) ? (curr = index + 1) : curr
+        )
+        .join("");
+    //code me
+}
+console.log(vowel2index("this is my string"));
+
+function vowel2index(str) {
+    return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+}
