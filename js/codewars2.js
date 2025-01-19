@@ -334,6 +334,33 @@ function vowel2index(str) {
 }
 console.log(vowel2index("this is my string"));
 
-function vowel2index(str) {
-    return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+// function vowel2index(str) {
+//     return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+// }
+function Fighter(name, health, damagePerAttack) {
+    this.name = name;
+    this.health = health;
+    this.damagePerAttack = damagePerAttack;
+    this.toString = function () {
+        return this.name;
+    };
 }
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let num1 = 0;
+    let num2 = 0;
+    // num1 = fighter1.health / fighter2.damagePerAttack;
+    // num2 =  (fighter2.health - fighter1.damagePerAttack)  / fighter1.damagePerAttack
+    if (fighter1.name === firstAttacker) {
+        num1 = fighter1.health / fighter2.damagePerAttack;
+    } else {
+        num2 =
+            (fighter2.health - fighter1.damagePerAttack) /
+            fighter1.damagePerAttack;
+    }
+
+    return num1 > num2 ? fighter1.name : fighter2.name;
+}
+console.log(
+    declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")
+);
