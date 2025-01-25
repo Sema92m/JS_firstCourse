@@ -358,9 +358,31 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
             (fighter2.health - fighter1.damagePerAttack) /
             fighter1.damagePerAttack;
     }
-
     return num1 > num2 ? fighter1.name : fighter2.name;
 }
 console.log(
     declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew")
 );
+
+function vertMirror(strng) {
+    return strng
+        .split("\n")
+        .map((el) => el.split("").reverse().join(""))
+        .join("\n");
+}
+// console.log(vertMirror("abcd\nefgh\nijkl\nmnop"));
+
+function horMirror(strng) {
+    return strng.split("\n").reverse().join("\n");
+}
+// console.log(horMirror("abcd\nefgh\nijkl\nmnop"));
+
+function oper(fct, s) {
+    return fct(s);
+}
+console.log(oper(vertMirror, "mnop\nijkl\nefgh\nabcd"));
+
+function cookingTime(eggs) {
+    return Math.ceil(eggs / 8) * 5;
+}
+console.log(cookingTime(7));
